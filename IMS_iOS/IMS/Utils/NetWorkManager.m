@@ -25,6 +25,7 @@ typedef enum : NSUInteger  {
     dispatch_once(&token, ^{
         if(instance == nil) {
             instance = [[self alloc] init];
+            
         }
     });
     return instance;
