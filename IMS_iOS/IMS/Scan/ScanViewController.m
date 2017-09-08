@@ -209,6 +209,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSString *)title {
+    return @"Scan";
+}
+
 /*
 #pragma mark - Navigation
 

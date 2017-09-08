@@ -24,6 +24,12 @@
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3BD062BD1F62762600C1722A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BB1F62762600C1722A /* LoginViewController.m */; };
 		3BD062BE1F62762600C1722A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD062BC1F62762600C1722A /* LoginViewController.xib */; };
+		3BD062C81F62776200C1722A /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062C71F62776200C1722A /* MainTabBarViewController.m */; };
+		3BD062C91F62776200C1722A /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062C71F62776200C1722A /* MainTabBarViewController.m */; };
+		3BD062CA1F62776200C1722A /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062C71F62776200C1722A /* MainTabBarViewController.m */; };
+		3BD062D21F62791400C1722A /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D11F62791400C1722A /* MainNavigationController.m */; };
+		3BD062D31F62791400C1722A /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D11F62791400C1722A /* MainNavigationController.m */; };
+		3BD062D41F62791400C1722A /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D11F62791400C1722A /* MainNavigationController.m */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -195,6 +201,10 @@
 		3BD062BA1F62762600C1722A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		3BD062BB1F62762600C1722A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		3BD062BC1F62762600C1722A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3BD062C61F62776200C1722A /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		3BD062C71F62776200C1722A /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
+		3BD062D01F62791400C1722A /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		3BD062D11F62791400C1722A /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -446,9 +456,13 @@
 			children = (
 				988DB1AA1A43EA0600C243F9 /* AppDelegate.h */,
 				988DB1AB1A43EA0600C243F9 /* AppDelegate.m */,
-				3B401EE61F6270F400EEEF57 /* Setting */,
-				3B401EE51F6270BC00EEEF57 /* Scan */,
+				3BD062C61F62776200C1722A /* MainTabBarViewController.h */,
+				3BD062C71F62776200C1722A /* MainTabBarViewController.m */,
+				3BD062D01F62791400C1722A /* MainNavigationController.h */,
+				3BD062D11F62791400C1722A /* MainNavigationController.m */,
 				3B401EE41F62709900EEEF57 /* Home */,
+				3B401EE51F6270BC00EEEF57 /* Scan */,
+				3B401EE61F6270F400EEEF57 /* Setting */,
 				3B401EDF1F62707400EEEF57 /* Login */,
 				98759A3C1AAD7736008EF3EE /* Utils */,
 				9879D3C11A49083400BF53EF /* Libs */,
@@ -715,6 +729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD062C81F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				9879D3DB1A49083400BF53EF /* AFURLConnectionOperation.m in Sources */,
 				3B401EF31F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
@@ -722,6 +737,7 @@
 				3BD062BD1F62762600C1722A /* LoginViewController.m in Sources */,
 				3B401EE91F62710E00EEEF57 /* SettingsViewController.m in Sources */,
 				9879D3D91A49083400BF53EF /* AFNetworkReachabilityManager.m in Sources */,
+				3BD062D21F62791400C1722A /* MainNavigationController.m in Sources */,
 				9879D3DE1A49083400BF53EF /* AFURLSessionManager.m in Sources */,
 				3B401EF01F62711800EEEF57 /* AVMetadataController.m in Sources */,
 				3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */,
@@ -753,12 +769,14 @@
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
 				98B6FA181AE493D400B2497E /* AFURLRequestSerialization.m in Sources */,
 				98B6FA191AE493D400B2497E /* AFURLResponseSerialization.m in Sources */,
+				3BD062D31F62791400C1722A /* MainNavigationController.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
 				98B6FA1D1AE493D400B2497E /* OpenUDID.m in Sources */,
 				98B6FA1E1AE493D400B2497E /* TypedefEnums.m in Sources */,
 				98B6FA1F1AE493D400B2497E /* AFHTTPRequestOperationManager.m in Sources */,
 				98B6FA201AE493D400B2497E /* AFSecurityPolicy.m in Sources */,
 				98B6FA211AE493D400B2497E /* main.m in Sources */,
+				3BD062C91F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3B401EF91F62712500EEEF57 /* HomeViewController.m in Sources */,
 				98B6FA231AE493D400B2497E /* AFHTTPSessionManager.m in Sources */,
 			);
@@ -779,12 +797,14 @@
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
 				98B6FA461AE493DB00B2497E /* AFURLRequestSerialization.m in Sources */,
 				98B6FA471AE493DB00B2497E /* AFURLResponseSerialization.m in Sources */,
+				3BD062D41F62791400C1722A /* MainNavigationController.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,
 				98B6FA4B1AE493DB00B2497E /* OpenUDID.m in Sources */,
 				98B6FA4C1AE493DB00B2497E /* TypedefEnums.m in Sources */,
 				98B6FA4D1AE493DB00B2497E /* AFHTTPRequestOperationManager.m in Sources */,
 				98B6FA4E1AE493DB00B2497E /* AFSecurityPolicy.m in Sources */,
 				98B6FA4F1AE493DB00B2497E /* main.m in Sources */,
+				3BD062CA1F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3B401EFA1F62712500EEEF57 /* HomeViewController.m in Sources */,
 				98B6FA511AE493DB00B2497E /* AFHTTPSessionManager.m in Sources */,
 			);

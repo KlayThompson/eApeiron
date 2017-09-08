@@ -7,8 +7,14 @@
 //
 
 #import "LoginViewController.h"
+#import "MainTabBarViewController.h"
 
 @interface LoginViewController ()
+
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 
 @end
 
@@ -16,22 +22,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    [self setupUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//设置界面
+- (void)setupUI {
+
+    self.loginButton.layer.cornerRadius = 5;
+    self.loginButton.layer.masksToBounds = YES;
+    
+    self.loginButton.layer.borderWidth = 1;
+    self.loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//点击登录按钮
+- (IBAction)loginButtonTap:(id)sender {
+    
+    //登录成功更换rootViewController
+    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+    tabbar.userLogin = YES;
+    [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
+    [tabbar setRootViewController];
 }
-*/
+
+
+- (NSString *)title {
+    return @"登录";
+}
 
 @end

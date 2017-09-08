@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "HomeViewController.h" 
+#import "MainTabBarViewController.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
@@ -24,9 +25,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    HomeViewController *view = [[HomeViewController alloc] init];
+//    HomeViewController *view = [[HomeViewController alloc] init];
     //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
-    [self.window setRootViewController:view];
+    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+    [self.window setRootViewController:tabbar];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
@@ -79,7 +81,7 @@
 {
     UIImageView *launchImage = (UIImageView *)[self.window viewWithTag:11111];
     [launchImage removeFromSuperview];
-    [(HomeViewController *)self.window.rootViewController updateLoad];
+//    [(HomeViewController *)self.window.rootViewController updateLoad];
 }
 - (void)changeRootURL
 {

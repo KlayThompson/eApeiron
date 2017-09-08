@@ -37,7 +37,7 @@
     NSArray *items = @[homeItem, scanItem, setItem];
     [_tabBar setItems:items animated:YES];
     [_tabBar setDelegate:self];
-    [self.view addSubview:_tabBar];  
+//    [self.view addSubview:_tabBar];  
     
     //
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, ScreenWidth, ScreenHeight - 20 - 49)];
@@ -162,6 +162,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString *)title {
+    return @"Home";
 }
 
 /*
