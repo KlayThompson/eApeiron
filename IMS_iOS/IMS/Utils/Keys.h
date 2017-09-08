@@ -38,7 +38,11 @@
 #define ScreenWidth                                             [[UIScreen mainScreen] bounds].size.width
 
 
-
+#define IMS_GET_CSRF_URL                                        @"getCSRFToken"
+#define IMS_AUTH_URL                                            @"getAuthToken"
+#define IMS_CREATE_INCIDENT                                     @"incident"
+#define IMS_GET_HISTORY                                         @"history"
+#define IMS_GET_PROJECTS                                        @"projects"
 
 
 

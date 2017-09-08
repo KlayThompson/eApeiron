@@ -30,6 +30,9 @@
 		3BD062D21F62791400C1722A /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D11F62791400C1722A /* MainNavigationController.m */; };
 		3BD062D31F62791400C1722A /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D11F62791400C1722A /* MainNavigationController.m */; };
 		3BD062D41F62791400C1722A /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D11F62791400C1722A /* MainNavigationController.m */; };
+		3BD062D71F62917400C1722A /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D61F62917400C1722A /* NetWorkManager.m */; };
+		3BD062D81F62917400C1722A /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D61F62917400C1722A /* NetWorkManager.m */; };
+		3BD062D91F62917400C1722A /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062D61F62917400C1722A /* NetWorkManager.m */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -205,6 +208,8 @@
 		3BD062C71F62776200C1722A /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		3BD062D01F62791400C1722A /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
 		3BD062D11F62791400C1722A /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		3BD062D51F62917400C1722A /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
+		3BD062D61F62917400C1722A /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -355,6 +360,8 @@
 				98759A421AAD79FE008EF3EE /* TypedefEnums.m */,
 				3B9868CA1EB073E600A2CB4D /* HostURL.h */,
 				3B9868CB1EB073E600A2CB4D /* HostURL.m */,
+				3BD062D51F62917400C1722A /* NetWorkManager.h */,
+				3BD062D61F62917400C1722A /* NetWorkManager.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -746,6 +753,7 @@
 				988DB1AC1A43EA0600C243F9 /* AppDelegate.m in Sources */,
 				9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */,
 				98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */,
+				3BD062D71F62917400C1722A /* NetWorkManager.m in Sources */,
 				9879D3D71A49083400BF53EF /* AFHTTPRequestOperationManager.m in Sources */,
 				9879D3DA1A49083400BF53EF /* AFSecurityPolicy.m in Sources */,
 				988DB1A91A43EA0600C243F9 /* main.m in Sources */,
@@ -762,6 +770,7 @@
 				3B401EF41F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98B6FA141AE493D400B2497E /* Hud.m in Sources */,
 				98B6FA151AE493D400B2497E /* AFHTTPRequestOperation.m in Sources */,
+				3BD062D81F62917400C1722A /* NetWorkManager.m in Sources */,
 				3B401EEA1F62710E00EEEF57 /* SettingsViewController.m in Sources */,
 				98B6FA161AE493D400B2497E /* AFNetworkReachabilityManager.m in Sources */,
 				98B6FA171AE493D400B2497E /* AFURLSessionManager.m in Sources */,
@@ -790,6 +799,7 @@
 				3B401EF51F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98B6FA421AE493DB00B2497E /* Hud.m in Sources */,
 				98B6FA431AE493DB00B2497E /* AFHTTPRequestOperation.m in Sources */,
+				3BD062D91F62917400C1722A /* NetWorkManager.m in Sources */,
 				3B401EEB1F62710E00EEEF57 /* SettingsViewController.m in Sources */,
 				98B6FA441AE493DB00B2497E /* AFNetworkReachabilityManager.m in Sources */,
 				98B6FA451AE493DB00B2497E /* AFURLSessionManager.m in Sources */,
