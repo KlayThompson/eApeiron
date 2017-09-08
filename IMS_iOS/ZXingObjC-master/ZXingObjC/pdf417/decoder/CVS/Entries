@@ -1,0 +1,21 @@
+D/ec////
+/ZXPDF417BarcodeMetadata.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417BarcodeMetadata.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417BarcodeValue.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417BarcodeValue.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417BoundingBox.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417BoundingBox.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417Codeword.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417Codeword.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417CodewordDecoder.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417CodewordDecoder.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417DecodedBitStreamParser.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417DecodedBitStreamParser.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417DetectionResult.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417DetectionResult.m/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417DetectionResultColumn.h/1.1/Thu Mar 19 06:10:45 2015/-ko/
+/ZXPDF417DetectionResultColumn.m/1.1/Thu Mar 19 06:10:46 2015/-ko/
+/ZXPDF417DetectionResultRowIndicatorColumn.h/1.1/Thu Mar 19 06:10:46 2015/-ko/
+/ZXPDF417DetectionResultRowIndicatorColumn.m/1.1/Thu Mar 19 06:10:46 2015/-ko/
+/ZXPDF417ScanningDecoder.h/1.1/Thu Mar 19 06:10:46 2015/-ko/
+/ZXPDF417ScanningDecoder.m/1.1/Thu Mar 19 06:10:46 2015/-ko/

@@ -1,0 +1,28 @@
+D/detector////
+D/reedsolomon////
+/ZXBitArray.h/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXBitArray.m/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXBitMatrix.h/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXBitMatrix.m/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXBitSource.h/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXBitSource.m/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXCharacterSetECI.h/1.1/Thu Mar 19 06:10:35 2015/-ko/
+/ZXCharacterSetECI.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXDecoderResult.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXDecoderResult.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXDefaultGridSampler.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXDefaultGridSampler.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXDetectorResult.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXDetectorResult.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXECI.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXECI.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXGlobalHistogramBinarizer.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXGlobalHistogramBinarizer.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXGridSampler.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXGridSampler.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXHybridBinarizer.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXHybridBinarizer.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXPerspectiveTransform.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXPerspectiveTransform.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXStringUtils.h/1.1/Thu Mar 19 06:10:36 2015/-ko/
+/ZXStringUtils.m/1.1/Thu Mar 19 06:10:36 2015/-ko/
