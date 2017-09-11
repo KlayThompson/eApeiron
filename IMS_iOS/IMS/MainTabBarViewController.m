@@ -12,6 +12,7 @@
 #import "HomeViewController.h"
 #import "ScanViewController.h"
 #import "SettingsViewController.h"
+#import "IMSAPIManager.h"
 
 @interface MainTabBarViewController ()<AVMetadataDelegate>
 
@@ -25,6 +26,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
 //    self.userLogin = NO;
     [self setRootViewController];
+    
+    [IMSAPIManager ims_getCSRFTokenWithBlock:^(id JSON, NSError *error) {
+        DLog(@"");
+    }];
 }
 
 - (void)setRootViewController {
