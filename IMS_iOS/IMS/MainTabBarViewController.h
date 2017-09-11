@@ -10,8 +10,6 @@
 
 @interface MainTabBarViewController : UITabBarController
 
-@property (nonatomic, assign) BOOL userLogin;
-
 //登录成功后重新设置rootViewController
 - (void)setRootViewController;
 @end

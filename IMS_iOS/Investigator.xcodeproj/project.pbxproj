@@ -54,6 +54,9 @@
 		3BD063171F66253200C1722A /* IMSAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063161F66253200C1722A /* IMSAPIManager.m */; };
 		3BD063181F66253200C1722A /* IMSAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063161F66253200C1722A /* IMSAPIManager.m */; };
 		3BD063191F66253200C1722A /* IMSAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063161F66253200C1722A /* IMSAPIManager.m */; };
+		3BD0635E1F665EE100C1722A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0635D1F665EE100C1722A /* UserInfoManager.m */; };
+		3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0635D1F665EE100C1722A /* UserInfoManager.m */; };
+		3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0635D1F665EE100C1722A /* UserInfoManager.m */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -219,6 +222,8 @@
 		3BD063111F66248800C1722A /* NetworkAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkAPIManager.m; sourceTree = "<group>"; };
 		3BD063151F66253200C1722A /* IMSAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMSAPIManager.h; sourceTree = "<group>"; };
 		3BD063161F66253200C1722A /* IMSAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSAPIManager.m; sourceTree = "<group>"; };
+		3BD0635C1F665EE100C1722A /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
+		3BD0635D1F665EE100C1722A /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -381,6 +386,8 @@
 				98759A421AAD79FE008EF3EE /* TypedefEnums.m */,
 				3B9868CA1EB073E600A2CB4D /* HostURL.h */,
 				3B9868CB1EB073E600A2CB4D /* HostURL.m */,
+				3BD0635C1F665EE100C1722A /* UserInfoManager.h */,
+				3BD0635D1F665EE100C1722A /* UserInfoManager.m */,
 				3BD062DC1F66211D00C1722A /* NetWork */,
 			);
 			path = Utils;
@@ -732,6 +739,7 @@
 			files = (
 				3BD063171F66253200C1722A /* IMSAPIManager.m in Sources */,
 				3BD062C81F62776200C1722A /* MainTabBarViewController.m in Sources */,
+				3BD0635E1F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3BD063121F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B401EF31F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
@@ -762,6 +770,7 @@
 				98B6FA141AE493D400B2497E /* Hud.m in Sources */,
 				3BD0630E1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3B401EEA1F62710E00EEEF57 /* SettingsViewController.m in Sources */,
+				3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B401EF11F62711800EEEF57 /* AVMetadataController.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
@@ -789,6 +798,7 @@
 				98B6FA421AE493DB00B2497E /* Hud.m in Sources */,
 				3BD0630F1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3B401EEB1F62710E00EEEF57 /* SettingsViewController.m in Sources */,
+				3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B401EF21F62711800EEEF57 /* AVMetadataController.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,

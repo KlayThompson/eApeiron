@@ -45,7 +45,17 @@
 #define IMS_GET_PROJECTS                                        @"projects"
 
 
+// 字符串
+#define STR_IS_NIL(objStr) (![objStr isKindOfClass:[NSString class]] || objStr == nil || [objStr length] <= 0 || [[objStr stringByReplacingOccurrencesOfString:@" " withString:@""] isEqualToString:@""])
+// 字典
+#define DICT_IS_NIL(objDict) (![objDict isKindOfClass:[NSDictionary class]] || objDict == nil || [objDict count] <= 0 )
+// 数组
+#define ARRAY_IS_NIL(objArray) (![objArray isKindOfClass:[NSArray class]] || objArray == nil || [objArray count] <= 0 )
+// Number
+#define NUMBER_IS_NIL(objNum) (![objNum isKindOfClass:[NSNumber class]] || objNum == nil )
 
+
+#define IMS_ERROR_MESSAGE                                       @"网络错误，请稍后再试"
 
 
 #endif

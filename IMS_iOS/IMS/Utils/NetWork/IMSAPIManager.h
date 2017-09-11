@@ -12,15 +12,26 @@
 
 + (instancetype)sharedManager;
 
-#pragma mark - news
-/**
- [商业头条]->[新闻]
- 新闻详情
- 新闻详情
- */
-+ (void)news_loadNewsContentWithNewsId:(NSNumber *)newsId
-                            industryID:(NSNumber *)inid
-                              websitId:(NSNumber *)websitId
-                                 Block:(void(^)(id JSON, NSError *error))block;
+#pragma mark - 获取CSrfToken
 + (void)ims_getCSRFTokenWithBlock:(void(^)(id JSON, NSError *error))block;
+
+#pragma mark -
+
+/**
+ 登录认证，获取AuthToken
+
+ @param username 用户名
+ @param password 密码
+ @param block 回调
+ */
++ (void)ims_getAuthTokenWithUsername:(NSString *)username
+                            password:(NSString *)password
+                               Block:(void(^)(id JSON, NSError *error))block;
+
+/**
+ 获取项目信息
+
+ @param block 回调项目信息
+ */
++ (void)ims_getProjectsWithBlock:(void(^)(id JSON, NSError *error))block;
 @end

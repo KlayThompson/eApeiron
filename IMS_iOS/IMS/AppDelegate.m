@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-
 #import "HomeViewController.h" 
 #import "MainTabBarViewController.h"
 
@@ -27,6 +26,9 @@
     
 //    HomeViewController *view = [[HomeViewController alloc] init];
     //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
+    
+    [self checkUserLoginState];
+    
     MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     [self.window setRootViewController:tabbar];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -132,6 +134,23 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+/**
+ 检查用户登录状态
+ */
+- (void)checkUserLoginState {
+
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    NSString *authToken = [manager getUserAuthToken];
+    
+    if (STR_IS_NIL(authToken)) {
+        manager.userLogin = NO;
+    } else {
+        manager.userLogin = YES;
+    }
+    
 }
 
 @end

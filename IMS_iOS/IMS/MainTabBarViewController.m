@@ -13,6 +13,7 @@
 #import "ScanViewController.h"
 #import "SettingsViewController.h"
 #import "IMSAPIManager.h"
+#import "AppDelegate.h"
 
 @interface MainTabBarViewController ()<AVMetadataDelegate>
 
@@ -27,14 +28,12 @@
 //    self.userLogin = NO;
     [self setRootViewController];
     
-    [IMSAPIManager ims_getCSRFTokenWithBlock:^(id JSON, NSError *error) {
-        DLog(@"");
-    }];
 }
 
 - (void)setRootViewController {
 
-    if (self.userLogin) {
+    UserInfoManager *manager = UserInfoManager.shareInstance;
+    if (manager.userLogin) {
         //显示主界面
         self.tabBar.hidden = NO;
         self.viewControllers = [self setLoginSuccessViewController];

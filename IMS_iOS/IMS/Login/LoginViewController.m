@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MainTabBarViewController.h"
-
+#import "IMSAPIManager.h"
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -38,12 +38,24 @@
 
 //点击登录按钮
 - (IBAction)loginButtonTap:(id)sender {
+    [Hud start];
+    [IMSAPIManager ims_getAuthTokenWithUsername:self.usernameTextField.text
+                                       password:self.passwordTextField.text
+                                          Block:^(id JSON, NSError *error) {
+                                              [Hud stop];
+                                              if (error) {
+                                                  [Hud showMessage:IMS_ERROR_MESSAGE];
+                                              } else {
+                                                  //登录成功更换rootViewController
+                                                  [Hud showMessage:@"登录成功"];
+                                                  MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+                                                  [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
+                                                  [tabbar setRootViewController];
+                                                  
+                                              }
+                                              
+                                          }];
     
-    //登录成功更换rootViewController
-    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
-    tabbar.userLogin = YES;
-    [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
-    [tabbar setRootViewController];
 }
 
 
