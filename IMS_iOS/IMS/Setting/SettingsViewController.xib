@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
+            <connections>
+                <outlet property="chooseProjectButton" destination="bA1-eR-Fnj" id="qg8-da-unH"/>
+                <outlet property="logoutButton" destination="R8d-Zl-4jc" id="cAa-mL-VDv"/>
+                <outlet property="pickerBottomCons" destination="Dzm-MW-Jkr" id="JNV-1N-gDs"/>
+                <outlet property="projectPicker" destination="YX9-eT-YuB" id="cn4-Jg-jQF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8d-Zl-4jc">
+                    <rect key="frame" x="20" y="205" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="juF-aa-3N7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Logout kanejin">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="logoutButtonTap:" destination="-1" eventType="touchUpInside" id="8Bs-QG-job"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tracking Program:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrt-xI-gJ5">
+                    <rect key="frame" x="20" y="100" width="335" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="ymy-Sr-tkA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YX9-eT-YuB">
+                    <rect key="frame" x="0.0" y="667" width="375" height="216"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="216" id="EHR-0z-oJF"/>
+                    </constraints>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA1-eR-Fnj">
+                    <rect key="frame" x="20" y="141" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="i5I-p6-6PQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseProjectButtonTap:" destination="-1" eventType="touchUpInside" id="VBs-95-Phy"/>
+                    </connections>
+                </button>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fo1-Jw-uWS">
+                    <rect key="frame" x="0.0" y="667" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vA7-lT-IEJ"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Cancel" id="9Ps-hS-EEF">
+                            <connections>
+                                <action selector="cancelButtonTap:" destination="-1" id="Kef-A6-NmT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="UYy-XE-6tc"/>
+                        <barButtonItem title="Done" id="gwA-xp-i64">
+                            <connections>
+                                <action selector="doneButtonTap:" destination="-1" id="E0s-MV-gai"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bA1-eR-Fnj" firstAttribute="leading" secondItem="hrt-xI-gJ5" secondAttribute="leading" id="00A-J0-dyU"/>
+                <constraint firstItem="Fo1-Jw-uWS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0ko-HJ-2D1"/>
+                <constraint firstAttribute="trailing" secondItem="Fo1-Jw-uWS" secondAttribute="trailing" id="1uf-l8-Qk6"/>
+                <constraint firstItem="bA1-eR-Fnj" firstAttribute="trailing" secondItem="hrt-xI-gJ5" secondAttribute="trailing" id="86m-RW-kWQ"/>
+                <constraint firstAttribute="bottom" secondItem="YX9-eT-YuB" secondAttribute="bottom" constant="-216" id="Dzm-MW-Jkr"/>
+                <constraint firstAttribute="trailing" secondItem="hrt-xI-gJ5" secondAttribute="trailing" constant="20" id="HmD-tc-OGO"/>
+                <constraint firstItem="hrt-xI-gJ5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MyQ-s1-S6Q"/>
+                <constraint firstItem="R8d-Zl-4jc" firstAttribute="trailing" secondItem="bA1-eR-Fnj" secondAttribute="trailing" id="SRT-QN-yVO"/>
+                <constraint firstItem="R8d-Zl-4jc" firstAttribute="top" secondItem="bA1-eR-Fnj" secondAttribute="bottom" constant="20" id="VeJ-xn-1kf"/>
+                <constraint firstItem="bA1-eR-Fnj" firstAttribute="top" secondItem="hrt-xI-gJ5" secondAttribute="bottom" constant="20" id="heg-7q-ukr"/>
+                <constraint firstItem="R8d-Zl-4jc" firstAttribute="leading" secondItem="bA1-eR-Fnj" secondAttribute="leading" id="kb1-qw-6Mh"/>
+                <constraint firstItem="YX9-eT-YuB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lk0-TI-RON"/>
+                <constraint firstItem="hrt-xI-gJ5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="r95-u1-az4"/>
+                <constraint firstAttribute="trailing" secondItem="YX9-eT-YuB" secondAttribute="trailing" id="rDJ-vO-e9L"/>
+                <constraint firstItem="Fo1-Jw-uWS" firstAttribute="top" secondItem="YX9-eT-YuB" secondAttribute="top" id="x5E-Ie-nnF"/>
+            </constraints>
+            <point key="canvasLocation" x="-206.5" y="110.5"/>
+        </view>
+    </objects>
+</document>

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3B401EE91F62710E00EEEF57 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B401EE81F62710E00EEEF57 /* SettingsViewController.m */; };
-		3B401EEA1F62710E00EEEF57 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B401EE81F62710E00EEEF57 /* SettingsViewController.m */; };
-		3B401EEB1F62710E00EEEF57 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B401EE81F62710E00EEEF57 /* SettingsViewController.m */; };
 		3B401EF01F62711800EEEF57 /* AVMetadataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B401EED1F62711800EEEF57 /* AVMetadataController.m */; };
 		3B401EF11F62711800EEEF57 /* AVMetadataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B401EED1F62711800EEEF57 /* AVMetadataController.m */; };
 		3B401EF21F62711800EEEF57 /* AVMetadataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B401EED1F62711800EEEF57 /* AVMetadataController.m */; };
@@ -57,6 +54,12 @@
 		3BD0635E1F665EE100C1722A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0635D1F665EE100C1722A /* UserInfoManager.m */; };
 		3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0635D1F665EE100C1722A /* UserInfoManager.m */; };
 		3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0635D1F665EE100C1722A /* UserInfoManager.m */; };
+		3BD063681F667FD900C1722A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063661F667FD900C1722A /* SettingsViewController.m */; };
+		3BD063691F667FD900C1722A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063661F667FD900C1722A /* SettingsViewController.m */; };
+		3BD0636A1F667FD900C1722A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063661F667FD900C1722A /* SettingsViewController.m */; };
+		3BD0636B1F667FD900C1722A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063671F667FD900C1722A /* SettingsViewController.xib */; };
+		3BD0636C1F667FD900C1722A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063671F667FD900C1722A /* SettingsViewController.xib */; };
+		3BD0636D1F667FD900C1722A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063671F667FD900C1722A /* SettingsViewController.xib */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -188,8 +191,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B401EE71F62710E00EEEF57 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		3B401EE81F62710E00EEEF57 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3B401EEC1F62711800EEEF57 /* AVMetadataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVMetadataController.h; sourceTree = "<group>"; };
 		3B401EED1F62711800EEEF57 /* AVMetadataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVMetadataController.m; sourceTree = "<group>"; };
 		3B401EEE1F62711800EEEF57 /* ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanViewController.h; sourceTree = "<group>"; };
@@ -224,6 +225,9 @@
 		3BD063161F66253200C1722A /* IMSAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMSAPIManager.m; sourceTree = "<group>"; };
 		3BD0635C1F665EE100C1722A /* UserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoManager.h; sourceTree = "<group>"; };
 		3BD0635D1F665EE100C1722A /* UserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoManager.m; sourceTree = "<group>"; };
+		3BD063651F667FD900C1722A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		3BD063661F667FD900C1722A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		3BD063671F667FD900C1722A /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -330,8 +334,9 @@
 		3B401EE61F6270F400EEEF57 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				3B401EE71F62710E00EEEF57 /* SettingsViewController.h */,
-				3B401EE81F62710E00EEEF57 /* SettingsViewController.m */,
+				3BD063651F667FD900C1722A /* SettingsViewController.h */,
+				3BD063661F667FD900C1722A /* SettingsViewController.m */,
+				3BD063671F667FD900C1722A /* SettingsViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -667,6 +672,7 @@
 				9879D3BE1A48FDCF00BF53EF /* Icon7.png in Resources */,
 				3BD062BE1F62762600C1722A /* LoginViewController.xib in Resources */,
 				98764D9C1A47ED24007ED35F /* ic_scan_selected@2x.png in Resources */,
+				3BD0636B1F667FD900C1722A /* SettingsViewController.xib in Resources */,
 				98ED33C51AE4DDD800E66D44 /* Default@2x.png in Resources */,
 				98764D9F1A47ED24007ED35F /* ic_settings@2x.png in Resources */,
 				98764D9E1A47ED24007ED35F /* ic_settings_selected@2x.png in Resources */,
@@ -701,6 +707,7 @@
 				98ED33C61AE4DDD800E66D44 /* Default@2x.png in Resources */,
 				98B6FA321AE493D400B2497E /* Images.xcassets in Resources */,
 				98B6FA331AE493D400B2497E /* ic_menu_home@2x.png in Resources */,
+				3BD0636C1F667FD900C1722A /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +734,7 @@
 				98ED33C71AE4DDD800E66D44 /* Default@2x.png in Resources */,
 				98B6FA601AE493DB00B2497E /* Images.xcassets in Resources */,
 				98B6FA611AE493DB00B2497E /* ic_menu_home@2x.png in Resources */,
+				3BD0636D1F667FD900C1722A /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,7 +752,6 @@
 				3B401EF31F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
 				3BD062BD1F62762600C1722A /* LoginViewController.m in Sources */,
-				3B401EE91F62710E00EEEF57 /* SettingsViewController.m in Sources */,
 				3BD062D21F62791400C1722A /* MainNavigationController.m in Sources */,
 				3B401EF01F62711800EEEF57 /* AVMetadataController.m in Sources */,
 				3BD063071F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
@@ -757,6 +764,7 @@
 				3BD0630D1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				988DB1A91A43EA0600C243F9 /* main.m in Sources */,
 				3B401EF81F62712500EEEF57 /* HomeViewController.m in Sources */,
+				3BD063681F667FD900C1722A /* SettingsViewController.m in Sources */,
 				3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3BD0630A1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 			);
@@ -769,10 +777,10 @@
 				3B401EF41F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98B6FA141AE493D400B2497E /* Hud.m in Sources */,
 				3BD0630E1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
-				3B401EEA1F62710E00EEEF57 /* SettingsViewController.m in Sources */,
 				3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B401EF11F62711800EEEF57 /* AVMetadataController.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3BD063691F667FD900C1722A /* SettingsViewController.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3BD062D31F62791400C1722A /* MainNavigationController.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
@@ -797,10 +805,10 @@
 				3B401EF51F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98B6FA421AE493DB00B2497E /* Hud.m in Sources */,
 				3BD0630F1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
-				3B401EEB1F62710E00EEEF57 /* SettingsViewController.m in Sources */,
 				3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B401EF21F62711800EEEF57 /* AVMetadataController.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3BD0636A1F667FD900C1722A /* SettingsViewController.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3BD062D41F62791400C1722A /* MainNavigationController.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,

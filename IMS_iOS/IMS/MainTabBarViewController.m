@@ -66,7 +66,7 @@
     MainNavigationController *scanNavi = [[MainNavigationController alloc] initWithRootViewController:scan];
 
     //Setting
-    SettingsViewController *setting = [[SettingsViewController alloc] init];
+    SettingsViewController *setting = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
     setting.title = @"Settings";
     setting.tabBarItem.image = [UIImage imageNamed:@"ic_settings"];
     setting.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_settings_selected"];
