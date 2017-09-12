@@ -28,20 +28,36 @@ static UserInfoManager *instance = nil;
  */
 - (void)saveUserInfoToLocal {
     
+    //AuthToken
     [[NSUserDefaults standardUserDefaults] setObject:self.authToken forKey:@"ims_authToken"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 
+    //ProjectName
+    [[NSUserDefaults standardUserDefaults] setObject:self.currentProjectName forKey:@"ims_projectname"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    //UserName
+    [[NSUserDefaults standardUserDefaults] setObject:self.currentUsername forKey:@"ims_username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-//获取AuthToken
-- (NSString *)getUserAuthToken {
+//设置用户保存在本地的信息
+- (void)getUserInfo {
     self.authToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_authToken"];
-    return self.authToken;
+    self.currentProjectName = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_projectname"];
+    self.currentUsername = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_username"];
+    DLog(@"");
 }
 
 //用户退出登录，清除用户信息
 - (void)clearUserInfo {
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_authToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_projectname"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

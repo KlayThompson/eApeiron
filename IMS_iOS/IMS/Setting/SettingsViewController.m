@@ -9,6 +9,8 @@
 #import "SettingsViewController.h"
 #import "IMSAPIManager.h"
 #import "UserInfoManager.h"
+#import "LoginViewController.h"
+#import "MainNavigationController.h"
 
 @interface SettingsViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
 
@@ -43,8 +45,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    [self setupPicker];
+
+    [self setupUI];
     [self getProects];
 }
 
@@ -89,7 +91,19 @@
  */
 - (IBAction)logoutButtonTap:(id)sender {
     
-    
+    [Hud start];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [Hud stop];
+        
+        UserInfoManager *manager = [UserInfoManager shareInstance];
+        [manager clearUserInfo];
+        
+        //显示登录页面
+        LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
+        [[UIApplication sharedApplication].keyWindow setRootViewController:navi];
+    });
 }
 
 - (IBAction)doneButtonTap:(id)sender {
@@ -105,6 +119,11 @@
     [self hidePicker];
     //改变按钮文字
     [self.chooseProjectButton setTitle:str forState:UIControlStateNormal];
+    
+    //存储项目名
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    manager.currentProjectName = str;
+    [manager saveUserInfoToLocal];
 }
 
 - (IBAction)cancelButtonTap:(id)sender {
@@ -131,6 +150,23 @@
 }
 
 #pragma mark - 设置界面
+- (void)setupUI {
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    //设置选择项目按钮标题
+    [self.chooseProjectButton setTitle:manager.currentProjectName forState:UIControlStateNormal];
+    
+    //设置退出按钮标题
+    [self.logoutButton setTitle:[NSString stringWithFormat:@"Logout %@",manager.currentUsername] forState:UIControlStateNormal];
+    
+    //添加一个手势，使得再显示选择矿的时候，点击其他地方隐藏Project选择框
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidePicker)];
+    [self.view addGestureRecognizer:tap];
+    
+    [self setupPicker];
+}
+
 - (void)setupPicker {
 
     self.projectPicker.delegate = self;

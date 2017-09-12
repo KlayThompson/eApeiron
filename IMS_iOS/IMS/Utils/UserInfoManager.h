@@ -33,16 +33,25 @@
 @property (nonatomic, strong) NSDictionary *projectDic;
 
 /**
+ 当前已经选择的Project名称
+ */
+@property (nonatomic, copy) NSString *currentProjectName;
+
+/**
+ 当前登录用户名
+ */
+@property (nonatomic, copy) NSString *currentUsername;
+
+
+/**
  保存用户信息到本地
  */
 - (void)saveUserInfoToLocal;
 
 /**
- 应用刚启动获取AuthToken，为空则需要登录
-
- @return AuthToken
+ 应用刚启动，从本地获取用户信息，赋值
  */
-- (NSString *)getUserAuthToken;
+- (void)getUserInfo;
 
 /**
  用户退出登录，清除用户信息

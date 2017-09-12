@@ -69,6 +69,7 @@
                                                                          manager.userLogin = YES;
                                                                          manager.authToken = authToken;
                                                                          manager.emailAddress = emailAddress;
+                                                                         manager.currentUsername = username;
                                                                          //存储用户信息
                                                                          [manager saveUserInfoToLocal];
                                                                      }

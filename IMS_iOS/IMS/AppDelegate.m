@@ -26,8 +26,8 @@
     
 //    HomeViewController *view = [[HomeViewController alloc] init];
     //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
-#warning 先关闭，记得打开
-//    [self checkUserLoginState];
+
+    [self checkUserLoginState];
     
     MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     [self.window setRootViewController:tabbar];
@@ -143,7 +143,9 @@
 
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    NSString *authToken = [manager getUserAuthToken];
+    [manager getUserInfo];
+    
+    NSString *authToken = manager.authToken;
     
     if (STR_IS_NIL(authToken)) {
         manager.userLogin = NO;
