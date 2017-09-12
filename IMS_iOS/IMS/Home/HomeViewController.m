@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "HistoryDetailViewController.h"
 
 @interface HomeViewController ()
 {
@@ -17,6 +18,12 @@
     CLLocationManager *_locationManager;
     CLLocation *_loc;
 }
+
+/**
+ 查看历史button
+ */
+@property (nonatomic, strong) UIButton *historyButton;
+
 @end
 
 @implementation HomeViewController
@@ -24,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self setupUI];
     
     // 
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
@@ -43,7 +51,7 @@
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 20, ScreenWidth, ScreenHeight - 20 - 49)];
     _webView.delegate = self;
 //    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@#home",kHostURL_USA]]]];
-    [self.view addSubview:_webView];
+//    [self.view addSubview:_webView];
     DLog(@"kHostURL_USA == %@",[HostURL defaultManager].hostURL);
     
     //_locationManager
@@ -164,7 +172,37 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark -
+#pragma mark - 此处为最新修改部分
+- (void)setupUI {
+    
+    [self.view addSubview:self.historyButton];
+}
+
+- (UIButton *)historyButton {
+
+    if (_historyButton == nil) {
+        _historyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_historyButton setTitle:@"History" forState:UIControlStateNormal];
+        [_historyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_historyButton setBackgroundColor:[UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]];
+        _historyButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+        _historyButton.frame = CGRectMake(20, 220, ScreenWidth - 20*2, 44);
+        _historyButton.layer.cornerRadius = 5;
+        _historyButton.layer.masksToBounds = YES;
+        _historyButton.layer.borderWidth = 1;
+        _historyButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        [_historyButton addTarget:self action:@selector(gotoHistoryDetailView) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _historyButton;
+}
+
+- (void)gotoHistoryDetailView {
+
+    HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+    detail.hidesBottomBarWhenPushed = YES;
+    detail.title = self.title;
+    [self.navigationController pushViewController:detail animated:YES];
+}
 
 - (NSString *)title {
     return @"Home";

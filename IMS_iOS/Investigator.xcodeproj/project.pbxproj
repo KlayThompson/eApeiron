@@ -60,6 +60,12 @@
 		3BD0636B1F667FD900C1722A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063671F667FD900C1722A /* SettingsViewController.xib */; };
 		3BD0636C1F667FD900C1722A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063671F667FD900C1722A /* SettingsViewController.xib */; };
 		3BD0636D1F667FD900C1722A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063671F667FD900C1722A /* SettingsViewController.xib */; };
+		3BD063721F67DF7400C1722A /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */; };
+		3BD063731F67DF7400C1722A /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */; };
+		3BD063741F67DF7400C1722A /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */; };
+		3BD063751F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */; };
+		3BD063761F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */; };
+		3BD063771F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -228,6 +234,9 @@
 		3BD063651F667FD900C1722A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3BD063661F667FD900C1722A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3BD063671F667FD900C1722A /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		3BD0636F1F67DF7400C1722A /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
+		3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
+		3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -316,6 +325,9 @@
 			children = (
 				3B401EF61F62712500EEEF57 /* HomeViewController.h */,
 				3B401EF71F62712500EEEF57 /* HomeViewController.m */,
+				3BD0636F1F67DF7400C1722A /* HistoryDetailViewController.h */,
+				3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */,
+				3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -675,6 +687,7 @@
 				98764D9C1A47ED24007ED35F /* ic_scan_selected@2x.png in Resources */,
 				3BD0636B1F667FD900C1722A /* SettingsViewController.xib in Resources */,
 				98ED33C51AE4DDD800E66D44 /* Default@2x.png in Resources */,
+				3BD063751F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */,
 				98764D9F1A47ED24007ED35F /* ic_settings@2x.png in Resources */,
 				98764D9E1A47ED24007ED35F /* ic_settings_selected@2x.png in Resources */,
 				98ED33BC1AE4DDD800E66D44 /* Default-667h@2x.png in Resources */,
@@ -692,6 +705,7 @@
 				98B6FA281AE493D400B2497E /* Main.storyboard in Resources */,
 				98ED33C31AE4DDD800E66D44 /* Default.png in Resources */,
 				98B6FA291AE493D400B2497E /* Icon@2x.png in Resources */,
+				3BD063761F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */,
 				98B6FA2A1AE493D400B2497E /* ic_menu_home_selected@2x.png in Resources */,
 				98B6FA2B1AE493D400B2497E /* Icon.png in Resources */,
 				98B6FA6C1AE49FF500B2497E /* Consumer-Info.plist in Resources */,
@@ -719,6 +733,7 @@
 				98B6FA561AE493DB00B2497E /* Main.storyboard in Resources */,
 				98ED33C41AE4DDD800E66D44 /* Default.png in Resources */,
 				98B6FA571AE493DB00B2497E /* Icon@2x.png in Resources */,
+				3BD063771F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */,
 				98B6FA581AE493DB00B2497E /* ic_menu_home_selected@2x.png in Resources */,
 				98B6FA591AE493DB00B2497E /* Icon.png in Resources */,
 				98B6FA5A1AE493DB00B2497E /* ic_scan@2x.png in Resources */,
@@ -768,6 +783,7 @@
 				3BD063681F667FD900C1722A /* SettingsViewController.m in Sources */,
 				3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3BD0630A1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
+				3BD063721F67DF7400C1722A /* HistoryDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -791,6 +807,7 @@
 				3BD063021F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3BD0630B1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 				98B6FA1E1AE493D400B2497E /* TypedefEnums.m in Sources */,
+				3BD063731F67DF7400C1722A /* HistoryDetailViewController.m in Sources */,
 				98B6FA211AE493D400B2497E /* main.m in Sources */,
 				3BD062C91F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3BD063131F66248800C1722A /* NetworkAPIManager.m in Sources */,
@@ -819,6 +836,7 @@
 				3BD063031F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3BD0630C1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 				98B6FA4C1AE493DB00B2497E /* TypedefEnums.m in Sources */,
+				3BD063741F67DF7400C1722A /* HistoryDetailViewController.m in Sources */,
 				98B6FA4F1AE493DB00B2497E /* main.m in Sources */,
 				3BD062CA1F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3BD063141F66248800C1722A /* NetworkAPIManager.m in Sources */,
