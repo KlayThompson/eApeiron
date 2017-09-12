@@ -15,7 +15,7 @@
 #import "IMSAPIManager.h"
 #import "AppDelegate.h"
 
-@interface MainTabBarViewController ()<AVMetadataDelegate>
+@interface MainTabBarViewController ()<AVMetadataDelegate,UITabBarDelegate>
 
 
 @end
@@ -25,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.userLogin = NO;
+    
     [self setRootViewController];
     
 }
@@ -58,8 +58,8 @@
     MainNavigationController *homeNavi = [[MainNavigationController alloc] initWithRootViewController:home];
 
     //Scan
-    AVMetadataController *scan = [[AVMetadataController alloc] init];
-    [scan setDelegate:self];
+    UIViewController *scan = [[UIViewController alloc] init];
+    scan.view.backgroundColor = [UIColor whiteColor];
     scan.title = @"Scan";
     scan.tabBarItem.image = [UIImage imageNamed:@"ic_scan"];
     scan.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_scan_selected"];
@@ -78,8 +78,19 @@
 }
 
 - (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
+    
+    self.selectedIndex = 0;
 }
 
+#pragma mark - UITabBarDelegate
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    if ([item.title isEqualToString:@"Scan"]) {
+        AVMetadataController *scan = [[AVMetadataController alloc] init];
+        [scan setDelegate:self];
+        [self presentViewController:scan animated:NO completion:nil];
+
+    }
+}
 
 - (NSString *)title {
     return @"标题";

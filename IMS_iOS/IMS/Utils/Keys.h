@@ -55,7 +55,7 @@
 #define NUMBER_IS_NIL(objNum) (![objNum isKindOfClass:[NSNumber class]] || objNum == nil )
 
 
-#define IMS_ERROR_MESSAGE                                       @"网络错误，请稍后再试"
+#define IMS_ERROR_MESSAGE                                       @"Network error..."
 
 
 #endif

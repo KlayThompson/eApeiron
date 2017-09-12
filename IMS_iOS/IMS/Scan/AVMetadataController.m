@@ -104,7 +104,7 @@
 #pragma mark - cancelClick
 - (void)cancelClick
 {
-    [self dismissViewControllerAnimated:NO completion:^{ 
+    [self dismissViewControllerAnimated:NO completion:^{
         if ([_delegate respondsToSelector:@selector(returnSerial:covertSerial:)]) {
             [_delegate returnSerial:nil covertSerial:nil];
         }

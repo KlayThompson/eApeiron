@@ -164,6 +164,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+
 - (NSString *)title {
     return @"Home";
 }
