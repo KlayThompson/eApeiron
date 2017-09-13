@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "HistoryDetailViewController.h"
+#import "UserInfoManager.h"
 
 @interface HomeViewController ()
 {
@@ -205,7 +206,8 @@
 }
 
 - (NSString *)title {
-    return @"Home";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    return manager.appName;
 }
 
 /*

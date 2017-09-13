@@ -23,6 +23,12 @@ static UserInfoManager *instance = nil;
     return instance;
 }
 
+- (NSString *)appName {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Info.plist" ofType:nil];
+    NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:path];
+    return dic[@"IMSIdentifier"];
+}
+
 /**
  保存用户登录信息
  */

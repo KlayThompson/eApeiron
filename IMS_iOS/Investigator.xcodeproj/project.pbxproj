@@ -66,6 +66,15 @@
 		3BD063751F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */; };
 		3BD063761F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */; };
 		3BD063771F67DF7400C1722A /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */; };
+		3BD0637C1F68E0B300C1722A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BB1F62762600C1722A /* LoginViewController.m */; };
+		3BD0637D1F68E10100C1722A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BB1F62762600C1722A /* LoginViewController.m */; };
+		3BD0637E1F68E20300C1722A /* LoginViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BA1F62762600C1722A /* LoginViewController.h */; };
+		3BD0637F1F68E20300C1722A /* LoginViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BC1F62762600C1722A /* LoginViewController.xib */; };
+		3BD063801F68E22A00C1722A /* LoginViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BA1F62762600C1722A /* LoginViewController.h */; };
+		3BD063811F68E22A00C1722A /* LoginViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062BC1F62762600C1722A /* LoginViewController.xib */; };
+		3BD063831F6907DF00C1722A /* goback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063821F6907DF00C1722A /* goback@2x.png */; };
+		3BD063841F6907DF00C1722A /* goback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063821F6907DF00C1722A /* goback@2x.png */; };
+		3BD063851F6907DF00C1722A /* goback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063821F6907DF00C1722A /* goback@2x.png */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -237,6 +246,7 @@
 		3BD0636F1F67DF7400C1722A /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
+		3BD063821F6907DF00C1722A /* goback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goback@2x.png"; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -420,6 +430,7 @@
 				98764D971A47ED24007ED35F /* ic_scan@2x.png */,
 				98764D981A47ED24007ED35F /* ic_settings_selected@2x.png */,
 				98764D991A47ED24007ED35F /* ic_settings@2x.png */,
+				3BD063821F6907DF00C1722A /* goback@2x.png */,
 				9879D3B91A48FDCF00BF53EF /* Icons */,
 			);
 			path = Images;
@@ -680,6 +691,7 @@
 				98ED33BF1AE4DDD800E66D44 /* Default-736h@3x.png in Resources */,
 				98ED33C21AE4DDD800E66D44 /* Default.png in Resources */,
 				98764D9A1A47ED24007ED35F /* ic_menu_home_selected@2x.png in Resources */,
+				3BD063831F6907DF00C1722A /* goback@2x.png in Resources */,
 				9879D3BD1A48FDCF00BF53EF /* Icon.png in Resources */,
 				98764D9D1A47ED24007ED35F /* ic_scan@2x.png in Resources */,
 				9879D3BE1A48FDCF00BF53EF /* Icon7.png in Resources */,
@@ -709,6 +721,7 @@
 				98B6FA2A1AE493D400B2497E /* ic_menu_home_selected@2x.png in Resources */,
 				98B6FA2B1AE493D400B2497E /* Icon.png in Resources */,
 				98B6FA6C1AE49FF500B2497E /* Consumer-Info.plist in Resources */,
+				3BD063841F6907DF00C1722A /* goback@2x.png in Resources */,
 				98B6FA2C1AE493D400B2497E /* ic_scan@2x.png in Resources */,
 				98B6FA2D1AE493D400B2497E /* Icon7.png in Resources */,
 				98ED33A01AE4B10A00E66D44 /* Launch Screen_Consumer.xib in Resources */,
@@ -737,6 +750,7 @@
 				98B6FA581AE493DB00B2497E /* ic_menu_home_selected@2x.png in Resources */,
 				98B6FA591AE493DB00B2497E /* Icon.png in Resources */,
 				98B6FA5A1AE493DB00B2497E /* ic_scan@2x.png in Resources */,
+				3BD063851F6907DF00C1722A /* goback@2x.png in Resources */,
 				98B6FA5B1AE493DB00B2497E /* Icon7.png in Resources */,
 				98B6FA6F1AE4A00000B2497E /* Packager-Info.plist in Resources */,
 				98B6FA5C1AE493DB00B2497E /* ic_scan_selected@2x.png in Resources */,
@@ -791,6 +805,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD0637E1F68E20300C1722A /* LoginViewController.h in Sources */,
+				3BD0637F1F68E20300C1722A /* LoginViewController.xib in Sources */,
+				3BD0637C1F68E0B300C1722A /* LoginViewController.m in Sources */,
 				3B401EF41F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98B6FA141AE493D400B2497E /* Hud.m in Sources */,
 				3BD0630E1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
@@ -820,6 +837,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BD063801F68E22A00C1722A /* LoginViewController.h in Sources */,
+				3BD063811F68E22A00C1722A /* LoginViewController.xib in Sources */,
+				3BD0637D1F68E10100C1722A /* LoginViewController.m in Sources */,
 				3B401EF51F62711800EEEF57 /* ScanViewController.m in Sources */,
 				98B6FA421AE493DB00B2497E /* Hud.m in Sources */,
 				3BD0630F1F66234B00C1722A /* AFURLSessionManager.m in Sources */,

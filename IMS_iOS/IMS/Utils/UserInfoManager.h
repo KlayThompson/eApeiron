@@ -42,6 +42,11 @@
  */
 @property (nonatomic, copy) NSString *currentUsername;
 
+/**
+ 当前工程名
+ */
+@property (nonatomic, copy) NSString *appName;
+
 
 /**
  保存用户信息到本地
