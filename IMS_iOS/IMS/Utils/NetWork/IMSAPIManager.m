@@ -10,6 +10,7 @@
 #import "NetworkAPIManager.h"
 #import "AppDelegate.h"
 
+
 @implementation IMSAPIManager
 
 + (instancetype)sharedManager {
@@ -83,6 +84,7 @@
     
 }
 
+//获取工程名
 + (void)ims_getProjectsWithBlock:(void(^)(id JSON, NSError *error))block {
 
     UserInfoManager *manager = [UserInfoManager shareInstance];
@@ -109,5 +111,33 @@
                                                      }];
 }
 
-
+//获取History
++ (void)ims_getHistoryWithLatitude:(NSString *)latitude
+                         longitude:(NSString *)longitude
+                             limit:(NSString *)limit
+                          deviceId:(NSString *)deviceId
+                             Block:(void(^)(id JSON, NSError *error))block {
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                manager.authToken,@"authToken",
+                                latitude,@"lat",
+                                longitude,@"lng",
+                                limit,@"limit",
+                                deviceId,@"d",
+                                nil];
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:IMS_GET_HISTORY
+                                                   withParams:parameters
+                                               withMethodType:Get
+                                                     andBlock:^(id data, NSError *error) {
+                                                         if (error) {
+                                                             block(nil, error);
+                                                         } else {
+                                                             
+                                                             block(data, nil);
+                                                         }
+                                                     }];
+}
 @end

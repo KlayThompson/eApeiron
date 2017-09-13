@@ -34,4 +34,19 @@
  @param block 回调项目信息
  */
 + (void)ims_getProjectsWithBlock:(void(^)(id JSON, NSError *error))block;
+
+/**
+ 获取History
+
+ @param latitude latitude
+ @param longitude longitude
+ @param limit 固定值，传10
+ @param deviceId 设备标识符
+ @param block 回调
+ */
++ (void)ims_getHistoryWithLatitude:(NSString *)latitude
+                         longitude:(NSString *)longitude
+                             limit:(NSString *)limit
+                          deviceId:(NSString *)deviceId
+                             Block:(void(^)(id JSON, NSError *error))block;
 @end

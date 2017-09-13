@@ -23,6 +23,7 @@ static UserInfoManager *instance = nil;
     return instance;
 }
 
+//返回当前工程名
 - (NSString *)appName {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Info.plist" ofType:nil];
     NSDictionary *dic = [[NSDictionary alloc] initWithContentsOfFile:path];

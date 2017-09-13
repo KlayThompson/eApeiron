@@ -75,6 +75,18 @@
 		3BD063831F6907DF00C1722A /* goback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063821F6907DF00C1722A /* goback@2x.png */; };
 		3BD063841F6907DF00C1722A /* goback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063821F6907DF00C1722A /* goback@2x.png */; };
 		3BD063851F6907DF00C1722A /* goback@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BD063821F6907DF00C1722A /* goback@2x.png */; };
+		3BD063981F691FA900C1722A /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063941F691FA900C1722A /* NSObject+YYModel.m */; };
+		3BD063991F691FA900C1722A /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063941F691FA900C1722A /* NSObject+YYModel.m */; };
+		3BD0639A1F691FA900C1722A /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063941F691FA900C1722A /* NSObject+YYModel.m */; };
+		3BD0639B1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
+		3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
+		3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
+		3BD063A01F691FC900C1722A /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0639F1F691FC900C1722A /* HistoryModel.m */; };
+		3BD063A11F691FC900C1722A /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0639F1F691FC900C1722A /* HistoryModel.m */; };
+		3BD063A21F691FC900C1722A /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD0639F1F691FC900C1722A /* HistoryModel.m */; };
+		3BD063AA1F692FAD00C1722A /* HistoryUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063A91F692FAD00C1722A /* HistoryUnit.m */; };
+		3BD063AB1F692FAD00C1722A /* HistoryUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063A91F692FAD00C1722A /* HistoryUnit.m */; };
+		3BD063AC1F692FAD00C1722A /* HistoryUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063A91F692FAD00C1722A /* HistoryUnit.m */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -247,6 +259,15 @@
 		3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
 		3BD063821F6907DF00C1722A /* goback@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "goback@2x.png"; sourceTree = "<group>"; };
+		3BD063931F691FA900C1722A /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		3BD063941F691FA900C1722A /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
+		3BD063951F691FA900C1722A /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
+		3BD063961F691FA900C1722A /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
+		3BD063971F691FA900C1722A /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		3BD0639E1F691FC900C1722A /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
+		3BD0639F1F691FC900C1722A /* HistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryModel.m; sourceTree = "<group>"; };
+		3BD063A81F692FAD00C1722A /* HistoryUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryUnit.h; sourceTree = "<group>"; };
+		3BD063A91F692FAD00C1722A /* HistoryUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryUnit.m; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -338,6 +359,10 @@
 				3BD0636F1F67DF7400C1722A /* HistoryDetailViewController.h */,
 				3BD063701F67DF7400C1722A /* HistoryDetailViewController.m */,
 				3BD063711F67DF7400C1722A /* HistoryDetailViewController.xib */,
+				3BD0639E1F691FC900C1722A /* HistoryModel.h */,
+				3BD0639F1F691FC900C1722A /* HistoryModel.m */,
+				3BD063A81F692FAD00C1722A /* HistoryUnit.h */,
+				3BD063A91F692FAD00C1722A /* HistoryUnit.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -392,6 +417,18 @@
 				3BD062FD1F66234B00C1722A /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		3BD063921F691FA900C1722A /* YYModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BD063931F691FA900C1722A /* NSObject+YYModel.h */,
+				3BD063941F691FA900C1722A /* NSObject+YYModel.m */,
+				3BD063951F691FA900C1722A /* YYClassInfo.h */,
+				3BD063961F691FA900C1722A /* YYClassInfo.m */,
+				3BD063971F691FA900C1722A /* YYModel.h */,
+			);
+			path = YYModel;
 			sourceTree = "<group>";
 		};
 		9855FE191A68B4110037153B /* OpenUDID */ = {
@@ -461,6 +498,7 @@
 		9879D3C11A49083400BF53EF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3BD063921F691FA900C1722A /* YYModel */,
 				3BD062F01F66234B00C1722A /* AFNetworking */,
 				9855FE191A68B4110037153B /* OpenUDID */,
 			);
@@ -778,8 +816,10 @@
 				3BD063171F66253200C1722A /* IMSAPIManager.m in Sources */,
 				3BD062C81F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3BD0635E1F665EE100C1722A /* UserInfoManager.m in Sources */,
+				3BD063981F691FA900C1722A /* NSObject+YYModel.m in Sources */,
 				3BD063121F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B401EF31F62711800EEEF57 /* ScanViewController.m in Sources */,
+				3BD063A01F691FC900C1722A /* HistoryModel.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
 				3BD062BD1F62762600C1722A /* LoginViewController.m in Sources */,
 				3BD062D21F62791400C1722A /* MainNavigationController.m in Sources */,
@@ -791,7 +831,9 @@
 				9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */,
 				3BD063011F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */,
+				3BD063AA1F692FAD00C1722A /* HistoryUnit.m in Sources */,
 				3BD0630D1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
+				3BD0639B1F691FA900C1722A /* YYClassInfo.m in Sources */,
 				988DB1A91A43EA0600C243F9 /* main.m in Sources */,
 				3B401EF81F62712500EEEF57 /* HomeViewController.m in Sources */,
 				3BD063681F667FD900C1722A /* SettingsViewController.m in Sources */,
@@ -813,11 +855,13 @@
 				3BD0630E1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B401EF11F62711800EEEF57 /* AVMetadataController.m in Sources */,
+				3BD063A11F691FC900C1722A /* HistoryModel.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3BD063691F667FD900C1722A /* SettingsViewController.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3BD062D31F62791400C1722A /* MainNavigationController.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
+				3BD063991F691FA900C1722A /* NSObject+YYModel.m in Sources */,
 				3BD063051F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				98B6FA1D1AE493D400B2497E /* OpenUDID.m in Sources */,
 				3BD063081F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
@@ -829,6 +873,8 @@
 				3BD062C91F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3BD063131F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B401EF91F62712500EEEF57 /* HomeViewController.m in Sources */,
+				3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */,
+				3BD063AB1F692FAD00C1722A /* HistoryUnit.m in Sources */,
 				3BD063181F66253200C1722A /* IMSAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -845,11 +891,13 @@
 				3BD0630F1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B401EF21F62711800EEEF57 /* AVMetadataController.m in Sources */,
+				3BD063A21F691FC900C1722A /* HistoryModel.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3BD0636A1F667FD900C1722A /* SettingsViewController.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3BD062D41F62791400C1722A /* MainNavigationController.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,
+				3BD0639A1F691FA900C1722A /* NSObject+YYModel.m in Sources */,
 				3BD063061F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				98B6FA4B1AE493DB00B2497E /* OpenUDID.m in Sources */,
 				3BD063091F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
@@ -861,6 +909,8 @@
 				3BD062CA1F62776200C1722A /* MainTabBarViewController.m in Sources */,
 				3BD063141F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B401EFA1F62712500EEEF57 /* HomeViewController.m in Sources */,
+				3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */,
+				3BD063AC1F692FAD00C1722A /* HistoryUnit.m in Sources */,
 				3BD063191F66253200C1722A /* IMSAPIManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
