@@ -105,7 +105,9 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         
         if (ARRAY_IS_NIL(self.issuesRecentArray)) {
             cell.timeLabel.text = @"NO Issues";
+            cell.describtionLabel.hidden = YES;
         } else {
+            cell.describtionLabel.hidden = NO;
             [cell configCellDataWith:[self.issuesRecentArray objectAtIndex:indexPath.row]];
         }
         

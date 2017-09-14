@@ -60,7 +60,7 @@
                                                        withMethodType:Post
                                                              andBlock:^(id data, NSError *error) {
                                                                  if (error) {
-                                                                     block(nil, error);
+                                                                        block(nil, error);
                                                                  } else {
                                                                      if (!DICT_IS_NIL(data)) {
                                                                          NSString *authToken = data[@"authToken"];

@@ -20,9 +20,14 @@
     if (!unit) {
         return;
     }
-    
+    //describtion
     self.describtionLabel.text = unit.issueDescription;
-    self.timeLabel.text = unit.title;
+    
+    //时间
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *time = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[unit.updated_at doubleValue]]];
+    self.timeLabel.text = time;
 }
 
 @end

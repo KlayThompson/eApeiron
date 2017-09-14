@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "MainTabBarViewController.h"
 #import "IMSAPIManager.h"
+#import "UserInfoManager.h"
+
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -95,7 +97,8 @@
 
 
 - (NSString *)title {
-    return @"登录";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    return manager.appName;
 }
 
 @end
