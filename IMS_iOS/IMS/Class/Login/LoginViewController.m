@@ -40,7 +40,7 @@
 //点击登录按钮
 - (IBAction)loginButtonTap:(id)sender {
     
-    [self.view resignFirstResponder];
+    [self.view endEditing:YES];
     
     NSString *tipString = [self checkUserInputState];
     if (!STR_IS_NIL(tipString)) {
