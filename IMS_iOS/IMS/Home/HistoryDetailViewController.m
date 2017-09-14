@@ -21,6 +21,10 @@ static NSString *cellId = @"cellId";
 
 @property (weak, nonatomic) IBOutlet UITableView *uTableView;
 
+@property (nonatomic, strong) NSMutableArray <HistoryUnit *>* issuesRecentArray;
+
+@property (nonatomic, strong) NSMutableArray <HistoryUnit *>* issuesNearbyArray;
+
 @end
 
 @implementation HistoryDetailViewController
@@ -36,15 +40,22 @@ static NSString *cellId = @"cellId";
 
 #pragma mark - 网络
 - (void)loadHistoryFromServer {
-
+    [Hud start];
+    __weak typeof(self) weakSelf = self;
     [IMSAPIManager ims_getHistoryWithLatitude:@"0"
                                     longitude:@"0"
                                         limit:@"10"
                                      deviceId:[OpenUDID value]
                                         Block:^(id JSON, NSError *error) {
-                                            
-                                            HistoryModel *model = [HistoryModel yy_modelWithDictionary:JSON];
-                                            
+                                            [Hud stop];
+                                            if (error) {
+                                                [Hud showMessage:IMS_ERROR_MESSAGE];
+                                            } else {
+                                                HistoryModel *model = [HistoryModel yy_modelWithDictionary:JSON];
+                                                weakSelf.issuesRecentArray = model.issuesByTime;
+                                                weakSelf.issuesNearbyArray = model.issuesByProx;
+                                                [weakSelf.uTableView reloadData];
+                                            }
         
     }];
 }
@@ -56,7 +67,21 @@ static NSString *cellId = @"cellId";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (sectionState[section]) {
-        return 10;
+        //此处判断：逻辑是有数据显示数据，没数据提示没有数据，故也需要一行
+        if (section == 0) {//第一行，issuesRecent
+            if (ARRAY_IS_NIL(self.issuesRecentArray)) {
+                return 1;
+            } else {
+                return self.issuesRecentArray.count;
+            }
+        } else if (section == 1) {//issuesNearby，逻辑同上
+            if (ARRAY_IS_NIL(self.issuesNearbyArray)) {
+                return 1;
+            } else {
+                return self.issuesNearbyArray.count;
+            }
+        }
+        return 0;
     }
     return 0;
 }
@@ -120,6 +145,23 @@ static NSString *cellId = @"cellId";
     sectionState[section] = !sectionState[section];
     
     [self.uTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - 初始化
+- (NSMutableArray<HistoryUnit *> *)issuesRecentArray {
+    
+    if (_issuesRecentArray == nil) {
+        _issuesRecentArray = [NSMutableArray new];
+    }
+    return _issuesRecentArray;
+}
+
+- (NSMutableArray<HistoryUnit *> *)issuesNearbyArray {
+    
+    if (_issuesNearbyArray == nil) {
+        _issuesNearbyArray = [NSMutableArray new];
+    }
+    return _issuesNearbyArray;
 }
 
 @end
