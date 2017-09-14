@@ -45,7 +45,6 @@ static NSString *cellId = @"cellId";
                                             
                                             HistoryModel *model = [HistoryModel yy_modelWithDictionary:JSON];
                                             
-                                            DLog(@"");
         
     }];
 }

@@ -10,4 +10,9 @@
 
 @implementation HistoryUnit
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"issueId" : @"id",
+             @"issueDescription" : @"description"};
+}
+
 @end
