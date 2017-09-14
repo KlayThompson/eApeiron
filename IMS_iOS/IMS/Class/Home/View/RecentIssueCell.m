@@ -15,10 +15,14 @@
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+- (void)configCellDataWith:(HistoryUnit *)unit {
 
-    // Configure the view for the selected state
+    if (!unit) {
+        return;
+    }
+    
+    self.describtionLabel.text = unit.issueDescription;
+    self.timeLabel.text = unit.title;
 }
 
 @end

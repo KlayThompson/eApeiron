@@ -382,11 +382,11 @@
 		3B6658B91F6A192A006A2A09 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3B6658BD1F6A192A006A2A09 /* HomeViewController.h */,
+				3B6658BE1F6A192A006A2A09 /* HomeViewController.m */,
 				3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */,
 				3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */,
 				3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */,
-				3B6658BD1F6A192A006A2A09 /* HomeViewController.h */,
-				3B6658BE1F6A192A006A2A09 /* HomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

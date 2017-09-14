@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HistoryUnit.h"
 
 @interface NearbyIssueCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+- (void)configCellDataWith:(HistoryUnit *)unit;
 @end

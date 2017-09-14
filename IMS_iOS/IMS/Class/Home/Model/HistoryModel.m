@@ -10,7 +10,11 @@
 
 @implementation HistoryModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"issuesByTime" : [HistoryUnit class]};
+    return @{@"issuesByTime" : [HistoryUnit class],
+             @"issuesByProx" : [HistoryUnit class]
+             };
 }
+
+
 @end
 

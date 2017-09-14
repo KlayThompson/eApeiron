@@ -47,6 +47,16 @@
  */
 @property (nonatomic, copy) NSString *appName;
 
+/**
+ 经度
+ */
+@property (nonatomic, copy) NSString *longitude;
+
+/**
+ 纬度
+ */
+@property (nonatomic, copy) NSString *latitude;
+
 
 /**
  保存用户信息到本地

@@ -155,6 +155,12 @@
     //locations数组里边存放的是CLLocation对象，一个CLLocation对象就代表着一个位置
     _loc = [locations firstObject];
     DLog(@"纬度=%f，经度=%f",_loc.coordinate.latitude,_loc.coordinate.longitude);
+    
+    //记录经纬度
+    UserInfoManager *userInfo = [UserInfoManager shareInstance];
+    userInfo.longitude = [NSString stringWithFormat:@"%f",_loc.coordinate.longitude];
+    userInfo.latitude = [NSString stringWithFormat:@"%f",_loc.coordinate.latitude];
+    
     [manager stopUpdatingLocation];
 }
 

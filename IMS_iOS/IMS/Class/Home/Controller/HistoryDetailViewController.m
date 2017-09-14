@@ -10,8 +10,12 @@
 #import "IMSAPIManager.h"
 #import "HistoryModel.h"
 #import "YYModel.h"
+#import "RecentIssueCell.h"
+#import "NearbyIssueCell.h"
+#import "UserInfoManager.h"
 
-static NSString *cellId = @"cellId";
+static NSString *recentCellId = @"RecentIssueCell";
+static NSString *nearbyCellId = @"NearbyIssueCell";
 
 @interface HistoryDetailViewController ()<UITableViewDelegate,UITableViewDataSource> {
 
@@ -24,6 +28,15 @@ static NSString *cellId = @"cellId";
 @property (nonatomic, strong) NSMutableArray <HistoryUnit *>* issuesRecentArray;
 
 @property (nonatomic, strong) NSMutableArray <HistoryUnit *>* issuesNearbyArray;
+/**
+ 经度
+ */
+@property (nonatomic, copy) NSString *longitude;
+
+/**
+ 纬度
+ */
+@property (nonatomic, copy) NSString *latitude;
 
 @end
 
@@ -32,18 +45,16 @@ static NSString *cellId = @"cellId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
+    [self setupUI];
     [self loadHistoryFromServer];
-    
-    [self.uTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
 }
 
 #pragma mark - 网络
 - (void)loadHistoryFromServer {
     [Hud start];
     __weak typeof(self) weakSelf = self;
-    [IMSAPIManager ims_getHistoryWithLatitude:@"0"
-                                    longitude:@"0"
+    [IMSAPIManager ims_getHistoryWithLatitude:self.latitude
+                                    longitude:self.longitude
                                         limit:@"10"
                                      deviceId:[OpenUDID value]
                                         Block:^(id JSON, NSError *error) {
@@ -88,11 +99,30 @@ static NSString *cellId = @"cellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
-    
-    cell.textLabel.text = @"123423123";
-    
-    return cell;
+    if (indexPath.section == 0) {//recentIssue
+        
+        RecentIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:recentCellId forIndexPath:indexPath];
+        
+        if (ARRAY_IS_NIL(self.issuesRecentArray)) {
+            cell.timeLabel.text = @"NO Issues";
+        } else {
+            [cell configCellDataWith:[self.issuesRecentArray objectAtIndex:indexPath.row]];
+        }
+        
+        return cell;
+    } else if (indexPath.section == 1) {//nearbyIssue
+        
+        NearbyIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:nearbyCellId forIndexPath:indexPath];
+        
+        if (ARRAY_IS_NIL(self.issuesNearbyArray)) {
+            cell.distanceLabel.text = @"No Issues";
+        } else {
+            [cell configCellDataWith:[self.issuesNearbyArray objectAtIndex:indexPath.row]];
+        }
+        
+        return cell;
+    }
+    return [UITableViewCell new];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -137,6 +167,12 @@ static NSString *cellId = @"cellId";
     return 1;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    
+}
+
 #pragma mark - Acrions
 - (void)sectionTap:(UIButton *)button {
 
@@ -147,7 +183,22 @@ static NSString *cellId = @"cellId";
     [self.uTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-#pragma mark - 初始化
+#pragma mark - 初始化、设置界面
+
+- (void)setupUI {
+
+    [self.uTableView registerNib:[UINib nibWithNibName:@"RecentIssueCell" bundle:nil] forCellReuseIdentifier:recentCellId];
+    [self.uTableView registerNib:[UINib nibWithNibName:@"NearbyIssueCell" bundle:nil] forCellReuseIdentifier:nearbyCellId];
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    self.longitude = manager.longitude;
+    self.latitude = manager.latitude;
+    
+    if (STR_IS_NIL(self.latitude) && STR_IS_NIL(self.longitude)) {
+        [Hud showMessage:@"Unable to determine your location. \n Please check your device's location settings"];
+    }
+}
+
 - (NSMutableArray<HistoryUnit *> *)issuesRecentArray {
     
     if (_issuesRecentArray == nil) {

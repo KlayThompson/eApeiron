@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HistoryUnit.h"
 
 @interface RecentIssueCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *describtionLabel;
+
+- (void)configCellDataWith:(HistoryUnit *)unit;
 @end
