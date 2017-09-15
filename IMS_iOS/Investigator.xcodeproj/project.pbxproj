@@ -58,6 +58,12 @@
 		3B6659121F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */; };
 		3B6659131F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */; };
 		3B6659141F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */; };
+		3B66591C1F6BB08E006A2A09 /* IssueDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */; };
+		3B66591D1F6BB08E006A2A09 /* IssueDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */; };
+		3B66591E1F6BB08E006A2A09 /* IssueDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */; };
+		3B6659201F6BB09A006A2A09 /* IssueDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */; };
+		3B6659211F6BB09A006A2A09 /* IssueDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */; };
+		3B6659221F6BB09A006A2A09 /* IssueDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */; };
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
@@ -257,6 +263,9 @@
 		3B66590C1F6A19C9006A2A09 /* NearbyIssueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyIssueCell.h; sourceTree = "<group>"; };
 		3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyIssueCell.m; sourceTree = "<group>"; };
 		3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyIssueCell.xib; sourceTree = "<group>"; };
+		3B66591A1F6BB08E006A2A09 /* IssueDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailView.h; sourceTree = "<group>"; };
+		3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailView.m; sourceTree = "<group>"; };
+		3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailView.xib; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
 		3BD062F11F66234B00C1722A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -411,6 +420,9 @@
 				3B66590C1F6A19C9006A2A09 /* NearbyIssueCell.h */,
 				3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */,
 				3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */,
+				3B66591A1F6BB08E006A2A09 /* IssueDetailView.h */,
+				3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */,
+				3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -805,6 +817,7 @@
 				988DB1B71A43EA0600C243F9 /* LaunchScreen.xib in Resources */,
 				988DB1B41A43EA0600C243F9 /* Images.xcassets in Resources */,
 				3B6659121F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
+				3B6659201F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98764D9B1A47ED24007ED35F /* ic_menu_home@2x.png in Resources */,
 				3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B6659051F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
@@ -831,6 +844,7 @@
 				98ED33BA1AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				3B6658FC1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B6659061F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
+				3B6659211F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA2E1AE493D400B2497E /* ic_scan_selected@2x.png in Resources */,
 				98B6FA2F1AE493D400B2497E /* ic_settings@2x.png in Resources */,
 				98B6FA301AE493D400B2497E /* ic_settings_selected@2x.png in Resources */,
@@ -863,6 +877,7 @@
 				98ED33BB1AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				3B6658FD1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B6659071F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
+				3B6659221F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA5D1AE493DB00B2497E /* ic_settings@2x.png in Resources */,
 				98B6FA5E1AE493DB00B2497E /* ic_settings_selected@2x.png in Resources */,
 				98ED33A31AE4B14400E66D44 /* Launch Screen_Package.xib in Resources */,
@@ -896,6 +911,7 @@
 				3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3BD063041F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				988DB1AC1A43EA0600C243F9 /* AppDelegate.m in Sources */,
+				3B66591C1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
 				3B6658EC1F6A192B006A2A09 /* MainNavigationController.m in Sources */,
 				9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */,
 				3BD063011F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
@@ -932,6 +948,7 @@
 				3BD063991F691FA900C1722A /* NSObject+YYModel.m in Sources */,
 				3BD063051F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				98B6FA1D1AE493D400B2497E /* OpenUDID.m in Sources */,
+				3B66591D1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
 				3B6658ED1F6A192B006A2A09 /* MainNavigationController.m in Sources */,
 				3BD063081F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
 				3BD063021F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
@@ -968,6 +985,7 @@
 				3BD0639A1F691FA900C1722A /* NSObject+YYModel.m in Sources */,
 				3BD063061F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				98B6FA4B1AE493DB00B2497E /* OpenUDID.m in Sources */,
+				3B66591E1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
 				3B6658EE1F6A192B006A2A09 /* MainNavigationController.m in Sources */,
 				3BD063091F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
 				3BD063031F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,

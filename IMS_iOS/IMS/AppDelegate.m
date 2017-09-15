@@ -27,7 +27,7 @@
 //    HomeViewController *view = [[HomeViewController alloc] init];
     //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
 
-//    [self checkUserLoginState];
+    [self checkUserLoginState];
     
     MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     [self.window setRootViewController:tabbar];

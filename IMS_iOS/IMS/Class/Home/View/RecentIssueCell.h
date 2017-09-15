@@ -13,7 +13,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *describtionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *isusseIdLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *lineView;
 
 - (void)configCellDataWith:(HistoryUnit *)unit;
 @end

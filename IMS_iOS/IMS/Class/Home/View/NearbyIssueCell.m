@@ -7,6 +7,8 @@
 //
 
 #import "NearbyIssueCell.h"
+#import <CoreLocation/CoreLocation.h>
+#import "UserInfoManager.h"
 
 @implementation NearbyIssueCell
 
@@ -21,8 +23,30 @@
         return;
     }
     
-    self.descriptionLabel.text = unit.issueDescription;
-    self.distanceLabel.text = unit.title;
+    //distance
+    self.distanceLabel.text = @"59.6 feet";
+    
+    //时间
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *time = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[unit.updated_at doubleValue]]];
+    self.timeLabel.text = time;
+    
+    //id
+    self.isusseIdLabel.text = [NSString stringWithFormat:@"(%@)",unit.issueId];
+    
+}
+
+-(double)distanceBetweenOrderBy:(double) lat1 :(double) lat2 :(double) lng1 :(double) lng2{
+    
+    CLLocation *curLocation = [[CLLocation alloc] initWithLatitude:lat1 longitude:lng1];
+    
+    CLLocation *otherLocation = [[CLLocation alloc] initWithLatitude:lat2 longitude:lng2];
+    
+    double  distance  = [curLocation distanceFromLocation:otherLocation];
+    
+    return  distance;
+    
 }
 
 @end

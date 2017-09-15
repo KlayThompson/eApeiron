@@ -12,7 +12,13 @@
 @interface NearbyIssueCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *lineView1;
+
+@property (weak, nonatomic) IBOutlet UIView *lineView2;
+
+@property (weak, nonatomic) IBOutlet UILabel *isusseIdLabel;
 
 - (void)configCellDataWith:(HistoryUnit *)unit;
 @end
