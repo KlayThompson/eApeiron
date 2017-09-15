@@ -15,5 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray <HistoryUnit *>*issuesByProx;
 
+@property (nonatomic, strong) NSMutableDictionary *projects;
+
 @end
 

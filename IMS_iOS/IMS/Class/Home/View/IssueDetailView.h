@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HistoryUnit.h"
 
 @interface IssueDetailView : UIView
+@property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
 
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *idLabel;
+@property (weak, nonatomic) IBOutlet UILabel *projectLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *serialNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createdLabel;
+@property (weak, nonatomic) IBOutlet UILabel *issueTypeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *latitudeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *longitudeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+
+- (void)configIssueDetailViewWith:(HistoryUnit *)unit;
 @end

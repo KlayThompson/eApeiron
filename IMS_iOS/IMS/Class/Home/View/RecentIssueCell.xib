@@ -28,7 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="describtion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofX-4s-bNS">
-                        <rect key="frame" x="153" y="13" width="73" height="17"/>
+                        <rect key="frame" x="161" y="13" width="73" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="BUI-8g-Tb5"/>
                         </constraints>
@@ -45,9 +45,10 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(3162)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OI-ac-UJZ">
-                        <rect key="frame" x="103" y="11" width="42" height="21"/>
+                        <rect key="frame" x="103" y="11" width="50" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="2FW-7K-p7c"/>
+                            <constraint firstAttribute="width" constant="50" id="g4U-Bs-3Y5"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>

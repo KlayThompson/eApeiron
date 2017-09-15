@@ -13,6 +13,8 @@
 #import "RecentIssueCell.h"
 #import "NearbyIssueCell.h"
 #import "UserInfoManager.h"
+#import "IssueDetailView.h"
+#import "AppDelegate.h"
 
 static NSString *recentCellId = @"RecentIssueCell";
 static NSString *nearbyCellId = @"NearbyIssueCell";
@@ -66,6 +68,9 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
                                                 weakSelf.issuesRecentArray = model.issuesByTime;
                                                 weakSelf.issuesNearbyArray = model.issuesByProx;
                                                 [weakSelf.uTableView reloadData];
+                                                //将Project字典存储
+                                                UserInfoManager *manager = [UserInfoManager shareInstance];
+                                                manager.projectDic = model.projects;
                                             }
         
     }];
@@ -172,7 +177,17 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    
+    if (indexPath.section == 0 && !ARRAY_IS_NIL(self.issuesRecentArray)) {//Recent
+        
+        HistoryUnit *unit = [self.issuesRecentArray objectAtIndex:indexPath.row];
+        [self showIssueDetailViewWithHistoryUnit:unit];
+        
+    } else if (indexPath.section == 1 && !ARRAY_IS_NIL(self.issuesNearbyArray)) {//Nearby
+        
+        HistoryUnit *unit = [self.issuesNearbyArray objectAtIndex:indexPath.row];
+        [self showIssueDetailViewWithHistoryUnit:unit];
+    }
+    //donothing
 }
 
 #pragma mark - Acrions
@@ -183,6 +198,19 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     sectionState[section] = !sectionState[section];
     
     [self.uTableView reloadSections:[NSIndexSet indexSetWithIndex:section] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)showIssueDetailViewWithHistoryUnit:(HistoryUnit *)unit {
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"IssueDetailView" owner:self options:nil];
+    id uv = [nib objectAtIndex:0];
+    IssueDetailView *detail = uv;
+    detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    [detail configIssueDetailViewWith:unit];
+    //添加到window上面
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [app.window addSubview:detail];
+    
+
 }
 
 #pragma mark - 初始化、设置界面

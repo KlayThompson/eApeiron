@@ -57,7 +57,6 @@
  */
 @property (nonatomic, copy) NSString *latitude;
 
-
 /**
  保存用户信息到本地
  */

@@ -26,7 +26,7 @@
     //时间
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *time = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[unit.updated_at doubleValue]]];
+    NSString *time = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[unit.created_at doubleValue]]];
     self.timeLabel.text = time;
     
     //id

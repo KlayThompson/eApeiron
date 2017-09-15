@@ -10,12 +10,44 @@
 
 @implementation IssueDetailView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib {
+
+    [super awakeFromNib];
+    
+    self.baseScrollView.layer.cornerRadius = 5;
+    self.baseScrollView.layer.masksToBounds = YES;
+    
 }
-*/
+
+- (void)configIssueDetailViewWith:(HistoryUnit *)unit {
+
+    if (!unit) {
+        return;
+    }
+    
+    self.idLabel.text = unit.issueId;
+    self.projectLabel.text = unit.projectName;
+    self.titleLabel.text = unit.title;
+    self.serialNumberLabel.text = unit.serial_number;
+    
+    self.issueTypeLabel.text = unit.issue_type;
+    self.latitudeLabel.text = unit.latitude;
+    self.longitudeLabel.text = unit.longitude;
+    self.priceLabel.text = unit.price;
+    //picture
+    
+    self.descriptionLabel.text = unit.issueDescription;
+    
+    //time
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd  HH:MM:SS"];
+    NSString *time = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[unit.created_at doubleValue]]];
+    self.createdLabel.text = time;
+}
+
+- (IBAction)closeButtonTap:(id)sender {
+    
+    [self removeFromSuperview];
+}
 
 @end

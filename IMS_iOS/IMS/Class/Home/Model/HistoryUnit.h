@@ -33,4 +33,7 @@
 @property (nonatomic, copy) NSString *serial_number;
 @property (nonatomic, copy) NSString *full_product_image_path;
 
+
+@property (nonatomic, copy) NSString *issue_type;
+@property (nonatomic, copy) NSString *projectName;
 @end
