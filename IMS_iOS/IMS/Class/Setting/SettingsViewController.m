@@ -123,6 +123,13 @@
     //存储项目名
     UserInfoManager *manager = [UserInfoManager shareInstance];
     manager.currentProjectName = str;
+    for (NSString *key in manager.projectDic.allKeys) {
+        NSString *value = manager.projectDic[key];
+        if ([value isEqualToString:str]) {
+            manager.currentProjectId = key;
+            break;
+        }
+    }
     [manager saveUserInfoToLocal];
 }
 

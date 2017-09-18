@@ -140,4 +140,48 @@
                                                          }
                                                      }];
 }
+
+//create Incident
++ (void)ims_checkIncidentWithProjectId:(NSString *)projectId
+                              deviceId:(NSString *)deviceId
+                          serialNumber:(NSString *)serialNumber
+                              latitude:(NSString *)latitude
+                             longitude:(NSString *)longitude
+                                 check:(NSString *)check
+                                 Block:(void(^)(id JSON, NSError *error))block {
+    
+    //需要先请求CSRFToken
+    [self ims_getCSRFTokenWithBlock:^(id JSON, NSError *error) {
+        if (!DICT_IS_NIL(JSON)) {
+            NSString *csrfToken = JSON[@"csrfToken"];
+            UserInfoManager *manager = [UserInfoManager shareInstance];
+            
+            NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                        projectId,@"appid",
+                                        csrfToken,@"fuel_csrf_token",
+                                        manager.authToken,@"authToken",
+                                        deviceId,@"d",
+                                        serialNumber,@"s",
+                                        latitude,@"lat",
+                                        longitude,@"lng",
+                                        check,@"check",
+                                        nil];
+            
+            [[NetworkAPIManager shareManager] requestJsonDataWithPath:IMS_CREATE_INCIDENT
+                                                           withParams:parameters
+                                                       withMethodType:Post
+                                                             andBlock:^(id data, NSError *error) {
+                                                                 if (error) {
+                                                                     block(nil, error);
+                                                                 } else {
+                                                                     if (!DICT_IS_NIL(data)) {
+                                                                     }
+                                                                     block(data, nil);
+                                                                 }
+                                                             }];
+        } else {
+            [Hud showMessage:IMS_ERROR_MESSAGE];
+        }
+    }];
+}
 @end

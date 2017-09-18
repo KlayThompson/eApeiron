@@ -7,6 +7,8 @@
 //
 
 #import "InputSerialNumberViewController.h"
+#import "IMSAPIManager.h"
+#import "UserInfoManager.h"
 
 @interface InputSerialNumberViewController ()
 
@@ -17,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
 
+@property (nonatomic, assign) BOOL checkState;
 
 @end
 
@@ -34,15 +37,67 @@
 }
 
 #pragma mark - Network
-- (void)loadServer {
+- (void)checkIncidentFromServer {
 
+    [Hud start];
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    NSString *check = self.checkState ? @"1" : @"0";
+    [IMSAPIManager ims_checkIncidentWithProjectId:manager.currentProjectId
+                                         deviceId:[OpenUDID value]
+                                     serialNumber:self.serialNumberTextField.text
+                                         latitude:manager.latitude
+                                        longitude:manager.longitude
+                                            check:check Block:^(id JSON, NSError *error) {
+                                                [Hud stop];
+                                                DLog(@"");
+                                            }];
+    
 }
 
 #pragma mark - Actions
 - (IBAction)creatRecordButtonTap:(id)sender {
+    
+    NSString *tipString = [self checkUserInputState];
+    if (!STR_IS_NIL(tipString)) {
+        [self showTipAlert:tipString];
+        return;
+    }
+    
+    [self checkIncidentFromServer];
 }
 
+//点击显示地图
 - (IBAction)mapButtonTap:(id)sender {
+    
+}
+
+/**
+ 检查用户输入用户名密码状态
+ 
+ @return 提示信息
+ */
+- (NSString *)checkUserInputState {
+    
+    if ([self.serialNumberTextField.text isEqualToString:@""]) {
+        return @"Please enter your Serial Number";
+    }
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    if (STR_IS_NIL(manager.currentProjectId)) {
+        return @"Please select a project first";
+    }
+    return @"";
+}
+
+//提示填写信息弹窗
+- (void)showTipAlert:(NSString *)message {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - UI

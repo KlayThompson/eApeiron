@@ -42,6 +42,10 @@ static UserInfoManager *instance = nil;
     //ProjectName
     [[NSUserDefaults standardUserDefaults] setObject:self.currentProjectName forKey:@"ims_projectname"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //ProjectID
+    [[NSUserDefaults standardUserDefaults] setObject:self.currentProjectId forKey:@"ims_projectid"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 
     //UserName
     [[NSUserDefaults standardUserDefaults] setObject:self.currentUsername forKey:@"ims_username"];
@@ -53,6 +57,7 @@ static UserInfoManager *instance = nil;
     self.authToken = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_authToken"];
     self.currentProjectName = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_projectname"];
     self.currentUsername = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_username"];
+    self.currentProjectId = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_projectid"];
     DLog(@"");
 }
 
@@ -64,7 +69,19 @@ static UserInfoManager *instance = nil;
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_projectname"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_projectid"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    self.currentProjectName = nil;
+    self.authToken = nil;
+    self.userLogin = nil;
+    self.emailAddress = nil;
+    self.projectDic = [NSDictionary new];
+    self.currentProjectId = nil;
+    self.currentUsername = nil;
+    self.longitude = nil;
+    self.latitude = nil;
 }
 @end

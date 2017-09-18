@@ -49,4 +49,24 @@
                              limit:(NSString *)limit
                           deviceId:(NSString *)deviceId
                              Block:(void(^)(id JSON, NSError *error))block;
+
+
+/**
+ check Incident
+
+ @param projectId ProjectId
+ @param deviceId deviceId
+ @param serialNumber serialNumber
+ @param latitude latitude
+ @param longitude longitude
+ @param check 1 or 0
+ @param block 返回json
+ */
++ (void)ims_checkIncidentWithProjectId:(NSString *)projectId
+                              deviceId:(NSString *)deviceId
+                          serialNumber:(NSString *)serialNumber
+                              latitude:(NSString *)latitude
+                             longitude:(NSString *)longitude
+                                 check:(NSString *)check
+                                 Block:(void(^)(id JSON, NSError *error))block;
 @end

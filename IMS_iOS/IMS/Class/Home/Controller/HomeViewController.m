@@ -25,6 +25,7 @@
  */
 @property (nonatomic, strong) UIButton *historyButton;
 
+@property (nonatomic, strong) UIImageView *topImageView;
 @end
 
 @implementation HomeViewController
@@ -183,6 +184,7 @@
 - (void)setupUI {
     
     [self.view addSubview:self.historyButton];
+    [self.view addSubview:self.topImageView];
 }
 
 - (UIButton *)historyButton {
@@ -193,7 +195,7 @@
         [_historyButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_historyButton setBackgroundColor:[UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]];
         _historyButton.titleLabel.font = [UIFont boldSystemFontOfSize:20];
-        _historyButton.frame = CGRectMake(20, 220, ScreenWidth - 20*2, 44);
+        _historyButton.frame = CGRectMake(15, 200, ScreenWidth - 20*2, 44);
         _historyButton.layer.cornerRadius = 5;
         _historyButton.layer.masksToBounds = YES;
         _historyButton.layer.borderWidth = 1;
@@ -201,6 +203,15 @@
         [_historyButton addTarget:self action:@selector(gotoHistoryDetailView) forControlEvents:UIControlEventTouchUpInside];
     }
     return _historyButton;
+}
+
+- (UIImageView *)topImageView {
+
+    if (_topImageView == nil) {
+        _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 90, 133, 100)];
+        _topImageView.image = [UIImage imageNamed:@"missing-thumbnail.jpg"];
+    }
+    return _topImageView;
 }
 
 - (void)gotoHistoryDetailView {

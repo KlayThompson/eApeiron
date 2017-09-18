@@ -38,6 +38,11 @@
 @property (nonatomic, copy) NSString *currentProjectName;
 
 /**
+ 当前已经选择的ProjectID
+ */
+@property (nonatomic, copy) NSString *currentProjectId;
+
+/**
  当前登录用户名
  */
 @property (nonatomic, copy) NSString *currentUsername;

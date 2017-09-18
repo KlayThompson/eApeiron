@@ -54,6 +54,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="OLH-5f-3zt"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="Create Record">
                                 <color key="titleColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -74,6 +75,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="zyO-C9-mhs"/>
                             </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="Map">
                                 <color key="titleColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
