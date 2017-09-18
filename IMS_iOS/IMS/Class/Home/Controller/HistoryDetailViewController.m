@@ -111,8 +111,12 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         if (ARRAY_IS_NIL(self.issuesRecentArray)) {
             cell.timeLabel.text = @"NO Issues";
             cell.titleLabel.hidden = YES;
+            cell.lineView.hidden = YES;
+            cell.isusseIdLabel.hidden = YES;
         } else {
             cell.titleLabel.hidden = NO;
+            cell.lineView.hidden = NO;
+            cell.isusseIdLabel.hidden = NO;
             [cell configCellDataWith:[self.issuesRecentArray objectAtIndex:indexPath.row]];
         }
         
@@ -123,8 +127,16 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         
         if (ARRAY_IS_NIL(self.issuesNearbyArray)) {
             cell.distanceLabel.text = @"No Issues";
+            cell.lineView1.hidden = YES;
+            cell.lineView2.hidden = YES;
+            cell.timeLabel.hidden = YES;
+            cell.isusseIdLabel.hidden = YES;
         } else {
             [cell configCellDataWith:[self.issuesNearbyArray objectAtIndex:indexPath.row]];
+            cell.lineView1.hidden = NO;
+            cell.lineView2.hidden = NO;
+            cell.timeLabel.hidden = NO;
+            cell.isusseIdLabel.hidden = NO;
         }
         
         return cell;
@@ -143,22 +155,27 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.tag = 101 + section;
     if (section == 0) {
+        [button setTitle:@"Recent Issues" forState:UIControlStateNormal];
         if (sectionState[section] != 0) {
-            [button setTitle:@"Recent Issues On" forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"issues_on"] forState:UIControlStateNormal];
+            [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -133, 0, 0)];
         } else {
-            [button setTitle:@"Recent Issues Off" forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"issues_off"] forState:UIControlStateNormal];
+            [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -140, 0, 0)];
         }
     } else if (section == 1) {
+        [button setTitle:@"Nearby Issues" forState:UIControlStateNormal];
         if (sectionState[section] != 0) {
-            [button setTitle:@"Nearby Issues On" forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"issues_on"] forState:UIControlStateNormal];
+            [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -133, 0, 0)];
         } else {
-            [button setTitle:@"Nearby Issues Off" forState:UIControlStateNormal];
+            [button setImage:[UIImage imageNamed:@"issues_off"] forState:UIControlStateNormal];
+            [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -140, 0, 0)];
         }
     } else {
         return [UIView new];
     }
-    
-    
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -150, 0, 0)];
     return button;
 }
 
