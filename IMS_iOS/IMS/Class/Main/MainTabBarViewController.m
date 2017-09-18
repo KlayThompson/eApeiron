@@ -14,6 +14,7 @@
 #import "SettingsViewController.h"
 #import "IMSAPIManager.h"
 #import "AppDelegate.h"
+#import "InputSerialNumberViewController.h"
 
 @interface MainTabBarViewController ()<AVMetadataDelegate,UITabBarDelegate>
 
@@ -58,8 +59,7 @@
     MainNavigationController *homeNavi = [[MainNavigationController alloc] initWithRootViewController:home];
 
     //Scan
-    UIViewController *scan = [[UIViewController alloc] init];
-    scan.view.backgroundColor = [UIColor whiteColor];
+    InputSerialNumberViewController *scan = [[InputSerialNumberViewController alloc] initWithNibName:@"InputSerialNumberViewController" bundle:nil];
     scan.title = @"Scan";
     scan.tabBarItem.image = [UIImage imageNamed:@"ic_scan"];
     scan.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_scan_selected"];
@@ -79,7 +79,7 @@
 
 - (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
     
-    self.selectedIndex = 0;
+//    self.selectedIndex = 0;
 }
 
 #pragma mark - UITabBarDelegate

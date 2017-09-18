@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputSerialNumberViewController">
+            <connections>
+                <outlet property="creatRecordButton" destination="aEJ-f9-30a" id="6Jf-Uv-xgX"/>
+                <outlet property="mapButton" destination="EJS-ip-3ub" id="HrN-pm-emn"/>
+                <outlet property="productImageView" destination="2m6-pR-KDu" id="40U-c0-0mZ"/>
+                <outlet property="serialNumberTextField" destination="SmT-bC-TLZ" id="HGA-Hj-e1e"/>
+                <outlet property="topImageView" destination="g5V-Fi-fjT" id="JLa-tz-gA1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SgX-Bx-z5L">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="g5V-Fi-fjT">
+                            <rect key="frame" x="24" y="26" width="118" height="89"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="118" id="7vU-pg-Y76"/>
+                                <constraint firstAttribute="height" constant="89" id="sif-Xb-Rut"/>
+                            </constraints>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ahk-mB-c8m">
+                            <rect key="frame" x="15" y="189" width="345" height="1"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="iFG-mV-0ol"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vCL-Uh-DY3">
+                            <rect key="frame" x="15" y="264" width="345" height="1"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="my7-Vw-YnI"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEJ-f9-30a">
+                            <rect key="frame" x="15" y="200" width="345" height="44"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="OLH-5f-3zt"/>
+                            </constraints>
+                            <state key="normal" title="Create Record">
+                                <color key="titleColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="creatRecordButtonTap:" destination="-1" eventType="touchUpInside" id="pvE-Lk-kju"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2m6-pR-KDu">
+                            <rect key="frame" x="24" y="285" width="118" height="89"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="118" id="4OH-hR-gXJ"/>
+                                <constraint firstAttribute="height" constant="89" id="8ue-3e-A9a"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-ip-3ub">
+                            <rect key="frame" x="15" y="424" width="345" height="44"/>
+                            <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="zyO-C9-mhs"/>
+                            </constraints>
+                            <state key="normal" title="Map">
+                                <color key="titleColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="mapButtonTap:" destination="-1" eventType="touchUpInside" id="fy6-7d-7BC"/>
+                            </connections>
+                        </button>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter or Scan Serial Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SmT-bC-TLZ">
+                            <rect key="frame" x="15" y="130" width="345" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="pMX-kw-5oM"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="top" secondItem="2m6-pR-KDu" secondAttribute="bottom" constant="50" id="3CR-eR-YSm"/>
+                        <constraint firstItem="2m6-pR-KDu" firstAttribute="top" secondItem="vCL-Uh-DY3" secondAttribute="bottom" constant="20" id="3Pl-ez-hg6"/>
+                        <constraint firstItem="aEJ-f9-30a" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="5O2-9o-OHx"/>
+                        <constraint firstItem="2m6-pR-KDu" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="24" id="5d2-fw-b5n"/>
+                        <constraint firstItem="SmT-bC-TLZ" firstAttribute="top" secondItem="SgX-Bx-z5L" secondAttribute="top" constant="130" id="8I2-zz-Hld"/>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="ARh-td-k8A"/>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="BW6-bW-4kV"/>
+                        <constraint firstItem="aEJ-f9-30a" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="Cwh-Mb-HcK"/>
+                        <constraint firstItem="SmT-bC-TLZ" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="15" id="FsQ-bz-ee4"/>
+                        <constraint firstItem="vCL-Uh-DY3" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="MjD-TM-WKj"/>
+                        <constraint firstItem="SmT-bC-TLZ" firstAttribute="top" secondItem="g5V-Fi-fjT" secondAttribute="bottom" constant="15" id="Ob2-4b-4ia"/>
+                        <constraint firstItem="Ahk-mB-c8m" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="OtI-SR-cmv"/>
+                        <constraint firstItem="vCL-Uh-DY3" firstAttribute="top" secondItem="aEJ-f9-30a" secondAttribute="bottom" constant="20" id="bTp-rx-gxl"/>
+                        <constraint firstItem="Ahk-mB-c8m" firstAttribute="top" secondItem="SmT-bC-TLZ" secondAttribute="bottom" constant="15" id="bbc-3k-PYn"/>
+                        <constraint firstItem="vCL-Uh-DY3" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="ejO-ud-fn8"/>
+                        <constraint firstItem="aEJ-f9-30a" firstAttribute="top" secondItem="Ahk-mB-c8m" secondAttribute="bottom" constant="10" id="fhg-oY-qjc"/>
+                        <constraint firstItem="SmT-bC-TLZ" firstAttribute="width" secondItem="SgX-Bx-z5L" secondAttribute="width" constant="-30" id="hgI-RI-wN4"/>
+                        <constraint firstAttribute="bottom" secondItem="EJS-ip-3ub" secondAttribute="bottom" constant="10" id="kYT-aX-aKK"/>
+                        <constraint firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" constant="15" id="qN0-dk-QQh"/>
+                        <constraint firstItem="g5V-Fi-fjT" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="24" id="rPe-KH-Puw"/>
+                        <constraint firstItem="Ahk-mB-c8m" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="t4C-TS-ZYG"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SgX-Bx-z5L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0Tn-7K-ouK"/>
+                <constraint firstAttribute="bottom" secondItem="SgX-Bx-z5L" secondAttribute="bottom" id="7N2-Qy-rJY"/>
+                <constraint firstItem="SgX-Bx-z5L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="I4b-aq-Dl5"/>
+                <constraint firstAttribute="trailing" secondItem="SgX-Bx-z5L" secondAttribute="trailing" id="T7x-nc-FR0"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="missing-thumbnail.jpg" width="118" height="89"/>
+    </resources>
+</document>

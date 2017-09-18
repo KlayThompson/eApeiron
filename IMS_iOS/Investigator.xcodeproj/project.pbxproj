@@ -70,6 +70,15 @@
 		3B6659AB1F6F6836006A2A09 /* issues_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6659AA1F6F6836006A2A09 /* issues_off@2x.png */; };
 		3B6659AC1F6F6836006A2A09 /* issues_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6659AA1F6F6836006A2A09 /* issues_off@2x.png */; };
 		3B6659AD1F6F6836006A2A09 /* issues_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B6659AA1F6F6836006A2A09 /* issues_off@2x.png */; };
+		3B73E1CE1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1CC1F6F9D6300AD5153 /* InputSerialNumberViewController.m */; };
+		3B73E1CF1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1CC1F6F9D6300AD5153 /* InputSerialNumberViewController.m */; };
+		3B73E1D01F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1CC1F6F9D6300AD5153 /* InputSerialNumberViewController.m */; };
+		3B73E1D11F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1CD1F6F9D6300AD5153 /* InputSerialNumberViewController.xib */; };
+		3B73E1D21F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1CD1F6F9D6300AD5153 /* InputSerialNumberViewController.xib */; };
+		3B73E1D31F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1CD1F6F9D6300AD5153 /* InputSerialNumberViewController.xib */; };
+		3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */; };
+		3B73E1DA1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */; };
+		3B73E1DB1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */; };
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
@@ -274,6 +283,10 @@
 		3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailView.xib; sourceTree = "<group>"; };
 		3B6659931F6F6567006A2A09 /* issues_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_on@2x.png"; sourceTree = "<group>"; };
 		3B6659AA1F6F6836006A2A09 /* issues_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "issues_off@2x.png"; sourceTree = "<group>"; };
+		3B73E1CB1F6F9D6300AD5153 /* InputSerialNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputSerialNumberViewController.h; sourceTree = "<group>"; };
+		3B73E1CC1F6F9D6300AD5153 /* InputSerialNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSerialNumberViewController.m; sourceTree = "<group>"; };
+		3B73E1CD1F6F9D6300AD5153 /* InputSerialNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputSerialNumberViewController.xib; sourceTree = "<group>"; };
+		3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "missing-thumbnail.jpg"; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
 		3BD062F11F66234B00C1722A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -463,6 +476,9 @@
 				3B6658D01F6A192A006A2A09 /* AVMetadataController.m */,
 				3B6658D11F6A192A006A2A09 /* ScanViewController.h */,
 				3B6658D21F6A192A006A2A09 /* ScanViewController.m */,
+				3B73E1CB1F6F9D6300AD5153 /* InputSerialNumberViewController.h */,
+				3B73E1CC1F6F9D6300AD5153 /* InputSerialNumberViewController.m */,
+				3B73E1CD1F6F9D6300AD5153 /* InputSerialNumberViewController.xib */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -557,6 +573,7 @@
 				98764D981A47ED24007ED35F /* ic_settings_selected@2x.png */,
 				3B6659931F6F6567006A2A09 /* issues_on@2x.png */,
 				3B6659AA1F6F6836006A2A09 /* issues_off@2x.png */,
+				3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */,
 				98764D991A47ED24007ED35F /* ic_settings@2x.png */,
 				3BD063821F6907DF00C1722A /* goback@2x.png */,
 				9879D3B91A48FDCF00BF53EF /* Icons */,
@@ -813,6 +830,7 @@
 				9879D3BF1A48FDCF00BF53EF /* Icon@2x.png in Resources */,
 				98ED33BF1AE4DDD800E66D44 /* Default-736h@3x.png in Resources */,
 				98ED33C21AE4DDD800E66D44 /* Default.png in Resources */,
+				3B73E1D11F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */,
 				98764D9A1A47ED24007ED35F /* ic_menu_home_selected@2x.png in Resources */,
 				3BD063831F6907DF00C1722A /* goback@2x.png in Resources */,
 				9879D3BD1A48FDCF00BF53EF /* Icon.png in Resources */,
@@ -830,6 +848,7 @@
 				3B6659201F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				3B6659AB1F6F6836006A2A09 /* issues_off@2x.png in Resources */,
 				98764D9B1A47ED24007ED35F /* ic_menu_home@2x.png in Resources */,
+				3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B6659051F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6658DA1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
@@ -847,6 +866,7 @@
 				98B6FA291AE493D400B2497E /* Icon@2x.png in Resources */,
 				3B6658DB1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
 				98B6FA2A1AE493D400B2497E /* ic_menu_home_selected@2x.png in Resources */,
+				3B73E1D21F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */,
 				98B6FA2B1AE493D400B2497E /* Icon.png in Resources */,
 				98B6FA6C1AE49FF500B2497E /* Consumer-Info.plist in Resources */,
 				3BD063841F6907DF00C1722A /* goback@2x.png in Resources */,
@@ -855,6 +875,7 @@
 				98ED33A01AE4B10A00E66D44 /* Launch Screen_Consumer.xib in Resources */,
 				98ED33BA1AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				3B6658FC1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
+				3B73E1DA1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6659061F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6659211F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA2E1AE493D400B2497E /* ic_scan_selected@2x.png in Resources */,
@@ -882,6 +903,7 @@
 				98B6FA571AE493DB00B2497E /* Icon@2x.png in Resources */,
 				3B6658DC1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
 				98B6FA581AE493DB00B2497E /* ic_menu_home_selected@2x.png in Resources */,
+				3B73E1D31F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */,
 				98B6FA591AE493DB00B2497E /* Icon.png in Resources */,
 				98B6FA5A1AE493DB00B2497E /* ic_scan@2x.png in Resources */,
 				3BD063851F6907DF00C1722A /* goback@2x.png in Resources */,
@@ -890,6 +912,7 @@
 				98B6FA5C1AE493DB00B2497E /* ic_scan_selected@2x.png in Resources */,
 				98ED33BB1AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				3B6658FD1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
+				3B73E1DB1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6659071F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6659221F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA5D1AE493DB00B2497E /* ic_settings@2x.png in Resources */,
@@ -921,6 +944,7 @@
 				3B66590F1F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658F81F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3BD063121F66248800C1722A /* NetworkAPIManager.m in Sources */,
+				3B73E1CE1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
 				3BD063071F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
@@ -958,6 +982,7 @@
 				3B6659101F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658F91F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3B73E1CF1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
@@ -995,6 +1020,7 @@
 				3B6659111F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658FA1F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3B73E1D01F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,

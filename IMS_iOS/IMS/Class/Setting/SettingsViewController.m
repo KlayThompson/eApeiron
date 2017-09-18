@@ -165,6 +165,16 @@
     [self.view addGestureRecognizer:tap];
     
     [self setupPicker];
+    
+    self.chooseProjectButton.layer.cornerRadius = 5;
+    self.chooseProjectButton.layer.masksToBounds = true;
+    self.chooseProjectButton.layer.borderWidth = 1;
+    self.chooseProjectButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    self.logoutButton.layer.cornerRadius = 5;
+    self.logoutButton.layer.masksToBounds = true;
+    self.logoutButton.layer.borderWidth = 1;
+    self.logoutButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
 }
 
 - (void)setupPicker {
