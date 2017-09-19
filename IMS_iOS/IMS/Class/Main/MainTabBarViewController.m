@@ -78,8 +78,8 @@
 }
 
 - (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
+    DLog(@"");
     
-//    self.selectedIndex = 0;
 }
 
 #pragma mark - UITabBarDelegate

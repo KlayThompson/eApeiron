@@ -10,6 +10,9 @@
 
 @interface MainTabBarViewController : UITabBarController
 
+@property (nonatomic, copy) NSString *serial;
+@property (nonatomic, copy) NSString *covertSerial;
+
 //登录成功后重新设置rootViewController
 - (void)setRootViewController;
 @end

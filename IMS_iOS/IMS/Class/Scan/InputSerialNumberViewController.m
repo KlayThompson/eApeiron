@@ -11,6 +11,7 @@
 #import "UserInfoManager.h"
 #import "YYModel.h"
 #import "CheckIncidentModel.h"
+#import "MainTabBarViewController.h"
 
 @interface InputSerialNumberViewController ()
 
@@ -79,7 +80,8 @@
 
 //点击显示地图
 - (IBAction)mapButtonTap:(id)sender {
-    
+    MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
+    DLog(@"");
 }
 
 /**
