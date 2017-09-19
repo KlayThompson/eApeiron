@@ -85,6 +85,18 @@
 		3B73E1E41F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */; };
 		3B73E1E51F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */; };
 		3B73E1E61F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */; };
+		3B73E1F01F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E91F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m */; };
+		3B73E1F11F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E91F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m */; };
+		3B73E1F21F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E91F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m */; };
+		3B73E1F31F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1EB1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m */; };
+		3B73E1F41F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1EB1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m */; };
+		3B73E1F51F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1EB1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m */; };
+		3B73E1F61F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1ED1F710AB500AD5153 /* TPKeyboardAvoidingTableView.m */; };
+		3B73E1F71F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1ED1F710AB500AD5153 /* TPKeyboardAvoidingTableView.m */; };
+		3B73E1F81F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1ED1F710AB500AD5153 /* TPKeyboardAvoidingTableView.m */; };
+		3B73E1F91F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		3B73E1FA1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		3B73E1FB1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
@@ -297,6 +309,14 @@
 		3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIncidentModel.m; sourceTree = "<group>"; };
 		3B73E1E21F70EB0300AD5153 /* CheckIncidentAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIncidentAuthority.h; sourceTree = "<group>"; };
 		3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIncidentAuthority.m; sourceTree = "<group>"; };
+		3B73E1E81F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		3B73E1E91F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		3B73E1EA1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		3B73E1EB1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		3B73E1EC1F710AB500AD5153 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		3B73E1ED1F710AB500AD5153 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		3B73E1EE1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
 		3BD062F11F66234B00C1722A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -515,6 +535,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3B73E1E71F710AB500AD5153 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				3B73E1E81F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.h */,
+				3B73E1E91F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m */,
+				3B73E1EA1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.h */,
+				3B73E1EB1F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m */,
+				3B73E1EC1F710AB500AD5153 /* TPKeyboardAvoidingTableView.h */,
+				3B73E1ED1F710AB500AD5153 /* TPKeyboardAvoidingTableView.m */,
+				3B73E1EE1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		3BD062DC1F66211D00C1722A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +663,7 @@
 		9879D3C11A49083400BF53EF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3B73E1E71F710AB500AD5153 /* TPKeyboardAvoiding */,
 				3BD063921F691FA900C1722A /* YYModel */,
 				3BD062F01F66234B00C1722A /* AFNetworking */,
 				9855FE191A68B4110037153B /* OpenUDID */,
@@ -977,14 +1013,18 @@
 				3B66591C1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
 				3B6658EC1F6A192B006A2A09 /* MainNavigationController.m in Sources */,
 				9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */,
+				3B73E1F01F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063011F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E31F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B73E1F61F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
+				3B73E1F31F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */,
 				3BD0630D1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3BD0639B1F691FA900C1722A /* YYClassInfo.m in Sources */,
 				3B6658F51F6A192B006A2A09 /* ScanViewController.m in Sources */,
 				988DB1A91A43EA0600C243F9 /* main.m in Sources */,
 				3B6658E01F6A192A006A2A09 /* HistoryModel.m in Sources */,
+				3B73E1F91F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3B73E1E41F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DD1F6A192A006A2A09 /* HomeViewController.m in Sources */,
@@ -1017,14 +1057,18 @@
 				3B66591D1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
 				3B6658ED1F6A192B006A2A09 /* MainNavigationController.m in Sources */,
 				3BD063081F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
+				3B73E1F11F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063021F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E41F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B73E1F71F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
+				3B73E1F41F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630B1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 				98B6FA1E1AE493D400B2497E /* TypedefEnums.m in Sources */,
 				98B6FA211AE493D400B2497E /* main.m in Sources */,
 				3B6658F61F6A192B006A2A09 /* ScanViewController.m in Sources */,
 				3BD063131F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B6658E11F6A192A006A2A09 /* HistoryModel.m in Sources */,
+				3B73E1FA1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */,
 				3B73E1E51F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DE1F6A192A006A2A09 /* HomeViewController.m in Sources */,
@@ -1057,14 +1101,18 @@
 				3B66591E1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
 				3B6658EE1F6A192B006A2A09 /* MainNavigationController.m in Sources */,
 				3BD063091F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
+				3B73E1F21F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063031F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E51F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B73E1F81F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
+				3B73E1F51F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630C1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 				98B6FA4C1AE493DB00B2497E /* TypedefEnums.m in Sources */,
 				98B6FA4F1AE493DB00B2497E /* main.m in Sources */,
 				3B6658F71F6A192B006A2A09 /* ScanViewController.m in Sources */,
 				3BD063141F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B6658E21F6A192A006A2A09 /* HistoryModel.m in Sources */,
+				3B73E1FB1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */,
 				3B73E1E61F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DF1F6A192A006A2A09 /* HomeViewController.m in Sources */,
