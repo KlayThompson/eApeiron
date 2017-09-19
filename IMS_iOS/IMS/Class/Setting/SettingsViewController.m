@@ -58,7 +58,7 @@
     [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
         [Hud stop];
         if (error) {
-            [Hud showMessage:@"获取项目列表失败"];
+            [Hud showMessage:IMS_ERROR_MESSAGE];
         } else {
             [weakSelf configDataArray];
             [self.projectPicker reloadAllComponents];

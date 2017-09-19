@@ -79,6 +79,12 @@
 		3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */; };
 		3B73E1DA1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */; };
 		3B73E1DB1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */; };
+		3B73E1DF1F70E82700AD5153 /* CheckIncidentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */; };
+		3B73E1E01F70E82700AD5153 /* CheckIncidentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */; };
+		3B73E1E11F70E82700AD5153 /* CheckIncidentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */; };
+		3B73E1E41F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */; };
+		3B73E1E51F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */; };
+		3B73E1E61F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */; };
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
@@ -287,6 +293,10 @@
 		3B73E1CC1F6F9D6300AD5153 /* InputSerialNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputSerialNumberViewController.m; sourceTree = "<group>"; };
 		3B73E1CD1F6F9D6300AD5153 /* InputSerialNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputSerialNumberViewController.xib; sourceTree = "<group>"; };
 		3B73E1D81F6FA16100AD5153 /* missing-thumbnail.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "missing-thumbnail.jpg"; sourceTree = "<group>"; };
+		3B73E1DD1F70E82700AD5153 /* CheckIncidentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIncidentModel.h; sourceTree = "<group>"; };
+		3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIncidentModel.m; sourceTree = "<group>"; };
+		3B73E1E21F70EB0300AD5153 /* CheckIncidentAuthority.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckIncidentAuthority.h; sourceTree = "<group>"; };
+		3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckIncidentAuthority.m; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
 		3BD062F11F66234B00C1722A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -472,6 +482,7 @@
 		3B6658CE1F6A192A006A2A09 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				3B73E1DC1F70E4EB00AD5153 /* Model */,
 				3B6658CF1F6A192A006A2A09 /* AVMetadataController.h */,
 				3B6658D01F6A192A006A2A09 /* AVMetadataController.m */,
 				3B6658D11F6A192A006A2A09 /* ScanViewController.h */,
@@ -491,6 +502,17 @@
 				3B6658D61F6A192A006A2A09 /* SettingsViewController.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		3B73E1DC1F70E4EB00AD5153 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B73E1DD1F70E82700AD5153 /* CheckIncidentModel.h */,
+				3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */,
+				3B73E1E21F70EB0300AD5153 /* CheckIncidentAuthority.h */,
+				3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3BD062DC1F66211D00C1722A /* NetWork */ = {
@@ -949,6 +971,7 @@
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
 				3BD063071F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
 				3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3B73E1DF1F70E82700AD5153 /* CheckIncidentModel.m in Sources */,
 				3BD063041F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				988DB1AC1A43EA0600C243F9 /* AppDelegate.m in Sources */,
 				3B66591C1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
@@ -963,6 +986,7 @@
 				988DB1A91A43EA0600C243F9 /* main.m in Sources */,
 				3B6658E01F6A192A006A2A09 /* HistoryModel.m in Sources */,
 				3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
+				3B73E1E41F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DD1F6A192A006A2A09 /* HomeViewController.m in Sources */,
 				3B6658EF1F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F21F6A192B006A2A09 /* AVMetadataController.m in Sources */,
@@ -987,6 +1011,7 @@
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
 				3BD063991F691FA900C1722A /* NSObject+YYModel.m in Sources */,
+				3B73E1E01F70E82700AD5153 /* CheckIncidentModel.m in Sources */,
 				3BD063051F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				98B6FA1D1AE493D400B2497E /* OpenUDID.m in Sources */,
 				3B66591D1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
@@ -1001,6 +1026,7 @@
 				3BD063131F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B6658E11F6A192A006A2A09 /* HistoryModel.m in Sources */,
 				3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */,
+				3B73E1E51F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DE1F6A192A006A2A09 /* HomeViewController.m in Sources */,
 				3B6658F01F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F31F6A192B006A2A09 /* AVMetadataController.m in Sources */,
@@ -1025,6 +1051,7 @@
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,
 				3BD0639A1F691FA900C1722A /* NSObject+YYModel.m in Sources */,
+				3B73E1E11F70E82700AD5153 /* CheckIncidentModel.m in Sources */,
 				3BD063061F66234B00C1722A /* AFSecurityPolicy.m in Sources */,
 				98B6FA4B1AE493DB00B2497E /* OpenUDID.m in Sources */,
 				3B66591E1F6BB08E006A2A09 /* IssueDetailView.m in Sources */,
@@ -1039,6 +1066,7 @@
 				3BD063141F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B6658E21F6A192A006A2A09 /* HistoryModel.m in Sources */,
 				3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */,
+				3B73E1E61F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DF1F6A192A006A2A09 /* HomeViewController.m in Sources */,
 				3B6658F11F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F41F6A192B006A2A09 /* AVMetadataController.m in Sources */,

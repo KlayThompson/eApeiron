@@ -175,8 +175,11 @@
                                                                      block(nil, error);
                                                                  } else {
                                                                      if (!DICT_IS_NIL(data)) {
+                                                                         NSDictionary *json = data[@"Message"];
+                                                                         block(json, nil);
+                                                                     } else {
+                                                                         block(nil,nil);
                                                                      }
-                                                                     block(data, nil);
                                                                  }
                                                              }];
         } else {

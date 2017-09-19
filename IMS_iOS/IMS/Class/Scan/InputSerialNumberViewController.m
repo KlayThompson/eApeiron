@@ -9,6 +9,8 @@
 #import "InputSerialNumberViewController.h"
 #import "IMSAPIManager.h"
 #import "UserInfoManager.h"
+#import "YYModel.h"
+#import "CheckIncidentModel.h"
 
 @interface InputSerialNumberViewController ()
 
@@ -18,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *creatRecordButton;
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
 @property (weak, nonatomic) IBOutlet UIButton *mapButton;
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
 
 @property (nonatomic, assign) BOOL checkState;
 
@@ -43,6 +48,7 @@
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
     NSString *check = self.checkState ? @"1" : @"0";
+    __weak typeof (self) weakSelf = self;
     [IMSAPIManager ims_checkIncidentWithProjectId:manager.currentProjectId
                                          deviceId:[OpenUDID value]
                                      serialNumber:self.serialNumberTextField.text
@@ -50,13 +56,17 @@
                                         longitude:manager.longitude
                                             check:check Block:^(id JSON, NSError *error) {
                                                 [Hud stop];
-                                                DLog(@"");
+                                                CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
+                                                
+                                                weakSelf.titleLabel.text = model.title;
                                             }];
     
 }
 
 #pragma mark - Actions
 - (IBAction)creatRecordButtonTap:(id)sender {
+    
+    [self.view endEditing:YES];
     
     NSString *tipString = [self checkUserInputState];
     if (!STR_IS_NIL(tipString)) {
@@ -102,7 +112,7 @@
 
 #pragma mark - UI
 - (void)setupUI {
-
+    
     self.creatRecordButton.layer.cornerRadius = 5;
     self.creatRecordButton.layer.masksToBounds = true;
     self.creatRecordButton.layer.borderWidth = 1;
