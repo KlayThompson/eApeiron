@@ -22,9 +22,10 @@
     if (!unit) {
         return;
     }
-    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
     //distance
-    self.distanceLabel.text = @"59.6 feet";
+    double distance = [self distanceBetweenOrderByLat1:manager.latitude.doubleValue lat2:unit.latitude.doubleValue lng1:manager.longitude.doubleValue lng2:unit.longitude.doubleValue];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%.1f feet",distance];
     
     //时间
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -37,7 +38,7 @@
     
 }
 
--(double)distanceBetweenOrderBy:(double) lat1 :(double) lat2 :(double) lng1 :(double) lng2{
+-(double)distanceBetweenOrderByLat1:(double)lat1 lat2:(double)lat2 lng1:(double)lng1 lng2:(double)lng2 {
     
     CLLocation *curLocation = [[CLLocation alloc] initWithLatitude:lat1 longitude:lng1];
     
@@ -45,7 +46,12 @@
     
     double  distance  = [curLocation distanceFromLocation:otherLocation];
     
-    return  distance;
+    
+    double change = 0.3048;
+    
+    double value = distance/change;
+    
+    return  value;
     
 }
 
