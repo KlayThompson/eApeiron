@@ -76,4 +76,21 @@
  用户退出登录，清除用户信息
  */
 - (void)clearUserInfo;
+
+/**
+ 用户登录成功，保存登录时间
+ */
+- (void)saveCurrentTime;
+
+/**
+ 获取当前时间
+ */
+- (NSString*)getCurrentTime;
+
+/**
+ 判断当前时间和用户上次登录时间是否超过半小时，超过则需要重新登录
+
+ @return 是否需要重新登陆 YES 需要 NO 不需要
+ */
+- (BOOL)checkUserShouldLoginAgain;
 @end

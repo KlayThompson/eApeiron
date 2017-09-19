@@ -73,6 +73,7 @@
                                                                          manager.currentUsername = username;
                                                                          //存储用户信息
                                                                          [manager saveUserInfoToLocal];
+                                                                         [manager saveCurrentTime];
                                                                      }
                                                                      block(data, nil);
                                                                  }

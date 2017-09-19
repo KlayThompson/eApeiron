@@ -33,9 +33,9 @@
     [self.window setRootViewController:tabbar];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
+
     [self showLaunchImage];
-    
+
     return YES;
 }
 
@@ -147,7 +147,7 @@
     
     NSString *authToken = manager.authToken;
     
-    if (STR_IS_NIL(authToken)) {
+    if (STR_IS_NIL(authToken) || [manager checkUserShouldLoginAgain]) {
         manager.userLogin = NO;
     } else {
         manager.userLogin = YES;

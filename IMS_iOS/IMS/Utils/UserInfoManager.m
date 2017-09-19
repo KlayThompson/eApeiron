@@ -74,6 +74,10 @@ static UserInfoManager *instance = nil;
     
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"ims_username"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ims_logintime"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     self.currentProjectName = nil;
     self.authToken = nil;
     self.userLogin = nil;
@@ -83,5 +87,52 @@ static UserInfoManager *instance = nil;
     self.currentUsername = nil;
     self.longitude = nil;
     self.latitude = nil;
+}
+
+/**
+ 用户登录成功，保存当前时间
+ */
+- (void)saveCurrentTime {
+    NSString *currentTime = [self getCurrentTime];
+    [[NSUserDefaults standardUserDefaults] setObject:currentTime forKey:@"ims_logintime"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+//获取当前时间
+- (NSString*)getCurrentTime {
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSDate *datenow = [NSDate date];
+    
+    NSString *currentTimeString = [formatter stringFromDate:datenow];
+    
+    return currentTimeString;
+}
+
+// 判断当前时间和用户上次登录时间是否超过半小时，超过则需要重新登录
+- (BOOL)checkUserShouldLoginAgain {
+    // 1.确定时间
+    NSString *time1 = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_logintime"];
+    NSString *time2 = [self getCurrentTime];
+    // 2.将时间转换为date
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSDate *date1 = [formatter dateFromString:time1];
+    NSDate *date2 = [formatter dateFromString:time2];
+    // 3.创建日历
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSCalendarUnit type = NSCalendarUnitMinute;
+    // 4.利用日历对象比较两个时间的差值
+    NSDateComponents *cmps = [calendar components:type fromDate:date1 toDate:date2 options:0];
+    // 5.输出结果
+    if (cmps.minute < 30) {
+        return NO;
+    }
+    //清除用户信息
+    [self clearUserInfo];
+    return YES;
 }
 @end
