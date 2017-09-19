@@ -79,7 +79,15 @@
 
 - (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
     DLog(@"");
-    
+    //如果两个都为空则是点击取消按钮
+    if (STR_IS_NIL(serial) && STR_IS_NIL(covertSerial)) {
+        //do nothing
+    } else {
+        //扫描成功，发送通知，通知CHECKINCIDENT
+        self.serial = serial;
+        self.covertSerial = covertSerial;
+        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODESUCCESS object:nil];
+    }
 }
 
 #pragma mark - UITabBarDelegate

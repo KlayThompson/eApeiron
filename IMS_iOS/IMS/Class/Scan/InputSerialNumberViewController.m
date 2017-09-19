@@ -31,10 +31,19 @@
 
 @implementation InputSerialNumberViewController
 
+- (void)dealloc {
+
+    //remove notification
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_SCANQRCODESUCCESS object:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setupUI];
+    
+    //接收通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanSuccessNotifi:) name:IMS_NOTIFICATION_SCANQRCODESUCCESS object:nil];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -80,7 +89,6 @@
 
 //点击显示地图
 - (IBAction)mapButtonTap:(id)sender {
-    MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
     DLog(@"");
 }
 
@@ -110,6 +118,15 @@
     UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
     [alert addAction:action];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+//扫描成功，进行处理
+- (void)scanSuccessNotifi:(NSNotification *)notify {
+    //获取tabbar，取得扫描的serial
+    MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
+    self.serialNumberTextField.text = main.serial;
+    //checkIncident
+    [self checkIncidentFromServer];
 }
 
 #pragma mark - UI

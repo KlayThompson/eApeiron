@@ -57,5 +57,15 @@
 
 #define IMS_ERROR_MESSAGE                                       @"Network error"
 
+//NSUserDefaults
+#define IMS_USERDEFAULTS_AUTHTOKEN                              @"ims_authToken"
+#define IMS_USERDEFAULTS_PROJECTNAME                            @"ims_projectname"
+#define IMS_USERDEFAULTS_PROJECTID                              @"ims_projectid"
+#define IMS_USERDEFAULTS_USERNAME                               @"ims_username"
+#define IMS_USERDEFAULTS_LOGINTIME                              @"ims_logintime"
+
+
+//Notification
+#define IMS_NOTIFICATION_SCANQRCODESUCCESS                            @"ims_scanqrcodesuccess"
 
 #endif
