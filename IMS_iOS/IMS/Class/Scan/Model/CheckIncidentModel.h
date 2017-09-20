@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *incidentDescription;
 @property (nonatomic, copy) NSString *deviceid;
-@property (nonatomic, copy) NSString *incident_type;
+@property (nonatomic, copy) NSString *incident_type;//扫码check的时候不为0方可create，即createRecord按钮可点击
 @property (nonatomic, copy) NSString *issue_id;
 @property (nonatomic, copy) NSString *lat;
 @property (nonatomic, copy) NSString *lng;

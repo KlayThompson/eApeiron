@@ -66,6 +66,6 @@
 
 
 //Notification
-#define IMS_NOTIFICATION_SCANQRCODESUCCESS                            @"ims_scanqrcodesuccess"
+#define IMS_NOTIFICATION_SCANQRCODESUCCESS                      @"ims_scanqrcodesuccess"
 
 #endif

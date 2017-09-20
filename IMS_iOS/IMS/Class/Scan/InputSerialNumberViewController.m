@@ -24,7 +24,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *productDetailLabel;
 
+/**
+ 只有扫描成功才是YES，其余全部为NO
+ */
 @property (nonatomic, assign) BOOL checkState;
 
 @end
@@ -68,7 +72,7 @@
                                                 [Hud stop];
                                                 CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
                                                 
-                                                weakSelf.titleLabel.text = model.title;
+                                                [weakSelf redrawUIWhenNetworkFinishWith:model];
                                             }];
     
 }
@@ -92,6 +96,7 @@
     DLog(@"");
 }
 
+#pragma mark - Custom Methoud
 /**
  检查用户输入用户名密码状态
  
@@ -122,6 +127,8 @@
 
 //扫描成功，进行处理
 - (void)scanSuccessNotifi:(NSNotification *)notify {
+    
+    self.checkState = YES;
     //获取tabbar，取得扫描的serial
     MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
     self.serialNumberTextField.text = main.serial;
@@ -129,8 +136,40 @@
     [self checkIncidentFromServer];
 }
 
+//网络加载成功后，进行一些界面上的处理
+- (void)redrawUIWhenNetworkFinishWith:(CheckIncidentModel *)model {
+    
+    self.titleLabel.text = model.title;
+    
+    self.productDetailLabel.text = model.authority.product_details;
+    
+    __weak typeof (self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.authority.product_image]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.productImageView.image = [UIImage imageWithData:data];
+        });
+    });
+    
+    //更改checkState状态
+    if (self.checkState) { //说明是扫码成功进入，需要设置createRecord按钮状态
+        self.checkState = NO;
+        
+        if (model.incident_type.integerValue != 0) {
+            self.creatRecordButton.enabled = YES;
+        } else {
+            self.creatRecordButton.enabled = NO;
+        }
+    } else {
+        
+    }
+}
+
 #pragma mark - UI
 - (void)setupUI {
+    
+    self.productDetailLabel.text = @"";
+    self.titleLabel.text = @"";
     
     self.creatRecordButton.layer.cornerRadius = 5;
     self.creatRecordButton.layer.masksToBounds = true;
