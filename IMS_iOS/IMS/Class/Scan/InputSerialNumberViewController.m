@@ -27,7 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productDetailLabel;
 
 /**
- 只有扫描成功才是YES，其余全部为NO
+ 需要check才是YES
  */
 @property (nonatomic, assign) BOOL checkState;
 
@@ -39,6 +39,8 @@
 
     //remove notification
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_SCANQRCODESUCCESS object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_SCANQRCODECANCEL object:nil];
+
 }
 
 - (void)viewDidLoad {
@@ -48,6 +50,7 @@
     
     //接收通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanSuccessNotifi:) name:IMS_NOTIFICATION_SCANQRCODESUCCESS object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scanCancelNotifi:) name:IMS_NOTIFICATION_SCANQRCODECANCEL object:nil];
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -125,6 +128,14 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+//取消扫描处理
+- (void)scanCancelNotifi:(NSNotification *)notify {
+    
+    //设置按钮
+    [self.creatRecordButton setTitle:@"Submit" forState:UIControlStateNormal];
+    self.checkState = YES;
+}
+
 //扫描成功，进行处理
 - (void)scanSuccessNotifi:(NSNotification *)notify {
     
@@ -152,7 +163,11 @@
     });
     
     //更改checkState状态
-    if (self.checkState) { //说明是扫码成功进入，需要设置createRecord按钮状态
+    if (self.checkState) {
+        
+        //无论是扫码成功还是取消，在这统一将按钮文字更改为creatRecord
+        [self.creatRecordButton setTitle:@"Create Record" forState:UIControlStateNormal];
+        
         self.checkState = NO;
         
         if (model.incident_type.integerValue != 0) {

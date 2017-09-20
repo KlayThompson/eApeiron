@@ -38,6 +38,7 @@
  项目选择器底部约束
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pickerBottomCons;
+
 @end
 
 @implementation SettingsViewController
@@ -166,10 +167,6 @@
     
     //设置退出按钮标题
     [self.logoutButton setTitle:[NSString stringWithFormat:@"Logout %@",manager.currentUsername] forState:UIControlStateNormal];
-    
-    //添加一个手势，使得再显示选择矿的时候，点击其他地方隐藏Project选择框
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidePicker)];
-    [self.view addGestureRecognizer:tap];
     
     [self setupPicker];
     
