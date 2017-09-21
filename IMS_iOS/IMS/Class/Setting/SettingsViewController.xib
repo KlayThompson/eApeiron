@@ -60,6 +60,7 @@
                         <constraint firstAttribute="height" constant="44" id="i5I-p6-6PQ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <inset key="imageEdgeInsets" minX="200" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <state key="normal" title="Button">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -86,18 +87,23 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_downbutton" translatesAutoresizingMaskIntoConstraints="NO" id="89o-uV-2qg">
+                    <rect key="frame" x="308" y="147" width="32" height="32"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bA1-eR-Fnj" firstAttribute="leading" secondItem="hrt-xI-gJ5" secondAttribute="leading" id="00A-J0-dyU"/>
                 <constraint firstItem="Fo1-Jw-uWS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0ko-HJ-2D1"/>
                 <constraint firstAttribute="trailing" secondItem="Fo1-Jw-uWS" secondAttribute="trailing" id="1uf-l8-Qk6"/>
+                <constraint firstItem="89o-uV-2qg" firstAttribute="trailing" secondItem="bA1-eR-Fnj" secondAttribute="trailing" constant="-15" id="2RJ-Kh-kLj"/>
                 <constraint firstItem="bA1-eR-Fnj" firstAttribute="trailing" secondItem="hrt-xI-gJ5" secondAttribute="trailing" id="86m-RW-kWQ"/>
                 <constraint firstAttribute="bottom" secondItem="YX9-eT-YuB" secondAttribute="bottom" constant="-216" id="Dzm-MW-Jkr"/>
                 <constraint firstAttribute="trailing" secondItem="hrt-xI-gJ5" secondAttribute="trailing" constant="20" id="HmD-tc-OGO"/>
                 <constraint firstItem="hrt-xI-gJ5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MyQ-s1-S6Q"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="trailing" secondItem="bA1-eR-Fnj" secondAttribute="trailing" id="SRT-QN-yVO"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="top" secondItem="bA1-eR-Fnj" secondAttribute="bottom" constant="20" id="VeJ-xn-1kf"/>
+                <constraint firstItem="89o-uV-2qg" firstAttribute="centerY" secondItem="bA1-eR-Fnj" secondAttribute="centerY" id="fVJ-RF-DSM"/>
                 <constraint firstItem="bA1-eR-Fnj" firstAttribute="top" secondItem="hrt-xI-gJ5" secondAttribute="bottom" constant="20" id="heg-7q-ukr"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="leading" secondItem="bA1-eR-Fnj" secondAttribute="leading" id="kb1-qw-6Mh"/>
                 <constraint firstItem="YX9-eT-YuB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lk0-TI-RON"/>
@@ -108,4 +114,7 @@
             <point key="canvasLocation" x="-206.5" y="110.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="select_downbutton" width="32" height="32"/>
+    </resources>
 </document>

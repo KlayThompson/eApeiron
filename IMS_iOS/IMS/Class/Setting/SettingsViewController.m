@@ -115,6 +115,9 @@
     
     if (self.dataArray.count > index) {
         str = [self.dataArray objectAtIndex:index];
+    } else {
+        DLog(@"Array is nil please check the code or server");
+        return;
     }
     DLog(@"--------------%@",str);
     [self hidePicker];
@@ -174,7 +177,7 @@
     self.chooseProjectButton.layer.masksToBounds = true;
     self.chooseProjectButton.layer.borderWidth = 1;
     self.chooseProjectButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    
+        
     self.logoutButton.layer.cornerRadius = 5;
     self.logoutButton.layer.masksToBounds = true;
     self.logoutButton.layer.borderWidth = 1;
