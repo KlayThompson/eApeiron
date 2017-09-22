@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "HistoryDetailViewController.h"
 #import "UserInfoManager.h"
+#import "IMSAPIManager.h"
 
 @interface HomeViewController ()
 {
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self setupUI];
-    
+    [self getProects];
     // 
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
@@ -185,6 +186,17 @@
     
     [self.view addSubview:self.historyButton];
     [self.view addSubview:self.topImageView];
+}
+
+- (void)getProects {
+    
+    [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
+        if (error) {
+        } else {
+            //通知获取projects成功，刷新
+            [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
+        }
+    }];
 }
 
 - (UIButton *)historyButton {

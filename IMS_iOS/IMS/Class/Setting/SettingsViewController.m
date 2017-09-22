@@ -48,23 +48,17 @@
     // Do any additional setup after loading the view from its nib.
 
     [self setupUI];
-    [self getProects];
+    [self configDataArray];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configDataArray) name:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
 }
 
-#pragma mark - 网络
-- (void)getProects {
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    __weak typeof(self) weakSelf = self;
-    [Hud start];
-    [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
-        [Hud stop];
-        if (error) {
-            [Hud showMessage:IMS_ERROR_MESSAGE];
-        } else {
-            [weakSelf configDataArray];
-            [self.projectPicker reloadAllComponents];
-        }
-    }];
+    //设置选择项目按钮标题
+    [self.chooseProjectButton setTitle:manager.currentProjectName forState:UIControlStateNormal];
 }
 
 /**
@@ -77,6 +71,7 @@
     for (NSString *value in manager.projectDic.allValues) {
         [self.dataArray addObject:value];
     }
+    [self.projectPicker reloadAllComponents];
 }
 
 #pragma mark - Actions

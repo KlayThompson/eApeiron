@@ -68,5 +68,6 @@
 //Notification
 #define IMS_NOTIFICATION_SCANQRCODESUCCESS                      @"ims_scanqrcodesuccess"
 #define IMS_NOTIFICATION_SCANQRCODECANCEL                       @"ims_scanqrcodecancel"
+#define IMS_NOTIFICATION_GETPROJECSSUCCESS                       @"ims_getprojectssuccess"
 
 #endif
