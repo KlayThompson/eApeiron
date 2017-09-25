@@ -51,6 +51,7 @@
     }
     
     [Hud start];
+    __weak typeof (self) weakSelf = self;
     [IMSAPIManager ims_getAuthTokenWithUsername:self.usernameTextField.text
                                        password:self.passwordTextField.text
                                           Block:^(id JSON, NSError *error) {
@@ -58,14 +59,9 @@
                                               if (error) {
                                                   [Hud showMessage:IMS_ERROR_MESSAGE];
                                               } else {
-                                                  //登录成功更换rootViewController
                                                   [Hud showMessage:@"Login Success"];
-                                                  MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
-                                                  [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
-                                                  [tabbar setRootViewController];
-                                                  
+                                                  [weakSelf doSomeWorkWhenLoginSuccess];
                                               }
-                                              
                                           }];
     
 }
@@ -95,6 +91,31 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+/**
+ 登录成功后做一些操作
+ */
+- (void)doSomeWorkWhenLoginSuccess {
+    //更换rootViewController
+    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+    [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
+    [tabbar setRootViewController];
+    
+    [self getProects];
+}
+
+/**
+ 获取项目列表
+ */
+- (void)getProects {
+    
+    [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
+        if (error) {
+        } else {
+            //通知获取projects成功，刷新
+            [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
+        }
+    }];
+}
 
 - (NSString *)title {
     UserInfoManager *manager = [UserInfoManager shareInstance];
