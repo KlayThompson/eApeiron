@@ -7,6 +7,7 @@
 //
 
 #import "IssueDetailView.h"
+#import "YYWebImage.h"
 
 @implementation IssueDetailView
 
@@ -35,14 +36,8 @@
     self.longitudeLabel.text = unit.longitude;
     self.priceLabel.text = unit.price;
     //picture
-    __weak typeof (self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:unit.full_product_image_path]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.productImageView.image = [UIImage imageWithData:data];
-        });
-    });
+    [self.productImageView yy_setImageWithURL:[NSURL URLWithString:unit.full_product_image_path] placeholder:[UIImage imageNamed:@"missing-thumbnail.jpg"]];
+    
     self.descriptionLabel.text = unit.issueDescription;
     
     //time

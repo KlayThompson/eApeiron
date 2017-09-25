@@ -12,6 +12,7 @@
 #import "YYModel.h"
 #import "CheckIncidentModel.h"
 #import "MainTabBarViewController.h"
+#import "YYWebImage.h"
 
 @interface InputSerialNumberViewController ()
 
@@ -154,14 +155,7 @@
     
     self.productDetailLabel.text = model.authority.product_details;
     
-    __weak typeof (self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:model.authority.product_image]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            weakSelf.productImageView.image = [UIImage imageWithData:data];
-        });
-    });
-    
+    [self.productImageView yy_setImageWithURL:[NSURL URLWithString:model.authority.product_image] placeholder:[UIImage imageNamed:@"missing-thumbnail.jpg"]];
     //更改checkState状态
     if (self.checkState) {
         
