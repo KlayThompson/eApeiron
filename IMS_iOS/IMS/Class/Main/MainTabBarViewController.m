@@ -209,6 +209,7 @@
         }
     }
     [manager saveUserInfoToLocal];
+    [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
 }
 
 - (void)jumpToScan {

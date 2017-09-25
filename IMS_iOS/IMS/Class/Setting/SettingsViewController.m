@@ -130,6 +130,8 @@
         }
     }
     [manager saveUserInfoToLocal];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
 }
 
 - (IBAction)cancelButtonTap:(id)sender {

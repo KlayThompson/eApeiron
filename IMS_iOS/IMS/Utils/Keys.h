@@ -57,6 +57,8 @@
 
 #define IMS_ERROR_MESSAGE                                       @"Network error"
 
+#define IMS_DEFAULT_IMAGE                                       @"missing-thumbnail.jpg"
+
 //NSUserDefaults
 #define IMS_USERDEFAULTS_AUTHTOKEN                              @"ims_authToken"
 #define IMS_USERDEFAULTS_PROJECTNAME                            @"ims_projectname"
@@ -69,6 +71,7 @@
 //Notification
 #define IMS_NOTIFICATION_SCANQRCODESUCCESS                      @"ims_scanqrcodesuccess"
 #define IMS_NOTIFICATION_SCANQRCODECANCEL                       @"ims_scanqrcodecancel"
-#define IMS_NOTIFICATION_GETPROJECSSUCCESS                       @"ims_getprojectssuccess"
+#define IMS_NOTIFICATION_GETPROJECSSUCCESS                      @"ims_getprojectssuccess"
+#define IMS_NOTIFICATION_CHANGEPROJECT                          @"ims_changeproject"
 
 #endif

@@ -36,7 +36,7 @@
     self.longitudeLabel.text = unit.longitude;
     self.priceLabel.text = unit.price;
     //picture
-    [self.productImageView yy_setImageWithURL:[NSURL URLWithString:unit.full_product_image_path] placeholder:[UIImage imageNamed:@"missing-thumbnail.jpg"]];
+    [self.productImageView yy_setImageWithURL:[NSURL URLWithString:unit.full_product_image_path] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
     
     self.descriptionLabel.text = unit.issueDescription;
     

@@ -155,7 +155,7 @@
     
     self.productDetailLabel.text = model.authority.product_details;
     
-    [self.productImageView yy_setImageWithURL:[NSURL URLWithString:model.authority.product_image] placeholder:[UIImage imageNamed:@"missing-thumbnail.jpg"]];
+    [self.productImageView yy_setImageWithURL:[NSURL URLWithString:model.authority.product_image] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
     //更改checkState状态
     if (self.checkState) {
         

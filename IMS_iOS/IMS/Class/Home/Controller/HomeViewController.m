@@ -10,6 +10,8 @@
 #import "HistoryDetailViewController.h"
 #import "UserInfoManager.h"
 #import "IMSAPIManager.h"
+#import "YYWebImage.h"
+#import "ProjectModel.h"
 
 @interface HomeViewController ()
 {
@@ -185,6 +187,29 @@
     
     [self.view addSubview:self.historyButton];
     [self.view addSubview:self.topImageView];
+    [self updateTopImage];
+    //增加GetProject成功通知，主要用于更新图标
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateTopImage)
+                                                 name:IMS_NOTIFICATION_GETPROJECSSUCCESS
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateTopImage)
+                                                 name:IMS_NOTIFICATION_CHANGEPROJECT
+                                               object:nil];
+}
+
+- (void)updateTopImage {
+    
+//    BOOL ss = YYImageWebPAvailable();
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    //获取当前Project
+    for (ProjectModel *model in manager.projectAllInfoArray) {
+        if ([manager.currentProjectId isEqualToString:model.projectId]) {
+            [self.topImageView yy_setImageWithURL:[NSURL URLWithString:model.projectDetailModel.mobileLogo] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
+        }
+    }
 }
 
 - (UIButton *)historyButton {
@@ -209,7 +234,7 @@
 
     if (_topImageView == nil) {
         _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 90, 133, 100)];
-        _topImageView.image = [UIImage imageNamed:@"missing-thumbnail.jpg"];
+        _topImageView.image = [UIImage imageNamed:IMS_DEFAULT_IMAGE];
     }
     return _topImageView;
 }
@@ -225,6 +250,12 @@
 - (NSString *)title {
     UserInfoManager *manager = [UserInfoManager shareInstance];
     return manager.appName;
+}
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
 }
 
 /*
