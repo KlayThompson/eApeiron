@@ -101,12 +101,6 @@
                                                          if (error) {
                                                              block(nil, error);
                                                          } else {
-                                                             if (!DICT_IS_NIL(data)) {
-                                                                 UserInfoManager *manager = UserInfoManager.shareInstance;
-
-                                                                 NSDictionary *messageDic = data[@"Message"];
-                                                                 manager.projectDic = messageDic;
-                                                             }
                                                              block(data, nil);
                                                          }
                                                      }];

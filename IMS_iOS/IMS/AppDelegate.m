@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "HomeViewController.h" 
 #import "MainTabBarViewController.h"
+#import "ProjectModel.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
@@ -152,6 +153,9 @@
         manager.userLogin = NO;
     } else {
         manager.userLogin = YES;
+        //需要解析一下保存在本地的Project信息
+        ProjectModel *model = [[ProjectModel alloc] init];
+        [model encodeDataWithJson:manager.projectResultJson];
     }
     
 }

@@ -37,18 +37,22 @@ static UserInfoManager *instance = nil;
     
     //AuthToken
     [[NSUserDefaults standardUserDefaults] setObject:self.authToken forKey:IMS_USERDEFAULTS_AUTHTOKEN];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 
     //ProjectName
     [[NSUserDefaults standardUserDefaults] setObject:self.currentProjectName forKey:IMS_USERDEFAULTS_PROJECTNAME];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     //ProjectID
     [[NSUserDefaults standardUserDefaults] setObject:self.currentProjectId forKey:IMS_USERDEFAULTS_PROJECTID];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 
     //UserName
     [[NSUserDefaults standardUserDefaults] setObject:self.currentUsername forKey:IMS_USERDEFAULTS_USERNAME];
+    
+    //projectJson
+    [[NSUserDefaults standardUserDefaults] setObject:self.projectResultJson forKey:IMS_USERDEFAULTS_PROJECTRESULTJSON];
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -58,25 +62,28 @@ static UserInfoManager *instance = nil;
     self.currentProjectName = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_PROJECTNAME];
     self.currentUsername = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_USERNAME];
     self.currentProjectId = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_PROJECTID];
+    self.projectResultJson = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_PROJECTRESULTJSON];
     DLog(@"");
 }
 
 //用户退出登录，清除用户信息
 - (void)clearUserInfo {
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:IMS_USERDEFAULTS_AUTHTOKEN];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:IMS_USERDEFAULTS_PROJECTNAME];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:IMS_USERDEFAULTS_PROJECTID];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:IMS_USERDEFAULTS_USERNAME];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:IMS_USERDEFAULTS_LOGINTIME];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:IMS_USERDEFAULTS_PROJECTRESULTJSON];
+    
     
     self.currentProjectName = nil;
     self.authToken = nil;
@@ -87,6 +94,8 @@ static UserInfoManager *instance = nil;
     self.currentUsername = nil;
     self.longitude = nil;
     self.latitude = nil;
+    self.projectResultJson = nil;
+    self.projectAllInfoArray = nil;
 }
 
 /**

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2AED1F1F78D517000505A2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED1E1F78D517000505A2 /* ProjectModel.m */; };
+		3B2AED201F78D517000505A2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED1E1F78D517000505A2 /* ProjectModel.m */; };
+		3B2AED211F78D517000505A2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED1E1F78D517000505A2 /* ProjectModel.m */; };
+		3B2AED241F78D8BA000505A2 /* ProjectDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED231F78D8BA000505A2 /* ProjectDetailModel.m */; };
+		3B2AED251F78D8BA000505A2 /* ProjectDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED231F78D8BA000505A2 /* ProjectDetailModel.m */; };
+		3B2AED261F78D8BA000505A2 /* ProjectDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED231F78D8BA000505A2 /* ProjectDetailModel.m */; };
 		3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
 		3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
 		3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
@@ -267,6 +273,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B2AED1D1F78D517000505A2 /* ProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectModel.h; sourceTree = "<group>"; };
+		3B2AED1E1F78D517000505A2 /* ProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectModel.m; sourceTree = "<group>"; };
+		3B2AED221F78D8BA000505A2 /* ProjectDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDetailModel.h; sourceTree = "<group>"; };
+		3B2AED231F78D8BA000505A2 /* ProjectDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectDetailModel.m; sourceTree = "<group>"; };
 		3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
@@ -417,6 +427,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B2AED181F78D4BA000505A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B2AED1D1F78D517000505A2 /* ProjectModel.h */,
+				3B2AED1E1F78D517000505A2 /* ProjectModel.m */,
+				3B2AED221F78D8BA000505A2 /* ProjectDetailModel.h */,
+				3B2AED231F78D8BA000505A2 /* ProjectDetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3B6658B71F6A192A006A2A09 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +574,7 @@
 		3BD062DC1F66211D00C1722A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				3B2AED181F78D4BA000505A2 /* Model */,
 				3BD063151F66253200C1722A /* IMSAPIManager.h */,
 				3BD063161F66253200C1722A /* IMSAPIManager.m */,
 				3BD063101F66248800C1722A /* NetworkAPIManager.h */,
@@ -1016,6 +1038,7 @@
 				3B73E1F01F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063011F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E31F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B2AED241F78D8BA000505A2 /* ProjectDetailModel.m in Sources */,
 				3B73E1F61F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3B73E1F31F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */,
@@ -1026,6 +1049,7 @@
 				3B6658E01F6A192A006A2A09 /* HistoryModel.m in Sources */,
 				3B73E1F91F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
+				3B2AED1F1F78D517000505A2 /* ProjectModel.m in Sources */,
 				3B73E1E41F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DD1F6A192A006A2A09 /* HomeViewController.m in Sources */,
 				3B6658EF1F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
@@ -1060,6 +1084,7 @@
 				3B73E1F11F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063021F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E41F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B2AED251F78D8BA000505A2 /* ProjectDetailModel.m in Sources */,
 				3B73E1F71F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3B73E1F41F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630B1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
@@ -1070,6 +1095,7 @@
 				3B6658E11F6A192A006A2A09 /* HistoryModel.m in Sources */,
 				3B73E1FA1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */,
+				3B2AED201F78D517000505A2 /* ProjectModel.m in Sources */,
 				3B73E1E51F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DE1F6A192A006A2A09 /* HomeViewController.m in Sources */,
 				3B6658F01F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
@@ -1104,6 +1130,7 @@
 				3B73E1F21F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063031F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E51F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B2AED261F78D8BA000505A2 /* ProjectDetailModel.m in Sources */,
 				3B73E1F81F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3B73E1F51F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630C1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
@@ -1114,6 +1141,7 @@
 				3B6658E21F6A192A006A2A09 /* HistoryModel.m in Sources */,
 				3B73E1FB1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */,
+				3B2AED211F78D517000505A2 /* ProjectModel.m in Sources */,
 				3B73E1E61F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DF1F6A192A006A2A09 /* HomeViewController.m in Sources */,
 				3B6658F11F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,

@@ -63,6 +63,16 @@
 @property (nonatomic, copy) NSString *latitude;
 
 /**
+ getProject返回的Json
+ */
+@property (nonatomic, strong) NSDictionary *projectResultJson;
+
+/**
+ Project全部信息对象数组
+ */
+@property (nonatomic, strong) NSMutableArray *projectAllInfoArray;
+
+/**
  保存用户信息到本地
  */
 - (void)saveUserInfoToLocal;

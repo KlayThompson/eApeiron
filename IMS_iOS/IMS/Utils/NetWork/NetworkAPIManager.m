@@ -15,7 +15,7 @@
     static NetworkAPIManager *shareManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareManager = [[NetworkAPIManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://www.apeironcloud.com/IMS/service/"]];
+        shareManager = [[NetworkAPIManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.0.26/IMS/service/"]];
     });
     
     return shareManager;

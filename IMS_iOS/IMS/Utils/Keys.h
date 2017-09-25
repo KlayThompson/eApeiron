@@ -63,6 +63,7 @@
 #define IMS_USERDEFAULTS_PROJECTID                              @"ims_projectid"
 #define IMS_USERDEFAULTS_USERNAME                               @"ims_username"
 #define IMS_USERDEFAULTS_LOGINTIME                              @"ims_logintime"
+#define IMS_USERDEFAULTS_PROJECTRESULTJSON                      @"ims_projectresultjson"
 
 
 //Notification
