@@ -12,6 +12,7 @@
 #import "IMSAPIManager.h"
 #import "YYWebImage.h"
 #import "ProjectModel.h"
+#import "UIColor+Addtions.h"
 
 @interface HomeViewController ()
 {

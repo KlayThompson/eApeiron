@@ -49,6 +49,9 @@
 		3B2AEDAF1F78FDD2000505A2 /* YYImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED881F78F9D1000505A2 /* YYImageCache.m */; };
 		3B2AEDB01F78FDD2000505A2 /* YYWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED8B1F78F9D1000505A2 /* YYWebImageManager.m */; };
 		3B2AEDB11F78FDD2000505A2 /* YYWebImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED8D1F78F9D1000505A2 /* YYWebImageOperation.m */; };
+		3B2AEDB51F79F0A0000505A2 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */; };
+		3B2AEDB61F79F0A0000505A2 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */; };
+		3B2AEDB71F79F0A0000505A2 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */; };
 		3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
 		3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
 		3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
@@ -359,6 +362,8 @@
 		3B2AED8B1F78F9D1000505A2 /* YYWebImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYWebImageManager.m; sourceTree = "<group>"; };
 		3B2AED8C1F78F9D1000505A2 /* YYWebImageOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYWebImageOperation.h; sourceTree = "<group>"; };
 		3B2AED8D1F78F9D1000505A2 /* YYWebImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYWebImageOperation.m; sourceTree = "<group>"; };
+		3B2AEDB31F79F0A0000505A2 /* UIColor+Addtions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addtions.h"; sourceTree = "<group>"; };
+		3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addtions.m"; sourceTree = "<group>"; };
 		3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
@@ -604,6 +609,15 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		3B2AEDB21F79EF83000505A2 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3B2AEDB31F79F0A0000505A2 /* UIColor+Addtions.h */,
+				3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		3B6658B71F6A192A006A2A09 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +816,7 @@
 				3B9868CB1EB073E600A2CB4D /* HostURL.m */,
 				3BD0635C1F665EE100C1722A /* UserInfoManager.h */,
 				3BD0635D1F665EE100C1722A /* UserInfoManager.m */,
+				3B2AEDB21F79EF83000505A2 /* Category */,
 				3BD062DC1F66211D00C1722A /* NetWork */,
 			);
 			path = Utils;
@@ -1232,6 +1247,7 @@
 				3B2AED1F1F78D517000505A2 /* ProjectModel.m in Sources */,
 				3B73E1E41F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DD1F6A192A006A2A09 /* HomeViewController.m in Sources */,
+				3B2AEDB51F79F0A0000505A2 /* UIColor+Addtions.m in Sources */,
 				3B6658EF1F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F21F6A192B006A2A09 /* AVMetadataController.m in Sources */,
 				3B6658E61F6A192A006A2A09 /* LoginViewController.m in Sources */,
@@ -1290,6 +1306,7 @@
 				3B2AED201F78D517000505A2 /* ProjectModel.m in Sources */,
 				3B73E1E51F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DE1F6A192A006A2A09 /* HomeViewController.m in Sources */,
+				3B2AEDB61F79F0A0000505A2 /* UIColor+Addtions.m in Sources */,
 				3B6658F01F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F31F6A192B006A2A09 /* AVMetadataController.m in Sources */,
 				3B6658E71F6A192A006A2A09 /* LoginViewController.m in Sources */,
@@ -1348,6 +1365,7 @@
 				3B2AED211F78D517000505A2 /* ProjectModel.m in Sources */,
 				3B73E1E61F70EB0300AD5153 /* CheckIncidentAuthority.m in Sources */,
 				3B6658DF1F6A192A006A2A09 /* HomeViewController.m in Sources */,
+				3B2AEDB71F79F0A0000505A2 /* UIColor+Addtions.m in Sources */,
 				3B6658F11F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F41F6A192B006A2A09 /* AVMetadataController.m in Sources */,
 				3B6658E81F6A192A006A2A09 /* LoginViewController.m in Sources */,
