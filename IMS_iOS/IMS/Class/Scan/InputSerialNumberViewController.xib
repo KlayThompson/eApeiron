@@ -29,7 +29,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SgX-Bx-z5L" customClass="TPKeyboardAvoidingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="g5V-Fi-fjT">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="g5V-Fi-fjT">
                             <rect key="frame" x="24" y="26" width="118" height="89"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="118" id="7vU-pg-Y76"/>
@@ -64,7 +64,7 @@
                                 <action selector="creatRecordButtonTap:" destination="-1" eventType="touchUpInside" id="pvE-Lk-kju"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2m6-pR-KDu">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="missing-thumbnail.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2m6-pR-KDu">
                             <rect key="frame" x="24" y="285" width="118" height="89"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="118" id="4OH-hR-gXJ"/>

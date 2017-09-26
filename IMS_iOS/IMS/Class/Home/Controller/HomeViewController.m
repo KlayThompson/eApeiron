@@ -235,6 +235,7 @@
     if (_topImageView == nil) {
         _topImageView = [[UIImageView alloc] initWithFrame:CGRectMake(15, 90, 133, 100)];
         _topImageView.image = [UIImage imageNamed:IMS_DEFAULT_IMAGE];
+        _topImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _topImageView;
 }

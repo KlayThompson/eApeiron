@@ -13,6 +13,7 @@
 #import "CheckIncidentModel.h"
 #import "MainTabBarViewController.h"
 #import "YYWebImage.h"
+#import "ProjectModel.h"
 
 @interface InputSerialNumberViewController ()
 
@@ -41,7 +42,7 @@
     //remove notification
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_SCANQRCODESUCCESS object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_SCANQRCODECANCEL object:nil];
-
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
 }
 
 - (void)viewDidLoad {
@@ -189,7 +190,22 @@
     self.mapButton.layer.masksToBounds = true;
     self.mapButton.layer.borderWidth = 1;
     self.mapButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    [self setupTopImage];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupTopImage) name:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
 }
 
+- (void)setupTopImage {
+    
+    //    BOOL ss = YYImageWebPAvailable();
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    //获取当前Project
+    for (ProjectModel *model in manager.projectAllInfoArray) {
+        if ([manager.currentProjectId isEqualToString:model.projectId]) {
+            [self.topImageView yy_setImageWithURL:[NSURL URLWithString:model.projectDetailModel.mobileLogo] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
+        }
+    }
+}
 
 @end
