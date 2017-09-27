@@ -15,8 +15,12 @@
 #import "IMSAPIManager.h"
 #import "AppDelegate.h"
 #import "InputSerialNumberViewController.h"
+#import "ProjectSelectView.h"
+#import "ProjectModel.h"
 
-@interface MainTabBarViewController ()<AVMetadataDelegate,UITabBarDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UITabBarControllerDelegate>
+@interface MainTabBarViewController ()<AVMetadataDelegate,UITabBarDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UITabBarControllerDelegate> {
+    ProjectSelectView *detail;
+}
 
 @property (nonatomic, strong) UIPickerView *projectPicker;
 @property (nonatomic, strong) UIButton *cancelButton;
@@ -106,6 +110,8 @@
             return;
         } else {
             [self jumpToScan];
+            //重新获取位置信息
+            [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_UPDATELOCATION object:nil];
         }
     }
 }
@@ -118,15 +124,18 @@
             //先判断是否已经选择Project，未选择弹出提示框选择
             UserInfoManager *manager = [UserInfoManager shareInstance];
             if (STR_IS_NIL(manager.currentProjectName)) {//为空要选择
-                [self.dataArray removeAllObjects];
-                for (NSString *value in manager.projectDic.allValues) {
-                    [self.dataArray addObject:value];
-                }
-                [self.projectPicker reloadAllComponents];
-                self.cancelButton.hidden = NO;
-                self.doneButton.hidden = NO;
-                self.titleLabel.hidden = NO;
-                [self showPicker];
+                
+                //                [self.dataArray removeAllObjects];
+                //                for (NSString *value in manager.projectDic.allValues) {
+                //                    [self.dataArray addObject:value];
+                //                }
+                //                [self.projectPicker reloadAllComponents];
+                //                self.cancelButton.hidden = NO;
+                //                self.doneButton.hidden = NO;
+                //                self.titleLabel.hidden = NO;
+                //                [self showPicker];
+                //改为自定义。上面为原生picker
+                [self showSelectProjectView];
                 return NO;
             }
         }
@@ -183,7 +192,7 @@
     
 }
 
-- (void)doneButtonTap {
+- (void)doneButtonTap:(UIButton *)button {
     
     NSInteger index = [self.projectPicker selectedRowInComponent:0];
     
@@ -216,6 +225,41 @@
     AVMetadataController *scan = [[AVMetadataController alloc] init];
     [scan setDelegate:self];
     [self presentViewController:scan animated:NO completion:nil];
+}
+
+- (void)showSelectProjectView {
+    
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"ProjectSelectView" owner:self options:nil];
+    id uv = [nib objectAtIndex:0];
+    detail = uv;
+    detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    [detail.doneButton addTarget:self action:@selector(doneButtonTap) forControlEvents:UIControlEventTouchUpInside];
+    //添加到window上面
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [app.window addSubview:detail];
+}
+
+- (void)doneButtonTap {
+    
+    [detail removeFromSuperview];
+    detail = nil;
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    for (ProjectModel *model in manager.projectAllInfoArray) {
+        if (model.didSelected) {//说明选择了她
+            
+            self.selectedIndex = 1;
+            [self jumpToScan];
+            
+            manager.currentProjectName = model.projectName;
+            manager.currentProjectId = model.projectId;
+            
+            [manager saveUserInfoToLocal];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
+        }
+    }
 }
 
 #pragma mark - 初始化
@@ -254,7 +298,7 @@
         [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
         [_doneButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         _doneButton.frame = CGRectMake(ScreenWidth - 10 - 70, ScreenHeight, 70, 35);
-        [_doneButton addTarget:self action:@selector(doneButtonTap) forControlEvents:UIControlEventTouchUpInside];
+        [_doneButton addTarget:self action:@selector(doneButtonTap:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_doneButton];
     }
     return _doneButton;

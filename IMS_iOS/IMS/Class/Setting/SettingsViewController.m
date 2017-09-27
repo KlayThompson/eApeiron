@@ -11,8 +11,14 @@
 #import "UserInfoManager.h"
 #import "LoginViewController.h"
 #import "MainNavigationController.h"
+#import "ProjectSelectView.h"
+#import "AppDelegate.h"
+#import "ProjectModel.h"
 
-@interface SettingsViewController ()<UIPickerViewDelegate,UIPickerViewDataSource>
+@interface SettingsViewController ()<UIPickerViewDelegate,UIPickerViewDataSource> {
+    
+    ProjectSelectView *detail;
+}
 
 /**
  选择项目按钮
@@ -79,7 +85,17 @@
  选择项目
  */
 - (IBAction)chooseProjectButtonTap:(id)sender {
-    [self showPicker];
+//    [self showPicker];
+    
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"ProjectSelectView" owner:self options:nil];
+    id uv = [nib objectAtIndex:0];
+    detail = uv;
+    detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    [detail.doneButton addTarget:self action:@selector(doneButtonTap) forControlEvents:UIControlEventTouchUpInside];
+    //添加到window上面
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [app.window addSubview:detail];
+    
 }
 
 /**
@@ -100,6 +116,27 @@
         MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
         [[UIApplication sharedApplication].keyWindow setRootViewController:navi];
     });
+}
+
+- (void)doneButtonTap {
+    
+    [detail removeFromSuperview];
+    detail = nil;
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    for (ProjectModel *model in manager.projectAllInfoArray) {
+        if (model.didSelected) {//说明选择了她
+            //改变按钮文字
+            [self.chooseProjectButton setTitle:model.projectName forState:UIControlStateNormal];
+            manager.currentProjectName = model.projectName;
+            manager.currentProjectId = model.projectId;
+            
+            [manager saveUserInfoToLocal];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
+        }
+    }
 }
 
 - (IBAction)doneButtonTap:(id)sender {

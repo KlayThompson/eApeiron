@@ -52,6 +52,18 @@
 		3B2AEDB51F79F0A0000505A2 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */; };
 		3B2AEDB61F79F0A0000505A2 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */; };
 		3B2AEDB71F79F0A0000505A2 /* UIColor+Addtions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */; };
+		3B2AEDBB1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDBA1F7B3FD9000505A2 /* ProjectSelectView.m */; };
+		3B2AEDBC1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDBA1F7B3FD9000505A2 /* ProjectSelectView.m */; };
+		3B2AEDBD1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDBA1F7B3FD9000505A2 /* ProjectSelectView.m */; };
+		3B2AEDC31F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC21F7B3FE6000505A2 /* ProjectSelectView.xib */; };
+		3B2AEDC41F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC21F7B3FE6000505A2 /* ProjectSelectView.xib */; };
+		3B2AEDC51F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC21F7B3FE6000505A2 /* ProjectSelectView.xib */; };
+		3B2AEDC91F7B47C2000505A2 /* ProjectSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */; };
+		3B2AEDCA1F7B47C2000505A2 /* ProjectSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */; };
+		3B2AEDCB1F7B47C2000505A2 /* ProjectSelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */; };
+		3B2AEDCC1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */; };
+		3B2AEDCD1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */; };
+		3B2AEDCE1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */; };
 		3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
 		3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
 		3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
@@ -364,6 +376,14 @@
 		3B2AED8D1F78F9D1000505A2 /* YYWebImageOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYWebImageOperation.m; sourceTree = "<group>"; };
 		3B2AEDB31F79F0A0000505A2 /* UIColor+Addtions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addtions.h"; sourceTree = "<group>"; };
 		3B2AEDB41F79F0A0000505A2 /* UIColor+Addtions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addtions.m"; sourceTree = "<group>"; };
+		3B2AEDB91F7B3FD9000505A2 /* ProjectSelectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectView.h; sourceTree = "<group>"; };
+		3B2AEDBA1F7B3FD9000505A2 /* ProjectSelectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectView.m; sourceTree = "<group>"; };
+		3B2AEDC21F7B3FE6000505A2 /* ProjectSelectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectSelectView.xib; sourceTree = "<group>"; };
+		3B2AEDC61F7B47C2000505A2 /* ProjectSelectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectCell.h; sourceTree = "<group>"; };
+		3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectCell.m; sourceTree = "<group>"; };
+		3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectSelectCell.xib; sourceTree = "<group>"; };
+		3B2AEDD01F7B6D6C000505A2 /* CheckBoxCotrol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBoxCotrol.m; sourceTree = "<group>"; };
+		3B2AEDD11F7B6D6C000505A2 /* CheckBoxCotrol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBoxCotrol.h; sourceTree = "<group>"; };
 		3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
@@ -618,6 +638,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		3B2AEDCF1F7B4B8A000505A2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3B2AEDD11F7B6D6C000505A2 /* CheckBoxCotrol.h */,
+				3B2AEDD01F7B6D6C000505A2 /* CheckBoxCotrol.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		3B6658B71F6A192A006A2A09 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,6 +750,12 @@
 				3B6658D41F6A192A006A2A09 /* SettingsViewController.h */,
 				3B6658D51F6A192A006A2A09 /* SettingsViewController.m */,
 				3B6658D61F6A192A006A2A09 /* SettingsViewController.xib */,
+				3B2AEDB91F7B3FD9000505A2 /* ProjectSelectView.h */,
+				3B2AEDBA1F7B3FD9000505A2 /* ProjectSelectView.m */,
+				3B2AEDC21F7B3FE6000505A2 /* ProjectSelectView.xib */,
+				3B2AEDC61F7B47C2000505A2 /* ProjectSelectCell.h */,
+				3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */,
+				3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -816,6 +851,7 @@
 				3B9868CB1EB073E600A2CB4D /* HostURL.m */,
 				3BD0635C1F665EE100C1722A /* UserInfoManager.h */,
 				3BD0635D1F665EE100C1722A /* UserInfoManager.m */,
+				3B2AEDCF1F7B4B8A000505A2 /* Tools */,
 				3B2AEDB21F79EF83000505A2 /* Category */,
 				3BD062DC1F66211D00C1722A /* NetWork */,
 			);
@@ -1088,10 +1124,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2AEDC31F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
 				3B6658E91F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				988DB1B21A43EA0600C243F9 /* Main.storyboard in Resources */,
 				9879D3BF1A48FDCF00BF53EF /* Icon@2x.png in Resources */,
 				98ED33BF1AE4DDD800E66D44 /* Default-736h@3x.png in Resources */,
+				3B2AEDCC1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
 				98ED33C21AE4DDD800E66D44 /* Default.png in Resources */,
 				3B73E1D11F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */,
 				98764D9A1A47ED24007ED35F /* ic_menu_home_selected@2x.png in Resources */,
@@ -1152,7 +1190,9 @@
 				98B6FA321AE493D400B2497E /* Images.xcassets in Resources */,
 				3B6659981F6F6567006A2A09 /* issues_on@2x.png in Resources */,
 				98B6FA331AE493D400B2497E /* ic_menu_home@2x.png in Resources */,
+				3B2AEDCD1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
 				3B6659131F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
+				3B2AEDC41F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1189,7 +1229,9 @@
 				98B6FA601AE493DB00B2497E /* Images.xcassets in Resources */,
 				3B6659991F6F6567006A2A09 /* issues_on@2x.png in Resources */,
 				98B6FA611AE493DB00B2497E /* ic_menu_home@2x.png in Resources */,
+				3B2AEDCE1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
 				3B6659141F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
+				3B2AEDC51F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1214,6 +1256,7 @@
 				3B2AED8E1F78FA2F000505A2 /* UIImageView+YYWebImage.m in Sources */,
 				3BD063171F66253200C1722A /* IMSAPIManager.m in Sources */,
 				3BD0635E1F665EE100C1722A /* UserInfoManager.m in Sources */,
+				3B2AEDBB1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */,
 				3B6659021F6A19B3006A2A09 /* RecentIssueCell.m in Sources */,
 				3BD063981F691FA900C1722A /* NSObject+YYModel.m in Sources */,
 				3B66590F1F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
@@ -1252,6 +1295,7 @@
 				3B6658F21F6A192B006A2A09 /* AVMetadataController.m in Sources */,
 				3B6658E61F6A192A006A2A09 /* LoginViewController.m in Sources */,
 				3BD0630A1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
+				3B2AEDC91F7B47C2000505A2 /* ProjectSelectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1273,6 +1317,7 @@
 				3B2AED9A1F78FCEB000505A2 /* UIImageView+YYWebImage.m in Sources */,
 				98B6FA141AE493D400B2497E /* Hud.m in Sources */,
 				3BD0630E1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
+				3B2AEDBC1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */,
 				3B6659031F6A19B3006A2A09 /* RecentIssueCell.m in Sources */,
 				3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B6659101F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
@@ -1311,6 +1356,7 @@
 				3B6658F31F6A192B006A2A09 /* AVMetadataController.m in Sources */,
 				3B6658E71F6A192A006A2A09 /* LoginViewController.m in Sources */,
 				3BD063181F66253200C1722A /* IMSAPIManager.m in Sources */,
+				3B2AEDCA1F7B47C2000505A2 /* ProjectSelectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1332,6 +1378,7 @@
 				3B2AEDB11F78FDD2000505A2 /* YYWebImageOperation.m in Sources */,
 				98B6FA421AE493DB00B2497E /* Hud.m in Sources */,
 				3BD0630F1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
+				3B2AEDBD1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */,
 				3B6659041F6A19B3006A2A09 /* RecentIssueCell.m in Sources */,
 				3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B6659111F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
@@ -1370,6 +1417,7 @@
 				3B6658F41F6A192B006A2A09 /* AVMetadataController.m in Sources */,
 				3B6658E81F6A192A006A2A09 /* LoginViewController.m in Sources */,
 				3BD063191F66253200C1722A /* IMSAPIManager.m in Sources */,
+				3B2AEDCB1F7B47C2000505A2 /* ProjectSelectCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

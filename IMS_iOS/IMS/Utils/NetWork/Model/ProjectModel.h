@@ -17,5 +17,7 @@
 
 @property (nonatomic, strong) ProjectDetailModel *projectDetailModel;
 
+@property (nonatomic, assign) BOOL didSelected;
+
 - (void)encodeDataWithJson:(id)json;
 @end

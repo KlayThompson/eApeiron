@@ -80,6 +80,14 @@
     //
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //每次在Home界面出现时候更新位置
+    [_locationManager startUpdatingLocation];
+}
+
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -156,11 +164,11 @@
 - (void)locationManager:(CLLocationManager *)manager
      didUpdateLocations:(NSArray *)locations
 {
+    
     //locations数组里边存放的是CLLocation对象，一个CLLocation对象就代表着一个位置
     _loc = [locations firstObject];
     DLog(@"纬度=%f，经度=%f",_loc.coordinate.latitude,_loc.coordinate.longitude);
-    
-    //记录经纬度
+   
     UserInfoManager *userInfo = [UserInfoManager shareInstance];
     userInfo.longitude = [NSString stringWithFormat:@"%f",_loc.coordinate.longitude];
     userInfo.latitude = [NSString stringWithFormat:@"%f",_loc.coordinate.latitude];
@@ -199,6 +207,11 @@
                                              selector:@selector(updateTopImage)
                                                  name:IMS_NOTIFICATION_CHANGEPROJECT
                                                object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateLocation)
+                                                 name:IMS_NOTIFICATION_UPDATELOCATION
+                                               object:nil];
 }
 
 - (void)updateTopImage {
@@ -211,6 +224,11 @@
             [self.topImageView yy_setImageWithURL:[NSURL URLWithString:model.projectDetailModel.mobileLogo] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
         }
     }
+}
+
+- (void)updateLocation {
+    
+    [_locationManager startUpdatingLocation];
 }
 
 - (UIButton *)historyButton {
@@ -258,6 +276,7 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:IMS_NOTIFICATION_UPDATELOCATION object:nil];
 }
 
 /*

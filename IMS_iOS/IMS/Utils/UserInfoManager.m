@@ -137,7 +137,7 @@ static UserInfoManager *instance = nil;
     // 4.利用日历对象比较两个时间的差值
     NSDateComponents *cmps = [calendar components:type fromDate:date1 toDate:date2 options:0];
     // 5.输出结果
-    if (cmps.minute < 30) {
+    if (cmps.minute < 300) {
         return NO;
     }
     //清除用户信息

@@ -38,6 +38,7 @@
     
 }
 
+//feet单位
 -(double)distanceBetweenOrderByLat1:(double)lat1 lat2:(double)lat2 lng1:(double)lng1 lng2:(double)lng2 {
     
     CLLocation *curLocation = [[CLLocation alloc] initWithLatitude:lat1 longitude:lng1];

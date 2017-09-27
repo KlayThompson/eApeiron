@@ -14,8 +14,9 @@
 #import "MainTabBarViewController.h"
 #import "YYWebImage.h"
 #import "ProjectModel.h"
+#import "UIColor+Addtions.h"
 
-@interface InputSerialNumberViewController ()
+@interface InputSerialNumberViewController ()<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 
@@ -56,7 +57,8 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+    self.creatRecordButton.enabled = YES;
+    self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
@@ -75,9 +77,12 @@
                                         longitude:manager.longitude
                                             check:check Block:^(id JSON, NSError *error) {
                                                 [Hud stop];
-                                                CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
-                                                
-                                                [weakSelf redrawUIWhenNetworkFinishWith:model];
+                                                if (error) {
+                                                    
+                                                } else {
+                                                    CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
+                                                    [weakSelf redrawUIWhenNetworkFinishWith:model];
+                                                }
                                             }];
     
 }
@@ -167,14 +172,26 @@
         
         if (model.incident_type.integerValue != 0) {
             self.creatRecordButton.enabled = YES;
+            self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
         } else {
-            self.creatRecordButton.enabled = NO;
+            self.creatRecordButton.enabled = NO;//这里禁用了，哪里可以启用？1.每次界面显示的时候 2.输入框重新编辑的时候
+            self.creatRecordButton.backgroundColor = [UIColor lightGrayColor];
         }
     } else {
         
     }
 }
 
+#pragma mark -
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    //开始编辑，按钮可以点击
+    self.creatRecordButton.enabled = YES;
+    self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
+    //更改的话就是自己手动输入，按钮标题需要更改为submit
+    [self.creatRecordButton setTitle:@"Submit" forState:UIControlStateNormal];
+    return YES;
+}
 #pragma mark - UI
 - (void)setupUI {
     

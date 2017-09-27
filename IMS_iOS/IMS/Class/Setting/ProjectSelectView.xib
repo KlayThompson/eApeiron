@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProjectSelectView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BFK-cT-rWR">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2V-dR-uBX">
+                    <rect key="frame" x="42" y="183" width="290" height="300"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XAZ-XO-HNX">
+                            <rect key="frame" x="0.0" y="30" width="290" height="270"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="XtL-Ha-X5g"/>
+                                <outlet property="delegate" destination="-1" id="Owp-Ki-Vwm"/>
+                            </connections>
+                        </tableView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJv-uy-L36">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYi-a9-I25">
+                                    <rect key="frame" x="8" y="0.0" width="48" height="30"/>
+                                    <state key="normal" title="Cancel"/>
+                                    <connections>
+                                        <action selector="cancelButtonTap:" destination="iN0-l3-epB" eventType="touchUpInside" id="6MG-7z-uat"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWb-zT-tVJ">
+                                    <rect key="frame" x="245" y="0.0" width="37" height="30"/>
+                                    <state key="normal" title="Done"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="xYi-a9-I25" firstAttribute="leading" secondItem="nJv-uy-L36" secondAttribute="leading" constant="8" id="5TN-oM-pTF"/>
+                                <constraint firstItem="MWb-zT-tVJ" firstAttribute="top" secondItem="nJv-uy-L36" secondAttribute="top" id="9TV-H0-1De"/>
+                                <constraint firstAttribute="height" constant="30" id="X6u-le-Okv"/>
+                                <constraint firstAttribute="trailing" secondItem="MWb-zT-tVJ" secondAttribute="trailing" constant="8" id="bJ9-ws-6av"/>
+                                <constraint firstItem="xYi-a9-I25" firstAttribute="top" secondItem="nJv-uy-L36" secondAttribute="top" id="lE9-QU-SQA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="XAZ-XO-HNX" firstAttribute="leading" secondItem="J2V-dR-uBX" secondAttribute="leading" id="5pO-7x-S7d"/>
+                        <constraint firstItem="nJv-uy-L36" firstAttribute="leading" secondItem="J2V-dR-uBX" secondAttribute="leading" id="9mb-cT-Tve"/>
+                        <constraint firstAttribute="width" constant="290" id="Day-Ez-2x3"/>
+                        <constraint firstAttribute="trailing" secondItem="XAZ-XO-HNX" secondAttribute="trailing" id="GN7-z5-aht"/>
+                        <constraint firstAttribute="height" constant="300" id="WGw-e7-Clk"/>
+                        <constraint firstAttribute="trailing" secondItem="nJv-uy-L36" secondAttribute="trailing" id="Ya2-Dx-WU0"/>
+                        <constraint firstItem="nJv-uy-L36" firstAttribute="top" secondItem="J2V-dR-uBX" secondAttribute="top" id="cVg-Jj-qHU"/>
+                        <constraint firstItem="XAZ-XO-HNX" firstAttribute="top" secondItem="nJv-uy-L36" secondAttribute="bottom" id="eZv-VP-r1G"/>
+                        <constraint firstAttribute="bottom" secondItem="XAZ-XO-HNX" secondAttribute="bottom" id="kF9-QT-pZN"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="BFK-cT-rWR" secondAttribute="bottom" id="1KL-84-hWG"/>
+                <constraint firstItem="J2V-dR-uBX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E9Z-hh-clE"/>
+                <constraint firstItem="BFK-cT-rWR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZFz-Bn-xR3"/>
+                <constraint firstAttribute="trailing" secondItem="BFK-cT-rWR" secondAttribute="trailing" id="Zol-Y5-8If"/>
+                <constraint firstItem="J2V-dR-uBX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="h8f-Np-Dsw"/>
+                <constraint firstItem="BFK-cT-rWR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yVs-4T-IJm"/>
+            </constraints>
+            <connections>
+                <outlet property="bgView" destination="J2V-dR-uBX" id="CuX-iv-2ie"/>
+                <outlet property="cancelButton" destination="xYi-a9-I25" id="lIG-cM-xpI"/>
+                <outlet property="doneButton" destination="MWb-zT-tVJ" id="Sf9-zI-eXI"/>
+                <outlet property="uTableView" destination="XAZ-XO-HNX" id="eFN-AH-r13"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

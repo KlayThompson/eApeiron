@@ -73,5 +73,6 @@
 #define IMS_NOTIFICATION_SCANQRCODECANCEL                       @"ims_scanqrcodecancel"
 #define IMS_NOTIFICATION_GETPROJECSSUCCESS                      @"ims_getprojectssuccess"
 #define IMS_NOTIFICATION_CHANGEPROJECT                          @"ims_changeproject"
+#define IMS_NOTIFICATION_UPDATELOCATION                         @"ims_updatelocation"
 
 #endif
