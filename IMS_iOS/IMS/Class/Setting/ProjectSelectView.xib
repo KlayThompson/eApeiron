@@ -44,13 +44,21 @@
                                     <rect key="frame" x="245" y="0.0" width="37" height="30"/>
                                     <state key="normal" title="Done"/>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvV-Gv-mvd">
+                                    <rect key="frame" x="86.5" y="5" width="117.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="xYi-a9-I25" firstAttribute="leading" secondItem="nJv-uy-L36" secondAttribute="leading" constant="8" id="5TN-oM-pTF"/>
                                 <constraint firstItem="MWb-zT-tVJ" firstAttribute="top" secondItem="nJv-uy-L36" secondAttribute="top" id="9TV-H0-1De"/>
+                                <constraint firstItem="wvV-Gv-mvd" firstAttribute="centerY" secondItem="nJv-uy-L36" secondAttribute="centerY" id="FIv-xa-Wm9"/>
                                 <constraint firstAttribute="height" constant="30" id="X6u-le-Okv"/>
                                 <constraint firstAttribute="trailing" secondItem="MWb-zT-tVJ" secondAttribute="trailing" constant="8" id="bJ9-ws-6av"/>
+                                <constraint firstItem="wvV-Gv-mvd" firstAttribute="centerX" secondItem="nJv-uy-L36" secondAttribute="centerX" id="bkR-PU-TGj"/>
                                 <constraint firstItem="xYi-a9-I25" firstAttribute="top" secondItem="nJv-uy-L36" secondAttribute="top" id="lE9-QU-SQA"/>
                             </constraints>
                         </view>
