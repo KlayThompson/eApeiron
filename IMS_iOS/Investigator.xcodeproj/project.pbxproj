@@ -382,8 +382,6 @@
 		3B2AEDC61F7B47C2000505A2 /* ProjectSelectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSelectCell.h; sourceTree = "<group>"; };
 		3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectCell.m; sourceTree = "<group>"; };
 		3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectSelectCell.xib; sourceTree = "<group>"; };
-		3B2AEDD01F7B6D6C000505A2 /* CheckBoxCotrol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckBoxCotrol.m; sourceTree = "<group>"; };
-		3B2AEDD11F7B6D6C000505A2 /* CheckBoxCotrol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckBoxCotrol.h; sourceTree = "<group>"; };
 		3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
 		3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
 		3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
@@ -638,15 +636,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		3B2AEDCF1F7B4B8A000505A2 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				3B2AEDD11F7B6D6C000505A2 /* CheckBoxCotrol.h */,
-				3B2AEDD01F7B6D6C000505A2 /* CheckBoxCotrol.m */,
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
 		3B6658B71F6A192A006A2A09 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -851,7 +840,6 @@
 				3B9868CB1EB073E600A2CB4D /* HostURL.m */,
 				3BD0635C1F665EE100C1722A /* UserInfoManager.h */,
 				3BD0635D1F665EE100C1722A /* UserInfoManager.m */,
-				3B2AEDCF1F7B4B8A000505A2 /* Tools */,
 				3B2AEDB21F79EF83000505A2 /* Category */,
 				3BD062DC1F66211D00C1722A /* NetWork */,
 			);

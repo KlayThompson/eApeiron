@@ -26,12 +26,11 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29W-fp-YC0">
-                        <rect key="frame" x="15" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="15" y="0.0" width="290" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="3Mu-8h-XvE"/>
                             <constraint firstAttribute="height" constant="50" id="Oyj-AQ-CAP"/>
                         </constraints>
-                        <state key="normal" image="purchesUnSelectedBoxes"/>
+                        <state key="normal" title="                                                    " image="purchesUnSelectedBoxes"/>
                         <state key="selected" image="purchesBoxes"/>
                         <state key="highlighted" image="purchesBoxes"/>
                         <connections>
@@ -46,13 +45,14 @@
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="29W-fp-YC0" secondAttribute="trailing" constant="15" id="3u7-ci-wCu"/>
                     <constraint firstItem="YhV-hf-QeG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bgl-Z5-e0T"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZpX-Lh-ani" secondAttribute="trailing" constant="5" id="K9d-gf-99M"/>
                     <constraint firstItem="ZpX-Lh-ani" firstAttribute="leading" secondItem="YhV-hf-QeG" secondAttribute="trailing" constant="20" id="LFW-yK-9pM"/>
                     <constraint firstItem="29W-fp-YC0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kTe-Rz-rtn"/>
+                    <constraint firstItem="YhV-hf-QeG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="85" id="nKu-aR-kPi"/>
                     <constraint firstItem="29W-fp-YC0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="qPh-Gr-lLF"/>
                     <constraint firstItem="ZpX-Lh-ani" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rq5-3E-Qk1"/>
-                    <constraint firstItem="YhV-hf-QeG" firstAttribute="leading" secondItem="29W-fp-YC0" secondAttribute="trailing" constant="20" id="s6s-8Q-hjE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

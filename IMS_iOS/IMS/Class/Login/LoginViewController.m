@@ -63,9 +63,6 @@
                                               } else {
                                                   [Hud showMessage:@"Login Success"];
 
-
-                                                  
-                                                  
                                                   [weakSelf doSomeWorkWhenLoginSuccess];
                                               }
                                           }];

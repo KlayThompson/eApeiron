@@ -80,6 +80,7 @@
                                                              }];
         } else {
             [Hud showMessage:IMS_ERROR_MESSAGE];
+            block(nil,error);
         }
     }];
     
@@ -179,6 +180,7 @@
                                                              }];
         } else {
             [Hud showMessage:IMS_ERROR_MESSAGE];
+            block(nil,error);
         }
     }];
 }

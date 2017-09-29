@@ -77,8 +77,7 @@
                                         longitude:manager.longitude
                                             check:check Block:^(id JSON, NSError *error) {
                                                 [Hud stop];
-                                                if (error) {
-                                                    
+                                                if (error) {                                                    
                                                 } else {
                                                     CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
                                                     [weakSelf redrawUIWhenNetworkFinishWith:model];
@@ -184,7 +183,7 @@
 
 #pragma mark -
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
+    self.checkState = YES;
     //开始编辑，按钮可以点击
     self.creatRecordButton.enabled = YES;
     self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
