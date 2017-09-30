@@ -38,6 +38,7 @@
 
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setMinimumDismissTimeInterval:3];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
     
     [self showLaunchImage];
 

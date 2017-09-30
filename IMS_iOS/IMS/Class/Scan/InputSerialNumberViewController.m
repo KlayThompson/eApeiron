@@ -66,7 +66,7 @@
 #pragma mark - Network
 - (void)checkIncidentFromServer {
 
-    [SVProgressHUD show];
+    [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
     NSString *check = self.checkState ? @"1" : @"0";

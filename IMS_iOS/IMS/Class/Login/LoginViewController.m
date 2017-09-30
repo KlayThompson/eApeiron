@@ -53,7 +53,7 @@
         return;
     }
     
-    [SVProgressHUD show];
+    [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
     __weak typeof (self) weakSelf = self;
     [IMSAPIManager ims_getAuthTokenWithUsername:self.usernameTextField.text
                                        password:self.passwordTextField.text

@@ -56,6 +56,7 @@
 
 
 #define IMS_ERROR_MESSAGE                                       @"Network error"
+#define IMS_LOADING_MESSAGE                                     @"Loading..."
 
 #define IMS_DEFAULT_IMAGE                                       @"missing-thumbnail.jpg"
 

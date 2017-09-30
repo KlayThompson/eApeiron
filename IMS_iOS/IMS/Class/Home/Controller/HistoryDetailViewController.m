@@ -54,7 +54,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 #pragma mark - 网络
 - (void)loadHistoryFromServer {
-    [SVProgressHUD show];
+    [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
     __weak typeof(self) weakSelf = self;
     [IMSAPIManager ims_getHistoryWithLatitude:self.latitude
                                     longitude:self.longitude
