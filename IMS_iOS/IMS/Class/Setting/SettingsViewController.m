@@ -14,6 +14,7 @@
 #import "ProjectSelectView.h"
 #import "AppDelegate.h"
 #import "ProjectModel.h"
+#import "SVProgressHUD.h"
 
 @interface SettingsViewController ()<UIPickerViewDelegate,UIPickerViewDataSource> {
     
@@ -103,10 +104,10 @@
  */
 - (IBAction)logoutButtonTap:(id)sender {
     
-    [Hud start];
+    [SVProgressHUD show];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [Hud stop];
+        [SVProgressHUD dismiss];
         
         UserInfoManager *manager = [UserInfoManager shareInstance];
         [manager clearUserInfo];

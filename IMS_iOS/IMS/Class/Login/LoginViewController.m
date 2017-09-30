@@ -12,6 +12,7 @@
 #import "UserInfoManager.h"
 #import "ProjectModel.h"
 #import "YYModel.h"
+#import "SVProgressHUD.h"
 
 @interface LoginViewController ()
 
@@ -52,16 +53,16 @@
         return;
     }
     
-    [Hud start];
+    [SVProgressHUD show];
     __weak typeof (self) weakSelf = self;
     [IMSAPIManager ims_getAuthTokenWithUsername:self.usernameTextField.text
                                        password:self.passwordTextField.text
                                           Block:^(id JSON, NSError *error) {
-                                              [Hud stop];
+                                              [SVProgressHUD dismiss];
                                               if (error) {
-                                                  [Hud showMessage:IMS_ERROR_MESSAGE];
+                                                  [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                               } else {
-                                                  [Hud showMessage:@"Login Success"];
+                                                  [SVProgressHUD showSuccessWithStatus:@"Login Success"];
 
                                                   [weakSelf doSomeWorkWhenLoginSuccess];
                                               }

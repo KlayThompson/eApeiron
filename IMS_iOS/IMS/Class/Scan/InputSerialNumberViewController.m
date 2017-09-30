@@ -15,6 +15,7 @@
 #import "YYWebImage.h"
 #import "ProjectModel.h"
 #import "UIColor+Addtions.h"
+#import "SVProgressHUD.h"
 
 @interface InputSerialNumberViewController ()<UITextFieldDelegate>
 
@@ -65,7 +66,7 @@
 #pragma mark - Network
 - (void)checkIncidentFromServer {
 
-    [Hud start];
+    [SVProgressHUD show];
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
     NSString *check = self.checkState ? @"1" : @"0";
@@ -76,8 +77,9 @@
                                          latitude:manager.latitude
                                         longitude:manager.longitude
                                             check:check Block:^(id JSON, NSError *error) {
-                                                [Hud stop];
-                                                if (error) {                                                    
+                                                [SVProgressHUD dismiss];
+                                                if (error) {
+                                                    [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                                 } else {
                                                     CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
                                                     [weakSelf redrawUIWhenNetworkFinishWith:model];

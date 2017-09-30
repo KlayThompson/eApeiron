@@ -157,6 +157,16 @@
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
+		3BCB9C9E1F7F2EC200067BC6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */; };
+		3BCB9C9F1F7F2EDA00067BC6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */; };
+		3BCB9CA01F7F2EE200067BC6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */; };
+		3BCB9CA11F7F2EFF00067BC6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2AED551F78F507000505A2 /* QuartzCore.framework */; };
+		3BCB9CA21F7F2F0900067BC6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2AED551F78F507000505A2 /* QuartzCore.framework */; };
+		3BCB9CA31F7F2F1200067BC6 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2AED551F78F507000505A2 /* QuartzCore.framework */; };
+		3BCB9CA41F7F314700067BC6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB9C9B1F7F2E8B00067BC6 /* SVProgressHUD.m */; };
+		3BCB9CA51F7F317200067BC6 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB9C9D1F7F2E8B00067BC6 /* SVRadialGradientLayer.m */; };
+		3BCB9CA61F7F318400067BC6 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB9C971F7F2E8B00067BC6 /* SVProgressAnimatedView.m */; };
+		3BCB9CA81F7F31A900067BC6 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB9C951F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.m */; };
 		3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062F21F66234B00C1722A /* AFHTTPSessionManager.m */; };
 		3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062F21F66234B00C1722A /* AFHTTPSessionManager.m */; };
 		3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD062F21F66234B00C1722A /* AFHTTPSessionManager.m */; };
@@ -434,6 +444,16 @@
 		3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
+		3BCB9C941F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		3BCB9C951F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		3BCB9C961F7F2E8B00067BC6 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		3BCB9C971F7F2E8B00067BC6 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		3BCB9C981F7F2E8B00067BC6 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		3BCB9C9A1F7F2E8B00067BC6 /* SVProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		3BCB9C9B1F7F2E8B00067BC6 /* SVProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		3BCB9C9C1F7F2E8B00067BC6 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		3BCB9C9D1F7F2E8B00067BC6 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		3BD062F11F66234B00C1722A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		3BD062F21F66234B00C1722A /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		3BD062F31F66234B00C1722A /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -506,6 +526,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9CA11F7F2EFF00067BC6 /* QuartzCore.framework in Frameworks */,
 				98E6207A1AF211D200E926BB /* libZXingObjC-iOS.a in Frameworks */,
 				9885E5061AB0101E00BBD208 /* CoreLocation.framework in Frameworks */,
 			);
@@ -515,6 +536,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9CA21F7F2F0900067BC6 /* QuartzCore.framework in Frameworks */,
 				98B6FA251AE493D400B2497E /* CoreLocation.framework in Frameworks */,
 				98B6FA261AE493D400B2497E /* libZXingObjC-iOS.a in Frameworks */,
 			);
@@ -524,6 +546,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9CA31F7F2F1200067BC6 /* QuartzCore.framework in Frameworks */,
 				98B6FA531AE493DB00B2497E /* CoreLocation.framework in Frameworks */,
 				98B6FA541AE493DB00B2497E /* libZXingObjC-iOS.a in Frameworks */,
 			);
@@ -775,6 +798,23 @@
 			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
+		3BCB9C931F7F2E8B00067BC6 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB9C941F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.h */,
+				3BCB9C951F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.m */,
+				3BCB9C961F7F2E8B00067BC6 /* SVProgressAnimatedView.h */,
+				3BCB9C971F7F2E8B00067BC6 /* SVProgressAnimatedView.m */,
+				3BCB9C981F7F2E8B00067BC6 /* SVProgressHUD-Prefix.pch */,
+				3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */,
+				3BCB9C9A1F7F2E8B00067BC6 /* SVProgressHUD.h */,
+				3BCB9C9B1F7F2E8B00067BC6 /* SVProgressHUD.m */,
+				3BCB9C9C1F7F2E8B00067BC6 /* SVRadialGradientLayer.h */,
+				3BCB9C9D1F7F2E8B00067BC6 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		3BD062DC1F66211D00C1722A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
@@ -890,6 +930,7 @@
 		9879D3C11A49083400BF53EF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3BCB9C931F7F2E8B00067BC6 /* SVProgressHUD */,
 				3B2AED651F78F9D1000505A2 /* YYWebImage */,
 				3B73E1E71F710AB500AD5153 /* TPKeyboardAvoiding */,
 				3BD063921F691FA900C1722A /* YYModel */,
@@ -1112,6 +1153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9C9E1F7F2EC200067BC6 /* SVProgressHUD.bundle in Resources */,
 				3B2AEDC31F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
 				3B6658E91F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				988DB1B21A43EA0600C243F9 /* Main.storyboard in Resources */,
@@ -1149,6 +1191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9C9F1F7F2EDA00067BC6 /* SVProgressHUD.bundle in Resources */,
 				98B6FA281AE493D400B2497E /* Main.storyboard in Resources */,
 				98ED33C31AE4DDD800E66D44 /* Default.png in Resources */,
 				3B6658EA1F6A192A006A2A09 /* LoginViewController.xib in Resources */,
@@ -1188,6 +1231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9CA01F7F2EE200067BC6 /* SVProgressHUD.bundle in Resources */,
 				98B6FA561AE493DB00B2497E /* Main.storyboard in Resources */,
 				98ED33C41AE4DDD800E66D44 /* Default.png in Resources */,
 				3B6658EB1F6A192A006A2A09 /* LoginViewController.xib in Resources */,
@@ -1230,6 +1274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BCB9CA81F7F31A900067BC6 /* SVIndefiniteAnimatedView.m in Sources */,
+				3BCB9CA61F7F318400067BC6 /* SVProgressAnimatedView.m in Sources */,
+				3BCB9CA51F7F317200067BC6 /* SVRadialGradientLayer.m in Sources */,
+				3BCB9CA41F7F314700067BC6 /* SVProgressHUD.m in Sources */,
 				3B2AED991F78FAED000505A2 /* YYKVStorage.m in Sources */,
 				3B2AED981F78FADC000505A2 /* YYSpriteSheetImage.m in Sources */,
 				3B2AED931F78FABB000505A2 /* YYDiskCache.m in Sources */,

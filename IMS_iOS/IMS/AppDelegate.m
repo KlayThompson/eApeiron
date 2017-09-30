@@ -10,6 +10,7 @@
 #import "HomeViewController.h" 
 #import "MainTabBarViewController.h"
 #import "ProjectModel.h"
+#import "SVProgressHUD.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
@@ -35,6 +36,9 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setMinimumDismissTimeInterval:3];
+    
     [self showLaunchImage];
 
     return YES;

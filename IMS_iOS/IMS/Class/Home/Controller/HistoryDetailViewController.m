@@ -15,6 +15,7 @@
 #import "UserInfoManager.h"
 #import "IssueDetailView.h"
 #import "AppDelegate.h"
+#import "SVProgressHUD.h"
 
 static NSString *recentCellId = @"RecentIssueCell";
 static NSString *nearbyCellId = @"NearbyIssueCell";
@@ -53,16 +54,16 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 #pragma mark - 网络
 - (void)loadHistoryFromServer {
-    [Hud start];
+    [SVProgressHUD show];
     __weak typeof(self) weakSelf = self;
     [IMSAPIManager ims_getHistoryWithLatitude:self.latitude
                                     longitude:self.longitude
                                         limit:@"10"
                                      deviceId:[OpenUDID value]
                                         Block:^(id JSON, NSError *error) {
-                                            [Hud stop];
+                                            [SVProgressHUD dismiss];
                                             if (error) {
-                                                [Hud showMessage:IMS_ERROR_MESSAGE];
+                                                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                             } else {
                                                 HistoryModel *model = [HistoryModel yy_modelWithDictionary:JSON];
                                                 weakSelf.issuesRecentArray = model.issuesByTime;
@@ -242,7 +243,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     self.latitude = manager.latitude;
     
     if (STR_IS_NIL(self.latitude) && STR_IS_NIL(self.longitude)) {
-        [Hud showMessage:@"Unable to determine your location. \n Please check your device's location settings"];
+        [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
     }
 }
 
