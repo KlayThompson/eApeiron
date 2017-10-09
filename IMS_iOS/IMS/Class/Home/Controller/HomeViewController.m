@@ -194,6 +194,9 @@
 #pragma mark - 此处为最新修改部分
 - (void)setupUI {
     
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    self.navigationItem.title = manager.appName;
+    
     [self.view addSubview:self.historyButton];
     [self.view addSubview:self.topImageView];
     [self updateTopImage];
@@ -265,11 +268,6 @@
     detail.hidesBottomBarWhenPushed = YES;
     detail.title = self.title;
     [self.navigationController pushViewController:detail animated:YES];
-}
-
-- (NSString *)title {
-    UserInfoManager *manager = [UserInfoManager shareInstance];
-    return manager.appName;
 }
 
 - (void)dealloc {

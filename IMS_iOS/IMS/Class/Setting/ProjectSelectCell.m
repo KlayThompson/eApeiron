@@ -21,8 +21,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    //setup color infomation? is API call w/ JSON reponese sufficient, or is some type of "configurations file" better?
     
-    
+    self.selectButton.imageEdgeInsets = UIEdgeInsetsMake(0, 230, 0, 0);
     
 }
 

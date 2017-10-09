@@ -217,6 +217,7 @@
     self.logoutButton.layer.masksToBounds = true;
     self.logoutButton.layer.borderWidth = 1;
     self.logoutButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
 }
 
 - (void)setupPicker {

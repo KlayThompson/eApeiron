@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProjectSelectView : UIView<UITableViewDelegate,UITableViewDataSource>
+@interface ProjectSelectView : UIView
 @property (weak, nonatomic) IBOutlet UITableView *uTableView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;

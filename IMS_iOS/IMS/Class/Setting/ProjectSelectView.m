@@ -13,7 +13,7 @@
 
 static NSString *cellId = @"ProjectSelectCell";
 
-@interface ProjectSelectView()
+@interface ProjectSelectView()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (nonatomic, strong) NSMutableArray <ProjectModel *>*dataArray;
@@ -28,6 +28,11 @@ static NSString *cellId = @"ProjectSelectCell";
     
     [self configSelectView];
     
+    //增加手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelTap)];
+    [self addGestureRecognizer:tap];
+    tap.delegate = self;
+    
     self.uTableView.delegate = self;
     self.uTableView.dataSource = self;
     self.uTableView.tableFooterView = [UIView new];
@@ -41,6 +46,21 @@ static NSString *cellId = @"ProjectSelectCell";
 }
 
 - (IBAction)cancelButtonTap:(id)sender {
+    //将选择状态恢复到上一次结果
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    for (ProjectModel *model in manager.projectAllInfoArray) {
+        if ([model.projectId isEqualToString:manager.currentProjectId]) {
+            model.didSelected = YES;
+        } else {
+            model.didSelected = NO;
+        }
+    }
+    
+    [self removeFromSuperview];
+}
+
+- (void)cancelTap {
     //将选择状态恢复到上一次结果
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
@@ -80,6 +100,16 @@ static NSString *cellId = @"ProjectSelectCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    
+    if ([touch.view isDescendantOfView:self.bgView]) {
+        return NO;
+    } else {
+        return YES;
+    }
 }
 
 #pragma mark -

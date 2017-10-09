@@ -69,7 +69,7 @@
     home.tabBarItem.image = [UIImage imageNamed:@"ic_menu_home"];
     home.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_menu_home_selected"];
     MainNavigationController *homeNavi = [[MainNavigationController alloc] initWithRootViewController:home];
-
+    
     //Scan
     InputSerialNumberViewController *scan = [[InputSerialNumberViewController alloc] initWithNibName:@"InputSerialNumberViewController" bundle:nil];
     scan.title = @"Scan";
