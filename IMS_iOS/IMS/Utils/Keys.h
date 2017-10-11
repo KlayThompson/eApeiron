@@ -76,4 +76,6 @@
 #define IMS_NOTIFICATION_CHANGEPROJECT                          @"ims_changeproject"
 #define IMS_NOTIFICATION_UPDATELOCATION                         @"ims_updatelocation"
 
+//iPhone X
+#define iPhoneX [[UIScreen mainScreen] bounds].size.height == 812
 #endif

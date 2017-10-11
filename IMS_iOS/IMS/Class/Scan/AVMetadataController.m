@@ -63,10 +63,15 @@
     [label setNumberOfLines:0];
     [self.view addSubview:label];
     [label sizeToFit];
-    [label setCenter:CGPointMake(ScreenWidth/2, 20 + label.frame.size.height/2)];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setFrame:CGRectMake(10, ScreenHeight - 10 - 44, ScreenWidth - 2*10, 44)];
+    if (iPhoneX) {
+        [label setCenter:CGPointMake(ScreenWidth/2, 40 + label.frame.size.height/2)];
+        [button setFrame:CGRectMake(10, ScreenHeight - 10 - 44 - 20, ScreenWidth - 2*10, 44)];
+    } else {
+        [label setCenter:CGPointMake(ScreenWidth/2, 20 + label.frame.size.height/2)];
+        [button setFrame:CGRectMake(10, ScreenHeight - 10 - 44, ScreenWidth - 2*10, 44)];
+    }
     [button setBackgroundColor:[UIColor lightGrayColor]];
     [button setTitle:@"Cancel" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
