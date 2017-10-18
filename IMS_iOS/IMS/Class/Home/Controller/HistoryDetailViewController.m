@@ -222,13 +222,22 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"IssueDetailView" owner:self options:nil];
     id uv = [nib objectAtIndex:0];
     IssueDetailView *detail = uv;
+    
     detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [detail configIssueDetailViewWith:unit];
     //添加到window上面
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.window addSubview:detail];
     
-
+    //增加个简单动画效果吧
+    detail.bgView.backgroundColor = [UIColor clearColor];
+    detail.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+    [UIView animateWithDuration:.3 animations:^{
+        detail.layer.affineTransform = CGAffineTransformMakeScale(1, 1);
+    } completion:^(BOOL finished) {
+        detail.layer.affineTransform = CGAffineTransformIdentity;
+        detail.bgView.backgroundColor = [UIColor blackColor];
+    }];
 }
 
 #pragma mark - 初始化、设置界面

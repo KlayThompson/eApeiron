@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *productImageView;
 
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 
 - (void)configIssueDetailViewWith:(HistoryUnit *)unit;
 @end

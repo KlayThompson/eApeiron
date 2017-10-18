@@ -364,6 +364,7 @@
             </constraints>
             <connections>
                 <outlet property="baseScrollView" destination="vSM-H7-ahU" id="3I1-dF-Sp4"/>
+                <outlet property="bgView" destination="Vfo-za-Z4Y" id="xHX-lF-Exs"/>
                 <outlet property="closeButton" destination="sBl-JL-Q7k" id="Vcu-zz-L7g"/>
                 <outlet property="createdLabel" destination="FNY-kw-lG3" id="8Kh-bA-6XG"/>
                 <outlet property="descriptionLabel" destination="2mv-FN-go9" id="PKe-2e-71I"/>

@@ -49,7 +49,12 @@
 
 - (IBAction)closeButtonTap:(id)sender {
     
-    [self removeFromSuperview];
+    self.bgView.backgroundColor = [UIColor clearColor];
+    [UIView animateWithDuration:.3 animations:^{
+        self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
 }
 
 @end
