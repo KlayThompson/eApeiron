@@ -16,6 +16,7 @@
 #import "ProjectModel.h"
 #import "UIColor+Addtions.h"
 #import "SVProgressHUD.h"
+#import "ShowMapViewController.h"
 
 @interface InputSerialNumberViewController ()<UITextFieldDelegate>
 
@@ -104,7 +105,10 @@
 
 //点击显示地图
 - (IBAction)mapButtonTap:(id)sender {
-    DLog(@"");
+    DLog(@"点击了map");
+    ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
+    showMap.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:showMap animated:true completion:nil];
 }
 
 #pragma mark - Custom Methoud
@@ -180,6 +184,13 @@
         }
     } else {
         
+    }
+    model.url = @"1234";
+    //model.url 不为空显示map按钮
+    if (STR_IS_NIL(model.url)) {
+        self.mapButton.hidden = YES;
+    } else {
+        self.mapButton.hidden = NO;
     }
 }
 
