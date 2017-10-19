@@ -270,5 +270,10 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     }
     return _issuesNearbyArray;
 }
+- (NSString *)title {
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    return manager.appName;
+}
 
 @end
