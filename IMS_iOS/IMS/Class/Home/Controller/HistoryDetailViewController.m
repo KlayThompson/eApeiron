@@ -235,7 +235,6 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     [UIView animateWithDuration:.3 animations:^{
         detail.layer.affineTransform = CGAffineTransformMakeScale(1, 1);
     } completion:^(BOOL finished) {
-        detail.layer.affineTransform = CGAffineTransformIdentity;
         detail.bgView.backgroundColor = [UIColor blackColor];
     }];
 }
