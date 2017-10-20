@@ -263,7 +263,7 @@
 }
 
 - (void)gotoHistoryDetailView {
-
+    
     HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
     detail.hidesBottomBarWhenPushed = YES;
     detail.title = self.title;

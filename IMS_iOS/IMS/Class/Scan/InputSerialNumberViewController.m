@@ -36,6 +36,7 @@
  */
 @property (nonatomic, assign) BOOL checkState;
 
+@property (nonatomic, copy) NSString *mapUrl;
 @end
 
 @implementation InputSerialNumberViewController
@@ -108,6 +109,7 @@
     DLog(@"点击了map");
     ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
     showMap.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    showMap.mapUrl = self.mapUrl;
     [self presentViewController:showMap animated:true completion:nil];
 }
 
@@ -185,13 +187,14 @@
     } else {
         
     }
-    model.url = @"1234";
+    
     //model.url 不为空显示map按钮
     if (STR_IS_NIL(model.url)) {
         self.mapButton.hidden = YES;
     } else {
         self.mapButton.hidden = NO;
     }
+    self.mapUrl = model.url;
 }
 
 #pragma mark -

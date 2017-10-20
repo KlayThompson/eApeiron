@@ -7,6 +7,7 @@
 //
 
 #import "ShowMapViewController.h"
+#import "YYWebImage.h"
 
 @interface ShowMapViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
@@ -18,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSString *mapSize = [NSString stringWithFormat:@"%.0fx%.0f",ScreenWidth,ScreenHeight - 64];
+    self.mapUrl = [NSString stringWithFormat:@"%@%@",self.mapUrl,mapSize];
+    self.mapUrl = [self.mapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:self.mapUrl] placeholder:[UIImage imageNamed:@""]];
+
 }
 - (IBAction)backButtonTap:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

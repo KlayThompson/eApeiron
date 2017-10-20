@@ -21,9 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angle-mask.png" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-Ni-Vxn">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staticmapforsure" translatesAutoresizingMaskIntoConstraints="NO" id="JfT-Ni-Vxn">
                     <rect key="frame" x="0.0" y="50" width="375" height="617"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dS7-wd-M1y">
                     <rect key="frame" x="16" y="20" width="46" height="30"/>
@@ -49,6 +48,6 @@
         </view>
     </objects>
     <resources>
-        <image name="angle-mask.png" width="100" height="100"/>
+        <image name="staticmapforsure" width="300" height="600"/>
     </resources>
 </document>
