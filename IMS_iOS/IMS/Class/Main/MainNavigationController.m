@@ -8,7 +8,7 @@
 
 #import "MainNavigationController.h"
 
-@interface MainNavigationController ()
+@interface MainNavigationController ()<UIGestureRecognizerDelegate,UINavigationControllerDelegate>
 
 @end
 
@@ -17,10 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    __weak typeof (self) weakSelf = self;
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.delegate = weakSelf;
+    }
+    self.delegate = self;
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
 
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
     if (self.childViewControllers.count > 0) {
         
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -37,6 +46,14 @@
         
     }
     [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
 }
 
 - (void)goBack {
