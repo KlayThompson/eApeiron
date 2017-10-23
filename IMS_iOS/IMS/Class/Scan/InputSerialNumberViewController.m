@@ -108,9 +108,9 @@
 - (IBAction)mapButtonTap:(id)sender {
     DLog(@"点击了map");
     ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
-    showMap.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     showMap.mapUrl = self.mapUrl;
-    [self presentViewController:showMap animated:true completion:nil];
+    showMap.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:showMap animated:true];
 }
 
 #pragma mark - Custom Methoud

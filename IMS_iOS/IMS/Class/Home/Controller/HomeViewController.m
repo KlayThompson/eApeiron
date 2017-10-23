@@ -13,6 +13,7 @@
 #import "YYWebImage.h"
 #import "ProjectModel.h"
 #import "UIColor+Addtions.h"
+#import "ShowMapViewController.h"
 
 @interface HomeViewController ()
 {
@@ -263,7 +264,12 @@
 }
 
 - (void)gotoHistoryDetailView {
-    
+    /** for test
+     ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
+     showMap.mapUrl = @"https://maps.googleapis.com/maps/api/staticmap?&maptype=roadmap&markers=color:blue|37.785834,-122.406417&markers=color:red|0,0&key=AIzaSyAhXzvQrCWak22mLfWWQB7O9sgKIlL1dFY";
+     showMap.hidesBottomBarWhenPushed = YES;
+     [self.navigationController pushViewController:showMap animated:true];
+     */
     HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
     detail.hidesBottomBarWhenPushed = YES;
     detail.title = self.title;

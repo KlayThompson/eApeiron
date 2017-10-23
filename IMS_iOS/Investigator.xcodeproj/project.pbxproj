@@ -13,6 +13,12 @@
 		3B20AFAC1F98755900B8BDED /* ShowMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B20AFA81F98755900B8BDED /* ShowMapViewController.xib */; };
 		3B20AFAD1F98755900B8BDED /* ShowMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B20AFA81F98755900B8BDED /* ShowMapViewController.xib */; };
 		3B20AFAE1F98755900B8BDED /* ShowMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B20AFA81F98755900B8BDED /* ShowMapViewController.xib */; };
+		3B20AFB71F9DC89800B8BDED /* YCXMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFB41F9DC54C00B8BDED /* YCXMenu.m */; };
+		3B20AFB81F9DC89800B8BDED /* YCXMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFB61F9DC54C00B8BDED /* YCXMenuItem.m */; };
+		3B20AFB91F9DC8AE00B8BDED /* YCXMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFB41F9DC54C00B8BDED /* YCXMenu.m */; };
+		3B20AFBA1F9DC8AE00B8BDED /* YCXMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFB61F9DC54C00B8BDED /* YCXMenuItem.m */; };
+		3B20AFBB1F9DC8F000B8BDED /* YCXMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFB41F9DC54C00B8BDED /* YCXMenu.m */; };
+		3B20AFBC1F9DC8F000B8BDED /* YCXMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFB61F9DC54C00B8BDED /* YCXMenuItem.m */; };
 		3B2AED1F1F78D517000505A2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED1E1F78D517000505A2 /* ProjectModel.m */; };
 		3B2AED201F78D517000505A2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED1E1F78D517000505A2 /* ProjectModel.m */; };
 		3B2AED211F78D517000505A2 /* ProjectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B2AED1E1F78D517000505A2 /* ProjectModel.m */; };
@@ -343,6 +349,10 @@
 		3B20AFA61F98755900B8BDED /* ShowMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMapViewController.h; sourceTree = "<group>"; };
 		3B20AFA71F98755900B8BDED /* ShowMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMapViewController.m; sourceTree = "<group>"; };
 		3B20AFA81F98755900B8BDED /* ShowMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowMapViewController.xib; sourceTree = "<group>"; };
+		3B20AFB31F9DC54C00B8BDED /* YCXMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCXMenu.h; sourceTree = "<group>"; };
+		3B20AFB41F9DC54C00B8BDED /* YCXMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YCXMenu.m; sourceTree = "<group>"; };
+		3B20AFB51F9DC54C00B8BDED /* YCXMenuItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YCXMenuItem.h; sourceTree = "<group>"; };
+		3B20AFB61F9DC54C00B8BDED /* YCXMenuItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YCXMenuItem.m; sourceTree = "<group>"; };
 		3B2AED1D1F78D517000505A2 /* ProjectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectModel.h; sourceTree = "<group>"; };
 		3B2AED1E1F78D517000505A2 /* ProjectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectModel.m; sourceTree = "<group>"; };
 		3B2AED221F78D8BA000505A2 /* ProjectDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectDetailModel.h; sourceTree = "<group>"; };
@@ -564,6 +574,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B20AFB21F9DC54C00B8BDED /* YCXMenu */ = {
+			isa = PBXGroup;
+			children = (
+				3B20AFB31F9DC54C00B8BDED /* YCXMenu.h */,
+				3B20AFB41F9DC54C00B8BDED /* YCXMenu.m */,
+				3B20AFB51F9DC54C00B8BDED /* YCXMenuItem.h */,
+				3B20AFB61F9DC54C00B8BDED /* YCXMenuItem.m */,
+			);
+			path = YCXMenu;
+			sourceTree = "<group>";
+		};
 		3B2AED181F78D4BA000505A2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,6 +963,7 @@
 		9879D3C11A49083400BF53EF /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				3B20AFB21F9DC54C00B8BDED /* YCXMenu */,
 				3BCB9C931F7F2E8B00067BC6 /* SVProgressHUD */,
 				3B2AED651F78F9D1000505A2 /* YYWebImage */,
 				3B73E1E71F710AB500AD5153 /* TPKeyboardAvoiding */,
@@ -1289,6 +1311,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B20AFB71F9DC89800B8BDED /* YCXMenu.m in Sources */,
+				3B20AFB81F9DC89800B8BDED /* YCXMenuItem.m in Sources */,
 				3BCB9CA81F7F31A900067BC6 /* SVIndefiniteAnimatedView.m in Sources */,
 				3BCB9CA61F7F318400067BC6 /* SVProgressAnimatedView.m in Sources */,
 				3BCB9CA51F7F317200067BC6 /* SVRadialGradientLayer.m in Sources */,
@@ -1355,6 +1379,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B20AFB91F9DC8AE00B8BDED /* YCXMenu.m in Sources */,
+				3B20AFBA1F9DC8AE00B8BDED /* YCXMenuItem.m in Sources */,
 				3B2AEDA51F78FD89000505A2 /* YYKVStorage.m in Sources */,
 				3B2AEDA41F78FD7B000505A2 /* YYSpriteSheetImage.m in Sources */,
 				3B2AEDA31F78FD70000505A2 /* YYDiskCache.m in Sources */,
@@ -1417,6 +1443,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B20AFBB1F9DC8F000B8BDED /* YCXMenu.m in Sources */,
+				3B20AFBC1F9DC8F000B8BDED /* YCXMenuItem.m in Sources */,
 				3B2AEDA61F78FDD2000505A2 /* YYCache.m in Sources */,
 				3B2AEDA71F78FDD2000505A2 /* YYDiskCache.m in Sources */,
 				3B2AEDA81F78FDD2000505A2 /* YYKVStorage.m in Sources */,
