@@ -31,6 +31,8 @@
 
     [self checkUserLoginState];
     
+    [self setupAppInfo];
+    
     MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     [self.window setRootViewController:tabbar];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -75,7 +77,7 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeRootURL)];
     [tap setNumberOfTapsRequired:3];
-    [launchImage addGestureRecognizer:tap];
+//    [launchImage addGestureRecognizer:tap];
     
     
     //
@@ -141,6 +143,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupAppInfo {
+    
+    //设置server
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    [manager getServerPathUrl];
 }
 
 /**

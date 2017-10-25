@@ -14,7 +14,7 @@
 #import "YYModel.h"
 #import "SVProgressHUD.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -39,7 +39,7 @@
     
     self.loginButton.layer.borderWidth = 1;
     self.loginButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    
+
 }
 
 //点击登录按钮
@@ -125,6 +125,32 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
         }
     }];
+}
+
+- (IBAction)changeServerPathUrl:(id)sender {
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Change The Default Server Root" message:@"You need to restart APP" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField *urlField = [alert textFieldAtIndex:0];
+    urlField.placeholder = @"New Server Root";
+    urlField.text = manager.serverPathUrl;
+
+    [alert show];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 1) {
+        UserInfoManager *manager = [UserInfoManager shareInstance];
+        UITextField *urlField = [alertView textFieldAtIndex:0];
+        [manager saveServerPathUrlwith:urlField.text];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [SVProgressHUD showSuccessWithStatus:@"Change Success\nPlease restart your APP"];
+        });
+    }
 }
 
 - (NSString *)title {

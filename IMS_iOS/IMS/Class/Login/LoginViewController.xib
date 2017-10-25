@@ -73,15 +73,19 @@
                         <constraint firstItem="ek4-dm-Klm" firstAttribute="leading" secondItem="Aua-6r-t9w" secondAttribute="leading" id="wej-9Y-eMW"/>
                     </constraints>
                 </scrollView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©Copyright eApeiron Solutions, 2017. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-Mh-WUa">
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="©Copyright eApeiron Solutions, 2017. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-Mh-WUa">
                     <rect key="frame" x="0.0" y="647" width="375" height="20"/>
                     <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="bj2-KY-CwJ"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="KJx-QJ-v3H" appends="YES" id="U2H-Qd-xGS"/>
+                    </connections>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,5 +100,10 @@
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
+        <tapGestureRecognizer numberOfTapsRequired="5" id="KJx-QJ-v3H">
+            <connections>
+                <action selector="changeServerPathUrl:" destination="-1" id="AvZ-Rx-Pdx"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

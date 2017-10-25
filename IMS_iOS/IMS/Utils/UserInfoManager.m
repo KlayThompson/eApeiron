@@ -7,6 +7,7 @@
 //
 
 #import "UserInfoManager.h"
+#import "NetworkAPIManager.h"
 
 static UserInfoManager *instance = nil;
 
@@ -143,5 +144,22 @@ static UserInfoManager *instance = nil;
     //清除用户信息
     [self clearUserInfo];
     return YES;
+}
+
+- (void)getServerPathUrl {
+    
+    self.serverPathUrl = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_SERVERPATHURL];
+    if (STR_IS_NIL(self.serverPathUrl)) {
+        self.serverPathUrl = SERVER_PATH_URL;
+    }
+}
+
+- (void)saveServerPathUrlwith:(NSString *)urlString {
+    
+    //直接保存在本地
+    [[NSUserDefaults standardUserDefaults] setObject:urlString forKey:IMS_USERDEFAULTS_SERVERPATHURL];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    self.serverPathUrl = urlString;
+    
 }
 @end

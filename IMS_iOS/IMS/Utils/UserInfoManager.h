@@ -73,6 +73,11 @@
 @property (nonatomic, strong) NSMutableArray *projectAllInfoArray;
 
 /**
+ 服务器URL
+ */
+@property (nonatomic, copy) NSString *serverPathUrl;
+
+/**
  保存用户信息到本地
  */
 - (void)saveUserInfoToLocal;
@@ -103,4 +108,16 @@
  @return 是否需要重新登陆 YES 需要 NO 不需要
  */
 - (BOOL)checkUserShouldLoginAgain;
+
+/**
+ 程序每次启动后获取服务器url
+ */
+- (void)getServerPathUrl;
+
+/**
+ 切换服务器url
+
+ @param urlString 要切换的url
+ */
+- (void)saveServerPathUrlwith:(NSString *)urlString;
 @end

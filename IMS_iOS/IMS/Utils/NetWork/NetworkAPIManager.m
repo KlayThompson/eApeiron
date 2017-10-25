@@ -8,14 +8,16 @@
 
 #import "NetworkAPIManager.h"
 #import "HostURL.h"
+#import "UserInfoManager.h"
 
+static NetworkAPIManager *shareManager = nil;
 @implementation NetworkAPIManager
 
 + (NetworkAPIManager *)shareManager {
-    static NetworkAPIManager *shareManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareManager = [[NetworkAPIManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://192.168.0.26/IMS/service/"]];
+        UserInfoManager *manager = [UserInfoManager shareInstance];
+        shareManager = [[NetworkAPIManager alloc] initWithBaseURL:[NSURL URLWithString:manager.serverPathUrl]];
     });
     
     return shareManager;

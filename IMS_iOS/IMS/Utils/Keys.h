@@ -31,7 +31,7 @@
 //#elif TARGER_PACKAGE
 //    #define kHostURL_USA                                            @"https://brandprotection.kodak.com/IMS/app/package/"
 //#endif
-
+#define SERVER_PATH_URL                                         @"http://192.168.0.26/IMS/service/"
 
 
 #define ScreenHeight                                            [[UIScreen mainScreen] bounds].size.height
@@ -67,6 +67,7 @@
 #define IMS_USERDEFAULTS_USERNAME                               @"ims_username"
 #define IMS_USERDEFAULTS_LOGINTIME                              @"ims_logintime"
 #define IMS_USERDEFAULTS_PROJECTRESULTJSON                      @"ims_projectresultjson"
+#define IMS_USERDEFAULTS_SERVERPATHURL                          @"ims_serverpathurl"
 
 
 //Notification
