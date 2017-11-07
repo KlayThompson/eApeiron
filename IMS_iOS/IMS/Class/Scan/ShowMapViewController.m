@@ -18,6 +18,8 @@
 @property (nonatomic, strong) NSMutableArray *markItems;
 @property (nonatomic, strong) NSMutableArray *markArray;
 @property (nonatomic, strong) UIButton *rightButton;
+@property (nonatomic, strong) NSMutableArray <YCXMenuItem *>*markItemArray;
+
 @end
 
 @implementation ShowMapViewController
@@ -25,41 +27,87 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self analysisLocationInfo];
     [self setupUI];
+    YCXMenuItem *item = self.markItemArray.firstObject;
+    NSString *mapUrl = item.urlString;
     
     NSString *mapSize = [NSString stringWithFormat:@"&size=%.0fx%.0f",ScreenWidth,ScreenHeight - 64];
-    self.mapUrl = [NSString stringWithFormat:@"%@%@",self.mapUrl,mapSize];
-    [self pickupMarksParamas];
-    self.mapUrl = [self.mapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:self.mapUrl] placeholder:[UIImage imageNamed:@""]];
+    mapUrl = [NSString stringWithFormat:@"%@%@",mapUrl,mapSize];
+//    [self pickupMarksParamas];
+    mapUrl = [mapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:mapUrl] placeholder:[UIImage imageNamed:@""]];
     
 }
 
-#pragma mark - Action&CustomMethod
-- (void)pickupMarksParamas {
+- (void)analysisLocationInfo {
     
-    NSString *string = @"&";
-    NSArray *array = [self.mapUrl componentsSeparatedByString:string];
-    NSMutableArray *mutableArray = [array mutableCopy];
-    for (NSInteger index = mutableArray.count - 1; index >= 0; index--) {
-        NSString *str = [mutableArray objectAtIndex:index];
-        if ([str hasPrefix:@"markers="]) {
-            [self.markArray addObject:str];
-            [mutableArray removeObjectAtIndex:index];
-        }
+    NSString *totalUrl = self.locationInfo[@"url"];
+    NSDictionary *expectLocationDic = self.locationInfo[@"expectLocation"];
+    NSDictionary *currentLocationDic = self.locationInfo[@"currentLocation"];
+    
+    NSString *expectUrl = expectLocationDic[@"url"];
+    NSString *expectName = expectLocationDic[@"name"];
+    
+    NSString *currentUrl = currentLocationDic[@"url"];
+    NSString *currentName = currentLocationDic[@"name"];
+    
+    if (STR_IS_NIL(expectName)) {
+        expectName = @"expectLocation";
     }
     
-    //先将完整的加进去
-    [self.urlStringArray addObject:self.mapUrl];
-    
-    //重新拼接成url
-    NSString *urlString = [mutableArray componentsJoinedByString:@"&"];
-    for (NSString *mark in self.markArray) {
-        NSString *str = [NSString stringWithFormat:@"%@&%@",urlString,mark];
-        [self.urlStringArray addObject:str];
+    if (STR_IS_NIL(currentName)) {
+        currentName = @"currentLocation";
     }
-    DLog(@"");
+
+    YCXMenuItem *total = [YCXMenuItem menuItem:@"ALL" image:nil tag:101 userInfo:nil];
+    total.title = @"ALL";
+    total.urlString = totalUrl;
+    total.foreColor = [UIColor whiteColor];
+    total.titleFont = [UIFont boldSystemFontOfSize:20.0f];
+
+    YCXMenuItem *current = [YCXMenuItem menuItem:currentName image:nil tag:102 userInfo:nil];
+    current.title = currentName;
+    current.urlString = currentUrl;
+    current.foreColor = [UIColor whiteColor];
+    current.titleFont = [UIFont boldSystemFontOfSize:20.0f];
+    
+    YCXMenuItem *expect = [YCXMenuItem menuItem:expectName image:nil tag:103 userInfo:nil];
+    expect.title = expectName;
+    expect.urlString = expectUrl;
+    expect.foreColor = [UIColor whiteColor];
+    expect.titleFont = [UIFont boldSystemFontOfSize:20.0f];
+    
+    [self.markItemArray addObject:total];
+    [self.markItemArray addObject:current];
+    [self.markItemArray addObject:expect];
 }
+
+#pragma mark - Action&CustomMethod
+//- (void)pickupMarksParamas {
+//
+//    NSString *string = @"&";
+//    NSArray *array = [self.mapUrl componentsSeparatedByString:string];
+//    NSMutableArray *mutableArray = [array mutableCopy];
+//    for (NSInteger index = mutableArray.count - 1; index >= 0; index--) {
+//        NSString *str = [mutableArray objectAtIndex:index];
+//        if ([str hasPrefix:@"markers="]) {
+//            [self.markArray addObject:str];
+//            [mutableArray removeObjectAtIndex:index];
+//        }
+//    }
+//
+//    //先将完整的加进去
+//    [self.urlStringArray addObject:self.mapUrl];
+//
+//    //重新拼接成url
+//    NSString *urlString = [mutableArray componentsJoinedByString:@"&"];
+//    for (NSString *mark in self.markArray) {
+//        NSString *str = [NSString stringWithFormat:@"%@&%@",urlString,mark];
+//        [self.urlStringArray addObject:str];
+//    }
+//    DLog(@"");
+//}
 
 - (void)selectMarkAction {
     
@@ -69,7 +117,7 @@
         [YCXMenu dismissMenu];
     } else {
         __weak typeof (self) weakSelf = self;
-        [YCXMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width - 50, 64, 50, 0) menuItems:self.markItems selected:^(NSInteger index, YCXMenuItem *item) {
+        [YCXMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width - 50, 64, 50, 0) menuItems:self.markItemArray selected:^(NSInteger index, YCXMenuItem *item) {
             NSLog(@"%@",item);
             [weakSelf.rightButton setTitle:item.title forState:UIControlStateNormal];
             [weakSelf changemarkWithSelectIndex:index];
@@ -79,7 +127,11 @@
 
 - (void)changemarkWithSelectIndex:(NSInteger)index {
     
-    NSString *urlStr = [self.urlStringArray objectAtIndex:index];
+    YCXMenuItem *item = [self.markItemArray objectAtIndex:index];
+    
+    NSString *urlStr = item.urlString;
+    NSString *mapSize = [NSString stringWithFormat:@"&size=%.0fx%.0f",ScreenWidth,ScreenHeight - 64];
+    urlStr = [NSString stringWithFormat:@"%@%@",urlStr,mapSize];
     urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:urlStr] placeholder:[UIImage imageNamed:@""]];
 }
@@ -138,6 +190,13 @@
         [_rightButton addTarget:self action:@selector(selectMarkAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightButton;
+}
+
+- (NSMutableArray<YCXMenuItem *> *)markItemArray {
+    if (_markItemArray == nil) {
+        _markItemArray = [NSMutableArray new];
+    }
+    return _markItemArray;
 }
 
 - (NSString *)title {

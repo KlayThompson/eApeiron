@@ -75,8 +75,8 @@
 
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    for (NSString *value in manager.projectDic.allValues) {
-        [self.dataArray addObject:value];
+    for (ProjectModel *model in manager.projectsListModel.projects) {
+        [self.dataArray addObject:model.projectName];
     }
     [self.projectPicker reloadAllComponents];
 }
@@ -126,7 +126,7 @@
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if (model.didSelected) {//说明选择了她
             //改变按钮文字
             [self.chooseProjectButton setTitle:model.projectName forState:UIControlStateNormal];
@@ -160,10 +160,10 @@
     //存储项目名
     UserInfoManager *manager = [UserInfoManager shareInstance];
     manager.currentProjectName = str;
-    for (NSString *key in manager.projectDic.allKeys) {
-        NSString *value = manager.projectDic[key];
+    for (ProjectModel *model in manager.projectsListModel.projects) {
+        NSString *value = model.projectName;
         if ([value isEqualToString:str]) {
-            manager.currentProjectId = key;
+            manager.currentProjectId = model.projectId;
             break;
         }
     }

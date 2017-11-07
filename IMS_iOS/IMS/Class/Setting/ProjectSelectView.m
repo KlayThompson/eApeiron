@@ -42,14 +42,14 @@ static NSString *cellId = @"ProjectSelectCell";
 - (void)configSelectView {
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
-    self.dataArray = [manager.projectAllInfoArray mutableCopy];
+    self.dataArray = manager.projectsListModel.projects;
 }
 
 - (IBAction)cancelButtonTap:(id)sender {
     //将选择状态恢复到上一次结果
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if ([model.projectId isEqualToString:manager.currentProjectId]) {
             model.didSelected = YES;
         } else {
@@ -64,7 +64,7 @@ static NSString *cellId = @"ProjectSelectCell";
     //将选择状态恢复到上一次结果
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if ([model.projectId isEqualToString:manager.currentProjectId]) {
             model.didSelected = YES;
         } else {

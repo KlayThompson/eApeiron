@@ -14,6 +14,8 @@
 #import "ProjectModel.h"
 #import "UIColor+Addtions.h"
 #import "ShowMapViewController.h"
+#import "ProjectListModel.h"
+#import "YYModel.h"
 
 @interface HomeViewController ()
 {
@@ -69,7 +71,7 @@
         [_locationManager requestAlwaysAuthorization];
         [_locationManager requestWhenInUseAuthorization];
     }
-    [_locationManager startUpdatingLocation]; 
+    [_locationManager startUpdatingLocation];
 }
 - (void)updateLoad
 {
@@ -223,7 +225,7 @@
 //    BOOL ss = YYImageWebPAvailable();
     UserInfoManager *manager = [UserInfoManager shareInstance];
     //获取当前Project
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if ([manager.currentProjectId isEqualToString:model.projectId]) {
             [self.topImageView yy_setImageWithURL:[NSURL URLWithString:model.projectDetailModel.mobileLogo] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
         }

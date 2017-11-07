@@ -36,7 +36,7 @@
  */
 @property (nonatomic, assign) BOOL checkState;
 
-@property (nonatomic, copy) NSString *mapUrl;
+@property (nonatomic, strong) NSDictionary *locationInfo;
 @end
 
 @implementation InputSerialNumberViewController
@@ -108,7 +108,7 @@
 - (IBAction)mapButtonTap:(id)sender {
     DLog(@"点击了map");
     ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
-    showMap.mapUrl = self.mapUrl;
+    showMap.locationInfo = self.locationInfo;
     showMap.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:showMap animated:true];
 }
@@ -188,13 +188,13 @@
         
     }
     
-    //model.url 不为空显示map按钮
-    if (STR_IS_NIL(model.url)) {
+    //model.locationInfo 不为空显示map按钮
+    if (DICT_IS_NIL(model.locationInfo)) {
         self.mapButton.hidden = YES;
     } else {
         self.mapButton.hidden = NO;
     }
-    self.mapUrl = model.url;
+    self.locationInfo = model.locationInfo;
 }
 
 #pragma mark -
@@ -233,7 +233,7 @@
     //    BOOL ss = YYImageWebPAvailable();
     UserInfoManager *manager = [UserInfoManager shareInstance];
     //获取当前Project
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if ([manager.currentProjectId isEqualToString:model.projectId]) {
             [self.topImageView yy_setImageWithURL:[NSURL URLWithString:model.projectDetailModel.mobileLogo] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
         }

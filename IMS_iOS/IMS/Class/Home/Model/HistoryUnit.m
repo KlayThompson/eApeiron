@@ -43,9 +43,10 @@
 
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    if (!DICT_IS_NIL(manager.projectDic)) {
-        
-        return manager.projectDic[self.project_id];
+    for (ProjectModel *model in manager.projectsListModel.projects) {
+        if ([model.projectId isEqualToString:self.project_id]) {
+            return model.projectName;
+        }
     }
     
     return @"";

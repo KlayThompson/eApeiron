@@ -29,6 +29,8 @@
 @property (nonatomic, copy) NSString *usertype;
 @property (nonatomic, copy) NSString *url;//地图图片url
 
+@property (nonatomic, strong) NSDictionary *locationInfo;
+
 
 @property (nonatomic, strong) CheckIncidentAuthority *authority;
 

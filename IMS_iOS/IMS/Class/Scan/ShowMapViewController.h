@@ -10,6 +10,6 @@
 
 @interface ShowMapViewController : UIViewController
 
-@property (nonatomic, copy) NSString *mapUrl;
+@property (nonatomic, strong) NSDictionary *locationInfo;
 
 @end

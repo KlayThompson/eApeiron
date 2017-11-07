@@ -210,10 +210,9 @@
     //存储项目名
     UserInfoManager *manager = [UserInfoManager shareInstance];
     manager.currentProjectName = str;
-    for (NSString *key in manager.projectDic.allKeys) {
-        NSString *value = manager.projectDic[key];
-        if ([value isEqualToString:str]) {
-            manager.currentProjectId = key;
+    for (ProjectModel *model in manager.projectsListModel.projects) {
+        if ([model.projectName isEqualToString:str]) {
+            manager.currentProjectId = model.projectId;
             break;
         }
     }
@@ -246,7 +245,7 @@
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if (model.didSelected) {//说明选择了她
             
             self.selectedIndex = 1;

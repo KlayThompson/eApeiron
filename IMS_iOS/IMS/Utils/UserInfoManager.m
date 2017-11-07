@@ -90,13 +90,11 @@ static UserInfoManager *instance = nil;
     self.authToken = nil;
     self.userLogin = nil;
     self.emailAddress = nil;
-    self.projectDic = [NSDictionary new];
     self.currentProjectId = nil;
     self.currentUsername = nil;
     self.longitude = nil;
     self.latitude = nil;
     self.projectResultJson = nil;
-    self.projectAllInfoArray = nil;
 }
 
 /**

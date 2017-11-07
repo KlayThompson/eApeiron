@@ -15,6 +15,7 @@
 @property (readwrite, nonatomic, strong) NSString     *title;
 @property (readwrite, nonatomic, assign) NSInteger     tag;
 @property (readwrite, nonatomic, strong) NSDictionary *userInfo;
+@property (readwrite, nonatomic, strong) NSString     *urlString;
 
 @property (readwrite, nonatomic, strong) UIFont  *titleFont;
 @property (readwrite, nonatomic) NSTextAlignment  alignment;

@@ -70,8 +70,8 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
                                                 weakSelf.issuesNearbyArray = model.issuesByProx;
                                                 [weakSelf.uTableView reloadData];
                                                 //将Project字典存储
-                                                UserInfoManager *manager = [UserInfoManager shareInstance];
-                                                manager.projectDic = model.projects;
+//                                                UserInfoManager *manager = [UserInfoManager shareInstance];
+//                                                manager.projectDic = model.projects;
                                             }
         
     }];

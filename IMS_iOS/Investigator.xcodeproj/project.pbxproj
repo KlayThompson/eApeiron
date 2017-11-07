@@ -215,6 +215,9 @@
 		3BD0639B1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
 		3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
 		3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
+		3BFB80FF1FB14E0C00A6B1E9 /* ProjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */; };
+		3BFB81001FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */; };
+		3BFB81011FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */; };
 		9855FE1C1A68B4110037153B /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 9855FE1B1A68B4110037153B /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		98759A401AAD7736008EF3EE /* Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A3F1AAD7736008EF3EE /* Hud.m */; };
 		98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */ = {isa = PBXBuildFile; fileRef = 98759A421AAD79FE008EF3EE /* TypedefEnums.m */; };
@@ -498,6 +501,8 @@
 		3BD063951F691FA900C1722A /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		3BD063961F691FA900C1722A /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		3BD063971F691FA900C1722A /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		3BFB80FD1FB14E0C00A6B1E9 /* ProjectListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectListModel.h; sourceTree = "<group>"; };
+		3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectListModel.m; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
 		9855FE1B1A68B4110037153B /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
 		98759A3D1AAD7736008EF3EE /* Keys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keys.h; sourceTree = "<group>"; };
@@ -588,6 +593,8 @@
 		3B2AED181F78D4BA000505A2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3BFB80FD1FB14E0C00A6B1E9 /* ProjectListModel.h */,
+				3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */,
 				3B2AED1D1F78D517000505A2 /* ProjectModel.h */,
 				3B2AED1E1F78D517000505A2 /* ProjectModel.m */,
 				3B2AED221F78D8BA000505A2 /* ProjectDetailModel.h */,
@@ -1340,6 +1347,7 @@
 				3BD063121F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B73E1CE1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
+				3BFB80FF1FB14E0C00A6B1E9 /* ProjectListModel.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
 				3BD063071F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
 				3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */,
@@ -1384,6 +1392,7 @@
 				3B2AEDA51F78FD89000505A2 /* YYKVStorage.m in Sources */,
 				3B2AEDA41F78FD7B000505A2 /* YYSpriteSheetImage.m in Sources */,
 				3B2AEDA31F78FD70000505A2 /* YYDiskCache.m in Sources */,
+				3BFB81001FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */,
 				3B2AEDA21F78FD66000505A2 /* YYMemoryCache.m in Sources */,
 				3B2AEDA11F78FD57000505A2 /* _YYWebImageSetter.m in Sources */,
 				3B2AEDA01F78FD48000505A2 /* YYImageCoder.m in Sources */,
@@ -1448,6 +1457,7 @@
 				3B2AEDA61F78FDD2000505A2 /* YYCache.m in Sources */,
 				3B2AEDA71F78FDD2000505A2 /* YYDiskCache.m in Sources */,
 				3B2AEDA81F78FDD2000505A2 /* YYKVStorage.m in Sources */,
+				3BFB81011FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */,
 				3B2AEDA91F78FDD2000505A2 /* YYMemoryCache.m in Sources */,
 				3B2AEDAA1F78FDD2000505A2 /* _YYWebImageSetter.m in Sources */,
 				3B2AEDAB1F78FDD2000505A2 /* UIImageView+YYWebImage.m in Sources */,

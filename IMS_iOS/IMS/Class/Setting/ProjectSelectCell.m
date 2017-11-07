@@ -36,7 +36,7 @@
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    for (ProjectModel *model in manager.projectAllInfoArray) {
+    for (ProjectModel *model in manager.projectsListModel.projects) {
         if (self.selectButton.isSelected) {
             if ([model.projectId isEqualToString:currentModel.projectId]) {
                 model.didSelected = YES;

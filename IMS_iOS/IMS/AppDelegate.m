@@ -11,6 +11,7 @@
 #import "MainTabBarViewController.h"
 #import "ProjectModel.h"
 #import "SVProgressHUD.h"
+#import "YYModel.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
@@ -168,8 +169,8 @@
     } else {
         manager.userLogin = YES;
         //需要解析一下保存在本地的Project信息
-        ProjectModel *model = [[ProjectModel alloc] init];
-        [model encodeDataWithJson:manager.projectResultJson];
+        ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:manager.projectResultJson];
+        manager.projectsListModel = listModel;
     }
     
 }

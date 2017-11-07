@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProjectListModel.h"
 
 @interface UserInfoManager : NSObject
 
@@ -26,11 +27,6 @@
  用户邮箱
  */
 @property (nonatomic, copy) NSString *emailAddress;
-
-/**
- Project字典
- */
-@property (nonatomic, strong) NSDictionary *projectDic;
 
 /**
  当前已经选择的Project名称
@@ -68,14 +64,16 @@
 @property (nonatomic, strong) NSDictionary *projectResultJson;
 
 /**
- Project全部信息对象数组
- */
-@property (nonatomic, strong) NSMutableArray *projectAllInfoArray;
-
-/**
  服务器URL
  */
 @property (nonatomic, copy) NSString *serverPathUrl;
+
+/**
+ expires_in
+ */
+@property (nonatomic, copy) NSNumber *expires_in;
+
+@property (nonatomic, strong) ProjectListModel *projectsListModel;
 
 /**
  保存用户信息到本地

@@ -13,6 +13,7 @@
 #import "ProjectModel.h"
 #import "YYModel.h"
 #import "SVProgressHUD.h"
+#import "ProjectListModel.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 
@@ -115,12 +116,13 @@
     [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
         if (error) {
         } else {
-            ProjectModel *model = [[ProjectModel alloc] init];
+            NSDictionary *messageDic = JSON[@"Message"];
+            ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:messageDic];
             //保存此json，下次进入若auhtoken没过期则直接使用
             UserInfoManager *manager = [UserInfoManager shareInstance];
             manager.projectResultJson = JSON;
             [manager saveUserInfoToLocal];
-            [model encodeDataWithJson:JSON];
+            manager.projectsListModel = listModel;
             //通知获取projects成功，刷新
             [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
         }

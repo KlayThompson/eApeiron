@@ -12,29 +12,29 @@
 
 @implementation ProjectModel
 
-- (void)encodeDataWithJson:(id)json {
-    
-    NSMutableArray <ProjectModel *>*projectArray = [NSMutableArray new];
-    UserInfoManager *manager = UserInfoManager.shareInstance;
-    
-    NSDictionary *messageDic = json[@"Message"];
-    NSMutableDictionary *projectDic = [NSMutableDictionary new];
-    for (int index  = 0; index < messageDic.allKeys.count; index++) {
-        NSString *key = [messageDic.allKeys objectAtIndex:index];
-        NSDictionary *valueDic = [messageDic.allValues objectAtIndex:index];
-        //取出projectName
-        NSString *projectName = [valueDic objectForKey:@"name"];
-        NSDictionary *assetsDic = [valueDic objectForKey:@"assets"];
-        ProjectDetailModel *model = [ProjectDetailModel yy_modelWithDictionary:assetsDic];
-        ProjectModel *project = [ProjectModel new];
-        project.projectId = key;
-        project.projectName = projectName;
-        project.projectDetailModel = model;
-        [projectArray addObject:project];
-        [projectDic setObject:projectName forKey:key];
-    }
-    manager.projectDic = projectDic;
-    manager.projectAllInfoArray = projectArray;
-    
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"projectId" : @"project_id",
+             @"projectName" : @"name",
+             @"projectDetailModel" : @"assets",
+             };
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    
+    [aCoder encodeObject:self.projectId forKey:@"projectId"];
+    [aCoder encodeObject:self.projectName forKey:@"projectName"];
+    [aCoder encodeObject:self.projectDetailModel forKey:@"projectDetailModel"];
+
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    
+    if (self = [super init]) {
+        self.projectId = [aDecoder decodeObjectForKey:@"projectId"];
+        self.projectName = [aDecoder decodeObjectForKey:@"projectName"];
+        self.projectDetailModel = [aDecoder decodeObjectForKey:@"projectDetailModel"];
+    }
+    return self;
+}
+
 @end
