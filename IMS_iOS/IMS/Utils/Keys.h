@@ -68,6 +68,9 @@
 #define IMS_USERDEFAULTS_LOGINTIME                              @"ims_logintime"
 #define IMS_USERDEFAULTS_PROJECTRESULTJSON                      @"ims_projectresultjson"
 #define IMS_USERDEFAULTS_SERVERPATHURL                          @"ims_serverpathurl"
+#define IMS_USERDEFAULTS_EXPIRES_IN                             @"ims_expires_in"
+#define IMS_USERDEFAULTS_REFRESH_TOKEN                          @"ims_refresh_token"
+#define IMS_USERDEFAULTS_REFRESH_TOKEN_EXPIRES_IN               @"ims_refresh_token_expires_in"
 
 
 //Notification

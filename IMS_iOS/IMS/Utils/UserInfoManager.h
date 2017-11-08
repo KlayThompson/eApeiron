@@ -73,6 +73,16 @@
  */
 @property (nonatomic, copy) NSNumber *expires_in;
 
+/**
+ refresh_token_expires_in
+ */
+@property (nonatomic, copy) NSNumber *refresh_token_expires_in;
+
+/**
+ refresh_token
+ */
+@property (nonatomic, copy) NSString *refresh_token;
+
 @property (nonatomic, strong) ProjectListModel *projectsListModel;
 
 /**
@@ -101,9 +111,9 @@
 - (NSString*)getCurrentTime;
 
 /**
- 判断当前时间和用户上次登录时间是否超过半小时，超过则需要重新登录
-
- @return 是否需要重新登陆 YES 需要 NO 不需要
+ 当登录时间超过refresh_token_expires_in则提示用户重新登录（仅仅在应用启动时候判断）
+ 
+ @return YES,则需要重新登录 NO则不需要，但是要进一步验证是否需要请求refresh_token
  */
 - (BOOL)checkUserShouldLoginAgain;
 
@@ -118,4 +128,16 @@
  @param urlString 要切换的url
  */
 - (void)saveServerPathUrlwith:(NSString *)urlString;
+
+/**
+ 根据用户登录时间，和AccessToken有效时间进行对比，如果超过有效时间，则利用refresh_token重新获取access_token和expires_in，来保持用户长时间在线状态，
+ */
+- (BOOL)checkUserShouldRequestRefresh_token;
+
+/**
+ 解析用户登录或者RefreshToken的结果并进行处理
+
+ @param json 服务端返回结果
+ */
+- (void)encodeLoginAndRefreshTokenData:(NSDictionary *)json;
 @end

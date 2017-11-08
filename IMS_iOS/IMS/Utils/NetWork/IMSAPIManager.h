@@ -12,8 +12,8 @@
 
 + (instancetype)sharedManager;
 
-#pragma mark - 获取CSrfToken
-+ (void)ims_getCSRFTokenWithBlock:(void(^)(id JSON, NSError *error))block;
+#pragma mark - 获取requestAccessTokenWithRefresh_token
++ (void)ims_requestAccessTokenWithRefresh_tokenBlock:(void(^)(id JSON, NSError *error))block;
 
 #pragma mark -
 

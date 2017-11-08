@@ -169,8 +169,11 @@
     } else {
         manager.userLogin = YES;
         //需要解析一下保存在本地的Project信息
-        ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:manager.projectResultJson];
-        manager.projectsListModel = listModel;
+        if (!DICT_IS_NIL(manager.projectResultJson)) {
+            NSDictionary *message = manager.projectResultJson[@"Message"];
+            ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:message];
+            manager.projectsListModel = listModel;
+        }
     }
     
 }

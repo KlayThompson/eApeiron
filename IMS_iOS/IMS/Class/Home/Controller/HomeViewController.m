@@ -72,6 +72,10 @@
         [_locationManager requestWhenInUseAuthorization];
     }
     [_locationManager startUpdatingLocation];
+    
+    [IMSAPIManager ims_requestAccessTokenWithRefresh_tokenBlock:^(id JSON, NSError *error) {
+        
+    }];
 }
 - (void)updateLoad
 {
