@@ -55,7 +55,6 @@
                             password:(NSString *)password
                                Block:(void(^)(id JSON, NSError *error))block {
     
-    //需要先请求CSRFToken
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 username,@"username",
                                 password,@"password",

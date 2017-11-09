@@ -12,6 +12,7 @@
 #import "ProjectModel.h"
 #import "SVProgressHUD.h"
 #import "YYModel.h"
+#import "IMSAPIManager.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
@@ -30,9 +31,10 @@
 //    HomeViewController *view = [[HomeViewController alloc] init];
     //    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:view];
 
+    [self setupAppInfo];
+    
     [self checkUserLoginState];
     
-    [self setupAppInfo];
     
     MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     [self.window setRootViewController:tabbar];
@@ -174,8 +176,26 @@
             ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:message];
             manager.projectsListModel = listModel;
         }
+        
+        //因为让用户长时间保持登录状态，故需要每次启动APP获取project
+        [self getProjectsFromServer];
     }
     
+}
+
+- (void)getProjectsFromServer {
+    [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
+        if (error) {
+        } else {
+            NSDictionary *messageDic = JSON[@"Message"];
+            ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:messageDic];
+            //保存此json，下次进入若auhtoken没过期则直接使用
+            UserInfoManager *manager = [UserInfoManager shareInstance];
+            manager.projectResultJson = JSON;
+            [manager saveUserInfoToLocal];
+            manager.projectsListModel = listModel;
+        }
+    }];
 }
 
 @end
