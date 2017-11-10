@@ -31,7 +31,7 @@
 //#elif TARGER_PACKAGE
 //    #define kHostURL_USA                                            @"https://brandprotection.kodak.com/IMS/app/package/"
 //#endif
-#define SERVER_PATH_URL                                         @"http://192.168.0.26/IMS/service/"
+#define SERVER_PATH_URL                                         @"http://www.apeironcloud.com/"
 
 
 #define ScreenHeight                                            [[UIScreen mainScreen] bounds].size.height

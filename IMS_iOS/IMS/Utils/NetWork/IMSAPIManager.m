@@ -31,9 +31,22 @@
     NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.refresh_token];
     [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
     
+    NSString *client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
+    NSString *client_id = @"2";
+    if ([manager.serverPathUrl isEqualToString:@"http://www.apeironcloud.com/"]) {
+        client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
+        client_id = @"2";
+    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
+        client_id = @"7";
+    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
+        client_secret = @"Z9kI6MMJ652UFweOJTWYjhGFGwm5RLHY3Q7T7nSm";
+        client_id = @"2";
+    }
+    
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                @"2",@"client_id",
-                                @"Z9kI6MMJ652UFweOJTWYjhGFGwm5RLHY3Q7T7nSm",@"client_secret",
+                                client_id,@"client_id",
+                                client_secret,@"client_secret",
                                 nil];
     [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"auth/login/refresh"
                                                    withParams:parameters
@@ -54,12 +67,26 @@
 + (void)ims_getAuthTokenWithUsername:(NSString *)username
                             password:(NSString *)password
                                Block:(void(^)(id JSON, NSError *error))block {
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    NSString *client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
+    NSString *client_id = @"2";
+    if ([manager.serverPathUrl isEqualToString:@"http://www.apeironcloud.com/"]) {
+        client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
+        client_id = @"2";
+    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
+        client_id = @"7";
+    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
+        client_secret = @"Z9kI6MMJ652UFweOJTWYjhGFGwm5RLHY3Q7T7nSm";
+        client_id = @"2";
+    }
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 username,@"username",
                                 password,@"password",
-                                @"2",@"client_id",
-                                @"Z9kI6MMJ652UFweOJTWYjhGFGwm5RLHY3Q7T7nSm",@"client_secret",
+                                client_id,@"client_id",
+                                client_secret,@"client_secret",
 //                                csrfToken,@"fuel_csrf_token",
                                 nil];
     
