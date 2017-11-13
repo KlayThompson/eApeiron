@@ -54,6 +54,13 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 #pragma mark - 网络
 - (void)loadHistoryFromServer {
+    
+    if (STR_IS_NIL(self.latitude) && STR_IS_NIL(self.longitude)) {
+        [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
+        return;
+    }
+
+    
     [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
     __weak typeof(self) weakSelf = self;
     [IMSAPIManager ims_getHistoryWithLatitude:self.latitude
@@ -249,10 +256,6 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     UserInfoManager *manager = [UserInfoManager shareInstance];
     self.longitude = manager.longitude;
     self.latitude = manager.latitude;
-    
-    if (STR_IS_NIL(self.latitude) && STR_IS_NIL(self.longitude)) {
-        [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
-    }
 }
 
 - (NSMutableArray<HistoryUnit *> *)issuesRecentArray {
