@@ -105,15 +105,6 @@
                                                              block(data, nil);
                                                          }
                                                      }];
-//    [self ims_getCSRFTokenWithBlock:^(id JSON, NSError *error) {
-//        if (!DICT_IS_NIL(JSON)) {
-//            NSString *csrfToken = JSON[@"csrfToken"];
-//
-//        } else {
-//            block(nil,error);
-//        }
-//    }];
-    
 }
 
 //获取工程名
@@ -272,7 +263,7 @@
                                             check,@"check",
                                             nil];
                 
-                [[NetworkAPIManager shareManager] requestJsonDataWithPath:IMS_CREATE_INCIDENT
+                [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/incident"
                                                                withParams:parameters
                                                            withMethodType:Post
                                                                  andBlock:^(id data, NSError *error) {
@@ -304,7 +295,7 @@
                                     check,@"check",
                                     nil];
         
-        [[NetworkAPIManager shareManager] requestJsonDataWithPath:IMS_CREATE_INCIDENT
+        [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/incident"
                                                        withParams:parameters
                                                    withMethodType:Post
                                                          andBlock:^(id data, NSError *error) {
