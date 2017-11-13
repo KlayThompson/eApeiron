@@ -181,7 +181,6 @@
                 [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
                 
                 NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                            //                                manager.authToken,@"authToken",
                                             latitude,@"lat",
                                             longitude,@"lng",
                                             limit,@"limit",
@@ -208,7 +207,6 @@
         [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
         
         NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                    //                                manager.authToken,@"authToken",
                                     latitude,@"lat",
                                     longitude,@"lng",
                                     limit,@"limit",
