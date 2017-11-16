@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoryUnit.h"
+#import "ProjectModel.h"
 
 @interface IssueDetailView : UIView
 @property (weak, nonatomic) IBOutlet UIScrollView *baseScrollView;
@@ -28,5 +29,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
-- (void)configIssueDetailViewWith:(HistoryUnit *)unit;
+- (void)configIssueDetailViewWith:(HistoryUnit *)unit allProjectsArray:(NSMutableArray <ProjectModel *>*)projects;
 @end

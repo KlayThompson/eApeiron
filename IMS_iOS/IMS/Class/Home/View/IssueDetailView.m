@@ -20,14 +20,14 @@
     
 }
 
-- (void)configIssueDetailViewWith:(HistoryUnit *)unit {
+- (void)configIssueDetailViewWith:(HistoryUnit *)unit allProjectsArray:(NSMutableArray <ProjectModel *>*)projects {
 
     if (!unit) {
         return;
     }
     
     self.idLabel.text = unit.issueId;
-    self.projectLabel.text = unit.projectName;
+//    self.projectLabel.text = unit.projectName;
     self.titleLabel.text = unit.title;
     self.serialNumberLabel.text = unit.serial_number;
     
@@ -45,6 +45,14 @@
     [formatter setDateFormat:@"yyyy-MM-dd  HH:MM:SS"];
     NSString *time = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:[unit.created_at doubleValue]]];
     self.createdLabel.text = time;
+
+    for (ProjectModel *model in projects) {
+        if ([model.projectId isEqualToString:unit.project_id]) {
+            self.projectLabel.text = model.projectName;
+            break;
+        }
+    }
+
 }
 
 - (IBAction)closeButtonTap:(id)sender {

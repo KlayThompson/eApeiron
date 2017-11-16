@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CheckIncidentAuthority.h"
+#import "MarkersInfoModel.h"
 
 @interface CheckIncidentModel : NSObject
 
@@ -27,9 +28,9 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *userid;
 @property (nonatomic, copy) NSString *usertype;
-@property (nonatomic, copy) NSString *url;//地图图片url
+@property (nonatomic, copy) NSString *mapUrlBase;//地图图片url
 
-@property (nonatomic, strong) NSDictionary *locationInfo;
+@property (nonatomic, strong) NSMutableArray <MarkersInfoModel *>*markersInfo;
 
 
 @property (nonatomic, strong) CheckIncidentAuthority *authority;

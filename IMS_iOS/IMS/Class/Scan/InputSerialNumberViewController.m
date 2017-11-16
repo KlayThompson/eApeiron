@@ -17,6 +17,7 @@
 #import "UIColor+Addtions.h"
 #import "SVProgressHUD.h"
 #import "ShowMapViewController.h"
+#import "MarkersInfoModel.h"
 
 @interface InputSerialNumberViewController ()<UITextFieldDelegate>
 
@@ -36,7 +37,7 @@
  */
 @property (nonatomic, assign) BOOL checkState;
 
-@property (nonatomic, strong) NSDictionary *locationInfo;
+@property (nonatomic, strong) NSMutableArray <MarkersInfoModel *>*markersInfo;
 @end
 
 @implementation InputSerialNumberViewController
@@ -108,7 +109,7 @@
 - (IBAction)mapButtonTap:(id)sender {
     DLog(@"点击了map");
     ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
-    showMap.locationInfo = self.locationInfo;
+    showMap.markersInfo = self.markersInfo;
     showMap.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:showMap animated:true];
 }
@@ -189,12 +190,12 @@
     }
     
     //model.locationInfo 不为空显示map按钮
-    if (DICT_IS_NIL(model.locationInfo)) {
+    if (ARRAY_IS_NIL(model.markersInfo)) {
         self.mapButton.hidden = YES;
     } else {
         self.mapButton.hidden = NO;
     }
-    self.locationInfo = model.locationInfo;
+    self.markersInfo = model.markersInfo;
 }
 
 #pragma mark -
@@ -238,6 +239,13 @@
             [self.topImageView yy_setImageWithURL:[NSURL URLWithString:model.projectDetailModel.mobileLogo] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
         }
     }
+}
+
+- (NSMutableArray<MarkersInfoModel *> *)markersInfo {
+    if (_markersInfo == nil) {
+        _markersInfo = [NSMutableArray new];
+    }
+    return  _markersInfo;
 }
 
 @end

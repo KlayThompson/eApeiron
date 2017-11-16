@@ -16,6 +16,7 @@
 #import "IssueDetailView.h"
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
+#import "ProjectModel.h"
 
 static NSString *recentCellId = @"RecentIssueCell";
 static NSString *nearbyCellId = @"NearbyIssueCell";
@@ -31,6 +32,9 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 @property (nonatomic, strong) NSMutableArray <HistoryUnit *>* issuesRecentArray;
 
 @property (nonatomic, strong) NSMutableArray <HistoryUnit *>* issuesNearbyArray;
+
+@property (nonatomic, strong) NSMutableArray <ProjectModel *>* projectsArray;
+
 /**
  经度
  */
@@ -75,6 +79,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
                                                 HistoryModel *model = [HistoryModel yy_modelWithDictionary:JSON];
                                                 weakSelf.issuesRecentArray = model.issuesByTime;
                                                 weakSelf.issuesNearbyArray = model.issuesByProx;
+                                                weakSelf.projectsArray = model.projects;
                                                 [weakSelf.uTableView reloadData];
                                                 //将Project字典存储
 //                                                UserInfoManager *manager = [UserInfoManager shareInstance];
@@ -231,7 +236,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     IssueDetailView *detail = uv;
     
     detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-    [detail configIssueDetailViewWith:unit];
+    [detail configIssueDetailViewWith:unit allProjectsArray:self.projectsArray];
     //添加到window上面
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.window addSubview:detail];
@@ -277,6 +282,13 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     return manager.appName;
+}
+
+- (NSMutableArray<ProjectModel *> *)projectsArray {
+    if (_projectsArray == nil) {
+        _projectsArray = [NSMutableArray new];
+    }
+    return _projectsArray;
 }
 
 @end

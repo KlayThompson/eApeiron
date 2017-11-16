@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MarkersInfoModel.h"
 
 @interface ShowMapViewController : UIViewController
 
-@property (nonatomic, strong) NSDictionary *locationInfo;
-
+@property (nonatomic, strong) NSMutableArray <MarkersInfoModel *> *markersInfo;
+@property (nonatomic, copy) NSString *mapUrlBase;
 @end

@@ -11,7 +11,8 @@
 @implementation HistoryModel
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"issuesByTime" : [HistoryUnit class],
-             @"issuesByProx" : [HistoryUnit class]
+             @"issuesByProx" : [HistoryUnit class],
+             @"projects" : [ProjectModel class],
              };
 }
 

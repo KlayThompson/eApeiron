@@ -11,6 +11,7 @@
 #import "MainNavigationController.h"
 #import "YCXMenu.h"
 #import "UIColor+Addtions.h"
+#import "IMSAPIManager.h"
 
 @interface ShowMapViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *mapImageView;
@@ -29,28 +30,39 @@
     
     [self analysisLocationInfo];
     [self setupUI];
-    YCXMenuItem *item = self.markItemArray.firstObject;
-    NSString *mapUrl = item.urlString;
     
-    NSString *mapSize = [NSString stringWithFormat:@"&size=%.0fx%.0f",ScreenWidth,ScreenHeight - 64];
-    mapUrl = [NSString stringWithFormat:@"%@%@",mapUrl,mapSize];
-//    [self pickupMarksParamas];
-    mapUrl = [mapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:mapUrl] placeholder:[UIImage imageNamed:@""]];
-    
+//    YCXMenuItem *item = self.markItemArray.firstObject;
+//    NSString *mapUrl = item.urlString;
+//
+//    NSString *mapSize = [NSString stringWithFormat:@"&size=%.0fx%.0f",ScreenWidth,ScreenHeight - 64];
+//    mapUrl = [NSString stringWithFormat:@"%@%@",mapUrl,mapSize];
+////    [self pickupMarksParamas];
+//    mapUrl = [mapUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:mapUrl] placeholder:[UIImage imageNamed:@""]];
+    [self getRoadMapWithSelectIndex:0];
 }
 
 - (void)analysisLocationInfo {
+    [self.markItemArray removeAllObjects];
+//    NSString *totalUrl = self.locationInfo[@"url"];
+//    NSDictionary *expectLocationDic = self.locationInfo[@"expectLocation"];
+//    NSDictionary *currentLocationDic = self.locationInfo[@"currentLocation"];
+    MarkersInfoModel *currentModel = [MarkersInfoModel new];
+    MarkersInfoModel *expectModel = [MarkersInfoModel new];
+    for (MarkersInfoModel *model in self.markersInfo) {
+        if ([model.type isEqualToString:@"current"]) {
+            currentModel = model;
+        } else if ([model.type isEqualToString:@"expect"]) {
+            expectModel = model;
+        }
+    }
     
-    NSString *totalUrl = self.locationInfo[@"url"];
-    NSDictionary *expectLocationDic = self.locationInfo[@"expectLocation"];
-    NSDictionary *currentLocationDic = self.locationInfo[@"currentLocation"];
     
-    NSString *expectUrl = expectLocationDic[@"url"];
-    NSString *expectName = expectLocationDic[@"name"];
+    NSString *expectUrl = @"";//要拼接
+    NSString *expectName = expectModel.name;
     
-    NSString *currentUrl = currentLocationDic[@"url"];
-    NSString *currentName = currentLocationDic[@"name"];
+    NSString *currentUrl = @"";//要拼接
+    NSString *currentName = currentModel.name;
     
     if (STR_IS_NIL(expectName)) {
         expectName = @"expectLocation";
@@ -62,7 +74,7 @@
 
     YCXMenuItem *total = [YCXMenuItem menuItem:@"ALL" image:nil tag:101 userInfo:nil];
     total.title = @"ALL";
-    total.urlString = totalUrl;
+    total.urlString = @"";//要拼接
     total.foreColor = [UIColor whiteColor];
     total.titleFont = [UIFont boldSystemFontOfSize:20.0f];
 
@@ -83,32 +95,51 @@
     [self.markItemArray addObject:expect];
 }
 
-#pragma mark - Action&CustomMethod
-//- (void)pickupMarksParamas {
-//
-//    NSString *string = @"&";
-//    NSArray *array = [self.mapUrl componentsSeparatedByString:string];
-//    NSMutableArray *mutableArray = [array mutableCopy];
-//    for (NSInteger index = mutableArray.count - 1; index >= 0; index--) {
-//        NSString *str = [mutableArray objectAtIndex:index];
-//        if ([str hasPrefix:@"markers="]) {
-//            [self.markArray addObject:str];
-//            [mutableArray removeObjectAtIndex:index];
-//        }
-//    }
-//
-//    //先将完整的加进去
-//    [self.urlStringArray addObject:self.mapUrl];
-//
-//    //重新拼接成url
-//    NSString *urlString = [mutableArray componentsJoinedByString:@"&"];
-//    for (NSString *mark in self.markArray) {
-//        NSString *str = [NSString stringWithFormat:@"%@&%@",urlString,mark];
-//        [self.urlStringArray addObject:str];
-//    }
-//    DLog(@"");
-//}
+#pragma mark - 网络
+- (void)getRoadMapWithSelectIndex:(NSInteger)index {
+    
+    NSMutableArray <MarkersInfoModel *>*array = [NSMutableArray new];
+    if (index == 0) {//为全部，多个mark
+        array = self.markersInfo;
+    } else {//为单个mark
+        MarkersInfoModel *model = [self.markersInfo objectAtIndex:index - 1];
+        [array addObject:model];
+    }
+    
+    NSString *mapSize = [NSString stringWithFormat:@"%.0fx%.0f",ScreenWidth,ScreenHeight - 64];
+    __weak typeof (self) weakSelf = self;
+    [IMSAPIManager ims_getRoadMapWithNum:[NSString stringWithFormat:@"%ld",array.count] size:mapSize zoom:@"" marksArray:array Block:^(id JSON, NSError *error) {
+        [weakSelf get_getLocationName];
+        if (error) {
+            DLog(@"network error");
+        } else {
+            UIImage *image = (UIImage *)JSON;
+            //获取到图片链接，显示图片
+            weakSelf.mapImageView.image = image;
+        }
+    }];
+    
+}
 
+- (void)get_getLocationName {
+    for (MarkersInfoModel *model in self.markersInfo) {
+        __weak typeof (self) weakSelf = self;
+        [IMSAPIManager ims_getLocationNameWithLatitude:model.lat longitude:model.lng Block:^(id JSON, NSError *error) {
+            if (error) {
+                DLog(@"network error");
+            } else {
+                if (!DICT_IS_NIL(JSON)) {
+                    NSString *name = JSON[@"name"];
+                    model.name =name;
+                    [weakSelf analysisLocationInfo];
+                }
+            }
+        }];
+    }
+    
+}
+
+#pragma mark - Action&CustomMethod
 - (void)selectMarkAction {
     
     [YCXMenu setTintColor:[UIColor ims_colorWithRed:73 green:73 blue:75]];
@@ -134,6 +165,9 @@
     urlStr = [NSString stringWithFormat:@"%@%@",urlStr,mapSize];
     urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self.mapImageView yy_setImageWithURL:[NSURL URLWithString:urlStr] placeholder:[UIImage imageNamed:@""]];
+    
+    //获取地图图片
+    [self getRoadMapWithSelectIndex:index];
 }
 
 #pragma mark - UI

@@ -14,6 +14,10 @@
     return @{@"incidentDescription" : @"description"};
 }
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"markersInfo" : [MarkersInfoModel class],
+             };
+}
 
 @end
 

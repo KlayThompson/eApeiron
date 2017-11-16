@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HistoryUnit.h"
+#import "ProjectModel.h"
 
 @interface HistoryModel : NSObject
 
@@ -15,7 +16,8 @@
 
 @property (nonatomic, strong) NSMutableArray <HistoryUnit *>*issuesByProx;
 
-@property (nonatomic, strong) NSMutableDictionary *projects;
+@property (nonatomic, strong) NSMutableArray <ProjectModel *>*projects;
 
 @end
+
 

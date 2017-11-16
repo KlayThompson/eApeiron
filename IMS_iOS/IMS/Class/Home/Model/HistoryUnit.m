@@ -39,17 +39,17 @@
     return @"";
 }
 
-- (NSString *)projectName {
-
-    UserInfoManager *manager = [UserInfoManager shareInstance];
-    
-    for (ProjectModel *model in manager.projectsListModel.projects) {
-        if ([model.projectId isEqualToString:self.project_id]) {
-            return model.projectName;
-        }
-    }
-    
-    return @"";
-}
+//- (NSString *)projectName {
+//
+//    UserInfoManager *manager = [UserInfoManager shareInstance];
+//    
+//    for (ProjectModel *model in manager.projectsListModel.projects) {
+//        if ([model.projectId isEqualToString:self.project_id]) {
+//            return model.projectName;
+//        }
+//    }
+//    
+//    return @"";
+//}
 
 @end

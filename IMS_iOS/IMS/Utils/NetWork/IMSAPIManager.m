@@ -310,4 +310,165 @@
                                                          }];
     }
 }
+
+//getRoadMap
++ (void)ims_getRoadMapWithNum:(NSString *)num
+                         size:(NSString *)size
+                         zoom:(NSString *)zoom
+                   marksArray:(NSArray <MarkersInfoModel *>*)marksArray
+                        Block:(void(^)(id JSON, NSError *error))block {
+    NetworkAPIManager *api = [NetworkAPIManager shareManager];
+    api.responseSerializer = [AFImageResponseSerializer serializer];
+    
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    //check need request refresh_token
+    if ([manager checkUserShouldRequestRefresh_token]) {
+        //
+        [self ims_requestAccessTokenWithRefresh_tokenBlock:^(id JSON, NSError *error) {
+            if (error) {
+                block(nil,error);
+            } else {
+                UserInfoManager *manager = UserInfoManager.shareInstance;
+                [manager encodeLoginAndRefreshTokenData:JSON];
+                
+                NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+                [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+                
+                NSMutableDictionary *parameters = [NSMutableDictionary new];
+                [parameters setObject:num forKey:@"num"];
+                [parameters setObject:size forKey:@"size"];
+                
+                for (int index = 0; index < marksArray.count; index ++) {
+                    MarkersInfoModel *model = [marksArray objectAtIndex:index];
+                    NSString *latKey = [NSString stringWithFormat:@"lat%d",index + 1];
+                    [parameters setValue:model.lat forKey:latKey];
+                    NSString *lngKey = [NSString stringWithFormat:@"lng%d",index + 1];
+                    [parameters setValue:model.lng forKey:lngKey];
+                    NSString *colorKey = [NSString stringWithFormat:@"color%d",index + 1];
+                    [parameters setValue:model.color forKey:colorKey];
+                }
+                
+                if (marksArray.count == 1) {//1才有zoom
+                    MarkersInfoModel *model = marksArray.firstObject;
+                    [parameters setValue:[NSString stringWithFormat:@"%@",model.zoom] forKey:@"zoom"];
+                }
+                
+                [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/getRoadMap"
+                                                               withParams:parameters
+                                                           withMethodType:Get
+                                                                 andBlock:^(id data, NSError *error) {
+                                                                     api.responseSerializer = [AFJSONResponseSerializer serializer];
+                                                                     if (error) {
+                                                                         block(nil, error);
+                                                                     } else {
+                                                                         block(data, nil);
+                                                                     }
+                                                                 }];
+            }
+        }];
+    } else {
+        
+        NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+        [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        
+        NSMutableDictionary *parameters = [NSMutableDictionary new];
+        [parameters setObject:num forKey:@"num"];
+        [parameters setObject:size forKey:@"size"];
+
+        for (int index = 0; index < marksArray.count; index ++) {
+            MarkersInfoModel *model = [marksArray objectAtIndex:index];
+            NSString *latKey = [NSString stringWithFormat:@"lat%d",index + 1];
+            [parameters setValue:model.lat forKey:latKey];
+            NSString *lngKey = [NSString stringWithFormat:@"lng%d",index + 1];
+            [parameters setValue:model.lng forKey:lngKey];
+            NSString *colorKey = [NSString stringWithFormat:@"color%d",index + 1];
+            [parameters setValue:model.color forKey:colorKey];
+        }
+        
+        if (marksArray.count == 1) {//1才有zoom
+            MarkersInfoModel *model = marksArray.firstObject;
+            [parameters setValue:[NSString stringWithFormat:@"%@",model.zoom] forKey:@"zoom"];
+        }
+        
+        [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/getRoadMap"
+                                                       withParams:parameters
+                                                   withMethodType:Get
+                                                         andBlock:^(id data, NSError *error) {
+                                                             api.responseSerializer = [AFJSONResponseSerializer serializer];
+                                                             if (error) {
+                                                                 block(nil, error);
+                                                             } else {
+                                                                 block(data, nil);
+                                                             }
+                                                         }];
+    }
+}
+
+//getLocationName
++ (void)ims_getLocationNameWithLatitude:(NSString *)latitude
+                              longitude:(NSString *)longitude
+                                  Block:(void(^)(id JSON, NSError *error))block {
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    //check need request refresh_token
+    if ([manager checkUserShouldRequestRefresh_token]) {
+        //
+        [self ims_requestAccessTokenWithRefresh_tokenBlock:^(id JSON, NSError *error) {
+            if (error) {
+                block(nil,error);
+            } else {
+                UserInfoManager *manager = UserInfoManager.shareInstance;
+                [manager encodeLoginAndRefreshTokenData:JSON];
+                NetworkAPIManager *api = [NetworkAPIManager shareManager];
+                
+                NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+                [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+                
+                NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                            latitude,@"lat",
+                                            longitude,@"lng",
+                                            nil];
+                
+                [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/getLocationName"
+                                                               withParams:parameters
+                                                           withMethodType:Get
+                                                                 andBlock:^(id data, NSError *error) {
+                                                                     if (error) {
+                                                                         block(nil, error);
+                                                                     } else {
+                                                                         block(data, nil);
+                                                                     }
+                                                                 }];
+            }
+        }];
+    } else {
+        NetworkAPIManager *api = [NetworkAPIManager shareManager];
+        
+        NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+        [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        
+        NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    latitude,@"lat",
+                                    longitude,@"lng",
+                                    nil];
+        
+        [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/getLocationName"
+                                                       withParams:parameters
+                                                   withMethodType:Get
+                                                         andBlock:^(id data, NSError *error) {
+                                                             if (error) {
+                                                                 block(nil, error);
+                                                             } else {
+                                                                 if (!DICT_IS_NIL(data)) {
+                                                                     block(data, nil);
+                                                                 } else {
+                                                                     block(nil,nil);
+                                                                 }
+                                                             }
+                                                         }];
+    }
+}
 @end

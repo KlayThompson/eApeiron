@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MarkersInfoModel.h"
 
 @interface IMSAPIManager : NSObject
 
@@ -69,4 +70,27 @@
                              longitude:(NSString *)longitude
                                  check:(NSString *)check
                                  Block:(void(^)(id JSON, NSError *error))block;
+
+
+/**
+ getRoadMap
+
+ @param num marks的个数
+ @param size 地图显示尺寸 300x400
+ @param latitude latitude
+ @param longitude longitude
+ @param color like red or blue ..
+ @param zoom 放大尺寸
+ @param block 图片
+ */
++ (void)ims_getRoadMapWithNum:(NSString *)num
+                         size:(NSString *)size
+                         zoom:(NSString *)zoom
+                   marksArray:(NSArray <MarkersInfoModel *>*)marksArray
+                        Block:(void(^)(id JSON, NSError *error))block;
+
+//getLocationName
++ (void)ims_getLocationNameWithLatitude:(NSString *)latitude
+                              longitude:(NSString *)longitude
+                                  Block:(void(^)(id JSON, NSError *error))block;
 @end

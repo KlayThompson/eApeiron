@@ -35,5 +35,5 @@
 
 
 @property (nonatomic, copy) NSString *issue_type;
-@property (nonatomic, copy) NSString *projectName;
+//@property (nonatomic, copy) NSString *projectName;
 @end

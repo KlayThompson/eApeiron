@@ -169,6 +169,9 @@
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
+		3BAE76361FBD626200B0C006 /* MarkersInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE76351FBD626200B0C006 /* MarkersInfoModel.m */; };
+		3BAE76371FBD626200B0C006 /* MarkersInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE76351FBD626200B0C006 /* MarkersInfoModel.m */; };
+		3BAE76381FBD626200B0C006 /* MarkersInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE76351FBD626200B0C006 /* MarkersInfoModel.m */; };
 		3BCB9C9E1F7F2EC200067BC6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */; };
 		3BCB9C9F1F7F2EDA00067BC6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */; };
 		3BCB9CA01F7F2EE200067BC6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB9C991F7F2E8B00067BC6 /* SVProgressHUD.bundle */; };
@@ -466,6 +469,8 @@
 		3B73E1EF1F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
+		3BAE76341FBD626200B0C006 /* MarkersInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkersInfoModel.h; sourceTree = "<group>"; };
+		3BAE76351FBD626200B0C006 /* MarkersInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MarkersInfoModel.m; sourceTree = "<group>"; };
 		3BCB9C941F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
 		3BCB9C951F7F2E8B00067BC6 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		3BCB9C961F7F2E8B00067BC6 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
@@ -819,6 +824,8 @@
 				3B73E1DE1F70E82700AD5153 /* CheckIncidentModel.m */,
 				3B73E1E21F70EB0300AD5153 /* CheckIncidentAuthority.h */,
 				3B73E1E31F70EB0300AD5153 /* CheckIncidentAuthority.m */,
+				3BAE76341FBD626200B0C006 /* MarkersInfoModel.h */,
+				3BAE76351FBD626200B0C006 /* MarkersInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1333,6 +1340,7 @@
 				3B2AED961F78FABB000505A2 /* YYImageCoder.m in Sources */,
 				3B2AED971F78FABB000505A2 /* YYWebImageOperation.m in Sources */,
 				3B2AED8F1F78FA64000505A2 /* YYCache.m in Sources */,
+				3BAE76361FBD626200B0C006 /* MarkersInfoModel.m in Sources */,
 				3B2AED901F78FA64000505A2 /* YYImage.m in Sources */,
 				3B2AED911F78FA64000505A2 /* YYImageCache.m in Sources */,
 				3B2AED921F78FA64000505A2 /* YYWebImageManager.m in Sources */,
@@ -1429,6 +1437,7 @@
 				3B73E1F71F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3B73E1F41F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630B1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
+				3BAE76371FBD626200B0C006 /* MarkersInfoModel.m in Sources */,
 				98B6FA1E1AE493D400B2497E /* TypedefEnums.m in Sources */,
 				98B6FA211AE493D400B2497E /* main.m in Sources */,
 				3B6658F61F6A192B006A2A09 /* ScanViewController.m in Sources */,
@@ -1494,6 +1503,7 @@
 				3B73E1F81F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
 				3B73E1F51F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630C1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
+				3BAE76381FBD626200B0C006 /* MarkersInfoModel.m in Sources */,
 				98B6FA4C1AE493DB00B2497E /* TypedefEnums.m in Sources */,
 				98B6FA4F1AE493DB00B2497E /* main.m in Sources */,
 				3B6658F71F6A192B006A2A09 /* ScanViewController.m in Sources */,
