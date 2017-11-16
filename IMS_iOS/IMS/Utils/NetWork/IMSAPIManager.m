@@ -40,8 +40,8 @@
         client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
         client_id = @"7";
     } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
-        client_secret = @"Z9kI6MMJ652UFweOJTWYjhGFGwm5RLHY3Q7T7nSm";
-        client_id = @"2";
+        client_secret = @"9h2HFsUyozll3YThdYtFAbyCu9JIQVD8EFSHOK9d";
+        client_id = @"5tlUHsftH5a095df31c22b4.87337685";
     }
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -78,8 +78,8 @@
         client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
         client_id = @"7";
     } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
-        client_secret = @"Z9kI6MMJ652UFweOJTWYjhGFGwm5RLHY3Q7T7nSm";
-        client_id = @"2";
+        client_secret = @"9h2HFsUyozll3YThdYtFAbyCu9JIQVD8EFSHOK9d";
+        client_id = @"5tlUHsftH5a095df31c22b4.87337685";
     }
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
