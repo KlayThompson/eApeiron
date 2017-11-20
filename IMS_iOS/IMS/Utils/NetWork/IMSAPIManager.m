@@ -31,18 +31,18 @@
     NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.refresh_token];
     [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
     
-    NSString *client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
-    NSString *client_id = @"2";
-    if ([manager.serverPathUrl isEqualToString:@"http://www.apeironcloud.com/"]) {
-        client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
-        client_id = @"2";
-    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
-        client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
-        client_id = @"7";
-    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
-        client_secret = @"9h2HFsUyozll3YThdYtFAbyCu9JIQVD8EFSHOK9d";
-        client_id = @"5tlUHsftH5a095df31c22b4.87337685";
-    }
+    NSString *client_secret = @"dCqlAdJC2R7VvW9tLD9JLot1ek39vVqeqC3ANWVa";
+    NSString *client_id = @"uZn8lvlkg5a0dfe7ae57df6.37079856";
+//    if ([manager.serverPathUrl isEqualToString:@"http://www.apeironcloud.com/"]) {
+//        client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
+//        client_id = @"2";
+//    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+//        client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
+//        client_id = @"7";
+//    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
+//        client_secret = @"9h2HFsUyozll3YThdYtFAbyCu9JIQVD8EFSHOK9d";
+//        client_id = @"5tlUHsftH5a095df31c22b4.87337685";
+//    }
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 client_id,@"client_id",
@@ -67,20 +67,20 @@
 + (void)ims_getAuthTokenWithUsername:(NSString *)username
                             password:(NSString *)password
                                Block:(void(^)(id JSON, NSError *error))block {
-    UserInfoManager *manager = [UserInfoManager shareInstance];
+//    UserInfoManager *manager = [UserInfoManager shareInstance];
 
-    NSString *client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
-    NSString *client_id = @"2";
-    if ([manager.serverPathUrl isEqualToString:@"http://www.apeironcloud.com/"]) {
-        client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
-        client_id = @"2";
-    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
-        client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
-        client_id = @"7";
-    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
-        client_secret = @"9h2HFsUyozll3YThdYtFAbyCu9JIQVD8EFSHOK9d";
-        client_id = @"5tlUHsftH5a095df31c22b4.87337685";
-    }
+    NSString *client_secret = @"dCqlAdJC2R7VvW9tLD9JLot1ek39vVqeqC3ANWVa";
+    NSString *client_id = @"uZn8lvlkg5a0dfe7ae57df6.37079856";
+//    if ([manager.serverPathUrl isEqualToString:@"http://www.apeironcloud.com/"]) {
+//        client_secret = @"edbsOI10Bbr4llQA5eKXDhz6inLTMT0Ln7TfzPdd";
+//        client_id = @"2";
+//    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+//        client_secret = @"yKgDjnGRp0H0GAAPuvnNSXO0BZ7YpIv6gyCW45dn";
+//        client_id = @"7";
+//    } else if ([manager.serverPathUrl isEqualToString:@"http://192.168.1.199/"]) {
+//        client_secret = @"dCqlAdJC2R7VvW9tLD9JLot1ek39vVqeqC3ANWVa";
+//        client_id = @"uZn8lvlkg5a0dfe7ae57df6.37079856";
+//    }
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 username,@"username",
