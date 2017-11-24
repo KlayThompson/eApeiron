@@ -86,6 +86,11 @@
 @property (nonatomic, strong) ProjectListModel *projectsListModel;
 
 /**
+ 是否需要更新密码
+ */
+@property (nonatomic, strong) NSNumber *need_update_pwd;
+
+/**
  保存用户信息到本地
  */
 - (void)saveUserInfoToLocal;

@@ -272,6 +272,7 @@
      showMap.hidesBottomBarWhenPushed = YES;
      [self.navigationController pushViewController:showMap animated:true];
      */
+    
     HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
     detail.hidesBottomBarWhenPushed = YES;
     detail.title = self.title;

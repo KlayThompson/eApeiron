@@ -93,4 +93,11 @@
 + (void)ims_getLocationNameWithLatitude:(NSString *)latitude
                               longitude:(NSString *)longitude
                                   Block:(void(^)(id JSON, NSError *error))block;
+
+/**
+ 用户退出登录
+
+ @param block 
+ */
++ (void)ims_userLogoutWithBlock:(void(^)(id JSON, NSError *error))block;
 @end

@@ -61,10 +61,10 @@
                                           Block:^(id JSON, NSError *error) {
                                               [SVProgressHUD dismiss];
                                               if (error) {
-                                                  [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+                                                  [weakSelf loginWithError:error];
                                               } else {
                                                   [SVProgressHUD showSuccessWithStatus:@"Login Success"];
-
+                                                  //检测是否需要need_update_pwd
                                                   [weakSelf doSomeWorkWhenLoginSuccess];
                                               }
                                           }];
@@ -100,12 +100,40 @@
  登录成功后做一些操作
  */
 - (void)doSomeWorkWhenLoginSuccess {
-    //更换rootViewController
-    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
-    [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
-    [tabbar setRootViewController];
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    //判断是否需要更新密码
+    if (manager.need_update_pwd.integerValue == 1) {
+        //需要更新密码，更新完成重新登录
+        
+    } else {
+        //不需要
+        //更换rootViewController
+        MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+        [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
+        [tabbar setRootViewController];
+        
+        [self getProects];
+    }
     
-    [self getProects];
+}
+
+/**
+ 登录失败，根据状态码不同需要做一些操作
+
+ @param error 返回的错误
+ */ 
+- (void)loginWithError:(NSError *)error {
+    
+    NSString *str = error.localizedDescription;
+    if ([str containsString:@"403"]) {//403/401
+        DLog(@"It's because the account was locked, such as due to too many times incorrect password");
+    } else if ([str containsString:@""]) {//412
+        
+    } else if ([str containsString:@""]) {//423
+        
+    } else {
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    }
 }
 
 /**

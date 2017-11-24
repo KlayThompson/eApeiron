@@ -471,4 +471,32 @@
                                                          }];
     }
 }
+
+//用户退出登录
++ (void)ims_userLogoutWithBlock:(void(^)(id JSON, NSError *error))block {
+    
+    
+    NetworkAPIManager *api = [NetworkAPIManager shareManager];
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+    [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"auth/logout"
+                                                   withParams:nil
+                                               withMethodType:Post
+                                                     andBlock:^(id data, NSError *error) {
+                                                         if (error) {
+                                                             block(nil, error);
+                                                         } else {
+                                                             if (!DICT_IS_NIL(data)) {
+                                                                 block(data, nil);
+                                                             } else {
+                                                                 block(nil,nil);
+                                                             }
+                                                         }
+                                                     }];
+    
+}
 @end

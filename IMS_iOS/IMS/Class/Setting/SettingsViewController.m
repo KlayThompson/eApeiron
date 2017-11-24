@@ -104,19 +104,25 @@
  */
 - (IBAction)logoutButtonTap:(id)sender {
     
+    
     [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
+    [IMSAPIManager ims_userLogoutWithBlock:^(id JSON, NSError *error) {
         [SVProgressHUD dismiss];
-        
-        UserInfoManager *manager = [UserInfoManager shareInstance];
-        [manager clearUserInfo];
-        
-        //显示登录页面
-        LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
-        [[UIApplication sharedApplication].keyWindow setRootViewController:navi];
-    });
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:IMS_ERROR_MESSAGE];
+        } else {
+            //退出登录成功
+            NSString *response = JSON[@"response"];
+            [SVProgressHUD showSuccessWithStatus:response];
+            UserInfoManager *manager = [UserInfoManager shareInstance];
+            [manager clearUserInfo];
+            
+            //显示登录页面
+            LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+            MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
+            [[UIApplication sharedApplication].keyWindow setRootViewController:navi];
+        }
+    }];
 }
 
 - (void)doneButtonTap {

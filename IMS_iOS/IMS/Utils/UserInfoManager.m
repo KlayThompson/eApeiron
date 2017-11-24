@@ -226,6 +226,7 @@ static UserInfoManager *instance = nil;
     self.refresh_token = refresh_token;
     self.refresh_token_expires_in = refresh_token_expires_in;
     self.expires_in = expires_in;
+    self.need_update_pwd = response[@"need_update_pwd"];
     //存储用户信息
     [self saveUserInfoToLocal];
     [self saveCurrentTime];
