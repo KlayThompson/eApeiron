@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -58,18 +58,33 @@
                                 <action selector="loginButtonTap:" destination="-1" eventType="touchUpInside" id="vnS-zs-KAl"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aEG-KE-uUB">
+                            <rect key="frame" x="246" y="318" width="109" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Z8O-t9-daE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="Forgot Password?">
+                                <color key="titleColor" red="0.28235294117647058" green="0.6705882352941176" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="forgotPwdButtonClick:" destination="-1" eventType="touchUpInside" id="WMc-yy-Nvj"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="Aua-6r-t9w" firstAttribute="top" secondItem="OtF-uu-apo" secondAttribute="top" constant="110" id="AmX-9t-9bd"/>
                         <constraint firstItem="ek4-dm-Klm" firstAttribute="trailing" secondItem="Aua-6r-t9w" secondAttribute="trailing" id="F5G-Af-5aY"/>
                         <constraint firstItem="Aua-6r-t9w" firstAttribute="width" secondItem="OtF-uu-apo" secondAttribute="width" constant="-40" id="KRP-9k-e6l"/>
                         <constraint firstAttribute="trailing" secondItem="Aua-6r-t9w" secondAttribute="trailing" id="Pds-6U-XmD"/>
+                        <constraint firstItem="aEG-KE-uUB" firstAttribute="top" secondItem="p95-HZ-Pm1" secondAttribute="bottom" constant="20" id="Y74-Km-Vug"/>
                         <constraint firstAttribute="bottom" secondItem="p95-HZ-Pm1" secondAttribute="bottom" constant="10" id="bTL-sD-dUm"/>
                         <constraint firstItem="Aua-6r-t9w" firstAttribute="leading" secondItem="OtF-uu-apo" secondAttribute="leading" constant="20" id="bzT-jU-p13"/>
                         <constraint firstItem="p95-HZ-Pm1" firstAttribute="top" secondItem="ek4-dm-Klm" secondAttribute="bottom" constant="44" id="cMy-ZB-Kag"/>
                         <constraint firstItem="p95-HZ-Pm1" firstAttribute="trailing" secondItem="ek4-dm-Klm" secondAttribute="trailing" id="cqW-1O-KtV"/>
                         <constraint firstItem="ek4-dm-Klm" firstAttribute="top" secondItem="Aua-6r-t9w" secondAttribute="bottom" constant="20" id="d1X-cc-r4W"/>
                         <constraint firstItem="p95-HZ-Pm1" firstAttribute="leading" secondItem="ek4-dm-Klm" secondAttribute="leading" id="quC-pt-SSp"/>
+                        <constraint firstItem="aEG-KE-uUB" firstAttribute="trailing" secondItem="p95-HZ-Pm1" secondAttribute="trailing" id="uxE-zu-t4s"/>
                         <constraint firstItem="ek4-dm-Klm" firstAttribute="leading" secondItem="Aua-6r-t9w" secondAttribute="leading" id="wej-9Y-eMW"/>
                     </constraints>
                 </scrollView>

@@ -499,4 +499,55 @@
                                                      }];
     
 }
+
+//用户更新用户密码或者用户邮箱
++ (void)ims_userUpdateAccountNewPassword:(NSString *)newPassword
+                                newEmail:(NSString *)newEmail
+                               WithBlock:(void(^)(id JSON, NSError *error))block {
+    
+    NetworkAPIManager *api = [NetworkAPIManager shareManager];
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+    [api.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                newPassword,@"newPwd",
+                                newEmail,@"newEmail",
+                                nil];
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/updateAccount"
+                                                   withParams:parameters
+                                               withMethodType:Post
+                                                     andBlock:^(id data, NSError *error) {
+                                                         if (error) {
+                                                             block(nil, error);
+                                                         } else {
+                                                             block(data, nil);
+                                                         }
+                                                     }];
+    
+}
+
+//用户忘记密码
++ (void)ims_userForgotPasswordWithEmail:(NSString *)email
+                              WithBlock:(void(^)(id JSON, NSError *error))block {
+    
+    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                email,@"email",
+                                nil];
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/forgotPassword"
+                                                   withParams:parameters
+                                               withMethodType:Post
+                                                     andBlock:^(id data, NSError *error) {
+                                                         if (error) {
+                                                             block(nil, error);
+                                                         } else {
+                                                             block(data, nil);
+                                                         }
+                                                     }];
+    
+}
+
 @end

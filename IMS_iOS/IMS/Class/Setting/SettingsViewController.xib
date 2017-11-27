@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +15,7 @@
                 <outlet property="logoutButton" destination="R8d-Zl-4jc" id="cAa-mL-VDv"/>
                 <outlet property="pickerBottomCons" destination="Dzm-MW-Jkr" id="JNV-1N-gDs"/>
                 <outlet property="projectPicker" destination="YX9-eT-YuB" id="cn4-Jg-jQF"/>
+                <outlet property="updateAccountButton" destination="xud-JB-WgX" id="NJH-CE-GfX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -90,6 +91,20 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select_downbutton" translatesAutoresizingMaskIntoConstraints="NO" id="89o-uV-2qg">
                     <rect key="frame" x="308" y="147" width="32" height="32"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xud-JB-WgX">
+                    <rect key="frame" x="20" y="269" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="lKA-b7-FSB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="UpdateAccount">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="updateAccountButtonClick:" destination="-1" eventType="touchUpInside" id="aXe-k9-xa9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -103,12 +118,15 @@
                 <constraint firstItem="hrt-xI-gJ5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MyQ-s1-S6Q"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="trailing" secondItem="bA1-eR-Fnj" secondAttribute="trailing" id="SRT-QN-yVO"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="top" secondItem="bA1-eR-Fnj" secondAttribute="bottom" constant="20" id="VeJ-xn-1kf"/>
+                <constraint firstItem="xud-JB-WgX" firstAttribute="trailing" secondItem="R8d-Zl-4jc" secondAttribute="trailing" id="Vfa-Mr-uXE"/>
+                <constraint firstItem="xud-JB-WgX" firstAttribute="top" secondItem="R8d-Zl-4jc" secondAttribute="bottom" constant="20" id="X5R-Oe-2ln"/>
                 <constraint firstItem="89o-uV-2qg" firstAttribute="centerY" secondItem="bA1-eR-Fnj" secondAttribute="centerY" id="fVJ-RF-DSM"/>
                 <constraint firstItem="bA1-eR-Fnj" firstAttribute="top" secondItem="hrt-xI-gJ5" secondAttribute="bottom" constant="20" id="heg-7q-ukr"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="leading" secondItem="bA1-eR-Fnj" secondAttribute="leading" id="kb1-qw-6Mh"/>
                 <constraint firstItem="YX9-eT-YuB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lk0-TI-RON"/>
                 <constraint firstItem="hrt-xI-gJ5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="r95-u1-az4"/>
                 <constraint firstAttribute="trailing" secondItem="YX9-eT-YuB" secondAttribute="trailing" id="rDJ-vO-e9L"/>
+                <constraint firstItem="xud-JB-WgX" firstAttribute="leading" secondItem="R8d-Zl-4jc" secondAttribute="leading" id="wAN-BW-u4r"/>
                 <constraint firstItem="Fo1-Jw-uWS" firstAttribute="top" secondItem="YX9-eT-YuB" secondAttribute="top" id="x5E-Ie-nnF"/>
             </constraints>
             <point key="canvasLocation" x="-206.5" y="110.5"/>

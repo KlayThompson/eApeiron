@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0A3F301FCBF37300BB5362 /* ForgotPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F2E1FCBF37300BB5362 /* ForgotPwdViewController.m */; };
+		3B0A3F311FCBF37300BB5362 /* ForgotPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F2F1FCBF37300BB5362 /* ForgotPwdViewController.xib */; };
+		3B0A3F361FCBF37D00BB5362 /* ForgotPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F2E1FCBF37300BB5362 /* ForgotPwdViewController.m */; };
+		3B0A3F371FCBF37E00BB5362 /* ForgotPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F2E1FCBF37300BB5362 /* ForgotPwdViewController.m */; };
+		3B0A3F381FCBF38300BB5362 /* ForgotPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F2F1FCBF37300BB5362 /* ForgotPwdViewController.xib */; };
+		3B0A3F391FCBF38400BB5362 /* ForgotPwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F2F1FCBF37300BB5362 /* ForgotPwdViewController.xib */; };
+		3B0A3F411FCBF82100BB5362 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F401FCBF82100BB5362 /* CommonModel.m */; };
+		3B0A3F421FCBF82100BB5362 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F401FCBF82100BB5362 /* CommonModel.m */; };
+		3B0A3F431FCBF82100BB5362 /* CommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F401FCBF82100BB5362 /* CommonModel.m */; };
+		3B0A3F471FCBFEB100BB5362 /* UpdateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */; };
+		3B0A3F481FCBFEB100BB5362 /* UpdateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */; };
+		3B0A3F491FCBFEB100BB5362 /* UpdateAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */; };
+		3B0A3F4A1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */; };
+		3B0A3F4B1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */; };
+		3B0A3F4C1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */; };
 		3B20AFA91F98755900B8BDED /* ShowMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFA71F98755900B8BDED /* ShowMapViewController.m */; };
 		3B20AFAA1F98755900B8BDED /* ShowMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFA71F98755900B8BDED /* ShowMapViewController.m */; };
 		3B20AFAB1F98755900B8BDED /* ShowMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFA71F98755900B8BDED /* ShowMapViewController.m */; };
@@ -352,6 +367,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B0A3F2D1FCBF37300BB5362 /* ForgotPwdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPwdViewController.h; sourceTree = "<group>"; };
+		3B0A3F2E1FCBF37300BB5362 /* ForgotPwdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPwdViewController.m; sourceTree = "<group>"; };
+		3B0A3F2F1FCBF37300BB5362 /* ForgotPwdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPwdViewController.xib; sourceTree = "<group>"; };
+		3B0A3F3F1FCBF82100BB5362 /* CommonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonModel.h; sourceTree = "<group>"; };
+		3B0A3F401FCBF82100BB5362 /* CommonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonModel.m; sourceTree = "<group>"; };
+		3B0A3F441FCBFEB100BB5362 /* UpdateAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateAccountViewController.h; sourceTree = "<group>"; };
+		3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateAccountViewController.m; sourceTree = "<group>"; };
+		3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateAccountViewController.xib; sourceTree = "<group>"; };
 		3B20AFA61F98755900B8BDED /* ShowMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMapViewController.h; sourceTree = "<group>"; };
 		3B20AFA71F98755900B8BDED /* ShowMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMapViewController.m; sourceTree = "<group>"; };
 		3B20AFA81F98755900B8BDED /* ShowMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowMapViewController.xib; sourceTree = "<group>"; };
@@ -604,6 +627,8 @@
 				3B2AED1E1F78D517000505A2 /* ProjectModel.m */,
 				3B2AED221F78D8BA000505A2 /* ProjectDetailModel.h */,
 				3B2AED231F78D8BA000505A2 /* ProjectDetailModel.m */,
+				3B0A3F3F1FCBF82100BB5362 /* CommonModel.h */,
+				3B0A3F401FCBF82100BB5362 /* CommonModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -768,6 +793,9 @@
 				3B6658C61F6A192A006A2A09 /* LoginViewController.h */,
 				3B6658C71F6A192A006A2A09 /* LoginViewController.m */,
 				3B6658C81F6A192A006A2A09 /* LoginViewController.xib */,
+				3B0A3F2D1FCBF37300BB5362 /* ForgotPwdViewController.h */,
+				3B0A3F2E1FCBF37300BB5362 /* ForgotPwdViewController.m */,
+				3B0A3F2F1FCBF37300BB5362 /* ForgotPwdViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -813,6 +841,9 @@
 				3B2AEDC61F7B47C2000505A2 /* ProjectSelectCell.h */,
 				3B2AEDC71F7B47C2000505A2 /* ProjectSelectCell.m */,
 				3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */,
+				3B0A3F441FCBFEB100BB5362 /* UpdateAccountViewController.h */,
+				3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */,
+				3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1215,6 +1246,7 @@
 				3BD063831F6907DF00C1722A /* goback@2x.png in Resources */,
 				9879D3BD1A48FDCF00BF53EF /* Icon.png in Resources */,
 				98764D9D1A47ED24007ED35F /* ic_scan@2x.png in Resources */,
+				3B0A3F311FCBF37300BB5362 /* ForgotPwdViewController.xib in Resources */,
 				9879D3BE1A48FDCF00BF53EF /* Icon7.png in Resources */,
 				98764D9C1A47ED24007ED35F /* ic_scan_selected@2x.png in Resources */,
 				98ED33C51AE4DDD800E66D44 /* Default@2x.png in Resources */,
@@ -1227,6 +1259,7 @@
 				3B6659121F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
 				3B6659201F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				3B6659AB1F6F6836006A2A09 /* issues_off@2x.png in Resources */,
+				3B0A3F4A1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */,
 				98764D9B1A47ED24007ED35F /* ic_menu_home@2x.png in Resources */,
 				3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
@@ -1243,6 +1276,7 @@
 				3BCB9C9F1F7F2EDA00067BC6 /* SVProgressHUD.bundle in Resources */,
 				98B6FA281AE493D400B2497E /* Main.storyboard in Resources */,
 				3B20AFAD1F98755900B8BDED /* ShowMapViewController.xib in Resources */,
+				3B0A3F4B1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */,
 				98ED33C31AE4DDD800E66D44 /* Default.png in Resources */,
 				3B6658EA1F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				98B6FA291AE493D400B2497E /* Icon@2x.png in Resources */,
@@ -1258,6 +1292,7 @@
 				98ED33BA1AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				3B6658FC1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B73E1DA1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
+				3B0A3F381FCBF38300BB5362 /* ForgotPwdViewController.xib in Resources */,
 				3B6659061F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6659211F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA2E1AE493D400B2497E /* ic_scan_selected@2x.png in Resources */,
@@ -1284,6 +1319,7 @@
 				3BCB9CA01F7F2EE200067BC6 /* SVProgressHUD.bundle in Resources */,
 				98B6FA561AE493DB00B2497E /* Main.storyboard in Resources */,
 				3B20AFAE1F98755900B8BDED /* ShowMapViewController.xib in Resources */,
+				3B0A3F4C1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */,
 				98ED33C41AE4DDD800E66D44 /* Default.png in Resources */,
 				3B6658EB1F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				98B6FA571AE493DB00B2497E /* Icon@2x.png in Resources */,
@@ -1299,6 +1335,7 @@
 				98ED33BB1AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				3B6658FD1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B73E1DB1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
+				3B0A3F391FCBF38400BB5362 /* ForgotPwdViewController.xib in Resources */,
 				3B6659071F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6659221F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA5D1AE493DB00B2497E /* ic_settings@2x.png in Resources */,
@@ -1340,6 +1377,7 @@
 				3B2AED961F78FABB000505A2 /* YYImageCoder.m in Sources */,
 				3B2AED971F78FABB000505A2 /* YYWebImageOperation.m in Sources */,
 				3B2AED8F1F78FA64000505A2 /* YYCache.m in Sources */,
+				3B0A3F301FCBF37300BB5362 /* ForgotPwdViewController.m in Sources */,
 				3BAE76361FBD626200B0C006 /* MarkersInfoModel.m in Sources */,
 				3B2AED901F78FA64000505A2 /* YYImage.m in Sources */,
 				3B2AED911F78FA64000505A2 /* YYImageCache.m in Sources */,
@@ -1368,8 +1406,10 @@
 				3B73E1F01F710AB500AD5153 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				3BD063011F66234B00C1722A /* AFNetworkReachabilityManager.m in Sources */,
 				3B6658E31F6A192A006A2A09 /* HistoryUnit.m in Sources */,
+				3B0A3F411FCBF82100BB5362 /* CommonModel.m in Sources */,
 				3B2AED241F78D8BA000505A2 /* ProjectDetailModel.m in Sources */,
 				3B73E1F61F710AB500AD5153 /* TPKeyboardAvoidingTableView.m in Sources */,
+				3B0A3F471FCBFEB100BB5362 /* UpdateAccountViewController.m in Sources */,
 				3B73E1F31F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				98759A431AAD79FE008EF3EE /* TypedefEnums.m in Sources */,
 				3BD0630D1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
@@ -1406,6 +1446,8 @@
 				3B2AEDA01F78FD48000505A2 /* YYImageCoder.m in Sources */,
 				3B2AED9F1F78FD3A000505A2 /* YYWebImageOperation.m in Sources */,
 				3B20AFAA1F98755900B8BDED /* ShowMapViewController.m in Sources */,
+				3B0A3F481FCBFEB100BB5362 /* UpdateAccountViewController.m in Sources */,
+				3B0A3F361FCBF37D00BB5362 /* ForgotPwdViewController.m in Sources */,
 				3B2AED9E1F78FD2A000505A2 /* YYCache.m in Sources */,
 				3B2AED9D1F78FD1E000505A2 /* YYImage.m in Sources */,
 				3B2AED9C1F78FD13000505A2 /* YYImageCache.m in Sources */,
@@ -1438,6 +1480,7 @@
 				3B73E1F41F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630B1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 				3BAE76371FBD626200B0C006 /* MarkersInfoModel.m in Sources */,
+				3B0A3F421FCBF82100BB5362 /* CommonModel.m in Sources */,
 				98B6FA1E1AE493D400B2497E /* TypedefEnums.m in Sources */,
 				98B6FA211AE493D400B2497E /* main.m in Sources */,
 				3B6658F61F6A192B006A2A09 /* ScanViewController.m in Sources */,
@@ -1472,6 +1515,8 @@
 				3B2AEDAB1F78FDD2000505A2 /* UIImageView+YYWebImage.m in Sources */,
 				3B2AEDAC1F78FDD2000505A2 /* YYImage.m in Sources */,
 				3B20AFAB1F98755900B8BDED /* ShowMapViewController.m in Sources */,
+				3B0A3F491FCBFEB100BB5362 /* UpdateAccountViewController.m in Sources */,
+				3B0A3F371FCBF37E00BB5362 /* ForgotPwdViewController.m in Sources */,
 				3B2AEDAD1F78FDD2000505A2 /* YYImageCoder.m in Sources */,
 				3B2AEDAE1F78FDD2000505A2 /* YYSpriteSheetImage.m in Sources */,
 				3B2AEDAF1F78FDD2000505A2 /* YYImageCache.m in Sources */,
@@ -1504,6 +1549,7 @@
 				3B73E1F51F710AB500AD5153 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3BD0630C1F66234B00C1722A /* AFURLResponseSerialization.m in Sources */,
 				3BAE76381FBD626200B0C006 /* MarkersInfoModel.m in Sources */,
+				3B0A3F431FCBF82100BB5362 /* CommonModel.m in Sources */,
 				98B6FA4C1AE493DB00B2497E /* TypedefEnums.m in Sources */,
 				98B6FA4F1AE493DB00B2497E /* main.m in Sources */,
 				3B6658F71F6A192B006A2A09 /* ScanViewController.m in Sources */,

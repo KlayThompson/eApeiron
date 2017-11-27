@@ -15,11 +15,13 @@
 #import "AppDelegate.h"
 #import "ProjectModel.h"
 #import "SVProgressHUD.h"
+#import "UpdateAccountViewController.h"
 
 @interface SettingsViewController ()<UIPickerViewDelegate,UIPickerViewDataSource> {
     
     ProjectSelectView *detail;
 }
+@property (weak, nonatomic) IBOutlet UIButton *updateAccountButton;
 
 /**
  选择项目按钮
@@ -104,7 +106,6 @@
  */
 - (IBAction)logoutButtonTap:(id)sender {
     
-    
     [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
     [IMSAPIManager ims_userLogoutWithBlock:^(id JSON, NSError *error) {
         [SVProgressHUD dismiss];
@@ -116,7 +117,7 @@
             [SVProgressHUD showSuccessWithStatus:response];
             UserInfoManager *manager = [UserInfoManager shareInstance];
             [manager clearUserInfo];
-            
+
             //显示登录页面
             LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
             MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
@@ -124,6 +125,15 @@
         }
     }];
 }
+
+- (IBAction)updateAccountButtonClick:(id)sender {
+    
+    UpdateAccountViewController *update = [[UpdateAccountViewController alloc] initWithNibName:@"UpdateAccountViewController" bundle:nil];
+    update.title = @"UpdateAccount";
+    update.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:update animated:YES];
+}
+
 
 - (void)doneButtonTap {
     
@@ -223,7 +233,11 @@
     self.logoutButton.layer.masksToBounds = true;
     self.logoutButton.layer.borderWidth = 1;
     self.logoutButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    
+ 
+    self.updateAccountButton.layer.cornerRadius = 5;
+    self.updateAccountButton.layer.masksToBounds = true;
+    self.updateAccountButton.layer.borderWidth = 1;
+    self.updateAccountButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
 }
 
 - (void)setupPicker {

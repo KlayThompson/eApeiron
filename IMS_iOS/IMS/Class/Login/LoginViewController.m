@@ -14,6 +14,7 @@
 #import "YYModel.h"
 #import "SVProgressHUD.h"
 #import "ProjectListModel.h"
+#import "ForgotPwdViewController.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 
@@ -70,6 +71,14 @@
                                           }];
     
 }
+
+- (IBAction)forgotPwdButtonClick:(id)sender {
+    
+    ForgotPwdViewController *forgot = [[ForgotPwdViewController alloc] initWithNibName:@"ForgotPwdViewController" bundle:nil];
+    forgot.title = @"Forgot Password";
+    [self.navigationController pushViewController:forgot animated:YES];
+}
+
 
 /**
  检查用户输入用户名密码状态
