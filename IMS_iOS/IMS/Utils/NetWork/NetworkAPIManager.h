@@ -28,4 +28,11 @@ typedef NS_ENUM(NSInteger, NetworkMethod) {
 - (void)downloadDataWithFullPath:(NSString *)aPath
                         andBlock:(void (^)(id data, NSError *error))block;
 
+/**
+ 供不需要Token或者确定Token有效的进行请求，否则使用requestJsonDataWithPath
+ */
+- (void)requestJsonDataWithEffectiveTokenWithPath:(NSString *)aPath
+                                       withParams:(NSDictionary*)params
+                                   withMethodType:(int)NetworkMethod
+                                         andBlock:(void (^)(id data, NSError *error))block;
 @end

@@ -34,21 +34,21 @@
                                 IMS_client_secret,@"client_secret",
                                 nil];
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"auth/login"
-                                                   withParams:parameters
-                                               withMethodType:Post
-                                                     andBlock:^(id data, NSError *error) {
-                                                         if (error) {
-                                                             block(nil, error);
-                                                         } else {
-                                                             if (!DICT_IS_NIL(data)) {
-                                                                 UserInfoManager *manager = UserInfoManager.shareInstance;
-                                                                 manager.currentUsername = username;
-                                                                 [manager encodeLoginAndRefreshTokenData:data];
-                                                             }
-                                                             block(data, nil);
-                                                         }
-                                                     }];
+    [[NetworkAPIManager shareManager] requestJsonDataWithEffectiveTokenWithPath:@"auth/login"
+                                                                     withParams:parameters
+                                                                 withMethodType:Post
+                                                                       andBlock:^(id data, NSError *error) {
+                                                                           if (error) {
+                                                                               block(nil, error);
+                                                                           } else {
+                                                                               if (!DICT_IS_NIL(data)) {
+                                                                                   UserInfoManager *manager = UserInfoManager.shareInstance;
+                                                                                   manager.currentUsername = username;
+                                                                                   [manager encodeLoginAndRefreshTokenData:data];
+                                                                               }
+                                                                               block(data, nil);
+                                                                           }
+                                                                       }];
 }
 
 //获取工程名
@@ -198,20 +198,20 @@
 //用户退出登录
 + (void)ims_userLogoutWithBlock:(void(^)(id JSON, NSError *error))block {
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"auth/logout"
-                                                   withParams:nil
-                                               withMethodType:Post
-                                                     andBlock:^(id data, NSError *error) {
-                                                         if (error) {
-                                                             block(nil, error);
-                                                         } else {
-                                                             if (!DICT_IS_NIL(data)) {
-                                                                 block(data, nil);
-                                                             } else {
-                                                                 block(nil,nil);
-                                                             }
-                                                         }
-                                                     }];
+    [[NetworkAPIManager shareManager] requestJsonDataWithEffectiveTokenWithPath:@"auth/logout"
+                                                                     withParams:nil
+                                                                 withMethodType:Post
+                                                                       andBlock:^(id data, NSError *error) {
+                                                                           if (error) {
+                                                                               block(nil, error);
+                                                                           } else {
+                                                                               if (!DICT_IS_NIL(data)) {
+                                                                                   block(data, nil);
+                                                                               } else {
+                                                                                   block(nil,nil);
+                                                                               }
+                                                                           }
+                                                                       }];
     
 }
 
@@ -246,16 +246,16 @@
                                 email,@"email",
                                 nil];
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/forgotPassword"
-                                                   withParams:parameters
-                                               withMethodType:Post
-                                                     andBlock:^(id data, NSError *error) {
-                                                         if (error) {
-                                                             block(nil, error);
-                                                         } else {
-                                                             block(data, nil);
-                                                         }
-                                                     }];
+    [[NetworkAPIManager shareManager] requestJsonDataWithEffectiveTokenWithPath:@"IMS/service/forgotPassword"
+                                                                     withParams:parameters
+                                                                 withMethodType:Post
+                                                                       andBlock:^(id data, NSError *error) {
+                                                                           if (error) {
+                                                                               block(nil, error);
+                                                                           } else {
+                                                                               block(data, nil);
+                                                                           }
+                                                                       }];
     
 }
 
