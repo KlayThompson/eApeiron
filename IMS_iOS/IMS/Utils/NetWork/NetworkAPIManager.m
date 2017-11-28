@@ -47,8 +47,8 @@ static NetworkAPIManager *shareManager = nil;
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
-    //检查Token是否过期
-    if ([manager checkUserShouldRequestRefresh_token]) {
+    //检查Token是否过期   //登录的方法不需要refresh
+    if ([manager checkUserShouldRequestRefresh_token] && ![aPath isEqualToString:@"auth/login"]) {
         
         NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.refresh_token];
         [self.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
