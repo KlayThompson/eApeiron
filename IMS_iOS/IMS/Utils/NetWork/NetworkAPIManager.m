@@ -39,6 +39,7 @@ static NetworkAPIManager *shareManager = nil;
     return self;
 }
 
+//供外部调用，在此方法内判断是否Token有效，有效则调用requestJsonDataWithEffectiveTokenWithPath，无效则获取最新Token，在调取requestJsonDataWithEffectiveTokenWithPath方法
 - (void)requestJsonDataWithPath:(NSString *)aPath
                      withParams:(NSDictionary*)params
                  withMethodType:(int)NetworkMethod
@@ -79,6 +80,7 @@ static NetworkAPIManager *shareManager = nil;
     
 }
 
+//持有有效的Token进行网络访问
 - (void)requestJsonDataWithEffectiveTokenWithPath:(NSString *)aPath
                                        withParams:(NSDictionary*)params
                                    withMethodType:(int)NetworkMethod
