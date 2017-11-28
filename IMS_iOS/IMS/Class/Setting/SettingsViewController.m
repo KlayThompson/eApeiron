@@ -133,6 +133,7 @@
     }];
 }
 
+//更新账户信息
 - (IBAction)updateAccountButtonClick:(id)sender {
     
     UpdateAccountViewController *update = [[UpdateAccountViewController alloc] initWithNibName:@"UpdateAccountViewController" bundle:nil];

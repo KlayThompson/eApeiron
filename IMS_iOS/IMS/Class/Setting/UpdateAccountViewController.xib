@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpdateAccountViewController">
             <connections>
+                <outlet property="emailLabel" destination="TuP-MF-p6w" id="5tj-og-vqt"/>
                 <outlet property="emailTextField" destination="5eh-3z-W6q" id="Rmw-0e-OL5"/>
+                <outlet property="noteLabel" destination="ju9-KD-M6q" id="OQS-Mx-mjE"/>
                 <outlet property="okButton" destination="8Ml-fb-g0h" id="vhU-Ld-FIU"/>
                 <outlet property="passwordTextfield" destination="wvz-PR-1aF" id="ka0-TP-DMa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

@@ -15,6 +15,7 @@
 #import "SVProgressHUD.h"
 #import "ProjectListModel.h"
 #import "ForgotPwdViewController.h"
+#import "UpdateAccountViewController.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 
@@ -113,7 +114,10 @@
     //判断是否需要更新密码
     if (manager.need_update_pwd.integerValue == 1) {
         //需要更新密码，更新完成重新登录
-        
+        UpdateAccountViewController *update = [[UpdateAccountViewController alloc] initWithNibName:@"UpdateAccountViewController" bundle:nil];
+        update.title = @"NeedUpdatePassword";
+        update.forChangePassword = YES;
+        [self presentViewController:update animated:YES completion:nil];
     } else {
         //不需要
         //更换rootViewController
@@ -136,10 +140,11 @@
     NSString *str = error.localizedDescription;
     if ([str containsString:@"403"]) {//403/401
         DLog(@"It's because the account was locked, such as due to too many times incorrect password");
-    } else if ([str containsString:@""]) {//412
-        
-    } else if ([str containsString:@""]) {//423
-        
+        [SVProgressHUD showErrorWithStatus:error.localizedDescription];
+    } else if ([str containsString:@"412"]) {//412
+        [SVProgressHUD showInfoWithStatus:@"You must verify your account. Check for an e-mail from Apeiron Cloud with the subject 'Welcome to Apeiron Cloud's IMS!' for verification instructions."];
+    } else if ([str containsString:@"423"]) {//423
+        [SVProgressHUD showInfoWithStatus:@"Your account is now locked due to too many login attempts. Please contact an administrator for further assistance or try later. "];
     } else {
         [SVProgressHUD showErrorWithStatus:error.localizedDescription];
     }

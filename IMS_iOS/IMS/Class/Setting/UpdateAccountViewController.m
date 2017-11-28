@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
+@property (weak, nonatomic) IBOutlet UILabel *noteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 
 
 @end
@@ -33,6 +35,16 @@
     self.okButton.layer.masksToBounds = true;
     self.okButton.layer.borderWidth = 1;
     self.okButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    if (self.forChangePassword) {
+        self.emailTextField.hidden = YES;
+        self.emailLabel.hidden = YES;
+        self.noteLabel.text = @"NOTE: you need change your password";
+    } else {
+        self.emailTextField.hidden = NO;
+        self.emailLabel.hidden = NO;
+        self.noteLabel.text = @"NOTE: at least one of the arguments shall be provided";
+    }
 }
 
 - (void)didReceiveMemoryWarning {

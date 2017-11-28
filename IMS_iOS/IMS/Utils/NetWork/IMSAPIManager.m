@@ -220,10 +220,13 @@
                                 newEmail:(NSString *)newEmail
                                WithBlock:(void(^)(id JSON, NSError *error))block {
     
-    NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
-                                newPassword,@"newPwd",
-                                newEmail,@"newEmail",
-                                nil];
+    NSMutableDictionary *parameters = [NSMutableDictionary new];
+    if (!STR_IS_NIL(newPassword)) {
+        [parameters setObject:newPassword forKey:@"newPwd"];
+    }
+    if (!STR_IS_NIL(newEmail)) {
+        [parameters setObject:newEmail forKey:@"newEmail"];
+    }
     
     [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/updateAccount"
                                                    withParams:parameters

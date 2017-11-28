@@ -10,4 +10,6 @@
 
 @interface UpdateAccountViewController : UIViewController
 
+@property (nonatomic, assign) BOOL forChangePassword;
+
 @end

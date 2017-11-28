@@ -44,7 +44,7 @@
             CommonModel *model = [CommonModel yy_modelWithDictionary:JSON];
             if (model.ErrCode.integerValue == 0) {
                 //发送成功
-                [SVProgressHUD showErrorWithStatus:model.Message];
+                [SVProgressHUD showSuccessWithStatus:model.Message];
             } else {
                 //发送失败
                 [SVProgressHUD showErrorWithStatus:model.Message];
