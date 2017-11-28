@@ -13,9 +13,6 @@
 
 + (instancetype)sharedManager;
 
-#pragma mark - 获取requestAccessTokenWithRefresh_token
-+ (void)ims_requestAccessTokenWithRefresh_tokenBlock:(void(^)(id JSON, NSError *error))block;
-
 #pragma mark -
 
 /**

@@ -10,10 +10,13 @@
 
 @interface CommonModel : NSObject
 
-//--------------忘记密码
+//--------------忘记密码 更新账户信息
 @property (nonatomic, copy) NSString *Result;
 @property (nonatomic, copy) NSString *ErrCode;
 @property (nonatomic, copy) NSString *Message;
 
-//-------------
+//-------------退出登录
+@property (nonatomic, copy) NSString *code;
+@property (nonatomic, copy) NSString *response;
+@property (nonatomic, copy) NSString *status;
 @end

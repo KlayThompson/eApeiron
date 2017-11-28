@@ -41,6 +41,7 @@
     self.delegate = self;
     [self setRootViewController];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(needLoginAgain) name:@"IMSNeedLogin" object:nil];
 }
 
 - (void)setRootViewController {
@@ -261,6 +262,15 @@
     }
 }
 
+- (void)needLoginAgain {
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    [manager clearUserInfo];
+
+    LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
+    [[UIApplication sharedApplication].keyWindow setRootViewController:navi];
+}
+
 #pragma mark - 初始化
 - (UIPickerView *)projectPicker {
     
@@ -329,6 +339,8 @@
     return @"标题";
 }
 
-
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"IMSNeedLogin" object:nil];
+}
 
 @end

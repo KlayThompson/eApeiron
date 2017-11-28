@@ -82,4 +82,9 @@
 
 //iPhone X
 #define iPhoneX [[UIScreen mainScreen] bounds].size.height == 812
+
+//client_secret、client_id
+#define IMS_client_id                                           @"uZn8lvlkg5a0dfe7ae57df6.37079856"
+#define IMS_client_secret                                       @"dCqlAdJC2R7VvW9tLD9JLot1ek39vVqeqC3ANWVa"
+
 #endif

@@ -44,9 +44,53 @@ static NetworkAPIManager *shareManager = nil;
                  withMethodType:(int)NetworkMethod
                        andBlock:(void (^)(id data, NSError *error))block{
     
+    UserInfoManager *manager = [UserInfoManager shareInstance];
     
+    //检查Token是否过期
+    if ([manager checkUserShouldRequestRefresh_token]) {
+        
+        NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.refresh_token];
+        [self.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+        
+        NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    IMS_client_id,@"client_id",
+                                    IMS_client_secret,@"client_secret",
+                                    nil];
+        //需要更新Token
+        [self POST:@"auth/login/refresh" parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            DLog(@"\n[获取的数据]:\n%@ \n", responseObject);
+            [manager encodeLoginAndRefreshTokenData:responseObject];
+
+            //请求数据
+            [self requestJsonDataWithEffectiveTokenWithPath:aPath withParams:params withMethodType:NetworkMethod andBlock:block];
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            DLog(@"\n[Resp Error]:\n%@", error);
+            block(nil, error);
+            if ([error.localizedDescription containsString:@"401"]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"IMSNeedLogin" object:nil];
+            }
+        }];
+    } else {
+        //直接请求
+        [self requestJsonDataWithEffectiveTokenWithPath:aPath withParams:params withMethodType:NetworkMethod andBlock:block];
+    }
+    
+    
+}
+
+- (void)requestJsonDataWithEffectiveTokenWithPath:(NSString *)aPath
+                                       withParams:(NSDictionary*)params
+                                   withMethodType:(int)NetworkMethod
+                                         andBlock:(void (^)(id data, NSError *error))block{
+
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    NSString *token = [NSString stringWithFormat:@"Bearer %@",manager.authToken];
+    [self.requestSerializer setValue:token forHTTPHeaderField:@"Authorization"];
+
     aPath = [aPath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
+
     //过滤 emoji表情
     NSMutableDictionary *parametersWithoutEmoji=[NSMutableDictionary dictionaryWithCapacity:1];
     for (NSString *key in [params allKeys]) {
@@ -58,11 +102,7 @@ static NetworkAPIManager *shareManager = nil;
             [parametersWithoutEmoji setObject:[params objectForKey:key] forKey:key];
         }
     }
-    
-    
-    
-    
-    
+
     //打印请求内容，使用GET方式打印，便于在浏览器中调试或发给server端同学调试
     NSMutableString *paraStr = [NSMutableString stringWithString:@"&"];
     if([parametersWithoutEmoji isKindOfClass:[NSDictionary class]]){
@@ -72,31 +112,37 @@ static NetworkAPIManager *shareManager = nil;
         }
     }
     DLog(@"\n>>>\n%@%@\n",[[NSURL URLWithString:aPath relativeToURL:self.baseURL] absoluteString]  ,paraStr);
-    
-    
+
+
     //发起请求
     switch (NetworkMethod) {
         case Get:{
-            
+
             [self GET:aPath parameters:parametersWithoutEmoji progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 DLog(@"\n[Resp]:\n%@:\n", responseObject);
                 block(responseObject, nil);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 DLog(@"\n[Resp Error]:\n%@", error);
                 block(nil, error);
+                if ([error.localizedDescription containsString:@"401"]) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"IMSNeedLogin" object:nil];
+                }
             }];
-            
+
             break;}
         case Post:{
-            
+
             [self POST:aPath parameters:parametersWithoutEmoji progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 DLog(@"\n[获取的数据]:\n%@ \n", responseObject);
                 block(responseObject,nil);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 DLog(@"\n[Resp Error]:\n%@", error);
                 block(nil, error);
+                if ([error.localizedDescription containsString:@"401"]) {
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"IMSNeedLogin" object:nil];
+                }
             }];
-            
+
             break;}
         case Put:{
             [self PUT:aPath parameters:parametersWithoutEmoji success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -106,7 +152,7 @@ static NetworkAPIManager *shareManager = nil;
                 DLog(@"\n[Resp Error]:\n%@", error);
                 block(nil, error);
             }];
-            
+
             break;}
         case Delete:{
             [self DELETE:aPath parameters:parametersWithoutEmoji success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -116,7 +162,7 @@ static NetworkAPIManager *shareManager = nil;
                 DLog(@"\n[Resp Error]:\n%@", error);
                 block(nil, error);
             }];
-            
+
             break;}
         default:
             break;
