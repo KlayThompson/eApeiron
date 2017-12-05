@@ -10,7 +10,6 @@
 #import "LoginViewController.h"
 #import "MainNavigationController.h"
 #import "HomeViewController.h"
-#import "ScanViewController.h"
 #import "SettingsViewController.h"
 #import "IMSAPIManager.h"
 #import "AppDelegate.h"
