@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-
-#import "ScanViewController.h"
 #import "AVMetadataController.h"
 
-@interface HomeViewController : UIViewController <UITabBarDelegate, UIWebViewDelegate, CLLocationManagerDelegate, ScanDelegate, AVMetadataDelegate>
+@interface HomeViewController : UIViewController <UITabBarDelegate, UIWebViewDelegate, CLLocationManagerDelegate, AVMetadataDelegate>
 - (void)updateLoad;
 
 
