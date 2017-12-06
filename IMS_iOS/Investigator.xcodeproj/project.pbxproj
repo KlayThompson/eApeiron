@@ -22,6 +22,15 @@
 		3B0A3F4A1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */; };
 		3B0A3F4B1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */; };
 		3B0A3F4C1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */; };
+		3B0A3F571FD7BFA500BB5362 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F551FD7BFA500BB5362 /* AboutViewController.m */; };
+		3B0A3F581FD7BFA500BB5362 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F551FD7BFA500BB5362 /* AboutViewController.m */; };
+		3B0A3F591FD7BFA500BB5362 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F551FD7BFA500BB5362 /* AboutViewController.m */; };
+		3B0A3F5A1FD7BFA500BB5362 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F561FD7BFA500BB5362 /* AboutViewController.xib */; };
+		3B0A3F5B1FD7BFA500BB5362 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F561FD7BFA500BB5362 /* AboutViewController.xib */; };
+		3B0A3F5C1FD7BFA500BB5362 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0A3F561FD7BFA500BB5362 /* AboutViewController.xib */; };
+		3B0A3F5F1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F5E1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m */; };
+		3B0A3F601FD7CDAB00BB5362 /* ShowEapeironWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F5E1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m */; };
+		3B0A3F611FD7CDAB00BB5362 /* ShowEapeironWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0A3F5E1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m */; };
 		3B20AFA91F98755900B8BDED /* ShowMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFA71F98755900B8BDED /* ShowMapViewController.m */; };
 		3B20AFAA1F98755900B8BDED /* ShowMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFA71F98755900B8BDED /* ShowMapViewController.m */; };
 		3B20AFAB1F98755900B8BDED /* ShowMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B20AFA71F98755900B8BDED /* ShowMapViewController.m */; };
@@ -317,6 +326,11 @@
 		3B0A3F441FCBFEB100BB5362 /* UpdateAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateAccountViewController.h; sourceTree = "<group>"; };
 		3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateAccountViewController.m; sourceTree = "<group>"; };
 		3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateAccountViewController.xib; sourceTree = "<group>"; };
+		3B0A3F541FD7BFA500BB5362 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		3B0A3F551FD7BFA500BB5362 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		3B0A3F561FD7BFA500BB5362 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		3B0A3F5D1FD7CDAB00BB5362 /* ShowEapeironWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowEapeironWebViewController.h; sourceTree = "<group>"; };
+		3B0A3F5E1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowEapeironWebViewController.m; sourceTree = "<group>"; };
 		3B20AFA61F98755900B8BDED /* ShowMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowMapViewController.h; sourceTree = "<group>"; };
 		3B20AFA71F98755900B8BDED /* ShowMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowMapViewController.m; sourceTree = "<group>"; };
 		3B20AFA81F98755900B8BDED /* ShowMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowMapViewController.xib; sourceTree = "<group>"; };
@@ -778,6 +792,11 @@
 				3B0A3F441FCBFEB100BB5362 /* UpdateAccountViewController.h */,
 				3B0A3F451FCBFEB100BB5362 /* UpdateAccountViewController.m */,
 				3B0A3F461FCBFEB100BB5362 /* UpdateAccountViewController.xib */,
+				3B0A3F541FD7BFA500BB5362 /* AboutViewController.h */,
+				3B0A3F551FD7BFA500BB5362 /* AboutViewController.m */,
+				3B0A3F561FD7BFA500BB5362 /* AboutViewController.xib */,
+				3B0A3F5D1FD7CDAB00BB5362 /* ShowEapeironWebViewController.h */,
+				3B0A3F5E1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1136,6 +1155,7 @@
 				3B6659AB1F6F6836006A2A09 /* issues_off@2x.png in Resources */,
 				3B0A3F4A1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */,
 				98764D9B1A47ED24007ED35F /* ic_menu_home@2x.png in Resources */,
+				3B0A3F5A1FD7BFA500BB5362 /* AboutViewController.xib in Resources */,
 				3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B6659051F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
@@ -1176,6 +1196,7 @@
 				98ED33C01AE4DDD800E66D44 /* Default-736h@3x.png in Resources */,
 				3B6659AC1F6F6836006A2A09 /* issues_off@2x.png in Resources */,
 				98B6FA311AE493D400B2497E /* LaunchScreen.xib in Resources */,
+				3B0A3F5B1FD7BFA500BB5362 /* AboutViewController.xib in Resources */,
 				98ED33BD1AE4DDD800E66D44 /* Default-667h@2x.png in Resources */,
 				98ED33C61AE4DDD800E66D44 /* Default@2x.png in Resources */,
 				98B6FA321AE493D400B2497E /* Images.xcassets in Resources */,
@@ -1219,6 +1240,7 @@
 				98ED33C11AE4DDD800E66D44 /* Default-736h@3x.png in Resources */,
 				3B6659AD1F6F6836006A2A09 /* issues_off@2x.png in Resources */,
 				98B6FA5F1AE493DB00B2497E /* LaunchScreen.xib in Resources */,
+				3B0A3F5C1FD7BFA500BB5362 /* AboutViewController.xib in Resources */,
 				98ED33BE1AE4DDD800E66D44 /* Default-667h@2x.png in Resources */,
 				98ED33C71AE4DDD800E66D44 /* Default@2x.png in Resources */,
 				98B6FA601AE493DB00B2497E /* Images.xcassets in Resources */,
@@ -1250,6 +1272,7 @@
 				3B20AFA91F98755900B8BDED /* ShowMapViewController.m in Sources */,
 				3B2AED951F78FABB000505A2 /* _YYWebImageSetter.m in Sources */,
 				3B2AED961F78FABB000505A2 /* YYImageCoder.m in Sources */,
+				3B0A3F5F1FD7CDAB00BB5362 /* ShowEapeironWebViewController.m in Sources */,
 				3B2AED971F78FABB000505A2 /* YYWebImageOperation.m in Sources */,
 				3B2AED8F1F78FA64000505A2 /* YYCache.m in Sources */,
 				3B0A3F301FCBF37300BB5362 /* ForgotPwdViewController.m in Sources */,
@@ -1267,6 +1290,7 @@
 				3B6658F81F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3BD063121F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B73E1CE1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
+				3B0A3F571FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
 				3BFB80FF1FB14E0C00A6B1E9 /* ProjectListModel.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
@@ -1312,6 +1336,7 @@
 				3B20AFB91F9DC8AE00B8BDED /* YCXMenu.m in Sources */,
 				3B20AFBA1F9DC8AE00B8BDED /* YCXMenuItem.m in Sources */,
 				3B2AEDA51F78FD89000505A2 /* YYKVStorage.m in Sources */,
+				3B0A3F601FD7CDAB00BB5362 /* ShowEapeironWebViewController.m in Sources */,
 				3B2AEDA41F78FD7B000505A2 /* YYSpriteSheetImage.m in Sources */,
 				3B2AEDA31F78FD70000505A2 /* YYDiskCache.m in Sources */,
 				3BFB81001FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */,
@@ -1335,6 +1360,7 @@
 				3B6659101F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658F91F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3B0A3F581FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B73E1CF1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
@@ -1380,6 +1406,7 @@
 				3B20AFBB1F9DC8F000B8BDED /* YCXMenu.m in Sources */,
 				3B20AFBC1F9DC8F000B8BDED /* YCXMenuItem.m in Sources */,
 				3B2AEDA61F78FDD2000505A2 /* YYCache.m in Sources */,
+				3B0A3F611FD7CDAB00BB5362 /* ShowEapeironWebViewController.m in Sources */,
 				3B2AEDA71F78FDD2000505A2 /* YYDiskCache.m in Sources */,
 				3B2AEDA81F78FDD2000505A2 /* YYKVStorage.m in Sources */,
 				3BFB81011FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */,
@@ -1403,6 +1430,7 @@
 				3B6659111F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658FA1F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
+				3B0A3F591FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B73E1D01F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,

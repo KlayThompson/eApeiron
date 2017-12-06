@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController">
             <connections>
+                <outlet property="aboutButton" destination="YmR-NC-RMI" id="fCe-3x-GfH"/>
                 <outlet property="chooseProjectButton" destination="bA1-eR-Fnj" id="qg8-da-unH"/>
                 <outlet property="logoutButton" destination="R8d-Zl-4jc" id="cAa-mL-VDv"/>
                 <outlet property="pickerBottomCons" destination="Dzm-MW-Jkr" id="JNV-1N-gDs"/>
@@ -105,6 +106,20 @@
                         <action selector="updateAccountButtonClick:" destination="-1" eventType="touchUpInside" id="aXe-k9-xa9"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmR-NC-RMI">
+                    <rect key="frame" x="20" y="333" width="335" height="44"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="8sT-mz-1xm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <state key="normal" title="About">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="aboutButtonClick:" destination="-1" eventType="touchUpInside" id="GzG-CA-ipo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -113,9 +128,12 @@
                 <constraint firstAttribute="trailing" secondItem="Fo1-Jw-uWS" secondAttribute="trailing" id="1uf-l8-Qk6"/>
                 <constraint firstItem="89o-uV-2qg" firstAttribute="trailing" secondItem="bA1-eR-Fnj" secondAttribute="trailing" constant="-15" id="2RJ-Kh-kLj"/>
                 <constraint firstItem="bA1-eR-Fnj" firstAttribute="trailing" secondItem="hrt-xI-gJ5" secondAttribute="trailing" id="86m-RW-kWQ"/>
+                <constraint firstItem="YmR-NC-RMI" firstAttribute="trailing" secondItem="xud-JB-WgX" secondAttribute="trailing" id="Bcf-Qs-Fd9"/>
+                <constraint firstItem="YmR-NC-RMI" firstAttribute="top" secondItem="xud-JB-WgX" secondAttribute="bottom" constant="20" id="DNq-GL-ILE"/>
                 <constraint firstAttribute="bottom" secondItem="YX9-eT-YuB" secondAttribute="bottom" constant="-216" id="Dzm-MW-Jkr"/>
                 <constraint firstAttribute="trailing" secondItem="hrt-xI-gJ5" secondAttribute="trailing" constant="20" id="HmD-tc-OGO"/>
                 <constraint firstItem="hrt-xI-gJ5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MyQ-s1-S6Q"/>
+                <constraint firstItem="YmR-NC-RMI" firstAttribute="leading" secondItem="xud-JB-WgX" secondAttribute="leading" id="NGb-10-rhx"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="trailing" secondItem="bA1-eR-Fnj" secondAttribute="trailing" id="SRT-QN-yVO"/>
                 <constraint firstItem="R8d-Zl-4jc" firstAttribute="top" secondItem="bA1-eR-Fnj" secondAttribute="bottom" constant="20" id="VeJ-xn-1kf"/>
                 <constraint firstItem="xud-JB-WgX" firstAttribute="trailing" secondItem="R8d-Zl-4jc" secondAttribute="trailing" id="Vfa-Mr-uXE"/>

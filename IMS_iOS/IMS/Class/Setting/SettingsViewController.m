@@ -18,6 +18,7 @@
 #import "UpdateAccountViewController.h"
 #import "CommonModel.h"
 #import "YYModel.h"
+#import "AboutViewController.h"
 
 @interface SettingsViewController ()<UIPickerViewDelegate,UIPickerViewDataSource> {
     
@@ -49,6 +50,8 @@
  项目选择器底部约束
  */
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *pickerBottomCons;
+@property (weak, nonatomic) IBOutlet UIButton *aboutButton;
+
 
 @end
 
@@ -142,6 +145,17 @@
     [self.navigationController pushViewController:update animated:YES];
 }
 
+/**
+ About
+
+ @param sender Button
+ */
+- (IBAction)aboutButtonClick:(id)sender {
+    
+    AboutViewController *update = [[AboutViewController alloc] initWithNibName:@"AboutViewController" bundle:nil];
+    update.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:update animated:YES];
+}
 
 - (void)doneButtonTap {
     
@@ -246,6 +260,12 @@
     self.updateAccountButton.layer.masksToBounds = true;
     self.updateAccountButton.layer.borderWidth = 1;
     self.updateAccountButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    
+    self.aboutButton.layer.cornerRadius = 5;
+    self.aboutButton.layer.masksToBounds = true;
+    self.aboutButton.layer.borderWidth = 1;
+    self.aboutButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+     
 }
 
 - (void)setupPicker {
