@@ -45,6 +45,8 @@
         self.emailLabel.hidden = NO;
         self.noteLabel.text = @"NOTE: at least one of the arguments shall be provided";
     }
+    
+    [self.passwordTextfield becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +59,7 @@
         [SVProgressHUD showInfoWithStatus:@"at least one of the arguments shall be provided"];
         return;
     }
+    [self.view endEditing:YES];
     
     NSString *newEmail = @"";
     NSString *newPwd = @"";

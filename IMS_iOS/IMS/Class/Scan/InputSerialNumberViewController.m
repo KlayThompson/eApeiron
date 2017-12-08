@@ -61,7 +61,11 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.creatRecordButton.enabled = YES;
+    if (STR_IS_NIL(self.serialNumberTextField.text)) {
+        self.creatRecordButton.enabled = NO;
+    } else {
+        self.creatRecordButton.enabled = YES;
+    }
     self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
@@ -158,6 +162,7 @@
     //获取tabbar，取得扫描的serial
     MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
     self.serialNumberTextField.text = main.serial;
+    self.creatRecordButton.enabled = YES;
     //checkIncident
     [self checkIncidentFromServer];
 }
@@ -201,16 +206,25 @@
 #pragma mark -
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     self.checkState = YES;
-    //开始编辑，按钮可以点击
-    self.creatRecordButton.enabled = YES;
+    
     self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
     //更改的话就是自己手动输入，按钮标题需要更改为submit
     [self.creatRecordButton setTitle:@"Submit" forState:UIControlStateNormal];
+    
+    NSMutableString *newValue = [textField.text mutableCopy];
+    [newValue replaceCharactersInRange:range withString:string];
+    if (STR_IS_NIL(newValue)) {
+        self.creatRecordButton.enabled = NO;
+    } else {
+        self.creatRecordButton.enabled = YES;
+    }
     return YES;
 }
+
 #pragma mark - UI
 - (void)setupUI {
     
+    self.creatRecordButton.enabled = NO;
     self.productDetailLabel.text = @"";
     self.titleLabel.text = @"";
     
@@ -227,6 +241,8 @@
     [self setupTopImage];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupTopImage) name:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
+    
+//    self.serialNumberTextField.delegate = self;
 }
 
 - (void)setupTopImage {
