@@ -122,7 +122,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         RecentIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:recentCellId forIndexPath:indexPath];
         
         if (ARRAY_IS_NIL(self.issuesRecentArray)) {
-            cell.timeLabel.text = @"NO Issues";
+            cell.timeLabel.text = @"NO Incidents";
             cell.titleLabel.hidden = YES;
             cell.lineView.hidden = YES;
             cell.isusseIdLabel.hidden = YES;
@@ -139,7 +139,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         NearbyIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:nearbyCellId forIndexPath:indexPath];
         
         if (ARRAY_IS_NIL(self.issuesNearbyArray)) {
-            cell.distanceLabel.text = @"No Issues";
+            cell.distanceLabel.text = @"No Incidents";
             cell.lineView1.hidden = YES;
             cell.lineView2.hidden = YES;
             cell.timeLabel.hidden = YES;
@@ -168,7 +168,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.tag = 101 + section;
     if (section == 0) {
-        [button setTitle:@"Recent Issues" forState:UIControlStateNormal];
+        [button setTitle:@"Recent Incidents" forState:UIControlStateNormal];
         if (sectionState[section] != 0) {
             [button setImage:[UIImage imageNamed:@"issues_on"] forState:UIControlStateNormal];
             [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -133, 0, 0)];
@@ -177,7 +177,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
             [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -140, 0, 0)];
         }
     } else if (section == 1) {
-        [button setTitle:@"Nearby Issues" forState:UIControlStateNormal];
+        [button setTitle:@"Nearby Incidents" forState:UIControlStateNormal];
         if (sectionState[section] != 0) {
             [button setImage:[UIImage imageNamed:@"issues_on"] forState:UIControlStateNormal];
             [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -133, 0, 0)];

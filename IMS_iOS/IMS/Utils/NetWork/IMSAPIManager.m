@@ -44,6 +44,7 @@
                                                                                if (!DICT_IS_NIL(data)) {
                                                                                    UserInfoManager *manager = UserInfoManager.shareInstance;
                                                                                    manager.currentUsername = username;
+                                                                                   manager.currentUserPassword = password;
                                                                                    [manager encodeLoginAndRefreshTokenData:data];
                                                                                }
                                                                                block(data, nil);

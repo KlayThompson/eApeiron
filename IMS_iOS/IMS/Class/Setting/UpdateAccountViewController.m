@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *okButton;
 @property (weak, nonatomic) IBOutlet UILabel *noteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UITextField *oldPasswordTextfield;
 
 
 @end
@@ -36,17 +37,17 @@
     self.okButton.layer.borderWidth = 1;
     self.okButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
     
+    self.emailLabel.hidden = YES;
+    self.emailTextField.hidden = YES;
     if (self.forChangePassword) {
-        self.emailTextField.hidden = YES;
-        self.emailLabel.hidden = YES;
         self.noteLabel.text = @"NOTE: you need change your password";
     } else {
-        self.emailTextField.hidden = NO;
-        self.emailLabel.hidden = NO;
-        self.noteLabel.text = @"NOTE: at least one of the arguments shall be provided";
+//        self.emailTextField.hidden = NO;
+//        self.emailLabel.hidden = NO;
+        self.noteLabel.text = @"";
     }
     
-    [self.passwordTextfield becomeFirstResponder];
+    [self.oldPasswordTextfield becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,10 +56,28 @@
 }
 - (IBAction)okButtonClick:(id)sender {
     
-    if (STR_IS_NIL(self.passwordTextfield.text) && STR_IS_NIL(self.emailTextField.text)) {
-        [SVProgressHUD showInfoWithStatus:@"at least one of the arguments shall be provided"];
+//    if (STR_IS_NIL(self.passwordTextfield.text) && STR_IS_NIL(self.emailTextField.text)) {
+//        [SVProgressHUD showInfoWithStatus:@"at least one of the arguments shall be provided"];
+//        return;
+//    }
+    
+    //check user input current password
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if (STR_IS_NIL(self.oldPasswordTextfield.text)) {
+        [SVProgressHUD showInfoWithStatus:@"please enter your current password"];
+        return;
+    } else if(![self.oldPasswordTextfield.text isEqualToString:manager.currentUserPassword]) {
+        [SVProgressHUD showInfoWithStatus:@"current password error"];
+        return;
+    } else {
+        //to be continue
+    }
+    
+    if (STR_IS_NIL(self.passwordTextfield.text)) {
+        [SVProgressHUD showInfoWithStatus:@"please enter your new password"];
         return;
     }
+    
     [self.view endEditing:YES];
     
     NSString *newEmail = @"";

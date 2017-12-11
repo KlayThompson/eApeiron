@@ -60,6 +60,8 @@ static UserInfoManager *instance = nil;
     
     [[NSUserDefaults standardUserDefaults] setObject:self.refresh_token_expires_in forKey:IMS_USERDEFAULTS_REFRESH_TOKEN_EXPIRES_IN];
     
+    [[NSUserDefaults standardUserDefaults] setObject:self.currentUserPassword forKey:@"ims_userpassword"];
+    
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
@@ -73,6 +75,7 @@ static UserInfoManager *instance = nil;
     self.expires_in = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_EXPIRES_IN];
     self.refresh_token = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_REFRESH_TOKEN];
     self.refresh_token_expires_in = [[NSUserDefaults standardUserDefaults] objectForKey:IMS_USERDEFAULTS_REFRESH_TOKEN_EXPIRES_IN];
+    self.currentUserPassword = [[NSUserDefaults standardUserDefaults] objectForKey:@"ims_userpassword"];
 
     DLog(@"");
 }
@@ -97,6 +100,7 @@ static UserInfoManager *instance = nil;
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:IMS_USERDEFAULTS_PROJECTRESULTJSON];
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:IMS_USERDEFAULTS_REFRESH_TOKEN];
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:IMS_USERDEFAULTS_REFRESH_TOKEN_EXPIRES_IN];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"ims_userpassword"];
 
     
     self.currentProjectName = nil;
@@ -111,6 +115,7 @@ static UserInfoManager *instance = nil;
     self.expires_in = nil;
     self.refresh_token_expires_in = nil;
     self.refresh_token = nil;
+    self.currentUserPassword = nil;
 }
 
 /**

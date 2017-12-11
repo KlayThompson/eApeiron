@@ -44,6 +44,11 @@
 @property (nonatomic, copy) NSString *currentUsername;
 
 /**
+ 当前登录用户密码
+ */
+@property (nonatomic, copy) NSString *currentUserPassword;
+
+/**
  当前工程名
  */
 @property (nonatomic, copy) NSString *appName;
