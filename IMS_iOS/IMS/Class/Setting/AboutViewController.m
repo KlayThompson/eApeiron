@@ -11,6 +11,7 @@
 
 @interface AboutViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *linkButton;
 @end
@@ -33,6 +34,9 @@
     NSRange strRange = {0,[str length]};
     [str addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:strRange];
     [self.linkButton setAttributedTitle:str forState:UIControlStateNormal];
+    
+    NSString *currentVersion = [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    self.versionLabel.text = [NSString stringWithFormat:@"Version:  %@",currentVersion];
 }
 
 - (IBAction)linkButtonClick:(id)sender {
