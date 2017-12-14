@@ -36,7 +36,8 @@
     [self.linkButton setAttributedTitle:str forState:UIControlStateNormal];
     
     NSString *currentVersion = [[[NSBundle mainBundle]infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    self.versionLabel.text = [NSString stringWithFormat:@"Version:  %@",currentVersion];
+    NSString *buildStr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+    self.versionLabel.text = [NSString stringWithFormat:@"Version:  %@-%@",currentVersion,buildStr];
 }
 
 - (IBAction)linkButtonClick:(id)sender {
@@ -44,7 +45,6 @@
     ShowEapeironWebViewController *show = [[ShowEapeironWebViewController alloc] init];
     [self.navigationController pushViewController:show animated:YES];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
