@@ -13,6 +13,9 @@
 #import "SVProgressHUD.h"
 #import "YYModel.h"
 #import "IMSAPIManager.h"
+#import "MainNavigationController.h"
+#import "HistoryDetailViewController.h"
+#import "LoginViewController.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
 {
@@ -36,11 +39,24 @@
     [self checkUserLoginState];
     
     
-    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
-    [self.window setRootViewController:tabbar];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-
+//    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if (manager.userLogin) {
+        HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+        MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:detail];
+        [self.window setRootViewController:navi];
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+        
+    } else {
+        LoginViewController *login = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:login];
+        [self.window setRootViewController:navi];
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+    }
+    
+    
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setMinimumDismissTimeInterval:3];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];

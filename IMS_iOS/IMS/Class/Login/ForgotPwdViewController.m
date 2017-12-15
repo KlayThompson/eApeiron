@@ -28,6 +28,16 @@
     
     self.sendButton.layer.borderWidth = 1;
     self.sendButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 70, 30);
+    [button setTitle:@"Back" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor colorWithRed:76/255.0 green:76/255.0 blue:76/255.0 alpha:1] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(goback) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:[UIImage imageNamed:@"goback@2x"] forState:UIControlStateNormal];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(0, -10, 0, 0)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 - (IBAction)sendEmailButtonClick:(id)sender {
@@ -56,6 +66,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)goback {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

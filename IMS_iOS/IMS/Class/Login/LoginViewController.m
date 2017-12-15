@@ -16,6 +16,8 @@
 #import "ProjectListModel.h"
 #import "ForgotPwdViewController.h"
 #import "UpdateAccountViewController.h"
+#import "MainNavigationController.h"
+#import "HistoryDetailViewController.h"
 
 @interface LoginViewController ()<UIAlertViewDelegate>
 
@@ -121,10 +123,12 @@
     } else {
         //不需要
         //更换rootViewController
-        MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
-        [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
-        [tabbar setRootViewController];
-        
+//        MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
+//        [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
+//        [tabbar setRootViewController];
+        HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+        MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:detail];
+        [UIApplication.sharedApplication.keyWindow setRootViewController:navi];
         [self getProects];
     }
     

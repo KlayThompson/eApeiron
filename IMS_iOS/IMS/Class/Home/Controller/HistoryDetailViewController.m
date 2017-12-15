@@ -17,14 +17,21 @@
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
 #import "ProjectModel.h"
+#import "SettingsViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "ProjectSelectView.h"
+#import "AVMetadataController.h"
+#import "InputSerialNumberViewController.h"
 
 static NSString *recentCellId = @"RecentIssueCell";
 static NSString *nearbyCellId = @"NearbyIssueCell";
 
-@interface HistoryDetailViewController ()<UITableViewDelegate,UITableViewDataSource> {
+@interface HistoryDetailViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,AVMetadataDelegate> {
 
     NSInteger sectionState[19];
-
+    CLLocationManager *_locationManager;
+    CLLocation *_loc;
+    ProjectSelectView *detail;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *uTableView;
@@ -45,6 +52,9 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
  */
 @property (nonatomic, copy) NSString *latitude;
 
+@property (nonatomic, strong) SettingsViewController *settingVC;
+
+@property (nonatomic, strong) UIView *bottomBgView;
 @end
 
 @implementation HistoryDetailViewController
@@ -53,7 +63,25 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setupUI];
-    [self loadHistoryFromServer];
+    
+    //_locationManager
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.delegate = self;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    if ([[UIDevice currentDevice].systemVersion floatValue] > 8) {
+        [_locationManager requestAlwaysAuthorization];
+        [_locationManager requestWhenInUseAuthorization];
+    }
+    [_locationManager startUpdatingLocation];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //每次在Home界面出现时候更新位置
+    [_locationManager startUpdatingLocation];
 }
 
 #pragma mark - 网络
@@ -138,6 +166,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         
         NearbyIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:nearbyCellId forIndexPath:indexPath];
         
+
         if (ARRAY_IS_NIL(self.issuesNearbyArray)) {
             cell.distanceLabel.text = @"No Incidents";
             cell.lineView1.hidden = YES;
@@ -251,6 +280,124 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     }];
 }
 
+- (void)settingButtonClick:(id)sender {
+    
+//    UIButton *button = (UIButton *)sender;
+//    if (button.selected) {
+//        //hide
+//        [self hideSettingVc];
+//    } else {
+//        //show
+//        [self showSettingVc];
+//    }
+//    button.selected = !button.selected;
+    [self.navigationController pushViewController:self.settingVC animated:YES];
+}
+
+- (void)showSettingVc {
+    CGFloat heightOfStatusbar = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    CGFloat heightOfNavigationbar = self.navigationController.navigationBar.frame.size.height;
+    CGFloat height = heightOfStatusbar + heightOfNavigationbar;
+    [UIView animateWithDuration:.3 animations:^{
+        self.settingVC.view.frame = CGRectMake(ScreenWidth - (ScreenWidth * 3 / 5), height, ScreenWidth * 3 / 5, ScreenHeight - height);
+    }];
+}
+
+- (void)hideSettingVc {
+    CGFloat heightOfStatusbar = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    CGFloat heightOfNavigationbar = self.navigationController.navigationBar.frame.size.height;
+    CGFloat height = heightOfStatusbar + heightOfNavigationbar;
+    [UIView animateWithDuration:.3 animations:^{
+        self.settingVC.view.frame = CGRectMake(ScreenWidth, height, ScreenWidth * 3 / 5, ScreenHeight - height);
+    }];
+}
+
+- (void)scanButtonClick {
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if (STR_IS_NIL(manager.currentProjectName)) {//为空要选择
+        [self showSelectProjectView];
+    } else {//扫描
+        [self jumpToScan];
+    }
+}
+
+- (void)showSelectProjectView {
+    
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"ProjectSelectView" owner:self options:nil];
+    id uv = [nib objectAtIndex:0];
+    detail = uv;
+    detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    [detail.doneButton addTarget:self action:@selector(doneButtonTap) forControlEvents:UIControlEventTouchUpInside];
+    //添加到window上面
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [app.window addSubview:detail];
+}
+
+- (void)doneButtonTap {
+    
+    [detail removeFromSuperview];
+    detail = nil;
+    
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    
+    for (ProjectModel *model in manager.projectsListModel.projects) {
+        if (model.didSelected) {//说明选择了她
+            [self jumpToScan];
+            
+            manager.currentProjectName = model.projectName;
+            manager.currentProjectId = model.projectId;
+            
+            [manager saveUserInfoToLocal];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
+        }
+    }
+}
+
+- (void)jumpToScan {
+    InputSerialNumberViewController *input = [[InputSerialNumberViewController alloc] initWithNibName:@"InputSerialNumberViewController" bundle:nil];
+    [self.navigationController pushViewController:input animated:NO];
+    
+    AVMetadataController *scan = [[AVMetadataController alloc] init];
+    [scan setDelegate:self];
+    [self presentViewController:scan animated:NO completion:nil];
+}
+
+#pragma mark -
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations
+{
+    
+    //locations数组里边存放的是CLLocation对象，一个CLLocation对象就代表着一个位置
+    _loc = [locations firstObject];
+    DLog(@"纬度=%f，经度=%f",_loc.coordinate.latitude,_loc.coordinate.longitude);
+    
+    UserInfoManager *userInfo = [UserInfoManager shareInstance];
+    userInfo.longitude = [NSString stringWithFormat:@"%f",_loc.coordinate.longitude];
+    userInfo.latitude = [NSString stringWithFormat:@"%f",_loc.coordinate.latitude];
+    self.longitude = userInfo.longitude;
+    self.latitude = userInfo.latitude;
+    [self loadHistoryFromServer];
+    [manager stopUpdatingLocation];
+}
+
+#pragma mark -
+- (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
+    DLog(@"");
+    //如果两个都为空则是点击取消按钮
+    if (STR_IS_NIL(serial) && STR_IS_NIL(covertSerial)) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODECANCEL object:nil];
+    } else {
+        //扫描成功，发送通知，通知CHECKINCIDENT
+//        self.serial = serial;
+//        self.covertSerial = covertSerial;
+        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODESUCCESS object:serial];
+    }
+}
+
 #pragma mark - 初始化、设置界面
 
 - (void)setupUI {
@@ -258,9 +405,31 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     [self.uTableView registerNib:[UINib nibWithNibName:@"RecentIssueCell" bundle:nil] forCellReuseIdentifier:recentCellId];
     [self.uTableView registerNib:[UINib nibWithNibName:@"NearbyIssueCell" bundle:nil] forCellReuseIdentifier:nearbyCellId];
     
+    //setting Button
+    [self setupNaviButton];
+    
+    //bottom
+    self.bottomBgView.hidden = NO;
+    
+    //设置setting
+//    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    [self addChildViewController:self.settingVC];
+//    [self.view addSubview:self.settingVC.view];
+    
     UserInfoManager *manager = [UserInfoManager shareInstance];
     self.longitude = manager.longitude;
     self.latitude = manager.latitude;
+    
+}
+
+- (void)setupNaviButton {
+    UIButton *setButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    setButton.frame = CGRectMake(10, 0, 70, 30);
+    [setButton setTitleColor:[UIColor colorWithRed:76/255.0 green:76/255.0 blue:76/255.0 alpha:1] forState:UIControlStateNormal];
+    [setButton addTarget:self action:@selector(settingButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    [setButton setImage:[UIImage imageNamed:@"navi_setting"] forState:UIControlStateNormal];
+    [setButton setImageEdgeInsets:UIEdgeInsetsMake(0, 30, 0, 0)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:setButton];
 }
 
 - (NSMutableArray<HistoryUnit *> *)issuesRecentArray {
@@ -291,4 +460,30 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     return _projectsArray;
 }
 
+- (SettingsViewController *)settingVC {
+    if (_settingVC == nil) {
+        _settingVC = [[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil];
+//        CGFloat heightOfStatusbar = [[UIApplication sharedApplication] statusBarFrame].size.height;
+//
+//        CGFloat heightOfNavigationbar = self.navigationController.navigationBar.frame.size.height;
+//        CGFloat height = heightOfStatusbar + heightOfNavigationbar;
+//        _settingVC.view.frame = CGRectMake(ScreenWidth + 30, height, ScreenWidth * 3 / 5, ScreenHeight - height);
+    }
+    return _settingVC;
+}
+
+- (UIView *)bottomBgView {
+    if (_bottomBgView == nil) {
+        _bottomBgView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 60, ScreenWidth, 60)];
+        _bottomBgView.backgroundColor = [UIColor whiteColor];
+        [self.view addSubview:_bottomBgView];
+        //button
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:[UIImage imageNamed:@"camera-3"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(scanButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomBgView addSubview:button];
+        button.frame = CGRectMake((ScreenWidth / 2) - 42.5, -25, 85, 85);
+    }
+    return _bottomBgView;
+}
 @end

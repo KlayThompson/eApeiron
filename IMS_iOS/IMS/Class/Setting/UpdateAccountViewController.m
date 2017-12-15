@@ -46,7 +46,7 @@
 //        self.emailLabel.hidden = NO;
         self.noteLabel.text = @"";
     }
-    
+
     [self.oldPasswordTextfield becomeFirstResponder];
 }
 

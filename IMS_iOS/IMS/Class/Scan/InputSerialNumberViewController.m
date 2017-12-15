@@ -160,8 +160,8 @@
     
     self.checkState = YES;
     //获取tabbar，取得扫描的serial
-    MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
-    self.serialNumberTextField.text = main.serial;
+//    MainTabBarViewController *main = (MainTabBarViewController *)self.tabBarController;
+    self.serialNumberTextField.text = notify.object;
     self.creatRecordButton.enabled = YES;
     //checkIncident
     [self checkIncidentFromServer];
