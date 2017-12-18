@@ -302,4 +302,8 @@
     }
     return _dataArray;
 }
+
+- (NSString *)title {
+    return @"Setting";
+}
 @end

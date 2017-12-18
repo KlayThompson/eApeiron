@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.7</string>
+	<string>2.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>20170512</string>
+	<string>20171218</string>
 	<key>IMSIdentifier</key>
 	<string>Investigator</string>
 	<key>LSRequiresIPhoneOS</key>

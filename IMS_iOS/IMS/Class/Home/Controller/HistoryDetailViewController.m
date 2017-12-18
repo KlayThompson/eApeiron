@@ -55,6 +55,8 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 @property (nonatomic, strong) SettingsViewController *settingVC;
 
 @property (nonatomic, strong) UIView *bottomBgView;
+
+@property (nonatomic, strong) UIImageView *titleImageView;
 @end
 
 @implementation HistoryDetailViewController
@@ -420,6 +422,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     self.longitude = manager.longitude;
     self.latitude = manager.latitude;
     
+    self.navigationItem.titleView = self.titleImageView;
 }
 
 - (void)setupNaviButton {
@@ -447,11 +450,11 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     }
     return _issuesNearbyArray;
 }
-- (NSString *)title {
-    
-    UserInfoManager *manager = [UserInfoManager shareInstance];
-    return manager.appName;
-}
+//- (NSString *)title {
+//
+//    UserInfoManager *manager = [UserInfoManager shareInstance];
+//    return manager.appName;
+//}
 
 - (NSMutableArray<ProjectModel *> *)projectsArray {
     if (_projectsArray == nil) {
@@ -475,7 +478,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 - (UIView *)bottomBgView {
     if (_bottomBgView == nil) {
         _bottomBgView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 60, ScreenWidth, 60)];
-        _bottomBgView.backgroundColor = [UIColor whiteColor];
+        _bottomBgView.backgroundColor = [UIColor lightGrayColor];
         [self.view addSubview:_bottomBgView];
         //button
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -485,5 +488,13 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         button.frame = CGRectMake((ScreenWidth / 2) - 42.5, -25, 85, 85);
     }
     return _bottomBgView;
+}
+
+- (UIImageView *)titleImageView {
+    if (_titleImageView == nil) {
+        _titleImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ims_title_logo"]];
+        _titleImageView.frame = CGRectMake(0, 0, 50, 20);
+    }
+    return _titleImageView;
 }
 @end
