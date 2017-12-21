@@ -14,6 +14,7 @@
 #import "LoginViewController.h"
 #import "UserInfoManager.h"
 #import "MainNavigationController.h"
+#import "RegExCategories.h"
 
 @interface UpdateAccountViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
@@ -75,6 +76,17 @@
     
     if (STR_IS_NIL(self.passwordTextfield.text)) {
         [SVProgressHUD showInfoWithStatus:@"please enter your new password"];
+        return;
+    }
+    
+    if (self.passwordTextfield.text.length < 6) {
+        [SVProgressHUD showInfoWithStatus:@"the password must length > 5"];
+        return;
+    }
+    
+    //verify newpassword correct
+    if (![self.passwordTextfield.text isMatch:RX(@"^(?=.*[0-9].*)(?=.*[A-Z].*)(?=.*[a-z].*)")]) {
+        [SVProgressHUD showInfoWithStatus:@"the password must contain at least one uppercase letter one lower case letter and one number"];
         return;
     }
     
