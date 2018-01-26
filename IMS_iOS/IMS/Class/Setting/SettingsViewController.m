@@ -64,6 +64,9 @@
     [self setupUI];
     [self configDataArray];
     
+    //刷新Project
+    [self getProects];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(configDataArray) name:IMS_NOTIFICATION_GETPROJECSSUCCESS object:nil];
 }
 
@@ -73,6 +76,28 @@
     
     //设置选择项目按钮标题
     [self.chooseProjectButton setTitle:manager.currentProjectName forState:UIControlStateNormal];
+}
+
+/**
+ 获取项目列表
+ */
+- (void)getProects {
+    
+    __weak typeof (self) weakSelf = self;
+    [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
+        if (error) {
+        } else {
+            NSDictionary *messageDic = JSON[@"Message"];
+            ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:messageDic];
+            //保存此json，下次进入若auhtoken没过期则直接使用
+            UserInfoManager *manager = [UserInfoManager shareInstance];
+            manager.projectResultJson = JSON;
+            [manager saveUserInfoToLocal];
+            manager.projectsListModel = listModel; 
+            //通知获取projects成功，刷新
+            [weakSelf configDataArray];
+        }
+    }];
 }
 
 /**
@@ -88,7 +113,7 @@
     [self.projectPicker reloadAllComponents];
 }
 
-#pragma mark - Actions
+#pragma mark - Actio ns
 /**
  选择项目
  */

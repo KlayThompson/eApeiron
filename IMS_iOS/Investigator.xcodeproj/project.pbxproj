@@ -242,6 +242,9 @@
 		3BD0639B1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
 		3BD0639C1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
 		3BD0639D1F691FA900C1722A /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BD063961F691FA900C1722A /* YYClassInfo.m */; };
+		3BF7F53B200897C000046B02 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F53A200897BF00046B02 /* UIView+Size.m */; };
+		3BF7F53C200897C000046B02 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F53A200897BF00046B02 /* UIView+Size.m */; };
+		3BF7F53D200897C000046B02 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BF7F53A200897BF00046B02 /* UIView+Size.m */; };
 		3BFB80FF1FB14E0C00A6B1E9 /* ProjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */; };
 		3BFB81001FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */; };
 		3BFB81011FB14E0D00A6B1E9 /* ProjectListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */; };
@@ -488,6 +491,8 @@
 		3BD063951F691FA900C1722A /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		3BD063961F691FA900C1722A /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		3BD063971F691FA900C1722A /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
+		3BF7F539200897BF00046B02 /* UIView+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Size.h"; sourceTree = "<group>"; };
+		3BF7F53A200897BF00046B02 /* UIView+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Size.m"; sourceTree = "<group>"; };
 		3BFB80FD1FB14E0C00A6B1E9 /* ProjectListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectListModel.h; sourceTree = "<group>"; };
 		3BFB80FE1FB14E0C00A6B1E9 /* ProjectListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectListModel.m; sourceTree = "<group>"; };
 		9855FE1A1A68B4110037153B /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
@@ -675,6 +680,8 @@
 		3B2AEDB21F79EF83000505A2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3BF7F539200897BF00046B02 /* UIView+Size.h */,
+				3BF7F53A200897BF00046B02 /* UIView+Size.m */,
 				3B2947581FEB83D200F716BE /* RegExCategories.h */,
 				3B2947591FEB83D200F716BE /* RegExCategories.m */,
 				3B2AEDB31F79F0A0000505A2 /* UIColor+Addtions.h */,
@@ -1323,6 +1330,7 @@
 				3BD0639B1F691FA900C1722A /* YYClassInfo.m in Sources */,
 				988DB1A91A43EA0600C243F9 /* main.m in Sources */,
 				3B6658E01F6A192A006A2A09 /* HistoryModel.m in Sources */,
+				3BF7F53B200897C000046B02 /* UIView+Size.m in Sources */,
 				3B73E1F91F710AB500AD5153 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				3BD062FE1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				3B2AED1F1F78D517000505A2 /* ProjectModel.m in Sources */,
@@ -1402,6 +1410,7 @@
 				3B2AEDB61F79F0A0000505A2 /* UIColor+Addtions.m in Sources */,
 				3B6658F01F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F31F6A192B006A2A09 /* AVMetadataController.m in Sources */,
+				3BF7F53C200897C000046B02 /* UIView+Size.m in Sources */,
 				3B6658E71F6A192A006A2A09 /* LoginViewController.m in Sources */,
 				3BD063181F66253200C1722A /* IMSAPIManager.m in Sources */,
 				3B2AEDCA1F7B47C2000505A2 /* ProjectSelectCell.m in Sources */,
@@ -1473,6 +1482,7 @@
 				3B2AEDB71F79F0A0000505A2 /* UIColor+Addtions.m in Sources */,
 				3B6658F11F6A192B006A2A09 /* MainTabBarViewController.m in Sources */,
 				3B6658F41F6A192B006A2A09 /* AVMetadataController.m in Sources */,
+				3BF7F53D200897C000046B02 /* UIView+Size.m in Sources */,
 				3B6658E81F6A192A006A2A09 /* LoginViewController.m in Sources */,
 				3BD063191F66253200C1722A /* IMSAPIManager.m in Sources */,
 				3B2AEDCB1F7B47C2000505A2 /* ProjectSelectCell.m in Sources */,

@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InputSerialNumberViewController">
             <connections>
                 <outlet property="creatRecordButton" destination="aEJ-f9-30a" id="6Jf-Uv-xgX"/>
+                <outlet property="detailButton" destination="mBr-Pz-4AV" id="nYB-uX-OcF"/>
                 <outlet property="mapButton" destination="EJS-ip-3ub" id="HrN-pm-emn"/>
                 <outlet property="productDetailLabel" destination="Ti3-Jy-oYM" id="dun-RX-zzR"/>
                 <outlet property="productImageView" destination="2m6-pR-KDu" id="40U-c0-0mZ"/>
@@ -112,6 +113,21 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBr-Pz-4AV">
+                            <rect key="frame" x="157" y="344" width="60" height="30"/>
+                            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="Pyb-re-G4y"/>
+                                <constraint firstAttribute="width" constant="60" id="tig-oh-Tq5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <state key="normal" title="Detail">
+                                <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="showDetailButtonClick:" destination="-1" eventType="touchUpInside" id="hci-JG-ApB"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="6Gz-kU-KHo" firstAttribute="trailing" secondItem="aEJ-f9-30a" secondAttribute="trailing" id="1LO-xx-xWo"/>
@@ -124,6 +140,7 @@
                         <constraint firstItem="aEJ-f9-30a" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="Cwh-Mb-HcK"/>
                         <constraint firstItem="Ti3-Jy-oYM" firstAttribute="top" secondItem="6Gz-kU-KHo" secondAttribute="bottom" constant="8" id="F0j-8e-S1e"/>
                         <constraint firstItem="SmT-bC-TLZ" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="15" id="FsQ-bz-ee4"/>
+                        <constraint firstItem="mBr-Pz-4AV" firstAttribute="leading" secondItem="2m6-pR-KDu" secondAttribute="trailing" constant="15" id="Hkq-lS-tVE"/>
                         <constraint firstItem="vCL-Uh-DY3" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="MjD-TM-WKj"/>
                         <constraint firstItem="6Gz-kU-KHo" firstAttribute="leading" secondItem="aEJ-f9-30a" secondAttribute="leading" id="N2t-hG-eh0"/>
                         <constraint firstItem="SmT-bC-TLZ" firstAttribute="top" secondItem="g5V-Fi-fjT" secondAttribute="bottom" constant="15" id="Ob2-4b-4ia"/>
@@ -140,6 +157,7 @@
                         <constraint firstItem="6Gz-kU-KHo" firstAttribute="top" secondItem="2m6-pR-KDu" secondAttribute="bottom" constant="8" id="qsL-eD-7KO"/>
                         <constraint firstItem="g5V-Fi-fjT" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="24" id="rPe-KH-Puw"/>
                         <constraint firstItem="Ahk-mB-c8m" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="t4C-TS-ZYG"/>
+                        <constraint firstItem="mBr-Pz-4AV" firstAttribute="bottom" secondItem="2m6-pR-KDu" secondAttribute="bottom" id="wV7-SY-wzi"/>
                         <constraint firstItem="EJS-ip-3ub" firstAttribute="top" secondItem="Ti3-Jy-oYM" secondAttribute="bottom" constant="12" id="wfV-3Q-i22"/>
                     </constraints>
                 </scrollView>

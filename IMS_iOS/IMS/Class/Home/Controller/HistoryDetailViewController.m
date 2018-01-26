@@ -22,6 +22,8 @@
 #import "ProjectSelectView.h"
 #import "AVMetadataController.h"
 #import "InputSerialNumberViewController.h"
+#import "MarkersInfoModel.h"
+#import "ShowMapViewController.h"
 
 static NSString *recentCellId = @"RecentIssueCell";
 static NSString *nearbyCellId = @"NearbyIssueCell";
@@ -32,6 +34,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     CLLocationManager *_locationManager;
     CLLocation *_loc;
     ProjectSelectView *detail;
+    HistoryUnit *selectUnit;
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *uTableView;
@@ -265,7 +268,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"IssueDetailView" owner:self options:nil];
     id uv = [nib objectAtIndex:0];
     IssueDetailView *detail = uv;
-    
+    selectUnit = unit;
     detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [detail configIssueDetailViewWith:unit allProjectsArray:self.projectsArray];
     //添加到window上面
@@ -280,6 +283,43 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     } completion:^(BOOL finished) {
         detail.bgView.backgroundColor = [UIColor blackColor];
     }];
+    
+    [detail.mapButton addTarget:self action:@selector(jumpToMapDetailView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+//跳转到地图界面
+- (void)jumpToMapDetailView {
+    //
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    for (UIView *subview in app.window.subviews) {
+        if ([subview isKindOfClass:[IssueDetailView class]]) {
+            [subview removeFromSuperview];
+        }
+    }
+    
+    //创建markInfo
+    NSMutableArray *markersInfo = [NSMutableArray new];
+    MarkersInfoModel *current = [MarkersInfoModel new];
+    current.color = @"blue";
+    current.lat = self.latitude;
+    current.lng = self.longitude;
+    current.type = @"current";
+    current.zoom = @14;
+    
+    MarkersInfoModel *expect = [MarkersInfoModel new];
+    expect.color = @"red";
+    expect.lat = selectUnit.latitude;
+    expect.lng = selectUnit.longitude;
+    expect.type = @"expect";
+    expect.zoom = @14;
+    
+    [markersInfo addObject:current];
+    [markersInfo addObject:expect];
+    
+    ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
+    showMap.markersInfo = markersInfo;
+    showMap.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:showMap animated:true];
 }
 
 - (void)settingButtonClick:(id)sender {

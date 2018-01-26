@@ -18,6 +18,8 @@
 #import "SVProgressHUD.h"
 #import "ShowMapViewController.h"
 #import "MarkersInfoModel.h"
+#import "IssueDetailView.h"
+#import "AppDelegate.h"
 
 @interface InputSerialNumberViewController ()<UITextFieldDelegate>
 
@@ -31,6 +33,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *productDetailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *detailButton;
+
+
 
 /**
  需要check才是YES
@@ -38,6 +43,8 @@
 @property (nonatomic, assign) BOOL checkState;
 
 @property (nonatomic, strong) NSMutableArray <MarkersInfoModel *>*markersInfo;
+
+@property (nonatomic, strong) CheckIncidentModel *incidentModel;
 @end
 
 @implementation InputSerialNumberViewController
@@ -64,7 +71,12 @@
     if (STR_IS_NIL(self.serialNumberTextField.text)) {
         self.creatRecordButton.enabled = NO;
     } else {
-        self.creatRecordButton.enabled = YES;
+        if (self.incidentModel.incident_type.integerValue != 0) {
+            self.creatRecordButton.enabled = YES;
+            self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
+        } else {
+            self.creatRecordButton.enabled = NO;//这里禁用了，哪里可以启用？1.每次界面显示的时候 2.输入框重新编辑的时候
+        }
     }
     self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -89,6 +101,7 @@
                                                     [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                                 } else {
                                                     CheckIncidentModel *model = [CheckIncidentModel yy_modelWithDictionary:JSON];
+                                                    weakSelf.incidentModel = model;
                                                     [weakSelf redrawUIWhenNetworkFinishWith:model];
                                                 }
                                             }];
@@ -112,13 +125,50 @@
 //点击显示地图
 - (IBAction)mapButtonTap:(id)sender {
     DLog(@"点击了map");
+    [self jumpToMapDetailView];
+}
+
+- (IBAction)showDetailButtonClick:(id)sender {
+    
+    NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"IssueDetailView" owner:self options:nil];
+    id uv = [nib objectAtIndex:0];
+    IssueDetailView *detail = uv;
+    
+    detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    [detail configIssueDetailViewWith:self.incidentModel];
+    //添加到window上面
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [app.window addSubview:detail];
+    
+    //增加个简单动画效果吧
+    detail.bgView.backgroundColor = [UIColor clearColor];
+    detail.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+    [UIView animateWithDuration:.3 animations:^{
+        detail.layer.affineTransform = CGAffineTransformMakeScale(1, 1);
+    } completion:^(BOOL finished) {
+        detail.bgView.backgroundColor = [UIColor blackColor];
+    }];
+    
+    [detail.mapButton addTarget:self action:@selector(jumpToMapDetailView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+#pragma mark - Custom Methoud
+//跳转到地图界面
+- (void)jumpToMapDetailView {
+    //
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    for (UIView *subview in app.window.subviews) {
+        if ([subview isKindOfClass:[IssueDetailView class]]) {
+            [subview removeFromSuperview];
+        }
+    }
+    
     ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
     showMap.markersInfo = self.markersInfo;
     showMap.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:showMap animated:true];
 }
 
-#pragma mark - Custom Methoud
 /**
  检查用户输入用户名密码状态
  
@@ -171,8 +221,16 @@
 - (void)redrawUIWhenNetworkFinishWith:(CheckIncidentModel *)model {
     
     self.titleLabel.text = model.title;
+    NSDictionary *optoins = @{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,
+                            NSFontAttributeName:[UIFont systemFontOfSize:14]};
+    NSData *data = [model.authority.product_details dataUsingEncoding:NSUnicodeStringEncoding];
+    NSAttributedString *attributeString=[[NSAttributedString alloc] initWithData:data
+                                                                         options:optoins
+                                                              documentAttributes:nil
+                                                                           error:nil];
     
-    self.productDetailLabel.text = model.authority.product_details;
+    
+    self.productDetailLabel.attributedText = attributeString;
     
     [self.productImageView yy_setImageWithURL:[NSURL URLWithString:model.authority.product_image] placeholder:[UIImage imageNamed:IMS_DEFAULT_IMAGE]];
     //更改checkState状态
@@ -188,7 +246,6 @@
             self.creatRecordButton.backgroundColor = [UIColor ims_colorWithHex:0xf5f5f5];
         } else {
             self.creatRecordButton.enabled = NO;//这里禁用了，哪里可以启用？1.每次界面显示的时候 2.输入框重新编辑的时候
-            self.creatRecordButton.backgroundColor = [UIColor lightGrayColor];
         }
     } else {
         
@@ -201,6 +258,9 @@
         self.mapButton.hidden = NO;
     }
     self.markersInfo = model.markersInfo;
+    
+    //显示detail按钮
+    self.detailButton.hidden = NO;
 }
 
 #pragma mark -
@@ -243,6 +303,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setupTopImage) name:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
     
 //    self.serialNumberTextField.delegate = self;
+    
+    //设置detailButton
+    self.detailButton.layer.cornerRadius = 5;
+    self.detailButton.layer.masksToBounds = YES;
+    self.detailButton.layer.borderColor = [UIColor ims_colorWithHex:0x888888].CGColor;
+    self.detailButton.layer.borderWidth = 0.5;
+    self.detailButton.hidden = YES;
 }
 
 - (void)setupTopImage {

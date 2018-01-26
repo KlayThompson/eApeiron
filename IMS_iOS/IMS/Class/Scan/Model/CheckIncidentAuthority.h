@@ -31,4 +31,7 @@
 @property (nonatomic, copy) NSString *stolen_date;
 @property (nonatomic, copy) NSString *time_threshold;
 
+@property (nonatomic, strong) NSDictionary *product_schema;
+
+
 @end
