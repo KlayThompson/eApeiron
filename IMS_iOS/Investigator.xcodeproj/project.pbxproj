@@ -1104,8 +1104,8 @@
 				TargetAttributes = {
 					988DB1A21A43EA0600C243F9 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 3M8UMV3ST9;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 3BB36MF7NL;
+						ProvisioningStyle = Automatic;
 					};
 					98B6FA0F1AE493D400B2497E = {
 						DevelopmentTeam = 3M8UMV3ST9;
@@ -1609,19 +1609,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3M8UMV3ST9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3BB36MF7NL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IMS/PrefixHeader.pch;
 				INFOPLIST_FILE = IMS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kodak.kbps.Investigator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kodak.kbps.Investigator12343;
 				PRODUCT_NAME = Investigator;
-				PROVISIONING_PROFILE = "ca0794fe-3e67-4ee9-815f-93a6d3066436";
-				PROVISIONING_PROFILE_SPECIFIER = "PDC-InHouse-Universal";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./ZXingObjC-master/**";
 			};
@@ -1633,19 +1633,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 3M8UMV3ST9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3BB36MF7NL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = IMS/PrefixHeader.pch;
 				INFOPLIST_FILE = IMS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kodak.kbps.Investigator;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kodak.kbps.Investigator12343;
 				PRODUCT_NAME = Investigator;
-				PROVISIONING_PROFILE = "ca0794fe-3e67-4ee9-815f-93a6d3066436";
-				PROVISIONING_PROFILE_SPECIFIER = "PDC-InHouse-Universal";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "./ZXingObjC-master/**";
 			};

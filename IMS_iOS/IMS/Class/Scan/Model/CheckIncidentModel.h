@@ -35,6 +35,7 @@
 
 @property (nonatomic, strong) CheckIncidentAuthority *authority;
 
+
 @end
 
 

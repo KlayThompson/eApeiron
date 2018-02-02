@@ -25,7 +25,6 @@
 @property (readwrite, nonatomic) SEL      action;
 
 
-
 + (instancetype)menuTitle:(NSString *)title WithIcon:(UIImage *)icon;
 
 + (instancetype)menuItem:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag userInfo:(NSDictionary *)userInfo;

@@ -16,5 +16,4 @@
 @property (nonatomic, copy) NSString *lat;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *type;
-
 @end

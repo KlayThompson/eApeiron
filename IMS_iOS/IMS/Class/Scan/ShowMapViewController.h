@@ -12,5 +12,4 @@
 @interface ShowMapViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray <MarkersInfoModel *> *markersInfo;
-@property (nonatomic, copy) NSString *mapUrlBase;
 @end
