@@ -307,8 +307,8 @@
     //设置detailButton
     self.detailButton.layer.cornerRadius = 5;
     self.detailButton.layer.masksToBounds = YES;
-    self.detailButton.layer.borderColor = [UIColor ims_colorWithHex:0x888888].CGColor;
-    self.detailButton.layer.borderWidth = 0.5;
+    self.detailButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+    self.detailButton.layer.borderWidth = 1;
     self.detailButton.hidden = YES;
 }
 

@@ -76,7 +76,7 @@
                             </constraints>
                         </imageView>
                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-ip-3ub">
-                            <rect key="frame" x="15" y="444" width="345" height="44"/>
+                            <rect key="frame" x="15" y="512" width="345" height="44"/>
                             <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="zyO-C9-mhs"/>
@@ -114,15 +114,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBr-Pz-4AV">
-                            <rect key="frame" x="157" y="344" width="60" height="30"/>
+                            <rect key="frame" x="15" y="454" width="345" height="44"/>
                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="Pyb-re-G4y"/>
-                                <constraint firstAttribute="width" constant="60" id="tig-oh-Tq5"/>
+                                <constraint firstAttribute="height" constant="44" id="n56-HN-nJg"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal" title="Detail">
-                                <color key="titleColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="showDetailButtonClick:" destination="-1" eventType="touchUpInside" id="hci-JG-ApB"/>
@@ -138,14 +137,15 @@
                         <constraint firstItem="EJS-ip-3ub" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="ARh-td-k8A"/>
                         <constraint firstItem="EJS-ip-3ub" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="BW6-bW-4kV"/>
                         <constraint firstItem="aEJ-f9-30a" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="Cwh-Mb-HcK"/>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="trailing" secondItem="mBr-Pz-4AV" secondAttribute="trailing" id="ECg-CI-wbO"/>
                         <constraint firstItem="Ti3-Jy-oYM" firstAttribute="top" secondItem="6Gz-kU-KHo" secondAttribute="bottom" constant="8" id="F0j-8e-S1e"/>
                         <constraint firstItem="SmT-bC-TLZ" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="15" id="FsQ-bz-ee4"/>
-                        <constraint firstItem="mBr-Pz-4AV" firstAttribute="leading" secondItem="2m6-pR-KDu" secondAttribute="trailing" constant="15" id="Hkq-lS-tVE"/>
                         <constraint firstItem="vCL-Uh-DY3" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="MjD-TM-WKj"/>
                         <constraint firstItem="6Gz-kU-KHo" firstAttribute="leading" secondItem="aEJ-f9-30a" secondAttribute="leading" id="N2t-hG-eh0"/>
                         <constraint firstItem="SmT-bC-TLZ" firstAttribute="top" secondItem="g5V-Fi-fjT" secondAttribute="bottom" constant="15" id="Ob2-4b-4ia"/>
                         <constraint firstItem="Ahk-mB-c8m" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="OtI-SR-cmv"/>
                         <constraint firstItem="Ti3-Jy-oYM" firstAttribute="trailing" secondItem="6Gz-kU-KHo" secondAttribute="trailing" id="WUe-gg-qBc"/>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="top" secondItem="mBr-Pz-4AV" secondAttribute="bottom" constant="14" id="YdL-2U-1ss"/>
                         <constraint firstItem="vCL-Uh-DY3" firstAttribute="top" secondItem="aEJ-f9-30a" secondAttribute="bottom" constant="20" id="bTp-rx-gxl"/>
                         <constraint firstItem="Ahk-mB-c8m" firstAttribute="top" secondItem="SmT-bC-TLZ" secondAttribute="bottom" constant="15" id="bbc-3k-PYn"/>
                         <constraint firstItem="vCL-Uh-DY3" firstAttribute="leading" secondItem="SmT-bC-TLZ" secondAttribute="leading" id="ejO-ud-fn8"/>
@@ -157,8 +157,8 @@
                         <constraint firstItem="6Gz-kU-KHo" firstAttribute="top" secondItem="2m6-pR-KDu" secondAttribute="bottom" constant="8" id="qsL-eD-7KO"/>
                         <constraint firstItem="g5V-Fi-fjT" firstAttribute="leading" secondItem="SgX-Bx-z5L" secondAttribute="leading" constant="24" id="rPe-KH-Puw"/>
                         <constraint firstItem="Ahk-mB-c8m" firstAttribute="trailing" secondItem="SmT-bC-TLZ" secondAttribute="trailing" id="t4C-TS-ZYG"/>
-                        <constraint firstItem="mBr-Pz-4AV" firstAttribute="bottom" secondItem="2m6-pR-KDu" secondAttribute="bottom" id="wV7-SY-wzi"/>
-                        <constraint firstItem="EJS-ip-3ub" firstAttribute="top" secondItem="Ti3-Jy-oYM" secondAttribute="bottom" constant="12" id="wfV-3Q-i22"/>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="leading" secondItem="mBr-Pz-4AV" secondAttribute="leading" id="uJU-Li-WNM"/>
+                        <constraint firstItem="EJS-ip-3ub" firstAttribute="top" secondItem="Ti3-Jy-oYM" secondAttribute="bottom" constant="80" id="wfV-3Q-i22"/>
                     </constraints>
                 </scrollView>
             </subviews>
