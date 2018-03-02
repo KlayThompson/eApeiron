@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "HistoryDetailViewController.h"
+#import "HomeRootViewController.h"
 #import "UserInfoManager.h"
 #import "IMSAPIManager.h"
 #import "YYWebImage.h"
@@ -273,7 +273,7 @@
      [self.navigationController pushViewController:showMap animated:true];
      */
     
-    HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+    HomeRootViewController *detail = [[HomeRootViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
     detail.hidesBottomBarWhenPushed = YES;
     detail.title = self.title;
     [self.navigationController pushViewController:detail animated:YES];

@@ -6,12 +6,10 @@
 //  Copyright © 2017年 kodak. All rights reserved.
 //
 
-#import "HistoryDetailViewController.h"
+#import "HomeRootViewController.h"
 #import "IMSAPIManager.h"
 #import "HistoryModel.h"
 #import "YYModel.h"
-#import "RecentIssueCell.h"
-#import "NearbyIssueCell.h"
 #import "UserInfoManager.h"
 #import "IssueDetailView.h"
 #import "AppDelegate.h"
@@ -26,7 +24,7 @@
 #import "ShowMapViewController.h"
 
 
-@interface HistoryDetailViewController ()<CLLocationManagerDelegate,AVMetadataDelegate> {
+@interface HomeRootViewController ()<CLLocationManagerDelegate,AVMetadataDelegate> {
 
     CLLocationManager *_locationManager;
     CLLocation *_loc;
@@ -53,7 +51,7 @@
 @property (nonatomic, strong) UIImageView *titleImageView;
 @end
 
-@implementation HistoryDetailViewController
+@implementation HomeRootViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

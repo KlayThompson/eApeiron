@@ -14,7 +14,7 @@
 #import "YYModel.h"
 #import "IMSAPIManager.h"
 #import "MainNavigationController.h"
-#import "HistoryDetailViewController.h"
+#import "HomeRootViewController.h"
 #import "LoginViewController.h"
 
 @interface AppDelegate () <UIAlertViewDelegate>
@@ -42,7 +42,7 @@
 //    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     UserInfoManager *manager = [UserInfoManager shareInstance];
     if (manager.userLogin) {
-        HistoryDetailViewController *detail = [[HistoryDetailViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+        HomeRootViewController *detail = [[HomeRootViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
         MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:detail];
         [self.window setRootViewController:navi];
         self.window.backgroundColor = [UIColor whiteColor];

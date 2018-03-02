@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HistoryDetailViewController : UIViewController
+@interface HomeRootViewController : UIViewController
 
 @end

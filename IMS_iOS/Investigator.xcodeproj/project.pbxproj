@@ -106,9 +106,9 @@
 		3B619594204680BE0029F1A7 /* HistoryUnitDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B619593204680BE0029F1A7 /* HistoryUnitDetails.m */; };
 		3B619595204680BE0029F1A7 /* HistoryUnitDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B619593204680BE0029F1A7 /* HistoryUnitDetails.m */; };
 		3B619596204680BE0029F1A7 /* HistoryUnitDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B619593204680BE0029F1A7 /* HistoryUnitDetails.m */; };
-		3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
-		3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
-		3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */; };
+		3B6658D71F6A192A006A2A09 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */; };
+		3B6658D81F6A192A006A2A09 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */; };
+		3B6658D91F6A192A006A2A09 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */; };
 		3B6658DA1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */; };
 		3B6658DB1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */; };
 		3B6658DC1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */; };
@@ -142,18 +142,6 @@
 		3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658D61F6A192A006A2A09 /* SettingsViewController.xib */; };
 		3B6658FC1F6A192B006A2A09 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658D61F6A192A006A2A09 /* SettingsViewController.xib */; };
 		3B6658FD1F6A192B006A2A09 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658D61F6A192A006A2A09 /* SettingsViewController.xib */; };
-		3B6659021F6A19B3006A2A09 /* RecentIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6659001F6A19B3006A2A09 /* RecentIssueCell.m */; };
-		3B6659031F6A19B3006A2A09 /* RecentIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6659001F6A19B3006A2A09 /* RecentIssueCell.m */; };
-		3B6659041F6A19B3006A2A09 /* RecentIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6659001F6A19B3006A2A09 /* RecentIssueCell.m */; };
-		3B6659051F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6659011F6A19B3006A2A09 /* RecentIssueCell.xib */; };
-		3B6659061F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6659011F6A19B3006A2A09 /* RecentIssueCell.xib */; };
-		3B6659071F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6659011F6A19B3006A2A09 /* RecentIssueCell.xib */; };
-		3B66590F1F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */; };
-		3B6659101F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */; };
-		3B6659111F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */; };
-		3B6659121F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */; };
-		3B6659131F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */; };
-		3B6659141F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */; };
 		3B66591C1F6BB08E006A2A09 /* IssueDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */; };
 		3B66591D1F6BB08E006A2A09 /* IssueDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */; };
 		3B66591E1F6BB08E006A2A09 /* IssueDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */; };
@@ -409,8 +397,8 @@
 		3B2AEDC81F7B47C2000505A2 /* ProjectSelectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectSelectCell.xib; sourceTree = "<group>"; };
 		3B619592204680BE0029F1A7 /* HistoryUnitDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HistoryUnitDetails.h; sourceTree = "<group>"; };
 		3B619593204680BE0029F1A7 /* HistoryUnitDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryUnitDetails.m; sourceTree = "<group>"; };
-		3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
-		3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
+		3B6658BA1F6A192A006A2A09 /* HomeRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRootViewController.h; sourceTree = "<group>"; };
+		3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRootViewController.m; sourceTree = "<group>"; };
 		3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
 		3B6658BD1F6A192A006A2A09 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3B6658BE1F6A192A006A2A09 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -430,12 +418,6 @@
 		3B6658D41F6A192A006A2A09 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		3B6658D51F6A192A006A2A09 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		3B6658D61F6A192A006A2A09 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
-		3B6658FF1F6A19B3006A2A09 /* RecentIssueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentIssueCell.h; sourceTree = "<group>"; };
-		3B6659001F6A19B3006A2A09 /* RecentIssueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentIssueCell.m; sourceTree = "<group>"; };
-		3B6659011F6A19B3006A2A09 /* RecentIssueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentIssueCell.xib; sourceTree = "<group>"; };
-		3B66590C1F6A19C9006A2A09 /* NearbyIssueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyIssueCell.h; sourceTree = "<group>"; };
-		3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyIssueCell.m; sourceTree = "<group>"; };
-		3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyIssueCell.xib; sourceTree = "<group>"; };
 		3B66591A1F6BB08E006A2A09 /* IssueDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueDetailView.h; sourceTree = "<group>"; };
 		3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueDetailView.m; sourceTree = "<group>"; };
 		3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailView.xib; sourceTree = "<group>"; };
@@ -722,8 +704,8 @@
 			children = (
 				3B6658BD1F6A192A006A2A09 /* HomeViewController.h */,
 				3B6658BE1F6A192A006A2A09 /* HomeViewController.m */,
-				3B6658BA1F6A192A006A2A09 /* HistoryDetailViewController.h */,
-				3B6658BB1F6A192A006A2A09 /* HistoryDetailViewController.m */,
+				3B6658BA1F6A192A006A2A09 /* HomeRootViewController.h */,
+				3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */,
 				3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */,
 			);
 			path = Controller;
@@ -745,12 +727,6 @@
 		3B6658C41F6A192A006A2A09 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3B6658FF1F6A19B3006A2A09 /* RecentIssueCell.h */,
-				3B6659001F6A19B3006A2A09 /* RecentIssueCell.m */,
-				3B6659011F6A19B3006A2A09 /* RecentIssueCell.xib */,
-				3B66590C1F6A19C9006A2A09 /* NearbyIssueCell.h */,
-				3B66590D1F6A19C9006A2A09 /* NearbyIssueCell.m */,
-				3B66590E1F6A19C9006A2A09 /* NearbyIssueCell.xib */,
 				3B66591A1F6BB08E006A2A09 /* IssueDetailView.h */,
 				3B66591B1F6BB08E006A2A09 /* IssueDetailView.m */,
 				3B66591F1F6BB09A006A2A09 /* IssueDetailView.xib */,
@@ -1171,7 +1147,6 @@
 				98ED33B91AE4DDD800E66D44 /* Default-568h@2x.png in Resources */,
 				988DB1B71A43EA0600C243F9 /* LaunchScreen.xib in Resources */,
 				988DB1B41A43EA0600C243F9 /* Images.xcassets in Resources */,
-				3B6659121F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
 				3B6659201F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				3B6659AB1F6F6836006A2A09 /* issues_off@2x.png in Resources */,
 				3B0A3F4A1FCBFEB100BB5362 /* UpdateAccountViewController.xib in Resources */,
@@ -1179,7 +1154,6 @@
 				3B0A3F5A1FD7BFA500BB5362 /* AboutViewController.xib in Resources */,
 				3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
-				3B6659051F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6658DA1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
 				3B6659971F6F6567006A2A09 /* issues_on@2x.png in Resources */,
 			);
@@ -1209,7 +1183,6 @@
 				3B6658FC1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B73E1DA1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B0A3F381FCBF38300BB5362 /* ForgotPwdViewController.xib in Resources */,
-				3B6659061F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6659211F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA2E1AE493D400B2497E /* ic_scan_selected@2x.png in Resources */,
 				98B6FA2F1AE493D400B2497E /* ic_settings@2x.png in Resources */,
@@ -1224,7 +1197,6 @@
 				3B6659981F6F6567006A2A09 /* issues_on@2x.png in Resources */,
 				98B6FA331AE493D400B2497E /* ic_menu_home@2x.png in Resources */,
 				3B2AEDCD1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
-				3B6659131F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
 				3B2AEDC41F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1253,7 +1225,6 @@
 				3B6658FD1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
 				3B73E1DB1F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B0A3F391FCBF38400BB5362 /* ForgotPwdViewController.xib in Resources */,
-				3B6659071F6A19B3006A2A09 /* RecentIssueCell.xib in Resources */,
 				3B6659221F6BB09A006A2A09 /* IssueDetailView.xib in Resources */,
 				98B6FA5D1AE493DB00B2497E /* ic_settings@2x.png in Resources */,
 				98B6FA5E1AE493DB00B2497E /* ic_settings_selected@2x.png in Resources */,
@@ -1268,7 +1239,6 @@
 				3B6659991F6F6567006A2A09 /* issues_on@2x.png in Resources */,
 				98B6FA611AE493DB00B2497E /* ic_menu_home@2x.png in Resources */,
 				3B2AEDCE1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
-				3B6659141F6A19C9006A2A09 /* NearbyIssueCell.xib in Resources */,
 				3B2AEDC51F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1306,15 +1276,13 @@
 				3BD063171F66253200C1722A /* IMSAPIManager.m in Sources */,
 				3BD0635E1F665EE100C1722A /* UserInfoManager.m in Sources */,
 				3B2AEDBB1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */,
-				3B6659021F6A19B3006A2A09 /* RecentIssueCell.m in Sources */,
 				3BD063981F691FA900C1722A /* NSObject+YYModel.m in Sources */,
-				3B66590F1F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B619594204680BE0029F1A7 /* HistoryUnitDetails.m in Sources */,
 				3B6658F81F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3BD063121F66248800C1722A /* NetworkAPIManager.m in Sources */,
 				3B73E1CE1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B0A3F571FD7BFA500BB5362 /* AboutViewController.m in Sources */,
-				3B6658D71F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
+				3B6658D71F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
 				3BFB80FF1FB14E0C00A6B1E9 /* ProjectListModel.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
 				3BD063071F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
@@ -1380,14 +1348,12 @@
 				98B6FA141AE493D400B2497E /* Hud.m in Sources */,
 				3BD0630E1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3B2AEDBC1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */,
-				3B6659031F6A19B3006A2A09 /* RecentIssueCell.m in Sources */,
 				3BD0635F1F665EE100C1722A /* UserInfoManager.m in Sources */,
-				3B6659101F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658F91F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3B0A3F581FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B73E1CF1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
-				3B6658D81F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
+				3B6658D81F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
 				3BD063991F691FA900C1722A /* NSObject+YYModel.m in Sources */,
@@ -1453,14 +1419,12 @@
 				98B6FA421AE493DB00B2497E /* Hud.m in Sources */,
 				3BD0630F1F66234B00C1722A /* AFURLSessionManager.m in Sources */,
 				3B2AEDBD1F7B3FD9000505A2 /* ProjectSelectView.m in Sources */,
-				3B6659041F6A19B3006A2A09 /* RecentIssueCell.m in Sources */,
 				3BD063601F665EE100C1722A /* UserInfoManager.m in Sources */,
-				3B6659111F6A19C9006A2A09 /* NearbyIssueCell.m in Sources */,
 				3B6658FA1F6A192B006A2A09 /* SettingsViewController.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3B0A3F591FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B73E1D01F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
-				3B6658D91F6A192A006A2A09 /* HistoryDetailViewController.m in Sources */,
+				3B6658D91F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,
 				3BD0639A1F691FA900C1722A /* NSObject+YYModel.m in Sources */,
