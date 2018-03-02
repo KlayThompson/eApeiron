@@ -273,7 +273,7 @@
      [self.navigationController pushViewController:showMap animated:true];
      */
     
-    HomeRootViewController *detail = [[HomeRootViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+    HomeRootViewController *detail = [[HomeRootViewController alloc] init];
     detail.hidesBottomBarWhenPushed = YES;
     detail.title = self.title;
     [self.navigationController pushViewController:detail animated:YES];

@@ -42,7 +42,7 @@
 //    MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
     UserInfoManager *manager = [UserInfoManager shareInstance];
     if (manager.userLogin) {
-        HomeRootViewController *detail = [[HomeRootViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+        HomeRootViewController *detail = [[HomeRootViewController alloc] init];
         MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:detail];
         [self.window setRootViewController:navi];
         self.window.backgroundColor = [UIColor whiteColor];

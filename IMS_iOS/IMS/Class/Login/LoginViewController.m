@@ -126,7 +126,7 @@
 //        MainTabBarViewController *tabbar = [[MainTabBarViewController alloc] init];
 //        [UIApplication.sharedApplication.keyWindow setRootViewController:tabbar];
 //        [tabbar setRootViewController];
-        HomeRootViewController *detail = [[HomeRootViewController alloc] initWithNibName:@"HistoryDetailViewController" bundle:nil];
+        HomeRootViewController *detail = [[HomeRootViewController alloc] init];
         MainNavigationController *navi = [[MainNavigationController alloc] initWithRootViewController:detail];
         [UIApplication.sharedApplication.keyWindow setRootViewController:navi];
         [self getProects];

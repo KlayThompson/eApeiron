@@ -109,9 +109,6 @@
 		3B6658D71F6A192A006A2A09 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */; };
 		3B6658D81F6A192A006A2A09 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */; };
 		3B6658D91F6A192A006A2A09 /* HomeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */; };
-		3B6658DA1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */; };
-		3B6658DB1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */; };
-		3B6658DC1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */; };
 		3B6658DD1F6A192A006A2A09 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BE1F6A192A006A2A09 /* HomeViewController.m */; };
 		3B6658DE1F6A192A006A2A09 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BE1F6A192A006A2A09 /* HomeViewController.m */; };
 		3B6658DF1F6A192A006A2A09 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B6658BE1F6A192A006A2A09 /* HomeViewController.m */; };
@@ -399,7 +396,6 @@
 		3B619593204680BE0029F1A7 /* HistoryUnitDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HistoryUnitDetails.m; sourceTree = "<group>"; };
 		3B6658BA1F6A192A006A2A09 /* HomeRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRootViewController.h; sourceTree = "<group>"; };
 		3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRootViewController.m; sourceTree = "<group>"; };
-		3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
 		3B6658BD1F6A192A006A2A09 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		3B6658BE1F6A192A006A2A09 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		3B6658C01F6A192A006A2A09 /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
@@ -706,7 +702,6 @@
 				3B6658BE1F6A192A006A2A09 /* HomeViewController.m */,
 				3B6658BA1F6A192A006A2A09 /* HomeRootViewController.h */,
 				3B6658BB1F6A192A006A2A09 /* HomeRootViewController.m */,
-				3B6658BC1F6A192A006A2A09 /* HistoryDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1154,7 +1149,6 @@
 				3B0A3F5A1FD7BFA500BB5362 /* AboutViewController.xib in Resources */,
 				3B73E1D91F6FA16100AD5153 /* missing-thumbnail.jpg in Resources */,
 				3B6658FB1F6A192B006A2A09 /* SettingsViewController.xib in Resources */,
-				3B6658DA1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
 				3B6659971F6F6567006A2A09 /* issues_on@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1170,7 +1164,6 @@
 				98ED33C31AE4DDD800E66D44 /* Default.png in Resources */,
 				3B6658EA1F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				98B6FA291AE493D400B2497E /* Icon@2x.png in Resources */,
-				3B6658DB1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
 				98B6FA2A1AE493D400B2497E /* ic_menu_home_selected@2x.png in Resources */,
 				3B73E1D21F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */,
 				98B6FA2B1AE493D400B2497E /* Icon.png in Resources */,
@@ -1212,7 +1205,6 @@
 				98ED33C41AE4DDD800E66D44 /* Default.png in Resources */,
 				3B6658EB1F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				98B6FA571AE493DB00B2497E /* Icon@2x.png in Resources */,
-				3B6658DC1F6A192A006A2A09 /* HistoryDetailViewController.xib in Resources */,
 				98B6FA581AE493DB00B2497E /* ic_menu_home_selected@2x.png in Resources */,
 				3B73E1D31F6F9D6300AD5153 /* InputSerialNumberViewController.xib in Resources */,
 				98B6FA591AE493DB00B2497E /* Icon.png in Resources */,
