@@ -6,6 +6,13 @@
 //  Copyright (c) 2015年 kodak. All rights reserved.
 //
 
+/**
+ ----------------------------------
+ 已经废弃
+ 使用HomeRootViewController
+ ----------------------------------
+ */
+
 #import "HomeViewController.h"
 #import "HomeRootViewController.h"
 #import "UserInfoManager.h"

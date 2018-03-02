@@ -22,7 +22,9 @@
 #import "InputSerialNumberViewController.h"
 #import "MarkersInfoModel.h"
 #import "ShowMapViewController.h"
-
+#import "NinaPagerView.h"
+#import "HomeListViewController.h"
+#import "UIColor+Addtions.h"
 
 @interface HomeRootViewController ()<CLLocationManagerDelegate,AVMetadataDelegate> {
 
@@ -49,6 +51,11 @@
 @property (nonatomic, strong) UIView *bottomBgView;
 
 @property (nonatomic, strong) UIImageView *titleImageView;
+
+/**
+ 顶部滑动选择视图
+ */
+@property (nonatomic, strong) NinaPagerView *sliderView;
 @end
 
 @implementation HomeRootViewController
@@ -84,39 +91,6 @@
 }
 
 #pragma mark - 网络
-- (void)loadHistoryFromServer {
-    
-    if (STR_IS_NIL(self.latitude) && STR_IS_NIL(self.longitude)) {
-        [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
-        return;
-    }
-    UserInfoManager *manager = [UserInfoManager shareInstance];
-    NSString *pId = manager.currentProjectId;
-    if (STR_IS_NIL(pId)) {
-        pId = @"";
-    }
-    
-    [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
-    __weak typeof(self) weakSelf = self;
-    [IMSAPIManager ims_getHistoryWithLatitude:self.latitude
-                                    longitude:self.longitude
-                                        limit:@"10"
-                                          pId:pId
-                                       offset:@"0"
-                                         type:@"nearby"
-                                        Block:^(id JSON, NSError *error) {
-                                            [SVProgressHUD dismiss];
-                                            if (error) {
-                                                [SVProgressHUD showErrorWithStatus:error.localizedDescription];
-                                            } else {
-                                                NSDictionary *messageDic = JSON[@"Message"];
-                                                NSDictionary *nearbyIncidents = messageDic[@"nearbyIncidents"];
-                                                
-                                            }
-                                            
-                                        }];
-}
-
 /**
  获取项目列表
  */
@@ -326,7 +300,6 @@
     userInfo.latitude = [NSString stringWithFormat:@"%f",_loc.coordinate.latitude];
     self.longitude = userInfo.longitude;
     self.latitude = userInfo.latitude;
-    [self loadHistoryFromServer];
     [manager stopUpdatingLocation];
 }
 
@@ -354,10 +327,8 @@
     //bottom
     self.bottomBgView.hidden = NO;
     
-    //设置setting
-//    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-//    [self addChildViewController:self.settingVC];
-//    [self.view addSubview:self.settingVC.view];
+    [self.view addSubview:self.sliderView];
+    self.sliderView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     self.longitude = manager.longitude;
@@ -417,4 +388,40 @@
     }
     return _titleImageView;
 }
+
+- (NinaPagerView *)sliderView {
+    if (!_sliderView) {
+        NSArray *titleArray = @[@"Assigned", @"Near By", @"Recent"];
+        NSMutableArray *vcArray = [NSMutableArray new];
+        
+        for (int index = 0; index < titleArray.count; index++) {
+            HomeListViewController *list = [[HomeListViewController alloc] init];
+            switch (index) {
+                case 0:
+                    list.historyType = HistoryTypeAssigned;
+                    break;
+                case 1:
+                    list.historyType = HistoryTypeNearBy;
+                    break;
+                case 2:
+                    list.historyType = HistoryTypeRecent;
+                    break;
+                    
+                default:
+                    break;
+            }
+            [vcArray addObject:list];
+        }
+        
+        _sliderView = [[NinaPagerView alloc] initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight)
+                                                WithTitles:titleArray
+                                               WithObjects:vcArray];
+        _sliderView.topTabHeight = 35;
+        _sliderView.ninaPagerStyles = NinaPagerStyleStateNormal;
+        _sliderView.selectTitleColor = [UIColor ims_colorWithHex:0x129aee];
+        _sliderView.unSelectTitleColor = [UIColor ims_colorWithHex:0x222222];
+    }
+    return _sliderView;
+}
+
 @end
