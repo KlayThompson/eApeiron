@@ -13,9 +13,15 @@
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"issueId" : @"id",
-             @"issueDescription" : @"description"};
+             @"issueDescription" : @"description",
+             @"details" : @"Details"
+             };
 }
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"details" : [HistoryUnitDetails class],
+             };
+}
 
 - (NSString *)issue_type {
     /**

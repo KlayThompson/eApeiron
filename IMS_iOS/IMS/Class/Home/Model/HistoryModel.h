@@ -18,6 +18,8 @@
 
 @property (nonatomic, strong) NSMutableArray <ProjectModel *>*projects;
 
+
+@property (nonatomic, strong) NSMutableArray <HistoryUnit *>*data;
 @end
 
 

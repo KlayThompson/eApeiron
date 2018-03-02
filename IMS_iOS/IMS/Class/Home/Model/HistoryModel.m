@@ -13,6 +13,7 @@
     return @{@"issuesByTime" : [HistoryUnit class],
              @"issuesByProx" : [HistoryUnit class],
              @"projects" : [ProjectModel class],
+             @"data" : [HistoryUnit class]
              };
 }
 

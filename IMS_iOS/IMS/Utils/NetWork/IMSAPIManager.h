@@ -39,13 +39,17 @@
  @param latitude latitude
  @param longitude longitude
  @param limit 固定值，传10
- @param deviceId 设备标识符
- @param block 回调
+ @param pId 当前选择的ProjectId
+ @param offset <#offset description#>
+ @param type nearby recent assigned
+ @param block block
  */
 + (void)ims_getHistoryWithLatitude:(NSString *)latitude
                          longitude:(NSString *)longitude
                              limit:(NSString *)limit
-                          deviceId:(NSString *)deviceId
+                               pId:(NSString *)pId
+                            offset:(NSString *)offset
+                              type:(NSString *)type
                              Block:(void(^)(id JSON, NSError *error))block;
 
 

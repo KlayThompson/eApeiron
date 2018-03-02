@@ -78,14 +78,19 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         [_locationManager requestAlwaysAuthorization];
         [_locationManager requestWhenInUseAuthorization];
     }
-    [_locationManager startUpdatingLocation];
-    
+
+    //getProjects
+    [self getProjectsFromServer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     //每次在Home界面出现时候更新位置
+    [_locationManager startUpdatingLocation];
+}
+
+- (void)startLocation {
     [_locationManager startUpdatingLocation];
 }
 
@@ -96,29 +101,58 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
         return;
     }
-
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    NSString *pId = manager.currentProjectId;
+    if (STR_IS_NIL(pId)) {
+        pId = @"";
+    }
     
     [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
     __weak typeof(self) weakSelf = self;
     [IMSAPIManager ims_getHistoryWithLatitude:self.latitude
                                     longitude:self.longitude
                                         limit:@"10"
-                                     deviceId:[OpenUDID value]
+                                          pId:pId
+                                       offset:@"0"
+                                         type:@"nearby"
                                         Block:^(id JSON, NSError *error) {
                                             [SVProgressHUD dismiss];
                                             if (error) {
                                                 [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                             } else {
-                                                HistoryModel *model = [HistoryModel yy_modelWithDictionary:JSON];
+                                                NSDictionary *messageDic = JSON[@"Message"];
+                                                NSDictionary *nearbyIncidents = messageDic[@"nearbyIncidents"];
+                                                HistoryModel *model = [HistoryModel yy_modelWithDictionary:nearbyIncidents];
                                                 weakSelf.issuesRecentArray = model.issuesByTime;
                                                 weakSelf.issuesNearbyArray = model.issuesByProx;
                                                 weakSelf.projectsArray = model.projects;
                                                 [weakSelf.uTableView reloadData];
                                                 //将Project字典存储
-//                                                UserInfoManager *manager = [UserInfoManager shareInstance];
-//                                                manager.projectDic = model.projects;
+                                                //                                                UserInfoManager *manager = [UserInfoManager shareInstance];
+                                                //                                                manager.projectDic = model.projects;
                                             }
-        
+                                            
+                                        }];
+}
+
+/**
+ 获取项目列表
+ */
+- (void)getProjectsFromServer {
+    __weak typeof (self) weakSelf = self;
+    [IMSAPIManager ims_getProjectsWithBlock:^(id JSON, NSError *error) {
+        if (error) {
+            [weakSelf startLocation];
+        } else {
+            NSDictionary *messageDic = JSON[@"Message"];
+            ProjectListModel *listModel = [ProjectListModel yy_modelWithDictionary:messageDic];
+            //保存此json，下次进入若auhtoken没过期则直接使用
+            UserInfoManager *manager = [UserInfoManager shareInstance];
+            manager.projectResultJson = JSON;
+            [manager saveUserInfoToLocal];
+            manager.projectsListModel = listModel;
+            [weakSelf verifyUserSelectProjectStatus];
+        }
     }];
 }
 
@@ -358,12 +392,12 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 - (void)scanButtonClick {
     
-    UserInfoManager *manager = [UserInfoManager shareInstance];
-    if (STR_IS_NIL(manager.currentProjectName)) {//为空要选择
-        [self showSelectProjectView];
-    } else {//扫描
-        [self jumpToScan];
-    }
+//    UserInfoManager *manager = [UserInfoManager shareInstance];
+//    if (STR_IS_NIL(manager.currentProjectName)) {//为空要选择
+//        [self showSelectProjectView];
+//    } else {//扫描
+//    }
+    [self jumpToScan];//在首页时候要进行选择
 }
 
 - (void)showSelectProjectView {
@@ -380,14 +414,11 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 - (void)doneButtonTap {
     
-    [detail removeFromSuperview];
-    detail = nil;
-    
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
     for (ProjectModel *model in manager.projectsListModel.projects) {
         if (model.didSelected) {//说明选择了她
-            [self jumpToScan];
+//            [self jumpToScan];
             
             manager.currentProjectName = model.projectName;
             manager.currentProjectId = model.projectId;
@@ -397,6 +428,15 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
             [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_CHANGEPROJECT object:nil];
         }
     }
+    
+    if (STR_IS_NIL(manager.currentProjectId)) {
+        [SVProgressHUD showInfoWithStatus:@"Please choose your project"];
+        return;
+    }
+    [detail removeFromSuperview];
+    detail = nil;
+    
+    [self startLocation];
 }
 
 - (void)jumpToScan {
@@ -406,6 +446,27 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     AVMetadataController *scan = [[AVMetadataController alloc] init];
     [scan setDelegate:self];
     [self presentViewController:scan animated:NO completion:nil];
+}
+
+- (void)verifyUserSelectProjectStatus {
+    
+    //判断是否选择了Project
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if (STR_IS_NIL(manager.currentProjectId)) {
+        //1.如果只有一个Project就直接帮助用户选择
+        if (manager.projectsListModel.projects.count == 1) {
+            ProjectModel *model = manager.projectsListModel.projects.firstObject;
+            manager.currentProjectName = model.projectName;
+            manager.currentProjectId = model.projectId;
+            [manager saveUserInfoToLocal];
+            [self startLocation];
+        } else {
+            //2.如果有多个则弹出Project选择框，供用户选择
+            [self showSelectProjectView];
+        }
+    } else {
+        [self startLocation];
+    }
 }
 
 #pragma mark -

@@ -71,19 +71,23 @@
 + (void)ims_getHistoryWithLatitude:(NSString *)latitude
                          longitude:(NSString *)longitude
                              limit:(NSString *)limit
-                          deviceId:(NSString *)deviceId
+                               pId:(NSString *)pId
+                            offset:(NSString *)offset
+                              type:(NSString *)type
                              Block:(void(^)(id JSON, NSError *error))block {
     
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:
                                 latitude,@"lat",
                                 longitude,@"lng",
                                 limit,@"limit",
-                                deviceId,@"d",
+                                pId,@"pId",
+                                offset,@"offset",
+                                type,@"type",
                                 nil];
     
     [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/history"
                                                    withParams:parameters
-                                               withMethodType:Get
+                                               withMethodType:Post
                                                      andBlock:^(id data, NSError *error) {
                                                          if (error) {
                                                              block(nil, error);

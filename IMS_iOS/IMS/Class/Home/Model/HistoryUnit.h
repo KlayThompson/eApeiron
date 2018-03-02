@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HistoryUnitDetails.h"
 
 @interface HistoryUnit : NSObject
 
@@ -36,4 +37,5 @@
 
 @property (nonatomic, copy) NSString *issue_type;
 //@property (nonatomic, copy) NSString *projectName;
+@property (nonatomic, strong) HistoryUnitDetails *details;
 @end
