@@ -53,13 +53,14 @@
 
 - (void)showProductSchemaWith:(NSDictionary *)dict {
     
-    if (DICT_IS_NIL(dict)) {
-        return;
-    }
     self.productImageView.hidden = YES;
     self.valueLabel.hidden = NO;
     self.valueLabel.text = @"";
     self.schmaBgView.hidden = NO;
+    
+    if (DICT_IS_NIL(dict)) {
+        return;
+    }
     
     int labelHeight = 20, topMargin = 5, leftMargin = 15, keyLabelWidth = 100;
     
