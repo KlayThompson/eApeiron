@@ -46,7 +46,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
     if (STR_IS_NIL(manager.latitude) && STR_IS_NIL(manager.longitude)) {
-//        [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
+        [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
         return;
     }
     NSString *pId = manager.currentProjectId;
