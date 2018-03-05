@@ -15,6 +15,7 @@
 #import "YYModel.h"
 #import "DetailIssueView.h"
 #import "AppDelegate.h"
+#import "ShowMapViewController.h"
 
 static NSString *nearbyCellId = @"NearbyIssueCell";
 
@@ -162,7 +163,49 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.window addSubview:issueView];
     
+    [issueView.mapButton addTarget:self action:@selector(jumpToMapDetailView) forControlEvents:UIControlEventTouchUpInside];
+}
+
+//跳转到地图界面
+- (void)jumpToMapDetailView {
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+
+    NSString *expectLat = @"";
+    NSString *expectLng = @"";
+    //
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    for (UIView *subview in app.window.subviews) {
+        if ([subview isKindOfClass:[DetailIssueView class]]) {
+            DetailIssueView *issueView = (DetailIssueView *)subview;
+            expectLat = issueView.lat;
+            expectLng = issueView.lng;
+            [subview removeFromSuperview];
+        }
+    }
     
+    //创建markInfo
+    NSMutableArray *markersInfo = [NSMutableArray new];
+    MarkersInfoModel *current = [MarkersInfoModel new];
+    current.color = @"blue";
+    current.lat = manager.latitude;
+    current.lng = manager.longitude;
+    current.type = @"current";
+    current.zoom = @14;
+    
+    MarkersInfoModel *expect = [MarkersInfoModel new];
+    expect.color = @"red";
+    expect.lat = expectLat;
+    expect.lng = expectLng;
+    expect.type = @"expect";
+    expect.zoom = @14;
+    
+    [markersInfo addObject:current];
+    [markersInfo addObject:expect];
+    
+    ShowMapViewController *showMap = [[ShowMapViewController alloc] initWithNibName:@"ShowMapViewController" bundle:nil];
+    showMap.markersInfo = markersInfo;
+    showMap.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:showMap animated:true];
 }
 
 #pragma mark - UI

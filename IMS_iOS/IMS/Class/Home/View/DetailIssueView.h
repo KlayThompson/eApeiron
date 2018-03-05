@@ -18,4 +18,9 @@
 
 - (void)configDetailIssueViewWith:(NSDictionary *)dict;
 
+@property (nonatomic, strong) UIButton *mapButton;
+
+@property (nonatomic, copy) NSString *lat;
+@property (nonatomic, copy) NSString *lng;
+
 @end

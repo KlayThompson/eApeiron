@@ -47,7 +47,8 @@
     
     NSString *str = (NSString *)value;
     self.valueLabel.text = str;
-    self.valueBgViewHeightCons.constant = 23;
+    CGSize size = [self.valueLabel sizeThatFits:CGSizeMake(self.valueLabel.frame.size.width, CGFLOAT_MAX)];
+    self.valueBgViewHeightCons.constant = size.height;
 }
 
 - (void)showProductSchemaWith:(NSDictionary *)dict {
@@ -95,12 +96,14 @@
     NSDictionary *optoins = @{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType,
                               NSFontAttributeName:[UIFont systemFontOfSize:14]};
     NSData *data = [desc dataUsingEncoding:NSUnicodeStringEncoding];
-    NSAttributedString *attributeString=[[NSAttributedString alloc] initWithData:data
+    NSAttributedString *attributeString = [[NSAttributedString alloc] initWithData:data
                                                                          options:optoins
                                                               documentAttributes:nil
                                                                            error:nil];
     
     self.valueLabel.attributedText = attributeString;
+    CGSize size = [self.valueLabel sizeThatFits:CGSizeMake(self.valueLabel.frame.size.width, CGFLOAT_MAX)];
+    self.valueBgViewHeightCons.constant = size.height;
 }
 
 - (void)showImageWithVlaue:(id)value {

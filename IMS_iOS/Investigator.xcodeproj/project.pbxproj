@@ -205,6 +205,9 @@
 		3B7FAC46204D1C5700C334BE /* DetailIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7FAC42204D1C5700C334BE /* DetailIssueCell.xib */; };
 		3B7FAC47204D1C5700C334BE /* DetailIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7FAC42204D1C5700C334BE /* DetailIssueCell.xib */; };
 		3B7FAC48204D1C5700C334BE /* DetailIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7FAC42204D1C5700C334BE /* DetailIssueCell.xib */; };
+		3B7FAC4B204D393400C334BE /* NSString+QT.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FAC4A204D393400C334BE /* NSString+QT.m */; };
+		3B7FAC4C204D393400C334BE /* NSString+QT.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FAC4A204D393400C334BE /* NSString+QT.m */; };
+		3B7FAC4D204D393400C334BE /* NSString+QT.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FAC4A204D393400C334BE /* NSString+QT.m */; };
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
@@ -478,6 +481,8 @@
 		3B7FAC40204D1C5700C334BE /* DetailIssueCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailIssueCell.h; sourceTree = "<group>"; };
 		3B7FAC41204D1C5700C334BE /* DetailIssueCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailIssueCell.m; sourceTree = "<group>"; };
 		3B7FAC42204D1C5700C334BE /* DetailIssueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailIssueCell.xib; sourceTree = "<group>"; };
+		3B7FAC49204D393400C334BE /* NSString+QT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QT.h"; sourceTree = "<group>"; };
+		3B7FAC4A204D393400C334BE /* NSString+QT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QT.m"; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
 		3BAE76341FBD626200B0C006 /* MarkersInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkersInfoModel.h; sourceTree = "<group>"; };
@@ -706,6 +711,8 @@
 		3B2AEDB21F79EF83000505A2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3B7FAC49204D393400C334BE /* NSString+QT.h */,
+				3B7FAC4A204D393400C334BE /* NSString+QT.m */,
 				3BF7F539200897BF00046B02 /* UIView+Size.h */,
 				3BF7F53A200897BF00046B02 /* UIView+Size.m */,
 				3B2947581FEB83D200F716BE /* RegExCategories.h */,
@@ -1355,6 +1362,7 @@
 				3B6658D71F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
 				3BFB80FF1FB14E0C00A6B1E9 /* ProjectListModel.m in Sources */,
 				98759A401AAD7736008EF3EE /* Hud.m in Sources */,
+				3B7FAC4B204D393400C334BE /* NSString+QT.m in Sources */,
 				3BD063071F66234B00C1722A /* AFURLRequestSerialization.m in Sources */,
 				3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3B73E1DF1F70E82700AD5153 /* CheckIncidentModel.m in Sources */,
@@ -1432,6 +1440,7 @@
 				3B0A3F581FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B73E1CF1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B7FAC2C2049311000C334BE /* HomeListViewController.m in Sources */,
+				3B7FAC4C204D393400C334BE /* NSString+QT.m in Sources */,
 				3B6658D81F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
 				3BD062FF1F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA1A1AE493D400B2497E /* AppDelegate.m in Sources */,
@@ -1509,6 +1518,7 @@
 				3B0A3F591FD7BFA500BB5362 /* AboutViewController.m in Sources */,
 				3B73E1D01F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B7FAC2D2049311000C334BE /* HomeListViewController.m in Sources */,
+				3B7FAC4D204D393400C334BE /* NSString+QT.m in Sources */,
 				3B6658D91F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
 				3BD063001F66234B00C1722A /* AFHTTPSessionManager.m in Sources */,
 				98B6FA481AE493DB00B2497E /* AppDelegate.m in Sources */,
