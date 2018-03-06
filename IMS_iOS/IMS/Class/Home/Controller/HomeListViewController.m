@@ -16,12 +16,17 @@
 #import "DetailIssueView.h"
 #import "AppDelegate.h"
 #import "ShowMapViewController.h"
+#import "MJRefresh.h"
+#import "UIView+Size.h"
+#import "Masonry.h"
 
 static NSString *nearbyCellId = @"NearbyIssueCell";
+#define PageSize 10
 
 @interface HomeListViewController ()<UITableViewDelegate,UITableViewDataSource> {
  
-
+    NSInteger currentPageIndex;
+    NSInteger offset;
 }
 
 @property (nonatomic, strong) UITableView *uTableView;
@@ -37,11 +42,18 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     
     [self setupUI];
     
-    [self loadHistoryFromServer];
 }
 
 #pragma mark - 网络
-- (void)loadHistoryFromServer {
+- (void)refreshDataFormServer {
+    [self loadHistoryFromServer:1];
+}
+
+- (void)loadMoreDataFormServer {
+    [self loadHistoryFromServer:currentPageIndex+1];
+}
+
+- (void)loadHistoryFromServer:(NSInteger)targetPageIndex {
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     
@@ -70,21 +82,25 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
             break;
     }
     
-    [SVProgressHUD showWithStatus:IMS_LOADING_MESSAGE];
+    if (targetPageIndex == 1) {
+        offset = 0;
+    }
+    
     __weak typeof(self) weakSelf = self;
     [IMSAPIManager ims_getHistoryWithLatitude:manager.latitude
                                     longitude:manager.longitude
-                                        limit:@"10"
+                                        limit:[NSString stringWithFormat:@"%d",PageSize]
                                           pId:pId
-                                       offset:@"0"
+                                       offset:[NSString stringWithFormat:@"%ld",offset]
                                          type:type
                                         Block:^(id JSON, NSError *error) {
-                                            [SVProgressHUD dismiss];
+                                            [weakSelf.uTableView.mj_footer endRefreshing];
+                                            [weakSelf.uTableView.mj_header endRefreshing];
                                             if (error) {
                                                 [SVProgressHUD showErrorWithStatus:error.localizedDescription];
                                             } else {
                                                 if (!DICT_IS_NIL(JSON)) {
-                                                    [weakSelf praseJsonDataWith:JSON];
+                                                    [weakSelf praseJsonDataWith:JSON targetPageIndex:targetPageIndex];
                                                 } else {
                                                     NSAssert(0, @"");
                                                 }
@@ -93,7 +109,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
                                         }];
 }
 
-- (void)praseJsonDataWith:(NSDictionary *)json {
+- (void)praseJsonDataWith:(NSDictionary *)json targetPageIndex:(NSInteger)targetPageIndex {
     
     NSDictionary *messageDic = json[@"Message"];
     NSDictionary *dataDic = [NSDictionary new];
@@ -117,7 +133,43 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     }
     
     HistoryModel *model = [HistoryModel yy_modelWithDictionary:dataDic];
-    self.dataArray = [model.data mutableCopy];
+    
+    if (targetPageIndex == 1) {
+        
+        [self.dataArray removeAllObjects];
+        self.dataArray = [model.data mutableCopy];
+        currentPageIndex = 1;
+        offset = self.dataArray.count;
+    }else{
+        if(!ARRAY_IS_NIL(model.data)){
+            
+            [self.dataArray addObjectsFromArray:model.data];
+            
+            currentPageIndex =  targetPageIndex;
+            
+            offset += model.data.count;
+        }else{
+            //认为server端没有返回数据
+        }
+    }
+    
+    //需要控制上拉更多
+    if (model.data && model.data.count < PageSize && model.data.count >0 ) {
+        
+        self.uTableView.mj_footer = nil;
+        
+    } else if(model.data.count == PageSize) {
+        
+        self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
+        self.uTableView.mj_footer.hidden = NO;
+    } else if (model.data.count == 0){
+        
+        self.uTableView.mj_footer = nil;
+    } else {
+        NSAssert(0, @"程序错误，检查代码！");
+    }
+    
+//    self.dataArray = [model.data mutableCopy];
     [self.uTableView reloadData];
 }
 
@@ -211,17 +263,37 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 #pragma mark - UI
 - (void)setupUI {
     
-    [self.view addSubview:self.uTableView];
+    self.uTableView.tableFooterView = [UIView new];
+    self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshDataFormServer)];
+    [self.uTableView.mj_header beginRefreshing];
+    
+    self.uTableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataFormServer)];
+    self.uTableView.mj_footer.hidden = YES;
+    
+    [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.top.equalTo(self.view.mas_top);
+        make.right.equalTo(self.view.mas_right);
+        if (iPhoneX) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-88);
+        } else {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-64);
+        }
+    }];
+    
+    
 }
 
 #pragma mark - 初始化
 - (UITableView *)uTableView {
     
     if (_uTableView == nil) {
-        _uTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:UITableViewStylePlain];
+        _uTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _uTableView.delegate = self;
         _uTableView.dataSource = self;
         [_uTableView registerNib:[UINib nibWithNibName:@"NearbyIssueCell" bundle:nil] forCellReuseIdentifier:@"NearbyIssueCell"];
+        [self.view addSubview:_uTableView];
+        _uTableView.contentSize = CGSizeMake(self.view.width, self.view.height);
     }
     return _uTableView;
 }

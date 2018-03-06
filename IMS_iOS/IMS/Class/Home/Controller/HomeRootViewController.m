@@ -74,7 +74,7 @@
         [_locationManager requestAlwaysAuthorization];
         [_locationManager requestWhenInUseAuthorization];
     }
-
+    
     //getProjects
     [self getProjectsFromServer];
 }
@@ -335,6 +335,9 @@
     self.latitude = manager.latitude;
     
     self.navigationItem.titleView = self.titleImageView;
+    
+    self.navigationController.navigationBar.translucent = NO;
+    
 }
 
 - (void)setupNaviButton {

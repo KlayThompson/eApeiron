@@ -99,6 +99,9 @@
                 DLog(@"network error");
             } else {
                 UIImage *image = (UIImage *)JSON;
+                if (image == nil) {
+                    return;
+                }
                 //获取到图片链接，显示图片
                 weakSelf.mapImageView.image = image;
                 [self.imageArray replaceObjectAtIndex:index withObject:image];

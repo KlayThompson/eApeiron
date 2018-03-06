@@ -57,9 +57,9 @@
     }
     
     
-    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
     [SVProgressHUD setMinimumDismissTimeInterval:3];
-    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeNone];
     
 //    [self showLaunchImage];
 

@@ -46,6 +46,9 @@
     self.schmaBgView.hidden = YES;
     
     NSString *str = (NSString *)value;
+    if (STR_IS_NIL(str)) {
+        str = @"";
+    }
     self.valueLabel.text = str;
     CGSize size = [self.valueLabel sizeThatFits:CGSizeMake(self.valueLabel.frame.size.width, CGFLOAT_MAX)];
     self.valueBgViewHeightCons.constant = size.height;
