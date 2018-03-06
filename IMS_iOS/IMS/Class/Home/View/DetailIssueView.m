@@ -74,7 +74,7 @@ static NSString *cellId = @"DetailIssueCell";
 
 #pragma mark - Action
 - (IBAction)closeButonTap:(id)sender {
-    self.bgView.backgroundColor = [UIColor clearColor];
+    self.coverView.backgroundColor = [UIColor clearColor];
     [UIView animateWithDuration:.3 animations:^{
         self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
     } completion:^(BOOL finished) {

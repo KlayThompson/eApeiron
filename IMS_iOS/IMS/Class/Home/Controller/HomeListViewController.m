@@ -19,11 +19,14 @@
 #import "MJRefresh.h"
 #import "UIView+Size.h"
 #import "Masonry.h"
+#import "AVMetadataController.h"
+#import "InputSerialNumberViewController.h"
 
 static NSString *nearbyCellId = @"NearbyIssueCell";
 #define PageSize 10
+#define BottomViewHeight 60
 
-@interface HomeListViewController ()<UITableViewDelegate,UITableViewDataSource> {
+@interface HomeListViewController ()<UITableViewDelegate,UITableViewDataSource,AVMetadataDelegate> {
  
     NSInteger currentPageIndex;
     NSInteger offset;
@@ -31,6 +34,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 @property (nonatomic, strong) UITableView *uTableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) UIView *bottomBgView;
 
 @end
 
@@ -215,6 +219,15 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [app.window addSubview:issueView];
     
+    //增加个简单动画效果吧
+    issueView.coverView.backgroundColor = [UIColor clearColor];
+    issueView.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+    [UIView animateWithDuration:.3 animations:^{
+        issueView.layer.affineTransform = CGAffineTransformMakeScale(1, 1);
+    } completion:^(BOOL finished) {
+        issueView.coverView.backgroundColor = [UIColor blackColor];
+    }];
+    
     [issueView.mapButton addTarget:self action:@selector(jumpToMapDetailView) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -260,6 +273,25 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     [self.navigationController pushViewController:showMap animated:true];
 }
 
+- (void)scanButtonClick {
+    
+    //    UserInfoManager *manager = [UserInfoManager shareInstance];
+    //    if (STR_IS_NIL(manager.currentProjectName)) {//为空要选择
+    //        [self showSelectProjectView];
+    //    } else {//扫描
+    //    }
+    [self jumpToScan];//在首页时候要进行选择
+}
+
+- (void)jumpToScan {
+    InputSerialNumberViewController *input = [[InputSerialNumberViewController alloc] initWithNibName:@"InputSerialNumberViewController" bundle:nil];
+    [self.navigationController pushViewController:input animated:NO];
+    
+    AVMetadataController *scan = [[AVMetadataController alloc] init];
+    [scan setDelegate:self];
+    [self presentViewController:scan animated:NO completion:nil];
+}
+
 #pragma mark - UI
 - (void)setupUI {
     
@@ -275,12 +307,24 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         make.top.equalTo(self.view.mas_top);
         make.right.equalTo(self.view.mas_right);
         if (iPhoneX) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-88 - BottomViewHeight);
+        } else {
+            make.bottom.equalTo(self.view.mas_bottom).offset(-64 - BottomViewHeight);
+        }
+    }];
+    
+    //bottom
+    self.bottomBgView.hidden = NO;
+    [self.bottomBgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_left);
+        make.height.mas_equalTo(BottomViewHeight);
+        make.right.equalTo(self.view.mas_right);
+        if (iPhoneX) {
             make.bottom.equalTo(self.view.mas_bottom).offset(-88);
         } else {
             make.bottom.equalTo(self.view.mas_bottom).offset(-64);
         }
     }];
-    
     
 }
 
@@ -298,4 +342,33 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
     return _uTableView;
 }
 
+
+- (UIView *)bottomBgView {
+    if (_bottomBgView == nil) {
+        _bottomBgView = [[UIView alloc] initWithFrame:CGRectZero];
+        _bottomBgView.backgroundColor = [UIColor lightGrayColor];
+        [self.view addSubview:_bottomBgView];
+        //button
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button setImage:[UIImage imageNamed:@"camera-3"] forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(scanButtonClick) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomBgView addSubview:button];
+        button.frame = CGRectMake((ScreenWidth / 2) - 42.5, -25, 85, 85);
+    }
+    return _bottomBgView;
+}
+
+#pragma mark -
+- (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
+    DLog(@"");
+    //如果两个都为空则是点击取消按钮
+    if (STR_IS_NIL(serial) && STR_IS_NIL(covertSerial)) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODECANCEL object:nil];
+    } else {
+        //扫描成功，发送通知，通知CHECKINCIDENT
+        //        self.serial = serial;
+        //        self.covertSerial = covertSerial;
+        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODESUCCESS object:serial];
+    }
+}
 @end

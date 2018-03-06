@@ -26,7 +26,7 @@
 #import "HomeListViewController.h"
 #import "UIColor+Addtions.h"
 
-@interface HomeRootViewController ()<CLLocationManagerDelegate,AVMetadataDelegate> {
+@interface HomeRootViewController ()<CLLocationManagerDelegate> {
 
     CLLocationManager *_locationManager;
     CLLocation *_loc;
@@ -47,8 +47,6 @@
 @property (nonatomic, copy) NSString *latitude;
 
 @property (nonatomic, strong) SettingsViewController *settingVC;
-
-@property (nonatomic, strong) UIView *bottomBgView;
 
 @property (nonatomic, strong) UIImageView *titleImageView;
 
@@ -207,16 +205,6 @@
     }];
 }
 
-- (void)scanButtonClick {
-    
-//    UserInfoManager *manager = [UserInfoManager shareInstance];
-//    if (STR_IS_NIL(manager.currentProjectName)) {//为空要选择
-//        [self showSelectProjectView];
-//    } else {//扫描
-//    }
-    [self jumpToScan];//在首页时候要进行选择
-}
-
 - (void)showSelectProjectView {
     
     NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"ProjectSelectView" owner:self options:nil];
@@ -254,15 +242,6 @@
     detail = nil;
     
     [self startLocation];
-}
-
-- (void)jumpToScan {
-    InputSerialNumberViewController *input = [[InputSerialNumberViewController alloc] initWithNibName:@"InputSerialNumberViewController" bundle:nil];
-    [self.navigationController pushViewController:input animated:NO];
-    
-    AVMetadataController *scan = [[AVMetadataController alloc] init];
-    [scan setDelegate:self];
-    [self presentViewController:scan animated:NO completion:nil];
 }
 
 - (void)verifyUserSelectProjectStatus {
@@ -303,29 +282,12 @@
     [manager stopUpdatingLocation];
 }
 
-#pragma mark -
-- (void)returnSerial:(NSString *)serial covertSerial:(NSString *)covertSerial {
-    DLog(@"");
-    //如果两个都为空则是点击取消按钮
-    if (STR_IS_NIL(serial) && STR_IS_NIL(covertSerial)) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODECANCEL object:nil];
-    } else {
-        //扫描成功，发送通知，通知CHECKINCIDENT
-//        self.serial = serial;
-//        self.covertSerial = covertSerial;
-        [[NSNotificationCenter defaultCenter] postNotificationName:IMS_NOTIFICATION_SCANQRCODESUCCESS object:serial];
-    }
-}
-
 #pragma mark - 初始化、设置界面
 
 - (void)setupUI {
     
     //setting Button
     [self setupNaviButton];
-    
-    //bottom
-    self.bottomBgView.hidden = NO;
     
     [self.view addSubview:self.sliderView];
     self.sliderView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
@@ -367,21 +329,6 @@
 //        _settingVC.view.frame = CGRectMake(ScreenWidth + 30, height, ScreenWidth * 3 / 5, ScreenHeight - height);
     }
     return _settingVC;
-}
-
-- (UIView *)bottomBgView {
-    if (_bottomBgView == nil) {
-        _bottomBgView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight - 60, ScreenWidth, 60)];
-        _bottomBgView.backgroundColor = [UIColor lightGrayColor];
-        [self.view addSubview:_bottomBgView];
-        //button
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setImage:[UIImage imageNamed:@"camera-3"] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(scanButtonClick) forControlEvents:UIControlEventTouchUpInside];
-        [_bottomBgView addSubview:button];
-        button.frame = CGRectMake((ScreenWidth / 2) - 42.5, -25, 85, 85);
-    }
-    return _bottomBgView;
 }
 
 - (UIImageView *)titleImageView {

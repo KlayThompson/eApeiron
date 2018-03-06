@@ -63,6 +63,7 @@
             <connections>
                 <outlet property="bgView" destination="9Hi-W0-Jwd" id="T2W-dV-qMQ"/>
                 <outlet property="closeButton" destination="4Yp-YR-cZj" id="DBH-yU-Zy2"/>
+                <outlet property="coverView" destination="SQP-oK-aCz" id="yt1-fk-8sp"/>
                 <outlet property="uTableView" destination="ON5-pN-4F7" id="YJj-Hf-YVG"/>
             </connections>
         </view>

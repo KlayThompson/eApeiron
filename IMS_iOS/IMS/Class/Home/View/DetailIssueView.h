@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailIssueView : UIView
+@property (weak, nonatomic) IBOutlet UIView *coverView;
 
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 
