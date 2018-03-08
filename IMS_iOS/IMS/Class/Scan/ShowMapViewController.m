@@ -40,6 +40,12 @@
 
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [SVProgressHUD dismiss];
+}
+
 - (void)analysisLocationInfo {
     if (ARRAY_IS_NIL(self.markersInfo)) {
         return;

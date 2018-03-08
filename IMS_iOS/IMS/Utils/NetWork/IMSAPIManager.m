@@ -55,7 +55,15 @@
 //获取工程名
 + (void)ims_getProjectsWithBlock:(void(^)(id JSON, NSError *error))block {
 
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/projects"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        pathStr = @"Integration/service/projects";
+    } else {
+        pathStr = @"IMS/service/projects";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:pathStr
                                                    withParams:nil
                                                withMethodType:Get
                                                      andBlock:^(id data, NSError *error) {
@@ -85,7 +93,15 @@
                                 type,@"type",
                                 nil];
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/history"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        pathStr = @"Integration/service/history";
+    } else {
+        pathStr = @"IMS/service/history";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:pathStr
                                                    withParams:parameters
                                                withMethodType:Post
                                                      andBlock:^(id data, NSError *error) {
@@ -116,7 +132,15 @@
                                 check,@"check",
                                 nil];
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/incident"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        pathStr = @"Integration/service/incident";
+    } else {
+        pathStr = @"IMS/service/incident";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:pathStr
                                                    withParams:parameters
                                                withMethodType:Post
                                                      andBlock:^(id data, NSError *error) {
@@ -161,7 +185,14 @@
         [parameters setValue:[NSString stringWithFormat:@"%@",model.zoom] forKey:@"zoom"];
     }
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/getRoadMap"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {        pathStr = @"Integration/service/getRoadMap";
+    } else {
+        pathStr = @"IMS/service/getRoadMap";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:pathStr
                                                    withParams:parameters
                                                withMethodType:Get
                                                      andBlock:^(id data, NSError *error) {
@@ -184,7 +215,15 @@
                                 longitude,@"lng",
                                 nil];
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/getLocationName"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        pathStr = @"Integration/service/getLocationName";
+    } else {
+        pathStr = @"IMS/service/getLocationName";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:pathStr
                                                    withParams:parameters
                                                withMethodType:Get
                                                      andBlock:^(id data, NSError *error) {
@@ -233,7 +272,15 @@
         [parameters setObject:newEmail forKey:@"newEmail"];
     }
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithPath:@"IMS/service/updateAccount"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        pathStr = @"Integration/service/updateAccount";
+    } else {
+        pathStr = @"IMS/service/updateAccount";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithPath:pathStr
                                                    withParams:parameters
                                                withMethodType:Post
                                                      andBlock:^(id data, NSError *error) {
@@ -254,7 +301,15 @@
                                 email,@"email",
                                 nil];
     
-    [[NetworkAPIManager shareManager] requestJsonDataWithEffectiveTokenWithPath:@"IMS/service/forgotPassword"
+    NSString *pathStr = @"";
+    UserInfoManager *manager = [UserInfoManager shareInstance];
+    if ([manager.serverPathUrl isEqualToString:@"http://192.168.0.26/"]) {
+        pathStr = @"Integration/service/forgotPassword";
+    } else {
+        pathStr = @"IMS/service/forgotPassword";
+    }
+    
+    [[NetworkAPIManager shareManager] requestJsonDataWithEffectiveTokenWithPath:pathStr
                                                                      withParams:parameters
                                                                  withMethodType:Post
                                                                        andBlock:^(id data, NSError *error) {

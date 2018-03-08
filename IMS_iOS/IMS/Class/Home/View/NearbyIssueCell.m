@@ -29,6 +29,18 @@
     NSString *lat = detailDic[@"Latitude"];
     NSString *lng = detailDic[@"Longitude"];
     NSString *desc = detailDic[@"Description"];
+    if (STR_IS_NIL(createDate)) {
+        createDate = @"";
+    }
+    if (STR_IS_NIL(lat)) {
+        lat = @"";
+    }
+    if (STR_IS_NIL(lng)) {
+        lng = @"";
+    }
+    if (STR_IS_NIL(desc)) {
+        desc = @"";
+    }
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
     //distance

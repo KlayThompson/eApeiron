@@ -32,20 +32,25 @@
         [self showProductSchemaWith:value];
     } else if ([key isEqualToString:@"Description"]) {
         [self showDescWithValue:value];
-    } else if ([key isEqualToString:@"Image"]) {
-        [self showImageWithVlaue:value];
     } else {
         [self showNormalValue:value];
     }
 }
 
 - (void)showNormalValue:(id)value {
+    NSString *str = (NSString *)value;
+    
+    if ([str hasPrefix:@"http://"]) {
+        if ([str hasSuffix:@".jpg"] || [str hasSuffix:@".png"]) {
+            [self showImageWithVlaue:value];
+            return;
+        }
+    }
     
     self.productImageView.hidden = YES;
     self.valueLabel.hidden = NO;
     self.schmaBgView.hidden = YES;
     
-    NSString *str = (NSString *)value;
     if (STR_IS_NIL(str)) {
         str = @"";
     }
@@ -70,7 +75,9 @@
     for (int index = 0; index < dict.allKeys.count; index++) {
         NSString *key = [dict.allKeys objectAtIndex:index];
         NSString *value = [dict objectForKey:key];
-        
+        if (STR_IS_NIL(value)) {
+            value = @"";
+        }
         //创建key value label
         UILabel *keyLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, (topMargin + labelHeight)*index + 23, keyLabelWidth, labelHeight)];
         keyLabel.font = [UIFont systemFontOfSize:15];

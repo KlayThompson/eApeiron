@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -41,11 +41,10 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="161.5" id="jUn-KD-KGv"/>
                             </constraints>
-                            <string key="text">This application contains the following Open Source Libraries:
+                            <mutableString key="text">This application contains the following Open Source Libraries:
  
 OpenUDID and TPKeyboardAvoiding which are licensed under Zlib and
-AFNetworking, YYModel, YYWebImage, SVProgressHUD, YCXMenu which are licensed under MIT License.
-</string>
+AFNetworking, YYModel, YYWebImage, SVProgressHUD, NinaPagerView，Masonry，MJRefresh，YCXMenu which are licensed under MIT License.</mutableString>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
