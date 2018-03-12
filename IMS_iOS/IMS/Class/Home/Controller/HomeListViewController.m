@@ -21,8 +21,10 @@
 #import "Masonry.h"
 #import "AVMetadataController.h"
 #import "InputSerialNumberViewController.h"
+#import "CommonIssueCell.h"
 
 static NSString *nearbyCellId = @"NearbyIssueCell";
+static NSString *commonIssueCellId = @"CommonIssueCell";
 #define PageSize 10
 #define BottomViewHeight 60
 
@@ -189,11 +191,18 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    NearbyIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:nearbyCellId forIndexPath:indexPath];
-    
     NSDictionary *dict = [self.dataArray objectAtIndex:indexPath.row];
-    [cell configCellDataWith:dict];
-    return cell;
+    if (self.historyType == HistoryTypeNearBy) {
+        
+        NearbyIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:nearbyCellId forIndexPath:indexPath];
+        [cell configCellDataWith:dict];
+        return cell;
+    } else {
+        CommonIssueCell *cell = [tableView dequeueReusableCellWithIdentifier:commonIssueCellId forIndexPath:indexPath];
+        [cell configCellDataWith:dict];
+        return cell;
+    }
+    return [UITableViewCell new];
 }
 
 #pragma mark - UITableViewDelegate
@@ -336,6 +345,7 @@ static NSString *nearbyCellId = @"NearbyIssueCell";
         _uTableView.delegate = self;
         _uTableView.dataSource = self;
         [_uTableView registerNib:[UINib nibWithNibName:@"NearbyIssueCell" bundle:nil] forCellReuseIdentifier:@"NearbyIssueCell"];
+        [_uTableView registerNib:[UINib nibWithNibName:@"CommonIssueCell" bundle:nil] forCellReuseIdentifier:@"CommonIssueCell"];
         [self.view addSubview:_uTableView];
         _uTableView.contentSize = CGSizeMake(self.view.width, self.view.height);
     }

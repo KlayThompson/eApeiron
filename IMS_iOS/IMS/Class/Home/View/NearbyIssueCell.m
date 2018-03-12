@@ -8,7 +8,6 @@
 
 #import "NearbyIssueCell.h"
 #import <CoreLocation/CoreLocation.h>
-#import "UserInfoManager.h"
 
 @implementation NearbyIssueCell
 
@@ -22,30 +21,29 @@
     if (DICT_IS_NIL(dict)) {
         return;
     }
-    NSDictionary *detailDic = dict[@"Details"];
 
     //get Details
     NSString *createDate = dict[@"Created At"];
-    NSString *lat = detailDic[@"Latitude"];
-    NSString *lng = detailDic[@"Longitude"];
-    NSString *desc = detailDic[@"Description"];
+    NSString *distance = dict[@"Dist"];
+    NSString *issueId = dict[@"ID"];
+    NSString *serialNumber = dict[@"Serial Number"];
     if (STR_IS_NIL(createDate)) {
         createDate = @"";
     }
-    if (STR_IS_NIL(lat)) {
-        lat = @"";
+    if (STR_IS_NIL(distance)) {
+        distance = @"";
     }
-    if (STR_IS_NIL(lng)) {
-        lng = @"";
+    if (STR_IS_NIL(issueId)) {
+        issueId = @"";
     }
-    if (STR_IS_NIL(desc)) {
-        desc = @"";
+    if (STR_IS_NIL(serialNumber)) {
+        serialNumber = @"";
     }
     
-    UserInfoManager *manager = [UserInfoManager shareInstance];
-    //distance
-    double distance = [self distanceBetweenOrderByLat1:manager.latitude.doubleValue lat2:lat.doubleValue lng1:manager.longitude.doubleValue lng2:lng.doubleValue];
-    self.distanceLabel.text = [NSString stringWithFormat:@"%.1f feet",distance];
+//    UserInfoManager *manager = [UserInfoManager shareInstance];
+//    //distance
+//    double distance = [self distanceBetweenOrderByLat1:manager.latitude.doubleValue lat2:lat.doubleValue lng1:manager.longitude.doubleValue lng2:lng.doubleValue];
+    self.distanceLabel.text = [NSString stringWithFormat:@"%@M",distance];
     
     
     //时间
@@ -55,8 +53,10 @@
     self.timeLabel.text = time;
     
     //id
-    self.isusseIdLabel.text = [NSString stringWithFormat:@"%@",desc];
+    self.isusseIdLabel.text = issueId;
     
+    //serial Number
+    self.serialNumberLabel.text = serialNumber;
 }
 
 //feet单位

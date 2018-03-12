@@ -298,6 +298,12 @@
 		3B7FACF2204E6E3800C334BE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FACD3204E6E3700C334BE /* ViewController+MASAdditions.m */; };
 		3B7FACF3204E6E3800C334BE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FACD3204E6E3700C334BE /* ViewController+MASAdditions.m */; };
 		3B7FACF4204E6E3800C334BE /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FACD3204E6E3700C334BE /* ViewController+MASAdditions.m */; };
+		3B7FACFA2056236C00C334BE /* CommonIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FACF82056236C00C334BE /* CommonIssueCell.m */; };
+		3B7FACFB2056236C00C334BE /* CommonIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FACF82056236C00C334BE /* CommonIssueCell.m */; };
+		3B7FACFC2056236C00C334BE /* CommonIssueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7FACF82056236C00C334BE /* CommonIssueCell.m */; };
+		3B7FACFD2056236C00C334BE /* CommonIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7FACF92056236C00C334BE /* CommonIssueCell.xib */; };
+		3B7FACFE2056236C00C334BE /* CommonIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7FACF92056236C00C334BE /* CommonIssueCell.xib */; };
+		3B7FACFF2056236C00C334BE /* CommonIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B7FACF92056236C00C334BE /* CommonIssueCell.xib */; };
 		3B9868CC1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
 		3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9868CB1EB073E600A2CB4D /* HostURL.m */; };
@@ -637,6 +643,9 @@
 		3B7FACD1204E6E3700C334BE /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		3B7FACD2204E6E3700C334BE /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		3B7FACD3204E6E3700C334BE /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		3B7FACF72056236C00C334BE /* CommonIssueCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonIssueCell.h; sourceTree = "<group>"; };
+		3B7FACF82056236C00C334BE /* CommonIssueCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonIssueCell.m; sourceTree = "<group>"; };
+		3B7FACF92056236C00C334BE /* CommonIssueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommonIssueCell.xib; sourceTree = "<group>"; };
 		3B9868CA1EB073E600A2CB4D /* HostURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HostURL.h; sourceTree = "<group>"; };
 		3B9868CB1EB073E600A2CB4D /* HostURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HostURL.m; sourceTree = "<group>"; };
 		3BAE76341FBD626200B0C006 /* MarkersInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MarkersInfoModel.h; sourceTree = "<group>"; };
@@ -936,6 +945,9 @@
 				3B7FAC40204D1C5700C334BE /* DetailIssueCell.h */,
 				3B7FAC41204D1C5700C334BE /* DetailIssueCell.m */,
 				3B7FAC42204D1C5700C334BE /* DetailIssueCell.xib */,
+				3B7FACF72056236C00C334BE /* CommonIssueCell.h */,
+				3B7FACF82056236C00C334BE /* CommonIssueCell.m */,
+				3B7FACF92056236C00C334BE /* CommonIssueCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1476,6 +1488,7 @@
 			files = (
 				3BCB9C9E1F7F2EC200067BC6 /* SVProgressHUD.bundle in Resources */,
 				3B2AEDC31F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
+				3B7FACFD2056236C00C334BE /* CommonIssueCell.xib in Resources */,
 				3B6658E91F6A192A006A2A09 /* LoginViewController.xib in Resources */,
 				988DB1B21A43EA0600C243F9 /* Main.storyboard in Resources */,
 				9879D3BF1A48FDCF00BF53EF /* Icon@2x.png in Resources */,
@@ -1556,6 +1569,7 @@
 				98B6FA331AE493D400B2497E /* ic_menu_home@2x.png in Resources */,
 				3B2AEDCD1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
 				3B2AEDC41F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
+				3B7FACFE2056236C00C334BE /* CommonIssueCell.xib in Resources */,
 				3B7FACD5204E6E3800C334BE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1602,6 +1616,7 @@
 				98B6FA611AE493DB00B2497E /* ic_menu_home@2x.png in Resources */,
 				3B2AEDCE1F7B47C2000505A2 /* ProjectSelectCell.xib in Resources */,
 				3B2AEDC51F7B3FE6000505A2 /* ProjectSelectView.xib in Resources */,
+				3B7FACFF2056236C00C334BE /* CommonIssueCell.xib in Resources */,
 				3B7FACD6204E6E3800C334BE /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1619,6 +1634,7 @@
 				3BCB9CA81F7F31A900067BC6 /* SVIndefiniteAnimatedView.m in Sources */,
 				3BCB9CA61F7F318400067BC6 /* SVProgressAnimatedView.m in Sources */,
 				3B7FACDD204E6E3800C334BE /* MASConstraintMaker.m in Sources */,
+				3B7FACFA2056236C00C334BE /* CommonIssueCell.m in Sources */,
 				3BCB9CA51F7F317200067BC6 /* SVRadialGradientLayer.m in Sources */,
 				3BCB9CA41F7F314700067BC6 /* SVProgressHUD.m in Sources */,
 				3B7FAC8C204E624300C334BE /* MJRefreshAutoGifFooter.m in Sources */,
@@ -1773,6 +1789,7 @@
 				3B7FAC3A204D160C00C334BE /* DetailIssueView.m in Sources */,
 				3B9868CD1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3B0A3F581FD7BFA500BB5362 /* AboutViewController.m in Sources */,
+				3B7FACFB2056236C00C334BE /* CommonIssueCell.m in Sources */,
 				3B73E1CF1F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B7FAC2C2049311000C334BE /* HomeListViewController.m in Sources */,
 				3B6658D81F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
@@ -1879,6 +1896,7 @@
 				3B7FAC3B204D160C00C334BE /* DetailIssueView.m in Sources */,
 				3B9868CE1EB073E600A2CB4D /* HostURL.m in Sources */,
 				3B0A3F591FD7BFA500BB5362 /* AboutViewController.m in Sources */,
+				3B7FACFC2056236C00C334BE /* CommonIssueCell.m in Sources */,
 				3B73E1D01F6F9D6300AD5153 /* InputSerialNumberViewController.m in Sources */,
 				3B7FAC2D2049311000C334BE /* HomeListViewController.m in Sources */,
 				3B6658D91F6A192A006A2A09 /* HomeRootViewController.m in Sources */,
