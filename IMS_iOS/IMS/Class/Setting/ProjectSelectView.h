@@ -13,5 +13,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
-
+/**
+ 如果是主页选择的时候，不能点击背景关闭弹出框
+ */
+@property (nonatomic, assign) BOOL isHomePage;
 @end

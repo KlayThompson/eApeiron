@@ -47,6 +47,7 @@
     double distance = [self distanceBetweenOrderByLat1:manager.latitude.doubleValue lat2:lat.doubleValue lng1:manager.longitude.doubleValue lng2:lng.doubleValue];
     self.distanceLabel.text = [NSString stringWithFormat:@"%.1f feet",distance];
     
+    
     //时间
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];

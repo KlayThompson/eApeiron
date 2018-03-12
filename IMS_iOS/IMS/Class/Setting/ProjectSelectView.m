@@ -28,11 +28,6 @@ static NSString *cellId = @"ProjectSelectCell";
     
     [self configSelectView];
     
-    //增加手势
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelTap)];
-    [self addGestureRecognizer:tap];
-    tap.delegate = self;
-    
     self.uTableView.delegate = self;
     self.uTableView.dataSource = self;
     self.uTableView.tableFooterView = [UIView new];
@@ -86,11 +81,12 @@ static NSString *cellId = @"ProjectSelectCell";
     ProjectSelectCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     
     ProjectModel *model = [self.dataArray objectAtIndex:indexPath.row];
-    
+
     [cell configCellDataWithProjectModel:model];
     
     __weak typeof (self) weakSelf = self;
     cell.SelectButtonTap = ^{
+        [weakSelf configSelectView];
         [weakSelf.uTableView reloadData];
     };
     
@@ -119,5 +115,14 @@ static NSString *cellId = @"ProjectSelectCell";
         _dataArray = [NSMutableArray new];
     }
     return _dataArray;
+}
+
+- (void)setIsHomePage:(BOOL)isHomePage {
+    if (!isHomePage) {
+        //增加手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelTap)];
+        [self addGestureRecognizer:tap];
+        tap.delegate = self;
+    }
 }
 @end

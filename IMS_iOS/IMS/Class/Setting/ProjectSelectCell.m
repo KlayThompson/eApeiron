@@ -32,9 +32,9 @@
     if (self.SelectButtonTap) {
         self.SelectButtonTap();
     }
-    self.selectButton.selected = !self.selectButton.selected;
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
+    self.selectButton.selected = !self.selectButton.selected;
     
     for (ProjectModel *model in manager.projectsListModel.projects) {
         if (self.selectButton.isSelected) {
@@ -51,6 +51,7 @@
             }
         }
     }
+
 }
 
 - (void)configCellDataWithProjectModel:(ProjectModel *)model {

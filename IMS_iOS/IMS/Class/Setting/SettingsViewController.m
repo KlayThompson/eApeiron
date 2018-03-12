@@ -123,6 +123,7 @@
     NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"ProjectSelectView" owner:self options:nil];
     id uv = [nib objectAtIndex:0];
     detail = uv;
+    detail.isHomePage = NO;
     detail.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     [detail.doneButton addTarget:self action:@selector(doneButtonTap) forControlEvents:UIControlEventTouchUpInside];
     //添加到window上面
