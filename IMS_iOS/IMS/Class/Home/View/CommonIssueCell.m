@@ -4,7 +4,7 @@
 //
 //  Created by Kim on 2018/3/12.
 //  Copyright © 2018年 kodak. All rights reserved.
-//
+//  Assined & recent Cell
 
 #import "CommonIssueCell.h"
 

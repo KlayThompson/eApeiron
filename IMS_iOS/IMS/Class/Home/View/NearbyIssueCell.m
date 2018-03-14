@@ -40,11 +40,7 @@
         serialNumber = @"";
     }
     
-//    UserInfoManager *manager = [UserInfoManager shareInstance];
-//    //distance
-//    double distance = [self distanceBetweenOrderByLat1:manager.latitude.doubleValue lat2:lat.doubleValue lng1:manager.longitude.doubleValue lng2:lng.doubleValue];
-    self.distanceLabel.text = [NSString stringWithFormat:@"%@M",distance];
-    
+    [self setUpDistanceLabelWith:distance];
     
     //时间
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -59,22 +55,18 @@
     self.serialNumberLabel.text = serialNumber;
 }
 
-//feet单位
--(double)distanceBetweenOrderByLat1:(double)lat1 lat2:(double)lat2 lng1:(double)lng1 lng2:(double)lng2 {
+- (void)setUpDistanceLabelWith:(NSString *)distance {
     
-    CLLocation *curLocation = [[CLLocation alloc] initWithLatitude:lat1 longitude:lng1];
-    
-    CLLocation *otherLocation = [[CLLocation alloc] initWithLatitude:lat2 longitude:lng2];
-    
-    double  distance  = [curLocation distanceFromLocation:otherLocation];
-    
-    
-    double change = 0.3048;
-    
-    double value = distance/change;
-    
-    return  value;
-    
+    double meters = distance.doubleValue;
+    double miles = meters / 1609;
+    double feet = meters / 0.3048;
+    if (miles < 1) {
+        //use feet
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.2f feet",feet];
+    } else {
+        //use miles
+        self.distanceLabel.text = [NSString stringWithFormat:@"%.2f miles",miles];
+    }
 }
 
 @end
