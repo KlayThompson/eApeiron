@@ -22,11 +22,13 @@
 #import "AVMetadataController.h"
 #import "InputSerialNumberViewController.h"
 #import "CommonIssueCell.h"
+#import "UIColor+Addtions.h"
 
 static NSString *nearbyCellId = @"NearbyIssueCell";
 static NSString *commonIssueCellId = @"CommonIssueCell";
 #define PageSize 10
 #define BottomViewHeight 60
+#define HeightViewHeight 44
 
 @interface HomeListViewController ()<UITableViewDelegate,UITableViewDataSource,AVMetadataDelegate> {
  
@@ -37,6 +39,8 @@ static NSString *commonIssueCellId = @"CommonIssueCell";
 @property (nonatomic, strong) UITableView *uTableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) UIView *bottomBgView;
+@property (nonatomic, strong) UIView *commonHeaderView;
+@property (nonatomic, strong) UIView *nearbyHeaderView;
 
 @end
 
@@ -62,9 +66,12 @@ static NSString *commonIssueCellId = @"CommonIssueCell";
 - (void)loadHistoryFromServer:(NSInteger)targetPageIndex {
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
-    
+    manager.longitude = @"0.00";
+    manager.latitude = @"0.00";
     if (STR_IS_NIL(manager.latitude) && STR_IS_NIL(manager.longitude)) {
         [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
+        [self.uTableView.mj_footer endRefreshing];
+        [self.uTableView.mj_header endRefreshing];
         return;
     }
     NSString *pId = manager.currentProjectId;
@@ -305,6 +312,12 @@ static NSString *commonIssueCellId = @"CommonIssueCell";
 - (void)setupUI {
     
     self.uTableView.tableFooterView = [UIView new];
+    if (self.historyType == HistoryTypeNearBy) {
+        [self.view addSubview:self.nearbyHeaderView];
+    } else {
+        [self.view addSubview:self.commonHeaderView];
+    }
+    
     self.uTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshDataFormServer)];
     [self.uTableView.mj_header beginRefreshing];
     
@@ -313,7 +326,7 @@ static NSString *commonIssueCellId = @"CommonIssueCell";
     
     [self.uTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view.mas_left);
-        make.top.equalTo(self.view.mas_top);
+        make.top.equalTo(self.view.mas_top).offset(HeightViewHeight);
         make.right.equalTo(self.view.mas_right);
         if (iPhoneX) {
             make.bottom.equalTo(self.view.mas_bottom).offset(-88 - BottomViewHeight);
@@ -366,6 +379,71 @@ static NSString *commonIssueCellId = @"CommonIssueCell";
         button.frame = CGRectMake((ScreenWidth / 2) - 42.5, -25, 85, 85);
     }
     return _bottomBgView;
+}
+
+- (UIView *)commonHeaderView {
+    if (_commonHeaderView == nil) {
+        _commonHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, HeightViewHeight)];
+        UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth / 3, HeightViewHeight)];
+        timeLabel.text = @"Created At ";
+        timeLabel.font = [UIFont systemFontOfSize:15];
+        timeLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        timeLabel.textAlignment = NSTextAlignmentCenter;
+        timeLabel.adjustsFontSizeToFitWidth = YES;
+        [_commonHeaderView addSubview:timeLabel];
+        UILabel *idLabel = [[UILabel alloc] initWithFrame:CGRectMake(timeLabel.right, 0, timeLabel.width, timeLabel.height)];
+        idLabel.text = @"ID";
+        idLabel.font = [UIFont systemFontOfSize:15];
+        idLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        idLabel.adjustsFontSizeToFitWidth = YES;
+        idLabel.textAlignment = NSTextAlignmentCenter;
+        [_commonHeaderView addSubview:idLabel];
+        UILabel *serialNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(idLabel.right, 0, timeLabel.width, timeLabel.height)];
+        serialNumberLabel.text = @"Serial Number ";
+        serialNumberLabel.font = [UIFont systemFontOfSize:15];
+        serialNumberLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        serialNumberLabel.textAlignment = NSTextAlignmentCenter;
+        serialNumberLabel.adjustsFontSizeToFitWidth = YES;
+        [_commonHeaderView addSubview:serialNumberLabel];
+        _commonHeaderView.backgroundColor = [UIColor ims_colorWithHex:0xf0f0f0];
+    }
+    return _commonHeaderView;
+}
+
+- (UIView *)nearbyHeaderView {
+    if (_nearbyHeaderView == nil) {
+        _nearbyHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, HeightViewHeight)];
+        UILabel *distanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth / 4, HeightViewHeight)];
+        distanceLabel.text = @"Distance ";
+        distanceLabel.font = [UIFont systemFontOfSize:15];
+        distanceLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        distanceLabel.textAlignment = NSTextAlignmentCenter;
+        distanceLabel.adjustsFontSizeToFitWidth = YES;
+        [_nearbyHeaderView addSubview:distanceLabel];
+        UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(distanceLabel.right, 0, distanceLabel.width, HeightViewHeight)];
+        timeLabel.text = @"Created At ";
+        timeLabel.font = [UIFont systemFontOfSize:15];
+        timeLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        timeLabel.textAlignment = NSTextAlignmentCenter;
+        timeLabel.adjustsFontSizeToFitWidth = YES;
+        [_nearbyHeaderView addSubview:timeLabel];
+        UILabel *idLabel = [[UILabel alloc] initWithFrame:CGRectMake(timeLabel.right, 0, timeLabel.width, timeLabel.height)];
+        idLabel.text = @"ID";
+        idLabel.font = [UIFont systemFontOfSize:15];
+        idLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        idLabel.adjustsFontSizeToFitWidth = YES;
+        idLabel.textAlignment = NSTextAlignmentCenter;
+        [_nearbyHeaderView addSubview:idLabel];
+        UILabel *serialNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(idLabel.right, 0, timeLabel.width, timeLabel.height)];
+        serialNumberLabel.text = @"Serial Number ";
+        serialNumberLabel.font = [UIFont systemFontOfSize:15];
+        serialNumberLabel.textColor = [UIColor ims_colorWithHex:0x4c4c4c];
+        serialNumberLabel.textAlignment = NSTextAlignmentCenter;
+        serialNumberLabel.adjustsFontSizeToFitWidth = YES;
+        [_nearbyHeaderView addSubview:serialNumberLabel];
+        _nearbyHeaderView.backgroundColor = [UIColor ims_colorWithHex:0xf0f0f0];
+    }
+    return _nearbyHeaderView;
 }
 
 #pragma mark -
