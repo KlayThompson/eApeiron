@@ -66,13 +66,13 @@ static NSString *commonIssueCellId = @"CommonIssueCell";
 - (void)loadHistoryFromServer:(NSInteger)targetPageIndex {
     
     UserInfoManager *manager = [UserInfoManager shareInstance];
-    manager.longitude = @"0.00";
-    manager.latitude = @"0.00";
+//    manager.longitude = @"0.00";
+//    manager.latitude = @"0.00";
     if (STR_IS_NIL(manager.latitude) && STR_IS_NIL(manager.longitude)) {
         [SVProgressHUD showInfoWithStatus:@"Unable to determine your location. \n Please check your device's location settings"];
         [self.uTableView.mj_footer endRefreshing];
         [self.uTableView.mj_header endRefreshing];
-        return;
+        return; 
     }
     NSString *pId = manager.currentProjectId;
     if (STR_IS_NIL(pId)) {
